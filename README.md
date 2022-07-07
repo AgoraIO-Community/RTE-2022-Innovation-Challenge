@@ -4,6 +4,8 @@
 
 ## 大赛介绍
 
+[大赛官网](https://www.agora.io/cn/rte-hackathon-2022)
+
 RTE（Real Time Engagement）创新编程挑战赛，是声网 Agora 自 2019 年开始，面向全球 RTC 开发者、编程爱好者与极客举办的在线黑客马拉松。
 [本届大赛](https://www.agora.io/cn/rte-hackathon-2022)，我们共分为 2 个赛道，[赛道一](https://github.com/AgoraIO-Community/RTE-2022-Innovation-Challenge)将继续延用经典赛题「声网 SDK 应用开发」。与此同时，今年我们还特别推出[赛道二](https://github.com/netless-io/community-apps)的新赛题「场景化白板插件应用开发」，给开发者提出更为聚焦的解题方向，探索应用场景的应用与技术能力边界。
 

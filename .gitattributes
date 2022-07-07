@@ -1,0 +1,1 @@
+*.psd,[[:space:]]*.jpg,[[:space:]]*.png,[[:space:]]*.jpeg,[[:space:]]*.bmp,[[:space:]]*.mp4,[[:space:]]*.doc*,[[:space:]]*.xls*,[[:space:]]*.ppt* filter=lfs diff=lfs merge=lfs -text

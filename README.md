@@ -114,7 +114,6 @@ RTC 作为新一代的基础技术能力，正支撑和推进着人、物及空�
 
 ---
 
-## 联合主办
-声网、环信、RTC开发者社区
+## 主办方与合作伙伴
+<img width="997" alt="image" src="https://user-images.githubusercontent.com/3679798/177704199-cbe6cbe2-d466-45a3-9652-80abed537412.png">
 
-<!-- ## 合作伙伴 -->

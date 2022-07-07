@@ -19,7 +19,7 @@ RTC 作为新一代的基础技术能力，正支撑和推进着人、物及空�
 3、自由（不限于上述方向）。
 
 ### 作品要求
-- 参赛队伍需使用声网官网正式发布的 SDK 产品进行应用开发。SDK 详见[声网SDK中心](https://docs.agora.io/cn/All/downloads?platform=All%20Platforms#SDK%20Downloads）；
+- 参赛队伍需使用声网官网正式发布的 SDK 产品进行应用开发。SDK 详见[声网SDK中心](https://docs.agora.io/cn/All/downloads?platform=All%20Platforms#SDK%20Downloads)；
 - 参赛队伍可借助声网云市场插件能力，增强和扩展你的应用能力范围。进一步添加各类 RTE 功能，详见[「云市场插件」资料汇总](https://rtcdeveloper.agora.io/t/topic/24289)；
 - 使用任意声网 SDK 与环信 IM SDK 结合进行开发的参赛作品，将可额外参与「环信专项奖」的评选。详见[环信 IM SDK](https://www.easemob.com/download/im)；
 - 基于已有项目进行二次开发的参赛作品，需在项目的 Readme 文档中详细说明主要变更点，并附上原项目链接，并适配声网 SDK 的官网最新版本；

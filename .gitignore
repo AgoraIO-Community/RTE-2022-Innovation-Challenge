@@ -7,3 +7,10 @@
 *.modulemap
 *.hmap
 Pods
+Thumbs.db
+**.log
+node_modules/
+public/
+.deploy*/
+.vscode/
+yarn.lock

@@ -8,7 +8,7 @@
 PRODUCT_NAME = omega_paking
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.omegaPaking
+PRODUCT_BUNDLE_IDENTIFIER = com.sin.omegaPaking
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2022 com.example. All rights reserved.

@@ -5,7 +5,7 @@ import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
 import 'package:permission_handler/permission_handler.dart';
 
 const appId = "7608e93c9a254cde8ed36e2872222f0a";
-const token = "0067608e93c9a254cde8ed36e2872222f0aIAAuiaeh9m6cMrZjN/+c2rRpEZhi8LS69jwaKxHnRxF4D3TrHHIAAAAAEACOhaHHlsrtYgEAAQCUyu1i";
+const token = "0067608e93c9a254cde8ed36e2872222f0aIAAMJUnTUQuUQc+ZWOCtRZxqc0zybBlqel320JgdTdeTiHTrHHIAAAAAEACOhaHHogPuYgEAAQChA+5i";
 const channel = "aya";
 
 void main() {
@@ -66,11 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }

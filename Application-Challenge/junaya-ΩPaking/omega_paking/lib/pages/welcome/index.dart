@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
+import 'package:omega_paking/models/app_model.dart';
 import 'package:omega_paking/pages/login/index.dart';
 import 'package:omega_paking/styles.dart';
 import 'package:omega_paking/themes.dart';
@@ -42,6 +45,12 @@ class WelcomePageState extends State<WelcomePage> {
     loadInfo();
     super.initState();
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Provider.value(value: this, child: WelcomePageStateView());
@@ -52,11 +61,40 @@ class WelcomePageStateView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WelcomePageState state = context.watch();
-
     AppTheme theme = context.watch();
     return Scaffold(
-      body: Center(
-        child: Text('WelcomePage'),
+      backgroundColor: theme.bg1,
+      body: TweenAnimationBuilder<double>(
+        duration: Durations.slow,
+        tween: Tween(begin: 0, end: 1),
+        builder: (context, value, child) => Opacity(
+          opacity: value,
+          child: Center(
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                Container(
+                  color: theme.accent1,
+                  alignment: Alignment.center,
+                  child: const Text('WelcomePage1'),
+                ),
+                Container(
+                  color: theme.bg2,
+                  margin: const EdgeInsets.only(bottom: 100),
+                  width: 400,
+                  height: 100,
+                  alignment: Alignment.bottomCenter,
+                  child: ElevatedButton(
+                    child: const Text("start"),
+                    onPressed: () async {
+                      Navigator.push<void>(context, PageRoutes.fade(() => LoginPage(), Durations.slow.inMilliseconds * .001));
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

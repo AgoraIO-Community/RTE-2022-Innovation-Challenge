@@ -73,7 +73,7 @@ class AppModel extends AbstractModel {
   /// //////////////////////////////////////////
   /// Current Theme (serialized)
   ThemeType get theme => _theme;
-  ThemeType _theme = ThemeType.Light;
+  ThemeType _theme = ThemeType.Dark;
 
   set theme(ThemeType value) {
     _theme = value;

@@ -110,7 +110,7 @@ RTC 作为新一代的基础技术能力，正支撑和推进着人、物及空�
 
 欢迎微信扫描二维码，进入“RTC 线上编程挑战赛2022”交流群。
 
-<img width="409" alt="image" src="https://user-images.githubusercontent.com/3679798/177703461-9f9cc4dc-4754-45c5-bb3a-fc8ab9f5aceb.png">
+![image](https://user-images.githubusercontent.com/3679798/183348580-6c1ff269-2bae-4ae6-ac45-82e60ebcb0a5.png)
 
 ---
 

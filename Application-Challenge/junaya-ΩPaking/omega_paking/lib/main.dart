@@ -49,6 +49,7 @@ class _MainAppState extends State<MainApp> {
       bool isSignedIn = await BootstrapCommand(context).execute();
       WelcomePageState? welcomePage = _welcomePageKey.currentState;
 
+      print(welcomePage);
       if (isSignedIn == true) {
         welcomePage?.refreshDataAndLoadApp();
       } else {
@@ -58,7 +59,7 @@ class _MainAppState extends State<MainApp> {
     });
     super.initState();
   }
-  
+
   @override
   Widget build(BuildContext context) {
 

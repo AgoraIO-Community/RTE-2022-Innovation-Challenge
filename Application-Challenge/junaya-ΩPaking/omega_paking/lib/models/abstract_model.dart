@@ -23,7 +23,7 @@ abstract class AbstractModel extends ChangeNotifier {
   void scheduleSave() async {
     if (_isSaveScheduled) return;
     _isSaveScheduled = true;
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     save();
     _isSaveScheduled = false;
   }

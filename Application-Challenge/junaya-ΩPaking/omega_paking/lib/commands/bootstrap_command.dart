@@ -14,6 +14,8 @@ class BootstrapCommand extends AbstractCommand {
 
   Future<bool> execute() async {
     /// Let the splash view sit for a bit. Mainly for aesthetics and to ensure a smooth intro animation.
+    await Future.delayed(const Duration(milliseconds: 1500));
+    
     /// Define default locale
     Intl.defaultLocale = 'en_US';
 
@@ -55,6 +57,8 @@ class BootstrapCommand extends AbstractCommand {
       // Check auth
       signInError = !authSuccess;
     }
+
+    return true;
 
     return !signInError && authModel.hasAuthKey;
   }

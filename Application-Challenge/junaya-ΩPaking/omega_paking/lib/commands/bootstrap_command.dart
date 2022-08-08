@@ -58,7 +58,7 @@ class BootstrapCommand extends AbstractCommand {
       signInError = !authSuccess;
     }
 
-    return true;
+    return false;
 
     return !signInError && authModel.hasAuthKey;
   }

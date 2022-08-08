@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:omega_paking/_internal/page_routes.dart';
+import 'package:omega_paking/pages/home/index.dart';
+import 'package:omega_paking/styles.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -10,7 +13,17 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Login'),
+        child: Column(
+          children: [
+            const Text('Login'),
+            ElevatedButton(
+              child: const Text("Login"),
+              onPressed: () async {
+                Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

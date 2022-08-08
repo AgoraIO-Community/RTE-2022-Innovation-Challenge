@@ -76,7 +76,7 @@ class WelcomePageStateView extends StatelessWidget {
                 Container(
                   color: theme.accent1,
                   alignment: Alignment.center,
-                  child: const Text('WelcomePage1'),
+                  child: const Text('Welcome OmegaPaking'),
                 ),
                 Container(
                   color: theme.bg2,
@@ -85,7 +85,7 @@ class WelcomePageStateView extends StatelessWidget {
                   height: 100,
                   alignment: Alignment.bottomCenter,
                   child: ElevatedButton(
-                    child: const Text("start"),
+                    child: const Text("Start"),
                     onPressed: () async {
                       Navigator.push<void>(context, PageRoutes.fade(() => LoginPage(), Durations.slow.inMilliseconds * .001));
                     },

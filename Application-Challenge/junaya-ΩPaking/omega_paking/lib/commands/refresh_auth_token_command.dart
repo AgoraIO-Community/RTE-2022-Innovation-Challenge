@@ -14,7 +14,7 @@ class RefreshAuthTokensCommand extends AbstractCommand {
     if (onlyIfExpired && !authModel.isExpired) return true;
 
     //Query server, see if we can get a new auth token
-    ServiceResult<AuthResults> result = await AuthService().refresh(authModel.refreshToken ?? "");
+    ServiceResult<AuthResults> result = await AuthService().refresh(authModel.refreshToken);
     //If the request succeeded, inject the model with the latest authToken and write to disk
     if (result.success) {
       authModel.accessToken = result.content?.accessToken ?? "";

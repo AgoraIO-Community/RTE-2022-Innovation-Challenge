@@ -121,6 +121,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.1"
+  im_flutter_sdk:
+    dependency: "direct main"
+    description:
+      name: im_flutter_sdk
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.9.4+2"
   intl:
     dependency: "direct main"
     description:

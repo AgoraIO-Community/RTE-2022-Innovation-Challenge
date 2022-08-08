@@ -10,6 +10,9 @@ class AuthService {
 
   AuthService();
 
+  Future<ServiceResult<AuthResults>> refresh(String? refreshToken) async =>
+    await login();
+
   Future<ServiceResult<AuthResults>> login({String email = "", String password = ""}) async {
     Map<String, String> params = {};
     params.putIfAbsent("email", () => email);

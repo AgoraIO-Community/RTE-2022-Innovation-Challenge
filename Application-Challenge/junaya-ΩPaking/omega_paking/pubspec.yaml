@@ -42,6 +42,7 @@ dependencies:
   intl: ^0.17.0
   path_provider: ^2.0.11
   animations: ^2.0.3
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:

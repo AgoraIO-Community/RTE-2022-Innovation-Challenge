@@ -13,8 +13,6 @@ enum DashboardSocialSectionType { All, Git, Twitter }
 class AppModel extends AbstractModel {
   static const kCurrentVersion = "1.1.0";
 
-  static bool forceIgnoreGoogleApiCalls = false;
-
   static bool get enableShadowsOnWeb => true;
 
   static bool get enableAnimationsOnWeb => true;

@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/components/no_glow_scroll_behavior.dart';
+import 'package:omega_paking/commands/bootstrap_command.dart';
 import 'package:omega_paking/models/app_model.dart';
+import 'package:omega_paking/models/auth_model.dart';
 import 'package:omega_paking/pages/welcome/index.dart';
 import 'package:omega_paking/styles.dart';
 import 'package:omega_paking/themes.dart';
@@ -14,13 +16,12 @@ import  'package:omega_paking/pages/welcome/index.dart';
 void main() {
   
   /// Initialize models, negotiate dependencies
-  var appModel = AppModel();
-
   runApp(
     MultiProvider(
       providers: [
         /// MODELS
-        ChangeNotifierProvider(create: (context) => appModel),
+        ChangeNotifierProvider.value(value: AppModel()),
+        ChangeNotifierProvider(create: (context) => AuthModel()),
 
         /// ROOT CONTEXT, Allows Commands to retrieve a 'safe' context that is not tied to any one view. Allows them to work on async tasks without issues.
         Provider<BuildContext>(create: (c) => c),
@@ -45,7 +46,7 @@ class _MainAppState extends State<MainApp> {
     context.read<AppModel>().load().then((value) async {
       setState(() => _settingLoaded = true);
 
-      bool isSignedIn = true;
+      bool isSignedIn = await BootstrapCommand(context).execute();
       WelcomePageState? welcomePage = _welcomePageKey.currentState;
 
       if (isSignedIn == true) {

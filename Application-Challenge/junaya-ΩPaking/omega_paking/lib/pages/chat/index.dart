@@ -4,61 +4,27 @@ import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
 import 'package:permission_handler/permission_handler.dart';
 
-const appId = "7608e93c9a254cde8ed36e2872222f0a";
-const token = "0067608e93c9a254cde8ed36e2872222f0aIAAMJUnTUQuUQc+ZWOCtRZxqc0zybBlqel320JgdTdeTiHTrHHIAAAAAEACOhaHHogPuYgEAAQChA+5i";
+const appId = "f295a2fc38ea4fc1aa76511d2dee7b3b";
+const token = "006f295a2fc38ea4fc1aa76511d2dee7b3bIABQfCZyJ6he8psQ2AnfNpsE+63OFIrI6ylLkqjixP4gtXTrHHIAAAAAEACOhaHH0lTzYgEAAQDRVPNi";
 const channel = "aya";
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    
-
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+class ChatPage extends StatefulWidget {
+  const ChatPage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<ChatPage> createState() => _ChatPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ChatPageState extends State<ChatPage> {
   int? _remoteUid;
   bool _localUserJoined = false;
+  bool _enableAudio = true;
+  bool _enableVideo = true;
   late RtcEngine _engine;
 
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  void _incrementCounter() async {
+    await initAgora();
   }
 
   Future<void> initAgora() async {
@@ -67,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     //create the engine
     _engine = await RtcEngine.create(appId);
-    await _engine.enableVideo();
     _engine.setEventHandler(
       RtcEngineEventHandler(
         joinChannelSuccess: (String channel, int uid, int elapsed) {
@@ -88,10 +53,34 @@ class _MyHomePageState extends State<MyHomePage> {
             _remoteUid = null;
           });
         },
+        userMuteVideo: (int uid, bool muted) {
+          print("userMuteVideo user $uid muted $muted");
+          setState(() {
+            _enableVideo = muted;
+          });
+        },
       ),
     );
 
     await _engine.joinChannel(token, channel, null, 0);
+    await _engine.enableVideo();
+  }
+
+  _toggleEnableAudio() {
+    print('############### _toggleEnableAudio :::');
+    setState(() {
+      _enableAudio = !_enableAudio;
+    });
+    _engine.muteLocalAudioStream(_enableAudio);
+  }
+
+  _toggleEnableVideo() {
+    print('############### _toggleEnableVideo :::');
+    _engine.muteLocalVideoStream(!_enableVideo);
+  }
+  
+  _switchCamera() {
+    _engine.switchCamera();
   }
 
   @override
@@ -102,21 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
       body: Stack(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         children: [
           Center(
             child: _remoteVideo(),
@@ -127,10 +103,36 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 100,
               height: 150,
               child: Center(
-                child: _localUserJoined
+                child: _enableVideo
                   ? RtcLocalView.SurfaceView()
                   : CircularProgressIndicator(),
               ),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            bottom: 0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: _toggleEnableAudio,
+                  child: const Text("ToggleAudio")
+                ),
+                ElevatedButton(
+                  onPressed: _toggleEnableVideo,
+                  child: const Text("ToggleVideo")
+                ),
+                ElevatedButton(
+                  onPressed: _switchCamera,
+                  child: const Text("switchCamera")
+                ),
+                ElevatedButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text("Pop")
+                ),
+              ],
             ),
           ),
         ],

@@ -44,7 +44,7 @@ abstract class AbstractModel extends ChangeNotifier {
 
   //Enable file serialization, remember to override the to/from serialization methods as well
   void enableSerialization(String fileName) {
-    _file = UniversalFile(fileName);
+    // _file = UniversalFile(fileName);
   }
 
   Map<String, dynamic> toJson() {

@@ -5,6 +5,7 @@
   import 'package:omega_paking/models/app_model.dart';
   import 'package:omega_paking/pages/home/index.dart';
   import 'package:omega_paking/pages/login/index.dart';
+  import 'package:omega_paking/pages/chat/index.dart';
   import 'package:omega_paking/styles.dart';
   import 'package:omega_paking/themes.dart';
   import 'package:provider/provider.dart';
@@ -42,7 +43,7 @@
       isLoading = true;
       /// Show main app view
       print("object");
-      Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
+      Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
     }
 
     @override

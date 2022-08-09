@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 const appId = "f295a2fc38ea4fc1aa76511d2dee7b3b";
@@ -91,6 +92,14 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 10),
+      padding: const EdgeInsets.all(0),
+      maximumSize: const Size.square(48),
+      minimumSize: const Size.square(48),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
+    );
+
     return Scaffold(
       body: Stack(
         children: [
@@ -118,18 +127,22 @@ class _ChatPageState extends State<ChatPage> {
               children: [
                 ElevatedButton(
                   onPressed: _toggleEnableAudio,
-                  child: const Text("ToggleAudio")
+                  style: style,
+                  child: SvgPicture.asset(_enableAudio ? "assets/icons/mic.svg" : "assets/icons/mic_off.svg", width: 24, height: 24, color: Colors.white),
                 ),
                 ElevatedButton(
                   onPressed: _toggleEnableVideo,
-                  child: const Text("ToggleVideo")
+                  style: style,
+                  child: SvgPicture.asset(_enableVideo ? "assets/icons/video_camera_on.svg" : "assets/icons/video_camera_off.svg", width: 24, height: 24, color: Colors.white),
                 ),
                 ElevatedButton(
                   onPressed: _switchCamera,
-                  child: const Text("switchCamera")
+                  style: style,
+                  child: SvgPicture.asset("assets/icons/video_switch.svg", width: 24, height: 24, color: Colors.white),
                 ),
                 ElevatedButton(
                   onPressed: () => Navigator.pop(context),
+                  style: style,
                   child: const Text("Pop")
                 ),
               ],

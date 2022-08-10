@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as rtc_local_view;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as rtc_remote_view;
+import 'package:flutter_svg/svg.dart';
 import 'package:omega_paking/config/agora.config.dart' as config;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -113,75 +116,66 @@ class _State extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.expand,
       children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (!kIsWeb &&
-                (defaultTargetPlatform == TargetPlatform.android ||
-                    defaultTargetPlatform == TargetPlatform.iOS))
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Text(
-                      'Rendered by SurfaceView \n(default TextureView): '),
-                  Switch(
-                    value: _isRenderSurfaceView,
-                    onChanged: isJoined
-                        ? null
-                        : (changed) {
-                            setState(() {
-                              _isRenderSurfaceView = changed;
-                            });
-                          },
-                  )
-                ],
-              ),
-            Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: ElevatedButton(
-                    onPressed: isJoined ? _leaveChannel : _joinChannel,
-                    child: Text('${isJoined ? 'Leave' : 'Join'} channel'),
-                  ),
-                )
-              ],
-            ),
-            _renderVideo(),
-          ],
+        Container(
+          child: _renderVideo(),
         ),
-        if (defaultTargetPlatform == TargetPlatform.android ||
-            defaultTargetPlatform == TargetPlatform.iOS)
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  onPressed: _switchCamera,
-                  child: Text('Camera ${switchCamera ? 'front' : 'rear'}'),
-                ),
-              ],
-            ),
-          )
+        Positioned(
+          top: 0,
+          right: 0,
+          bottom: 0,
+          child: _groupButtons(),
+        ),
       ],
     );
   }
 
-  _renderVideo() {
+  Widget _groupButtons() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          onPressed: isJoined ? _leaveChannel : _joinChannel,
+          child: Text('${isJoined ? 'Leave' : 'Join'} channel'),
+        ),
+        if (Platform.isAndroid || Platform.isIOS)
+          ElevatedButton(
+            onPressed: _switchCamera,
+            child: SvgPicture.asset('assets/icons/video_switch.svg', color: switchCamera ? Colors.white : Colors.black),
+          ),
+       
+      ]
+    );
+  }
+
+  Widget _localVideo() {
+    return (kIsWeb || _isRenderSurfaceView)
+      ? const rtc_local_view.SurfaceView(
+          zOrderMediaOverlay: true,
+          zOrderOnTop: true,
+        )
+      : const rtc_local_view.TextureView();
+  }
+
+  Widget _remoteVideo(int uid, String channelId) {
+    return (kIsWeb || _isRenderSurfaceView)
+      ? rtc_remote_view.SurfaceView(
+          uid: uid,
+          channelId: channelId,
+        )
+      : rtc_remote_view.TextureView(
+          uid: uid,
+          channelId: channelId,
+        );
+  }
+
+  Widget _renderVideo() {
     return Expanded(
       child: Stack(
         children: [
           Container(
-            child: (kIsWeb || _isRenderSurfaceView)
-                ? const rtc_local_view.SurfaceView(
-                    zOrderMediaOverlay: true,
-                    zOrderOnTop: true,
-                  )
-                : const rtc_local_view.TextureView(),
+            child: _localVideo(),
           ),
           Align(
             alignment: Alignment.topLeft,
@@ -194,15 +188,7 @@ class _State extends State<ChatPage> {
                     child: SizedBox(
                       width: 120,
                       height: 120,
-                      child: (kIsWeb || _isRenderSurfaceView)
-                          ? rtc_remote_view.SurfaceView(
-                              uid: e,
-                              channelId: _controller.text,
-                            )
-                          : rtc_remote_view.TextureView(
-                              uid: e,
-                              channelId: _controller.text,
-                            ),
+                      child: _remoteVideo(e, _controller.text),
                     ),
                   ),
                 )),

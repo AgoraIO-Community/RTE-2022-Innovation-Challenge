@@ -34,6 +34,8 @@ class _State extends State<ChatPage> {
   late TextEditingController _controller;
   bool _isRenderSurfaceView = false;
   bool _isEnabledVirtualBackgroundImage = false;
+  bool playEffect = false;
+  bool openMicrophone = true;
 
   @override
   void initState() {
@@ -162,6 +164,27 @@ class _State extends State<ChatPage> {
     });
   }
 
+  _switchEffect() async {
+    if (playEffect) {
+      _engine.stopEffect(1).then((value) {
+        setState(() {
+          playEffect = false;
+        });
+      }).catchError((err) {
+        print('stopEffect $err');
+      });
+    } else {
+      final path = (await _engine.getAssetAbsolutePath("assets/audios/Sound_Horizon.mp3"))!;
+      _engine.playEffect(1, path, 0, 1, 1, 100, openMicrophone).then((value) {
+        setState(() {
+          playEffect = true;
+        });
+      }).catchError((err) {
+        print('playEffect $err');
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -208,6 +231,10 @@ class _State extends State<ChatPage> {
           child: isMuteAudio
             ? SvgPicture.asset('assets/icons/mic_off.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'UnmutedAudio')
             : SvgPicture.asset('assets/icons/mic.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'MutedAudio')
+        ),
+        ElevatedButton(
+          onPressed: isJoined ? _switchEffect : null,
+          child: Text('${playEffect ? 'Stop' : 'Play'} effect'),
         ),
         ElevatedButton(
           style: style,

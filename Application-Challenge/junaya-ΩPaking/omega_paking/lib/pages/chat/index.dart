@@ -21,7 +21,11 @@ class ChatPage extends StatefulWidget {
 class _State extends State<ChatPage> {
   late final RtcEngine _engine;
 
-  bool isJoined = false, switchCamera = true, switchRender = true;
+  bool isJoined = false;
+  bool switchCamera = true;
+  bool switchRender = true;
+  bool isMuteVideo = false;
+  bool isMuteAudio = false;
   List<int> remoteUid = [];
   late TextEditingController _controller;
   bool _isRenderSurfaceView = false;
@@ -82,6 +86,9 @@ class _State extends State<ChatPage> {
           remoteUid.clear();
         });
       },
+      userMuteVideo: (uid, muted) {
+        print('_toggleMuteVideoLocal  $uid $muted');
+      }
     ));
   }
 
@@ -113,10 +120,23 @@ class _State extends State<ChatPage> {
     });
   }
 
+  _toggleMuteVideoLocal() {
+    _engine.muteLocalVideoStream(!isMuteVideo);
+    setState(() {
+      isMuteVideo = !isMuteVideo;
+    });
+  }
+
+  _toggleMuteAudioLocal() {
+    _engine.muteLocalAudioStream(!isMuteAudio);
+    setState(() {
+      isMuteAudio = !isMuteAudio;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.expand,
       children: [
         Container(
           child: _renderVideo(),
@@ -132,15 +152,38 @@ class _State extends State<ChatPage> {
   }
 
   Widget _groupButtons() {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+      padding: const EdgeInsets.all(0),
+      maximumSize: const Size.square(48),
+      minimumSize: const Size.square(48),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
+    );
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
           onPressed: isJoined ? _leaveChannel : _joinChannel,
-          child: Text('${isJoined ? 'Leave' : 'Join'} channel'),
+          style: style,
+          child: Text(isJoined ? 'Leave' : 'Join'),
+        ),
+        ElevatedButton(
+          style: style,
+          onPressed: _toggleMuteVideoLocal,
+          child: isMuteVideo 
+            ? SvgPicture.asset('assets/icons/video_camera_off.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'UnmutedVideo')
+            : SvgPicture.asset('assets/icons/video_camera_on.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'MutedVideo')
+        ),
+        ElevatedButton(
+          style: style,
+          onPressed: _toggleMuteAudioLocal,
+          child: isMuteAudio
+            ? SvgPicture.asset('assets/icons/mic_off.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'UnmutedAudio')
+            : SvgPicture.asset('assets/icons/mic.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'MutedAudio')
         ),
         if (Platform.isAndroid || Platform.isIOS)
           ElevatedButton(
+            style: style,
             onPressed: _switchCamera,
             child: SvgPicture.asset('assets/icons/video_switch.svg', color: switchCamera ? Colors.white : Colors.black),
           ),

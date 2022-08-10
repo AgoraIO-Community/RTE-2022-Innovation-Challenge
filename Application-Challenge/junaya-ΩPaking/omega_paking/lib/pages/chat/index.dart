@@ -139,6 +139,7 @@ class _State extends State<ChatPage> {
     });
   }
 
+  // 仅在远程可以生效，本地无效果
   Future<void> _enableVirtualBackground() async {
     print('_enableVirtualBackground');
     ByteData data = await rootBundle.load("assets/images/home.jpg");

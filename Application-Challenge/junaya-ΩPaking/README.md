@@ -6,11 +6,12 @@
 
 ## 使用指南
 <!-- 请描述该应用的使用步骤，包括下载、依赖安装、参数及软硬件配置（如有）等 -->
-xxx
+> * `flutter pub get`
+> * `flutter run`
 
 ## 功能简介
 <!-- 请给出该应用的主要功能点 -->
-xxx
+1v1 教学场景
 
 ## 技术栈
 <!-- 请给出该应用主要的技术栈，包括声网和环信（如有用） SDK 版本 -->
@@ -34,9 +35,9 @@ xxx
 | **sqflite**                | **数据库**        |
 | **flutter_statusbar**      | **状态栏**        |
 | **flutter_svg**            | **svg**        |
-| **agora_rtc_engine**       | **agora_rtc_engine**         |
+| **agora_rtc_engine**       | **agora_rtc_engine: ^5.3.0**         |
 | **path_provider**          | **本地路径**       |
-| **path**          				 | **本地路径**       |
+| **path**                   | **本地路径**       |
 | **permission_handler**     | **权限**         |
 | **lottie**                 | **svg动画**    |
 

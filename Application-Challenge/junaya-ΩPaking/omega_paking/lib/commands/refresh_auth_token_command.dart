@@ -18,7 +18,7 @@ class RefreshAuthTokensCommand extends AbstractCommand {
     //If the request succeeded, inject the model with the latest authToken and write to disk
     if (result.success) {
       authModel.accessToken = result.content?.accessToken ?? "";
-      authModel.setExpiry(result.content?.expiresIn ?? 0);
+      // authModel.setExpiry(result.content?.expiresIn ?? 0);
       authModel.scheduleSave();
     }
     return result.success;

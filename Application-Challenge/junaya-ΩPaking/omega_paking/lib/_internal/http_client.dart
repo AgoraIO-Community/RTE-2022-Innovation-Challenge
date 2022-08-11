@@ -74,7 +74,7 @@ class HttpResponse {
 
   HttpResponse(this.raw) {
     //200 means all is good :)
-    if (raw.statusCode == 200)
+    if (raw.statusCode >= 200 && raw.statusCode < 300) 
       errorType = NetErrorType.none;
     //500's, server is probably down
     else if (raw.statusCode >= 500 && raw.statusCode < 600)

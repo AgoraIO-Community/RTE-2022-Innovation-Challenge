@@ -27,18 +27,16 @@ class AuthService {
         // "Authorization": "Bearer $accessToken"
       },
       body: jsonEncode(params));
-    print("Response: ${response.statusCode} / ${response.body}");
+    print("Response: ${response.statusCode} ${response.success} / ${response.body}");
     AuthResults? results;
     if (response.success) {
       Map<String, dynamic> userAccess = jsonDecode(response.body);
       results = AuthResults(
         accessToken: userAccess["access_token"],
-        expiresIn: userAccess["expires_in"],
-        refreshToken: userAccess["refresh_token"],
         tokenType: userAccess["token_type"],
-        idToken: userAccess["id_token"],
       );
     }
+    
     return ServiceResult(results, response);
   }
 
@@ -54,10 +52,7 @@ class AuthService {
       Map<String, dynamic> userAccess = jsonDecode(response.body);
       results = AuthResults(
         accessToken: userAccess["access_token"],
-        expiresIn: userAccess["expires_in"],
-        refreshToken: userAccess["refresh_token"],
         tokenType: userAccess["token_type"],
-        idToken: userAccess["id_token"],
       );
     }
     return ServiceResult(results, response);
@@ -73,10 +68,7 @@ class AuthService {
       Map<String, dynamic> userAccess = jsonDecode(response.body);
       results = AuthResults(
         accessToken: userAccess["access_token"],
-        expiresIn: userAccess["expires_in"],
-        refreshToken: userAccess["refresh_token"],
         tokenType: userAccess["token_type"],
-        idToken: userAccess["id_token"],
       );
     }
     return ServiceResult(results, response);
@@ -85,10 +77,10 @@ class AuthService {
 
 class AuthResults {
   final String accessToken;
-  final int expiresIn;
-  final String? refreshToken;
+  // final int expiresIn;
+  // final String? refreshToken;
   final String tokenType;
-  final String idToken;
+  // final String idToken;
   late Map<String, dynamic> profile;
 
   String get email => _email;
@@ -96,12 +88,13 @@ class AuthResults {
 
   AuthResults(
       {required this.accessToken,
-      required this.expiresIn,
-      required this.refreshToken,
+      // required this.expiresIn,
+      // required this.refreshToken,
       required this.tokenType,
-      required this.idToken}) {
-    profile = jsonDecode(getProfileFromToken(idToken));
-    _email = profile["email"];
+      // required this.idToken,
+      }) {
+    // profile = jsonDecode(getProfileFromToken(idToken));
+    // _email = profile["email"];
   }
 
   String getProfileFromToken(String idToken) {

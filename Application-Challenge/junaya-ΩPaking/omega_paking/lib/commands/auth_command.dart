@@ -7,15 +7,15 @@ import 'package:omega_paking/services/result.dart';
 class AuthTokensCommand extends AbstractCommand {
   AuthTokensCommand(BuildContext context) : super(context);
 
-  Future<bool> register({String email = "", String password = "", String name = ""}) async {
+  Future<bool> register(String nickname, String email, String password) async {
     if (StringUtils.isEmpty(authModel.refreshToken)) return true;
 
     //Query server, see if we can get a new auth token
-    ServiceResult<AuthResults> result = await AuthService().register(email, password, name);
+    ServiceResult<AuthResults> result = await AuthService().register(email, password, nickname);
     //If the request succeeded, inject the model with the latest authToken and write to disk
     if (result.success) {
       authModel.accessToken = result.content?.accessToken ?? "";
-      authModel.setExpiry(result.content?.expiresIn ?? 0);
+      // authModel.setExpiry(result.content?.expiresIn ?? 0);
       authModel.scheduleSave();
     }
     return result.success;
@@ -29,7 +29,7 @@ class AuthTokensCommand extends AbstractCommand {
     //If the request succeeded, inject the model with the latest authToken and write to disk
     if (result.success) {
       authModel.accessToken = result.content?.accessToken ?? "";
-      authModel.setExpiry(result.content?.expiresIn ?? 0);
+      // authModel.setExpiry(result.content?.expiresIn ?? 0);
       authModel.scheduleSave();
     }
     return result.success;

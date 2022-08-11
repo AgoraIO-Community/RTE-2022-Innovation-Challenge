@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/_internal/utils/form.dart';
+import 'package:omega_paking/commands/auth_command.dart';
 import 'package:omega_paking/pages/home/index.dart';
 import 'package:omega_paking/services/auth.dart';
 import 'package:omega_paking/styles.dart';
@@ -30,12 +31,12 @@ class _LoginPageStateView extends StatelessWidget {
     _LoginPageState state = context.watch();
     AppTheme theme = context.watch();
 
-    String nickname = "test35";
-    String email = "test35@gmail.com";
-    String password = "test35@gmail.com";
+    String nickname = "";
+    String email = "";
+    String password = "";
     bool isLoading = false;
-    bool isValidEmail = true;
-    bool isValidPassword = true;
+    bool isValidEmail = false;
+    bool isValidPassword = false;
 
     Future<void> submit() async {
       print(nickname);
@@ -51,7 +52,8 @@ class _LoginPageStateView extends StatelessWidget {
       }
       print('============');
       isLoading = true;
-      await AuthService().register(nickname, email, password);
+      var result = await AuthTokensCommand(context).register(nickname, email, password);
+      print("result ===== $result");
       isLoading = false;
       Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
     }

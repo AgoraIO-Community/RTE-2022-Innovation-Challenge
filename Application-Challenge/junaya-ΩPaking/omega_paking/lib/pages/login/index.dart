@@ -30,13 +30,15 @@ class _LoginPageStateView extends StatelessWidget {
     _LoginPageState state = context.watch();
     AppTheme theme = context.watch();
 
-    String email = "";
-    String password = "";
+    String nickname = "test35";
+    String email = "test35@gmail.com";
+    String password = "test35@gmail.com";
     bool isLoading = false;
-    bool isValidEmail = false;
-    bool isValidPassword = false;
+    bool isValidEmail = true;
+    bool isValidPassword = true;
 
     Future<void> submit() async {
+      print(nickname);
       print(email);
       print(password);
       print(isValidEmail);
@@ -47,8 +49,9 @@ class _LoginPageStateView extends StatelessWidget {
       if (!isValidPassword) {
         return;
       }
+      print('============');
       isLoading = true;
-      await AuthService().login(email: email, password: password);
+      await AuthService().register(nickname, email, password);
       isLoading = false;
       Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
     }
@@ -121,6 +124,29 @@ class _LoginPageStateView extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        TextField(
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: theme.bg2,
+                            hintText: "nickname",
+                            prefixIcon: Icon(
+                              Icons.email,
+                              color: Colors.grey[600],
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          onChanged: (String value) {
+                            print(value);
+                            nickname = value;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 10.0,
+                        ),
                         TextField(
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(

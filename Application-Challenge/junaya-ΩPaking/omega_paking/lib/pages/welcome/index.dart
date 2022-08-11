@@ -43,7 +43,7 @@
       isLoading = true;
       /// Show main app view
       print("object");
-      Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
+      Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
     }
 
     @override

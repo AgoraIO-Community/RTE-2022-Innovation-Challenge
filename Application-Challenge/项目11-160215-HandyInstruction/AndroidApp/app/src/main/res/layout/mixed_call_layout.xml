@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <android.opengl.GLSurfaceView
+    android:id="@+id/glSurfaceView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:visibility="gone"
+    />
+
+  <com.qingkouwei.handyinstruction.av.ui.widget.DrawView
+    android:id="@+id/drawView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:visibility="gone"
+    />
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dip"
+    android:layout_marginLeft="16dip"
+    android:layout_marginRight="16dip"
+    android:layout_marginTop="24dip">
+
+    <ImageView
+      android:id="@+id/lscFinish"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_centerVertical="true"
+      android:background="@drawable/bg_live_menu_sharp"
+      android:scaleType="centerInside"
+      android:padding="8dp"
+      android:src="@mipmap/btn_liveview_finish" />
+
+    <com.qingkouwei.handyinstruction.av.ui.widget.LiveStudioLayout_Time
+      android:id="@+id/lslTime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_marginLeft="8dip"
+      android:layout_toRightOf="@id/lscFinish" />
+
+  </RelativeLayout>
+  <com.qingkouwei.handyinstruction.av.ui.widget.LiveStudioLayout_Menu
+    android:id="@+id/menu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true" />
+
+  <com.qingkouwei.handyinstruction.av.ui.widget.LiveStudioLayout_PickColor
+    android:id="@+id/pickColorLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:visibility="gone"/>
+</RelativeLayout>

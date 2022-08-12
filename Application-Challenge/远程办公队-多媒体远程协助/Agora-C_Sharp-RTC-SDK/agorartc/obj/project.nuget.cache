@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "l//lxtZ/Cr6P4eGNUfz7PzLHz/lXfnpcOC7mO68MrC503iIWF+fwTsBRd/02VtF7Xt9NNyfHC19ZGQYVTTcawQ==",
+  "success": true,
+  "projectFilePath": "C:\\迅雷下载\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-RTC-SDK\\agorartc\\agorartc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\beyondma\\.nuget\\packages\\microsoft.netcore.app\\2.0.0\\microsoft.netcore.app.2.0.0.nupkg.sha512",
+    "C:\\Users\\beyondma\\.nuget\\packages\\microsoft.netcore.dotnetapphost\\2.0.0\\microsoft.netcore.dotnetapphost.2.0.0.nupkg.sha512",
+    "C:\\Users\\beyondma\\.nuget\\packages\\microsoft.netcore.dotnethostpolicy\\2.0.0\\microsoft.netcore.dotnethostpolicy.2.0.0.nupkg.sha512",
+    "C:\\Users\\beyondma\\.nuget\\packages\\microsoft.netcore.dotnethostresolver\\2.0.0\\microsoft.netcore.dotnethostresolver.2.0.0.nupkg.sha512",
+    "C:\\Users\\beyondma\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\beyondma\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

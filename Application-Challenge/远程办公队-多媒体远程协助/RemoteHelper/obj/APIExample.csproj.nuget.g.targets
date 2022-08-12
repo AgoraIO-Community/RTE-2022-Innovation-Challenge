@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)agora_rtc_sdk\3.6.2\build\netcoreapp20\agora_rtc_sdk.targets" Condition="Exists('$(NuGetPackageRoot)agora_rtc_sdk\3.6.2\build\netcoreapp20\agora_rtc_sdk.targets')" />
+  </ImportGroup>
+</Project>

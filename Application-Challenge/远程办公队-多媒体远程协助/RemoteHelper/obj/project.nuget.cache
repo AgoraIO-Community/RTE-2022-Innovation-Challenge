@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "g6Psx5jFm/WWgoVRpFP0oUjRzhnu/XCLhQmCJLa1RHoMN4e9L6X1AHIg0dKgtE9vn14LgyGbdCjCFQivHxbnyA==",
+  "success": true,
+  "projectFilePath": "D:\\agora\\agora\\RemoteHelper\\RTRemoteHelper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\by000\\.nuget\\packages\\agora_rtc_sdk\\3.6.2\\agora_rtc_sdk.3.6.2.nupkg.sha512",
+    "C:\\Users\\by000\\.nuget\\packages\\newtonsoft.json\\13.0.1-beta1\\newtonsoft.json.13.0.1-beta1.nupkg.sha512",
+    "C:\\Users\\by000\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\by000\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\by000\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\by000\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\3.1.24\\microsoft.netcore.app.host.win-x86.3.1.24.nupkg.sha512"
+  ],
+  "logs": []
+}

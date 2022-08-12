@@ -1,0 +1,224 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "agora_rtc_sdk/3.6.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1-beta1"
+        },
+        "compile": {
+          "lib/netcoreapp20/agorartc.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp20/agorartc.dll": {}
+        },
+        "build": {
+          "build/netcoreapp20/agora_rtc_sdk.props": {},
+          "build/netcoreapp20/agora_rtc_sdk.targets": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1-beta1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "agora_rtc_sdk/3.6.2": {
+      "sha512": "Hu8iI2zOdzKyLje0PpUmJ4uub4lNCU6aPNXis4W7ydXT17xiwvgU5LlrzpD7Afwg00eWYlx64ROT6yA4noSKgw==",
+      "type": "package",
+      "path": "agora_rtc_sdk/3.6.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "agora_rtc_sdk.3.6.2.nupkg.sha512",
+        "agora_rtc_sdk.nuspec",
+        "build/net40/agora_rtc_sdk.props",
+        "build/net40/agora_rtc_sdk.targets",
+        "build/netcoreapp20/agora_rtc_sdk.props",
+        "build/netcoreapp20/agora_rtc_sdk.targets",
+        "build/x64/AgoraRtcScreenSharing.exe",
+        "build/x64/AgoraRtcScreenSharing.pdb",
+        "build/x64/AgoraRtcWrapper.dll",
+        "build/x64/AgoraRtcWrapper.exp",
+        "build/x64/AgoraRtcWrapper.lib",
+        "build/x64/AgoraRtcWrapper.pdb",
+        "build/x64/agora_rtc_sdk.dll",
+        "build/x64/agora_rtc_sdk.lib",
+        "build/x64/av1.dll",
+        "build/x64/libagora-core.dll",
+        "build/x64/libagora-ffmpeg.dll",
+        "build/x64/libagora-soundtouch.dll",
+        "build/x64/libagora-wgc.dll",
+        "build/x64/libagora_ai_denoise_extension.dll",
+        "build/x64/libagora_ci_extension.dll",
+        "build/x64/libagora_dav1d_extension.dll",
+        "build/x64/libagora_fd_extension.dll",
+        "build/x64/libagora_fdkaac.dll",
+        "build/x64/libagora_full_audio_format_extension.dll",
+        "build/x64/libagora_jnd_extension.dll",
+        "build/x64/libagora_mpg123.dll",
+        "build/x64/libagora_segmentation_extension.dll",
+        "build/x64/libagora_video_process_extension.dll",
+        "build/x64/libhwcodec.dll",
+        "build/x64/net40/agorartc.dll",
+        "build/x64/netcoreapp20/agorartc.dll",
+        "build/x86/AgoraRtcScreenSharing.exe",
+        "build/x86/AgoraRtcScreenSharing.pdb",
+        "build/x86/AgoraRtcWrapper.dll",
+        "build/x86/AgoraRtcWrapper.exp",
+        "build/x86/AgoraRtcWrapper.lib",
+        "build/x86/AgoraRtcWrapper.pdb",
+        "build/x86/agora_rtc_sdk.dll",
+        "build/x86/agora_rtc_sdk.lib",
+        "build/x86/av1.dll",
+        "build/x86/libagora-core.dll",
+        "build/x86/libagora-ffmpeg.dll",
+        "build/x86/libagora-soundtouch.dll",
+        "build/x86/libagora-wgc.dll",
+        "build/x86/libagora_ai_denoise_extension.dll",
+        "build/x86/libagora_ci_extension.dll",
+        "build/x86/libagora_dav1d_extension.dll",
+        "build/x86/libagora_fd_extension.dll",
+        "build/x86/libagora_fdkaac.dll",
+        "build/x86/libagora_full_audio_format_extension.dll",
+        "build/x86/libagora_jnd_extension.dll",
+        "build/x86/libagora_mpg123.dll",
+        "build/x86/libagora_segmentation_extension.dll",
+        "build/x86/libagora_video_process_extension.dll",
+        "build/x86/libhwcodec.dll",
+        "build/x86/net40/agorartc.dll",
+        "build/x86/netcoreapp20/agorartc.dll",
+        "lib/net40/agorartc.dll",
+        "lib/netcoreapp20/agorartc.dll"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1-beta1": {
+      "sha512": "XqyEqeyn0RVaYpgwbpTw6Es1rFJIa/BHn8TNv2V6KkxRFohfwzN1e9z2THfOXnRoI51vREtNE5GfQ6LND9m1Kg==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1-beta1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1-beta1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "agora_rtc_sdk >= 3.6.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\by000\\.nuget\\packages\\": {},
+    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "3.6.2",
+    "restore": {
+      "projectUniqueName": "D:\\agora\\agora\\RemoteHelper\\RTRemoteHelper.csproj",
+      "projectName": "RTRemoteHelper",
+      "projectPath": "D:\\agora\\agora\\RemoteHelper\\RTRemoteHelper.csproj",
+      "packagesPath": "C:\\Users\\by000\\.nuget\\packages\\",
+      "outputPath": "D:\\agora\\agora\\RemoteHelper\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\by000\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "agora_rtc_sdk": {
+            "target": "Package",
+            "version": "[3.6.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x86",
+            "version": "[3.1.24, 3.1.24]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

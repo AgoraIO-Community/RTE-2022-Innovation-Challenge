@@ -30,6 +30,10 @@ class _LoginPageState extends State<LoginPage> {
   bool _isValidEmail = false;
   bool get isValidEmail => _isValidEmail;
   set isValidEmail(bool value) => setState(() => _isValidEmail = value);
+  
+  bool _isValidPassword = false;
+  bool get isValidPassword => _isValidPassword;
+  set isValidPassword(bool value) => setState(() => _isValidPassword = value);
 
   @override
   Widget build(BuildContext context) {
@@ -47,22 +51,15 @@ class _LoginPageStateView extends StatelessWidget {
     String email = "";
     String password = "";
     bool isLoading = false;
-    bool isValidPassword = false;
     
 
     Future<void> submitRegister() async {
-      print(nickname);
-      print(email);
-      print(password);
-      print(state.isValidEmail);
-      print(isValidPassword);
       if (!state.isValidEmail) {
         return;
       }
-      if (!isValidPassword) {
+      if (!state.isValidPassword) {
         return;
       }
-      print('============');
       isLoading = true;
       var result = await AuthTokensCommand(context).register(nickname, email, password);
       print("result ===== $result");
@@ -71,20 +68,14 @@ class _LoginPageStateView extends StatelessWidget {
     }
 
     Future<void> submitLogin() async {
-      print(nickname);
-      print(email);
-      print(password);
-      print(state.isValidEmail);
-      print(isValidPassword);
       if (!state.isValidEmail) {
         return;
       }
-      if (!isValidPassword) {
+      if (!state.isValidPassword) {
         return;
       }
-      print('============');
       isLoading = true;
-      var result = await AuthTokensCommand(context).register(nickname, email, password);
+      var result = await AuthTokensCommand(context).login(email, password);
       print("result ===== $result");
       isLoading = false;
       Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
@@ -169,13 +160,11 @@ class _LoginPageStateView extends StatelessWidget {
             ),
           ),
           onChanged: (String value) {
-            print(value);
             email = value;
             state.isValidEmail = FormUtils.isValidEmail(value);
-            print(state.isValidEmail);
           },
         ),
-        state.isValidEmail ? SizedBox.shrink() : Text(
+        if (state.isValidEmail) const SizedBox.shrink() else const Text(
           "Please enter a valid email",
           style: TextStyle(
             color: Colors.red,
@@ -205,10 +194,10 @@ class _LoginPageStateView extends StatelessWidget {
             ),
             onChanged: (String value) => {
               password = value,
-              isValidPassword = FormUtils.isValidPassword(value),
+              state.isValidPassword = FormUtils.isValidPassword(value),
             },
           ),
-          isValidPassword ? SizedBox.shrink() : Text(
+          state.isValidPassword ? const SizedBox.shrink() : const Text(
             "Please enter a valid password",
             style: TextStyle(
               color: Colors.red,

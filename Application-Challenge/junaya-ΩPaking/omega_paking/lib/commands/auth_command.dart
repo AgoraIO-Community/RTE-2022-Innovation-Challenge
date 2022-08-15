@@ -21,7 +21,7 @@ class AuthTokensCommand extends AbstractCommand {
     return result.success;
   }
 
-  Future<bool> login({String email = "", String password = ""}) async {
+  Future<bool> login(String email, String password) async {
     if (StringUtils.isEmpty(authModel.refreshToken)) return true;
 
     //Query server, see if we can get a new auth token

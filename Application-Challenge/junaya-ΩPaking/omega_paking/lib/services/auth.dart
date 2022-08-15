@@ -45,7 +45,13 @@ class AuthService {
     params.putIfAbsent("email", () => email);
     params.putIfAbsent("password", () => password);
 
-    HttpResponse response = await HttpClient.post("$LOGIN_URL", body: params);
+    HttpResponse response = await HttpClient.post(
+      "$LOGIN_URL",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: jsonEncode(params),
+    );
     print("Response: ${response.statusCode} / ${response.body}");
     AuthResults? results;
     if (response.success) {

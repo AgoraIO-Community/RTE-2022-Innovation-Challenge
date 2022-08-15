@@ -20,7 +20,10 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
+    authModel = context.read<AuthModel>();
   }
+
+  late AuthModel authModel;
 
 
   bool _isRegister = false;
@@ -35,6 +38,16 @@ class _LoginPageState extends State<LoginPage> {
   bool get isValidPassword => _isValidPassword;
   set isValidPassword(bool value) => setState(() => _isValidPassword = value);
 
+  String _nickname = "";
+  String get nickname => _nickname;
+  set nickname(value) => setState(() => _nickname = value);
+  String _email = "";
+  String get email => _email;
+  set email(value) => setState(() => _email = value);
+  String _password = "";
+  String get password => _password;
+  set password(value) => setState(() => _password = value);
+
   @override
   Widget build(BuildContext context) {
     return Provider.value(value: this, child: _LoginPageStateView());
@@ -47,11 +60,7 @@ class _LoginPageStateView extends StatelessWidget {
     _LoginPageState state = context.watch();
     AppTheme theme = context.watch();
 
-    String nickname = "";
-    String email = "";
-    String password = "";
-    bool isLoading = false;
-    
+    bool isLoading = false;    
 
     Future<void> submitRegister() async {
       if (!state.isValidEmail) {
@@ -61,10 +70,13 @@ class _LoginPageStateView extends StatelessWidget {
         return;
       }
       isLoading = true;
-      var result = await AuthTokensCommand(context).register(nickname, email, password);
+      var result = await AuthTokensCommand(context).register(state.nickname, state.email, state.password);
       print("result ===== $result");
+      print(state.authModel);
       isLoading = false;
-      Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
+      if (result) {
+        Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
+      }
     }
 
     Future<void> submitLogin() async {
@@ -75,10 +87,13 @@ class _LoginPageStateView extends StatelessWidget {
         return;
       }
       isLoading = true;
-      var result = await AuthTokensCommand(context).login(email, password);
-      print("result ===== $result");
+      var result = await AuthTokensCommand(context).login(state.email, state.password);
+      print("login result ===== $result");
+      print(state.authModel.accessToken);
       isLoading = false;
-      Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
+      if (result) {
+        Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
+      }
     }
 
     void _toggleForm() {
@@ -137,7 +152,7 @@ class _LoginPageStateView extends StatelessWidget {
         ),
         onChanged: (String value) {
           print(value);
-          nickname = value;
+          state.nickname = value;
         },
       );
     }
@@ -160,7 +175,7 @@ class _LoginPageStateView extends StatelessWidget {
             ),
           ),
           onChanged: (String value) {
-            email = value;
+            state.email = value;
             state.isValidEmail = FormUtils.isValidEmail(value);
           },
         ),
@@ -193,7 +208,7 @@ class _LoginPageStateView extends StatelessWidget {
               ),
             ),
             onChanged: (String value) => {
-              password = value,
+              state.password = value,
               state.isValidPassword = FormUtils.isValidPassword(value),
             },
           ),

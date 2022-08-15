@@ -8,10 +8,10 @@ class AuthTokensCommand extends AbstractCommand {
   AuthTokensCommand(BuildContext context) : super(context);
 
   Future<bool> register(String nickname, String email, String password) async {
-    if (StringUtils.isEmpty(authModel.refreshToken)) return true;
+    // if (StringUtils.isEmpty(authModel.refreshToken)) return true;
 
     //Query server, see if we can get a new auth token
-    ServiceResult<AuthResults> result = await AuthService().register(email, password, nickname);
+    ServiceResult<AuthResults> result = await AuthService().register(nickname, email, password);
     //If the request succeeded, inject the model with the latest authToken and write to disk
     if (result.success) {
       authModel.accessToken = result.content?.accessToken ?? "";
@@ -22,10 +22,12 @@ class AuthTokensCommand extends AbstractCommand {
   }
 
   Future<bool> login(String email, String password) async {
-    if (StringUtils.isEmpty(authModel.refreshToken)) return true;
+    // if (StringUtils.isEmpty(authModel.refreshToken)) return true;
 
     //Query server, see if we can get a new auth token
     ServiceResult<AuthResults> result = await AuthService().login(email, password);
+    print('----------:');
+    print(result);
     //If the request succeeded, inject the model with the latest authToken and write to disk
     if (result.success) {
       authModel.accessToken = result.content?.accessToken ?? "";

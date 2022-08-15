@@ -5,7 +5,8 @@ class FormUtils {
   }
 
   static bool isValidPassword(String value) {
-    return RegExp(r"(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$")
+    // return RegExp(r"(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$")
+    return RegExp(r"(?![0-9]+$){6,16}$")
     .hasMatch(value);
   }
 

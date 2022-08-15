@@ -339,10 +339,10 @@ class _LoginPageStateView extends StatelessWidget {
                       topLeft: Radius.circular(30.0),
                       topRight: Radius.circular(30.0),
                     )),
-                  child:  state.isRegister ? Padding(
+                  child:  Padding(
                     padding: const EdgeInsets.all(24.0),
-                    child:_boardRegister()
-                  ) : _boardLogin(),
+                    child: state.isRegister ? _boardRegister() : _boardLogin()
+                  ),
                   
                 ),
               )

@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/_internal/utils/form.dart';
 import 'package:omega_paking/commands/auth_command.dart';
+import 'package:omega_paking/models/auth_model.dart';
 import 'package:omega_paking/pages/home/index.dart';
 import 'package:omega_paking/services/auth.dart';
 import 'package:omega_paking/styles.dart';
@@ -19,6 +22,13 @@ class _LoginPageState extends State<LoginPage> {
     super.initState();
   }
 
+
+  bool _isRegister = false;
+  bool get isRegister => _isRegister;
+  set isRegister(bool value) => setState(() => _isRegister = value);
+
+  bool isValidEmail = false;
+
   @override
   Widget build(BuildContext context) {
     return Provider.value(value: this, child: _LoginPageStateView());
@@ -35,16 +45,16 @@ class _LoginPageStateView extends StatelessWidget {
     String email = "";
     String password = "";
     bool isLoading = false;
-    bool isValidEmail = false;
     bool isValidPassword = false;
+    
 
-    Future<void> submit() async {
+    Future<void> submitRegister() async {
       print(nickname);
       print(email);
       print(password);
-      print(isValidEmail);
+      print(state.isValidEmail);
       print(isValidPassword);
-      if (!isValidEmail) {
+      if (!state.isValidEmail) {
         return;
       }
       if (!isValidPassword) {
@@ -58,6 +68,253 @@ class _LoginPageStateView extends StatelessWidget {
       Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
     }
 
+    Future<void> submitLogin() async {
+      print(nickname);
+      print(email);
+      print(password);
+      print(state.isValidEmail);
+      print(isValidPassword);
+      if (!state.isValidEmail) {
+        return;
+      }
+      if (!isValidPassword) {
+        return;
+      }
+      print('============');
+      isLoading = true;
+      var result = await AuthTokensCommand(context).register(nickname, email, password);
+      print("result ===== $result");
+      isLoading = false;
+      Navigator.push<void>(context, PageRoutes.fade(() => HomePage(), Durations.slow.inMilliseconds * .001));
+    }
+
+    void _toggleForm() {
+      state.isRegister = !state.isRegister;
+    }
+
+    Widget _header() {
+      return Expanded(
+        flex: 2,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 36.0, horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                "Paking",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 42.0,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                "Welcome to OmegaPaking",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w400,
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    }
+
+    Widget _formNickname() {
+      return TextField(
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: theme.bg2,
+          hintText: "nickname",
+          prefixIcon: Icon(
+            Icons.person,
+            color: Colors.grey[600],
+          ),
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
+        onChanged: (String value) {
+          print(value);
+          nickname = value;
+        },
+      );
+    }
+
+    Widget _formEmail() {
+      return Column(children: [
+        TextField(
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: theme.bg2,
+            hintText: "Email",
+            prefixIcon: Icon(
+              Icons.mail,
+              color: Colors.grey[600],
+            ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+          ),
+          onChanged: (String value) {
+            print(value);
+            email = value;
+            state.isValidEmail = FormUtils.isValidEmail(value);
+            print(state.isValidEmail);
+          },
+        ),
+        state.isValidEmail ? SizedBox.shrink() : Text(
+          "Please enter a valid email",
+          style: TextStyle(
+            color: Colors.red,
+            fontSize: 12.0,
+          ),
+        ),
+      ]);
+    }
+    
+    Widget _formPassworld() {
+      return Column(
+        children: [
+          TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: theme.bg2,
+              hintText: "password",
+              prefixIcon: Icon(
+                Icons.lock,
+                color: theme.grey,
+              ),
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
+            onChanged: (String value) => {
+              password = value,
+              isValidPassword = FormUtils.isValidPassword(value),
+            },
+          ),
+          isValidPassword ? SizedBox.shrink() : Text(
+            "Please enter a valid password",
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 12.0,
+            ),
+          ),
+        ],
+      );
+    }
+
+    Widget _boardRegister() {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _formNickname(),
+          const SizedBox(
+            height: 10.0,
+          ),
+          _formEmail(),
+          const SizedBox(
+            height: 20.0,
+          ),
+          _formPassworld(),
+          const SizedBox(
+            height: 10.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                "Forget password",
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                  color: theme.accentTxt,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 50.0,
+          ),
+          Container(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () async { submitRegister(); },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 18.0),
+                child: Text(
+                  "Register",
+                  style: TextStyle(
+                    color: theme.accentTxt,
+                    fontSize: 18.0,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 16),
+            ),
+            onPressed: _toggleForm,
+            child: const Text('login'),
+          ),
+        ],
+      );
+    }
+
+    Widget _boardLogin() {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        _formEmail(),
+        const SizedBox(
+          height: 20.0,
+        ),
+        _formPassworld(),
+        const SizedBox(
+          height: 50.0,
+        ),
+        Container(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () async { submitLogin(); },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 18.0),
+              child: Text(
+                "Login",
+                style: TextStyle(
+                  color: theme.accentTxt,
+                  fontSize: 18.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+        TextButton(
+          style: TextButton.styleFrom(
+            textStyle: const TextStyle(fontSize: 16),
+          ),
+          onPressed: _toggleForm,
+          child: const Text('register'),
+        ),
+      ],
+      );
+    }
+  
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
@@ -80,172 +337,22 @@ class _LoginPageStateView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 36.0, horizontal: 24.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Paking",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 42.0,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 5.0,
-                      ),
-                      Text(
-                        "Welcome to OmegaPaking",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              _header(),
               Expanded(
                 flex: 5,
                 child: Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
-                      color: theme.bg1,
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(30.0),
-                        topRight: Radius.circular(30.0),
-                      )),
-                  child: Padding(
+                    color: theme.bg1,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(30.0),
+                      topRight: Radius.circular(30.0),
+                    )),
+                  child:  state.isRegister ? Padding(
                     padding: const EdgeInsets.all(24.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextField(
-                          keyboardType: TextInputType.text,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: theme.bg2,
-                            hintText: "nickname",
-                            prefixIcon: Icon(
-                              Icons.email,
-                              color: Colors.grey[600],
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          onChanged: (String value) {
-                            print(value);
-                            nickname = value;
-                          },
-                        ),
-                        const SizedBox(
-                          height: 10.0,
-                        ),
-                        TextField(
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: theme.bg2,
-                            hintText: "Email",
-                            prefixIcon: Icon(
-                              Icons.mail,
-                              color: Colors.grey[600],
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          onChanged: (String value) {
-                            print(value);
-                            email = value;
-                            isValidEmail = FormUtils.isValidEmail(value);
-                            print(isValidEmail);
-                          },
-                        ),
-                        isValidEmail ? SizedBox.shrink() : Text(
-                          "Please enter a valid email",
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 12.0,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20.0,
-                        ),
-                        TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: theme.bg2,
-                            hintText: "password",
-                            prefixIcon: Icon(
-                              Icons.lock,
-                              color: theme.grey,
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          onChanged: (String value) => {
-                            password = value,
-                            isValidPassword = FormUtils.isValidPassword(value),
-                          },
-                        ),
-                        isValidPassword ? SizedBox.shrink() : Text(
-                          "Please enter a valid password",
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 12.0,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              "Forget password",
-                              textAlign: TextAlign.end,
-                              style: TextStyle(
-                                color: theme.accentTxt,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 50.0,
-                        ),
-                        Container(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                            onPressed: () async { submit(); },
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 18.0),
-                              child: Text(
-                                "Login",
-                                style: TextStyle(
-                                  color: theme.accentTxt,
-                                  fontSize: 18.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                    child:_boardRegister()
+                  ) : _boardLogin(),
+                  
                 ),
               )
             ],
@@ -253,5 +360,13 @@ class _LoginPageStateView extends StatelessWidget {
         ),
       ),
     );
+  
+
+  }
+  
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }

@@ -27,7 +27,9 @@ class _LoginPageState extends State<LoginPage> {
   bool get isRegister => _isRegister;
   set isRegister(bool value) => setState(() => _isRegister = value);
 
-  bool isValidEmail = false;
+  bool _isValidEmail = false;
+  bool get isValidEmail => _isValidEmail;
+  set isValidEmail(bool value) => setState(() => _isValidEmail = value);
 
   @override
   Widget build(BuildContext context) {

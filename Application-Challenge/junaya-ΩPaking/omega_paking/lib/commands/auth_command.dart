@@ -26,8 +26,6 @@ class AuthTokensCommand extends AbstractCommand {
 
     //Query server, see if we can get a new auth token
     ServiceResult<AuthResults> result = await AuthService().login(email, password);
-    print('----------:');
-    print(result);
     //If the request succeeded, inject the model with the latest authToken and write to disk
     if (result.success) {
       authModel.accessToken = result.content?.accessToken ?? "";

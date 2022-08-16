@@ -39,7 +39,7 @@ class _HomePageStateView extends StatelessWidget {
         onPressed: () {
           context.read<AppModel>().toggleTheme();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.settings, color: Colors.white,),
       ),
     );
   }

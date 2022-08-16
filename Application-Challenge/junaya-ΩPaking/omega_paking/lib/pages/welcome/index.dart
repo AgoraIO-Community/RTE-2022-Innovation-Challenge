@@ -9,6 +9,7 @@
   import 'package:omega_paking/styles.dart';
   import 'package:omega_paking/themes.dart';
   import 'package:provider/provider.dart';
+import 'package:rive/rive.dart';
 
   class WelcomePage extends StatefulWidget {
     final bool initialPanelOpen;
@@ -80,17 +81,19 @@
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Container(
-                    color: theme.accent1,
-                    alignment: Alignment.center,
-                    child: const Text('Welcome OmegaPaking'),
+                  const Positioned(
+                    left: 0,
+                    right: 0,
+                    top: 0,   
+                    bottom: 0,
+                    child: RiveAnimation.asset(
+                      'assets/rives/plane.riv',
+                    )
                   ),
-                  state.showContent ? Container(
-                    color: theme.bg2,
-                    margin: const EdgeInsets.only(bottom: 100),
-                    width: 400,
-                    height: 100,
-                    alignment: Alignment.bottomCenter,
+                  state.showContent ? Positioned(
+                    bottom: 48,
+                    left: 0,
+                    right: 0,
                     child: ElevatedButton(
                       child: const Text("Start"),
                       onPressed: () async {

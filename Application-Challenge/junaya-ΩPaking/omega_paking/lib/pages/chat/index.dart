@@ -216,7 +216,7 @@ class _State extends State<ChatPage> {
         ElevatedButton(
           onPressed: isJoined ? _leaveChannel : _joinChannel,
           style: style,
-          child: Text(isJoined ? 'Leave' : 'Join'),
+          child: Text(isJoined ? 'Leave' : 'Join', style: TextStyle(color: Colors.white),),
         ),
         ElevatedButton(
           style: style,
@@ -260,7 +260,9 @@ class _State extends State<ChatPage> {
           zOrderMediaOverlay: true,
           zOrderOnTop: true,
         )
-      : const rtc_local_view.TextureView();
+      : rtc_local_view.TextureView(
+          renderMode: VideoRenderMode.Fit,
+      );
   }
 
   Widget _remoteVideo(int uid, String channelId) {
@@ -288,9 +290,11 @@ class _State extends State<ChatPage> {
                   Container(
                     width: 120,
                     height: 120,
+                    clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.white, width: 1),
                       borderRadius: BorderRadius.circular(120),
+                      color: Colors.black.withOpacity(0.8),
                     ),
                     child: _localVideo(),
                   ),
@@ -300,6 +304,7 @@ class _State extends State<ChatPage> {
                     child: Container(
                       width: 120,
                       height: 120,
+                      clipBehavior: Clip.antiAlias,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.white, width: 1),
                         borderRadius: BorderRadius.circular(60),

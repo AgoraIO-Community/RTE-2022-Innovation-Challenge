@@ -1,0 +1,44 @@
+#疲劳检测平均FPS
+AVG_FPS : 7.5
+
+#模型权重文件
+scrfd_weights : "scrfd_500m_kps.onnx"   #scrfd人脸检测器权重文件相对于demo的文件路径
+frown_model_weights : "frownMobileNet_CE_sobel.pth"   #皱眉模型权重文件相对于demo的文件路径
+
+#校准图片路径
+calibrate_imgs : ["img/calibrate_glasses.jpg","img/calibrate_noglasses.jpg"]
+
+#Perclos阈值,用于快眨眼慢眨眼检测
+PERCLOS_time_window_length : 30   #计算perclos时的EAR窗口长度
+PERCLOS_range : [0.3,0.5]  #当perclos小于0.3时为快眨眼，0.3 < perclos < 0.5表示正常眨眼，perclos > 0.5表示慢眨眼
+
+#EAR自适应阈值超参数
+EAR_alpha : 0.8   #通过校准图片的EAR * EAR_alpha得到初始EAR阈值
+EAR_pitch_range : [-8,-5,10,16]   #通过头部姿态pitch区间，根据对应的EAR_beta更新初始EAR阈值, len(EAR_pitch_range) = 4, 元素从小到大
+EAR_beta : [0.75,0.85,1,0.85,0.75]  #pitch<-8时，通过EAR_threshold * 0.75来更新阈值, len(EAR_beta) = 5
+EAR_yaw_threshold : -20 #根据头部姿态yaw值，选择用那只眼睛计算EAR, yaw < -20选择左眼计算EAR； yaw > -20,选择右眼计算EAR
+
+#BAR自适应阈值超参数
+BAR_alpha : 1.2   #通过校准图片的BAR * BAR_alpha得到初始BAR阈值
+BAR_pitch_range : [-3,8,14,20]   #通过头部姿态pitch区间，根据对应的BAR_beta更新初始BAR阈值, len(BAR_pitch_range) = 4, 元素从小到大
+BAR_beta : [0.95,1,0.95,0.9,0.88]  #pitch<-3时，通过BAR_threshold * 0.95来更新阈值, len(EAR_pitch_range) = 5
+BAR_yaw_range : [-20,20]   #根据头部姿态yaw值，选择用那个眉毛计算BAR, yaw < -20选择左眉计算EAR； yaw > 20,选择右眉计算EAR；其他情况两眉去平均
+
+#哈欠阈值
+MAR_threshold : 0.6
+FOM_TIMEWINDOW_LENGTH : 65  #基于FOM的哈欠检测时间窗口长度
+FOM_threshold : 0.6   #FOM哈欠检测阈值
+
+#关于头部姿态的运动检测超参数
+deltaX_threshold : 1.5 #pitch差分阈值，用于检测点头
+nodding_window_length : 10 #点头是一个反复的动作，需要设置时间窗口长度，如果mean > deltaX_threshold，则标记为点头
+deltaDist_threshold : 0.5 #距离差分阈值，用于检测前后倾
+deltaY_threshold : 10  #yaw差分阈值，用于过滤掉左右旋转引起距离差分增强的问题
+front_behind_WL : 3  #前后倾动作是一个快运动，默认时间窗口为3，如果mean.deltaD > deltaDist_threshold且mean.deltaY < deltaY_threshold，则标记为前后倾
+action_threshold : 5  #正常运动检测阈值，如果pitch，roll，yaw超过该阈值，则标记为运动。
+
+#关于推理模型配置(因子图构建)
+
+
+
+#诊断表长度

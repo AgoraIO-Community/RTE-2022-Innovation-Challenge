@@ -1,0 +1,36 @@
+#short_timeWindowLength
+5s
+
+#long_timeWindowLength
+30s
+
+#kss_map
+{
+    "e1": 4, "e2": 9, "e3": 5,
+    "h1": 8, "h2": 6, "h3": 4, "h4": 5,
+    "m1": 7, "m2": 4,
+    "b1": 5, "b2": 6, "b3": 4
+}
+
+#count_weight_map
+{
+    "e1": 1, "e2": 5, "e3": 1,
+    "h1": 5, "h2": 2, "h3": 1, "h4": 1,
+    "m1": 5, "m2": 1,
+    "b1": 1, "b2": 2, "b3": 1
+}
+
+#singleton
+[e2,m1,h1]
+
+#mutual
+[h2,b1],[h4,b1]
+
+#activate
++[h2],+[e3],+[b1],+[b2],-[h3],-[e1]
+
+#fatigue2_ratio
+0.3
+
+#fatigue3_ratio
+0.15

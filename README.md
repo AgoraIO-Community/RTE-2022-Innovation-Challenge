@@ -32,11 +32,11 @@ RTC 作为新一代的基础技术能力，正支撑和推进着人、物及空�
 - 参赛作品的源代码均需以 MIT 协议托管在 GitHub 平台上，供社会各界参考。
 
 ### 作品提交流程
-- Fork： 本次编程大赛官方作品提交[本仓库](https://github.com/AgoraIO-Community/RTE-2022-Innovation-Challenge)至你的个人 GitHub 仓库；
-- Clone：你的 GitHub 仓库代码「https://github.com/{你的GitHub名}/RTE-2022-Innovation-Challenge」；
-- Coding：在本地的 「Application-Challenge」文件夹下新创建个人项目文件夹，命名格式为“队伍名-作品名”，将参赛作品的相关文件与代码放置在该文件夹内，勿要“感染”其他文件或者文件夹；
-- PR：最后通过 Pull Request 将作品内容推送至官方仓库；
-- Merge：Review 通过，合入本次比赛的主分支。
+- Fork 本次编程大赛官方作品提交仓库至你的个人 GitHub 仓库；
+- Clone 你的 GitHub 仓库代码「https://github.com/你的GitHub名/RTE-2022-Innovation-Challenge」；
+- 在本地的 「Application-Challenge」文件夹下新创建个人项目文件夹，命名格式为“项目序号-队伍名-作品名”，将参赛作品的相关文件与代码放置在该文件夹内，勿要“感染”其他文件或者文件夹；
+- 最后通过 Pull Request 将作品内容推送至官方仓库；
+- Review 通过，合入本次比赛的主分支。
 
 ### 作品评选
 本次比赛作品评选包含三项评委评分和网络公开投票，详情如下：
@@ -110,11 +110,10 @@ RTC 作为新一代的基础技术能力，正支撑和推进着人、物及空�
 
 欢迎微信扫描二维码，进入“RTC 线上编程挑战赛2022”交流群。
 
-<img width="409" alt="image" src="https://user-images.githubusercontent.com/3679798/177703461-9f9cc4dc-4754-45c5-bb3a-fc8ab9f5aceb.png">
+![image](https://user-images.githubusercontent.com/3679798/183348580-6c1ff269-2bae-4ae6-ac45-82e60ebcb0a5.png)
 
 ---
 
-## 联合主办
-声网、环信、RTC开发者社区
+## 主办方与合作伙伴
+<img width="997" alt="image" src="https://user-images.githubusercontent.com/3679798/177704199-cbe6cbe2-d466-45a3-9652-80abed537412.png">
 
-<!-- ## 合作伙伴 -->

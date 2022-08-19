@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -20,7 +21,7 @@ class BootstrapCommand extends AbstractCommand {
     Intl.defaultLocale = 'en_US';
 
     /// Set minimal Window size
-    // DesktopWindow.setMinWindowSize(Size(750, 600));
+    DesktopWindow.setMinWindowSize(const Size(480, 600));
 
     /// Handle version upgrades
     if (appModel.version != AppModel.kCurrentVersion) {

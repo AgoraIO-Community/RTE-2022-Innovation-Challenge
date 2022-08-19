@@ -48,6 +48,10 @@ dependencies:
   connectivity: ^3.0.6
   fluttertoast: ^8.0.9
   rive: ^0.9.1
+  desktop_window: 
+    git:
+      url: https://github.com/mix1009/desktop_window
+      ref: c0800a77477141ce7d1ad3080db5909fcce0d520
 
 dev_dependencies:
   flutter_test:

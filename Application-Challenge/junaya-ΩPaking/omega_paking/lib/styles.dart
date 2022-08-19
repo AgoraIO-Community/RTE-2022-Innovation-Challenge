@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:textstyle_extensions/textstyle_extensions.dart';
 
-export 'package:textstyle_extensions/textstyle_extensions.dart';
 
 
 class Durations {

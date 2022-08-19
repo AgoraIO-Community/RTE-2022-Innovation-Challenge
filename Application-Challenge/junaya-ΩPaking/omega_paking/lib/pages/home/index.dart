@@ -7,6 +7,8 @@ import 'package:omega_paking/styles.dart';
 import 'package:omega_paking/themes.dart';
 import 'package:provider/provider.dart';
 
+import 'components/Channel.dart';
+
 class StyledScrollPhysics extends AlwaysScrollableScrollPhysics {}
 
 class HomePage extends StatefulWidget {
@@ -69,21 +71,16 @@ class _WrapperDesktopView extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       physics: StyledScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       controller: state.scrollController,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
-            },
-            child: const Text('Default Channel'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
-            },
-            child: const Text('Default Channel'),
-          ),
+          ChannelWidge(),
+          ChannelWidge(),
+          ChannelWidge(),
+          ChannelWidge(),
+          ChannelWidge(),
         ],
       )
     );
@@ -98,14 +95,14 @@ class _WrapperView extends StatelessWidget {
       scrollDirection: Axis.vertical,
       physics: StyledScrollPhysics(),
       controller: state.scrollController,
+      padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
-            },
-            child: const Text('Default Channel'),
-          ),
+          ChannelWidge(),
+          ChannelWidge(),
+          ChannelWidge(),
+          ChannelWidge(),
+          ChannelWidge(),
         ],
       )
     );

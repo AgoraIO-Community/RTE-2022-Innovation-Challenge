@@ -27,7 +27,8 @@ class AppModel extends AbstractModel {
   static bool get ignoreCooldowns => false;
 
   AppModel() {
-    enableSerialization("app.settings");
+    // enableSerialization("app.settings");
+    enableSerialization("app");
   }
 
   /// //////////////////////////////////////////////////

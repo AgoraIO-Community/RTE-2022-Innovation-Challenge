@@ -10,7 +10,8 @@ class AuthModel extends AbstractModel {
   DateTime _expiry = DateTime.utc(2099);
 
   AuthModel() {
-    enableSerialization("auth.dat");
+    // enableSerialization("auth.dat");
+    enableSerialization("auth");
   }
 
   //Helper method to quickly lookup last known auth state, does not mean user is necessarily verified, the auth token may be expired.

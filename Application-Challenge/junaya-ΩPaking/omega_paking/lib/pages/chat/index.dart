@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as rtc_local_view;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as rtc_remote_view;
+import 'package:omega_paking/config/agora.config.dart' as config;
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:omega_paking/_internal/components/spacing.dart';
-import 'package:omega_paking/config/agora.config.dart' as config;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as path;
@@ -38,6 +38,14 @@ class _State extends State<ChatPage> {
   bool playEffect = false;
   bool openMicrophone = true;
 
+  bool screenSharing = false;
+  int _selectedDisplayId = -1;
+  int _selectedWindowId = -1;
+  List<MediaDeviceInfo> recordings = [];
+  String _selectedLoopBackRecordingDeviceName = "";
+  List<Display> displays = [];
+  List<Window> windows = [];
+
   @override
   void initState() {
     super.initState();
@@ -59,6 +67,8 @@ class _State extends State<ChatPage> {
     await _engine.startPreview();
     await _engine.setChannelProfile(ChannelProfile.LiveBroadcasting);
     await _engine.setClientRole(ClientRole.Broadcaster);
+    await _enumerateDisplayAndWindow();
+    await _enumerateRecording();
   }
 
   void _addListeners() {
@@ -186,6 +196,143 @@ class _State extends State<ChatPage> {
     }
   }
 
+    Future<void> _enumerateDisplayAndWindow() async {
+    if (!(Platform.isWindows || Platform.isMacOS)) {
+      return;
+    }
+    final windows = _engine.enumerateWindows();
+    final displays = _engine.enumerateDisplays();
+    setState(() {
+      this.windows = windows;
+      this.displays = displays;
+    });
+  }
+
+  Widget _displayDropDown() {
+    if (displays.isEmpty || !(Platform.isWindows || Platform.isMacOS)) {
+      return Container();
+    }
+   
+    return Container(
+      child: Column(
+        children: [
+          ...displays.map((v) => ElevatedButton(onPressed: () {
+             setState(() {
+                _selectedWindowId = v.id!;
+                _selectedDisplayId = -1;
+              });
+          }, child: Text('Display: ${v.id}'))),
+        ],
+      ),  
+    );
+  }
+
+  Widget _windowDropDown() {
+    if (windows.isEmpty || !(Platform.isWindows || Platform.isMacOS)) {
+      return Container();
+    }
+
+    return Container(
+      child: Column(
+        children: [
+          ...windows.map((v) => ElevatedButton(onPressed: () {
+             setState(() {
+                _selectedWindowId = v.id!;
+                _selectedDisplayId = -1;
+              });
+          }, child: Text(v.name))),
+        ],
+      ),  
+    );
+  }
+
+  Future<void> _enumerateRecording() async {
+    if (!(Platform.isWindows || Platform.isMacOS)) {
+      return;
+    }
+    final recordings =
+        await _engine.deviceManager.enumerateAudioRecordingDevices();
+
+    setState(() {
+      this.recordings = recordings;
+    });
+  }
+
+  Widget _loopBackRecordingDropDown() {
+    if (recordings.isEmpty || !(Platform.isWindows || Platform.isMacOS)) {
+      return Container();
+    }
+    return Container(
+      child: Column(
+        children: [
+          ...recordings.map((v) {
+            return ElevatedButton(onPressed: () {
+              setState(() {
+                _selectedLoopBackRecordingDeviceName = v.deviceId!;
+              });
+            }, child: Text(v.deviceName)
+            );
+          }),
+        ],
+      ),  
+    );
+  }
+
+  _startScreenShare() async {
+    if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+      const ScreenAudioParameters parametersAudioParams = ScreenAudioParameters(
+        100,
+      );
+      const VideoDimensions videoParamsDimensions = VideoDimensions(
+        width: 1280,
+        height: 720,
+      );
+      const ScreenVideoParameters parametersVideoParams = ScreenVideoParameters(
+        dimensions: videoParamsDimensions,
+        frameRate: 15,
+        bitrate: 1000,
+        contentHint: VideoContentHint.Motion,
+      );
+      const ScreenCaptureParameters2 parameters = ScreenCaptureParameters2(
+        captureAudio: true,
+        audioParams: parametersAudioParams,
+        captureVideo: true,
+        videoParams: parametersVideoParams,
+      );
+
+      await _engine.startScreenCaptureMobile(parameters);
+    } else if (Platform.isWindows || Platform.isMacOS) {
+      if (_selectedDisplayId != -1) {
+        await _engine.startScreenCaptureByDisplayId(
+          _selectedDisplayId,
+        );
+        await _engine.enableAudio();
+        await _engine.enableLoopbackRecording(true,
+            deviceName: _selectedLoopBackRecordingDeviceName);
+      } else if (_selectedWindowId != -1) {
+        await _engine.startScreenCaptureByWindowId(_selectedWindowId);
+        await _engine.enableAudio();
+        await _engine.enableLoopbackRecording(true,
+            deviceName: _selectedLoopBackRecordingDeviceName);
+      } else {
+        return;
+      }
+    }
+
+    setState(() {
+      screenSharing = true;
+    });
+  }
+
+  _stopScreenShare() async {
+    await _engine.stopScreenCapture();
+    setState(() {
+      screenSharing = false;
+      _selectedDisplayId = -1;
+      _selectedWindowId = -1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -199,6 +346,37 @@ class _State extends State<ChatPage> {
           bottom: 0,
           child: _groupButtons(),
         ),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _displayDropDown(),
+              _windowDropDown(),
+              _loopBackRecordingDropDown(),
+            ]
+          ),
+        ),
+        Positioned(
+          bottom: 16,
+          left: 16,
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            style: ElevatedButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+              padding: const EdgeInsets.all(0),
+              maximumSize: const Size.square(48),
+              minimumSize: const Size.square(48),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
+            ),
+            child: Icon(Icons.exit_to_app, color: Colors.white,),
+          ),
+        )
       ],
     );
   }
@@ -253,6 +431,12 @@ class _State extends State<ChatPage> {
           ElevatedButton(
             style: style,
             onPressed: _switchCamera,
+            child: SvgPicture.asset('assets/icons/video_switch.svg', height: 24, width: 24, color: switchCamera ? Colors.white : Colors.black),
+          ),
+        if (!(Platform.isAndroid || Platform.isIOS))
+          ElevatedButton(
+            style: style,
+            onPressed: screenSharing ? _stopScreenShare : _startScreenShare,
             child: SvgPicture.asset('assets/icons/video_switch.svg', height: 24, width: 24, color: switchCamera ? Colors.white : Colors.black),
           ),
        
@@ -322,7 +506,7 @@ class _State extends State<ChatPage> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

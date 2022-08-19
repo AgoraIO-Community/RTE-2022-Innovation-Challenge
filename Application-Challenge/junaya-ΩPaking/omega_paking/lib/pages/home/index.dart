@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:omega_paking/_internal/components/resposive.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/models/app_model.dart';
 import 'package:omega_paking/pages/chat/index.dart';
@@ -44,24 +45,11 @@ class _HomePageStateView extends StatelessWidget {
     _HomePageState state = context.watch();
     AppTheme theme = context.watch();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
       backgroundColor: theme.bg2,
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        physics: StyledScrollPhysics(),
-        controller: state.scrollController,
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
-              },
-              child: const Text('Default Channel'),
-            ),
-          ],
-        ),
+      body: Response(
+        mobile: _WrapperView(),
+        tablet: _WrapperDesktopView(),
+        desktop: _WrapperDesktopView(),
       ),
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButton: FloatingActionButton(
@@ -70,6 +58,56 @@ class _HomePageStateView extends StatelessWidget {
         },
         child: const Icon(Icons.settings, color: Colors.white,),
       ),
+    );
+  }
+}
+
+class _WrapperDesktopView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    _HomePageState state = context.watch();
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      physics: StyledScrollPhysics(),
+      controller: state.scrollController,
+      child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
+            },
+            child: const Text('Default Channel'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
+            },
+            child: const Text('Default Channel'),
+          ),
+        ],
+      )
+    );
+  }
+}
+
+class _WrapperView extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    _HomePageState state = context.watch();
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      physics: StyledScrollPhysics(),
+      controller: state.scrollController,
+      child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
+            },
+            child: const Text('Default Channel'),
+          ),
+        ],
+      )
     );
   }
 }

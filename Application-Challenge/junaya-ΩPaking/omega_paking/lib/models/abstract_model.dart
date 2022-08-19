@@ -3,12 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// import '../_internal/log.dart';
-// import '../universal_file/universal_file.dart';
-
 abstract class AbstractModel extends ChangeNotifier {
-
-  // UniversalFile? _file;
   String _fileName = 'app';
 
   void reset([bool notify = true]) {
@@ -33,26 +28,18 @@ abstract class AbstractModel extends ChangeNotifier {
 
   //Loads a string from disk, and parses it into ourselves.
   Future<void> load() async {
-    // final file = _file;
-    // if (file == null) return;
-    // String string = await file.read().catchError((e, s) {
-    //   Log.e("$e", stack: s);
-    //   return "{}";
-    // });
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     String str = prefs.getString(_fileName) ?? '{}';
     copyFromJson(jsonDecode(str));
   }
 
   Future<void> save() async {
-    // _file?.write(jsonEncode(toJson()));
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString(_fileName, jsonEncode(toJson()));
   }
 
   //Enable file serialization, remember to override the to/from serialization methods as well
   void enableSerialization(String fileName) {
-    // _file = UniversalFile(fileName);
     _fileName = fileName;
   }
 

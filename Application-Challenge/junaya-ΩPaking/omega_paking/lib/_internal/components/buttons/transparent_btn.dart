@@ -5,6 +5,7 @@ import 'package:omega_paking/_internal/utils/colors.dart';
 import 'package:omega_paking/styles.dart';
 import 'package:omega_paking/themes.dart';
 import 'package:provider/provider.dart';
+import 'package:textstyle_extensions/textstyle_extensions.dart';
 
 class TransparentBtn extends StatelessWidget {
   final Widget? child;

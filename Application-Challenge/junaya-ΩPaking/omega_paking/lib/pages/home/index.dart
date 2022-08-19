@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/components/resposive.dart';
+import 'package:omega_paking/_internal/components/scrolling/styled_listview.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/models/app_model.dart';
 import 'package:omega_paking/pages/chat/index.dart';
@@ -69,7 +70,8 @@ class _WrapperDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _HomePageState state = context.watch();
-    return Row(
+    return LayoutBuilder(builder: (_, constraints) {
+      return Row(
       children: [
         SideBarLayout(),
         SingleChildScrollView(
@@ -80,16 +82,35 @@ class _WrapperDesktopView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ChannelWidge(),
-              ChannelWidge(),
-              ChannelWidge(),
-              ChannelWidge(),
-              ChannelWidge(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  ChannelWidge(),
+                  SizedBox(width: 16.0),
+                  ChannelWidge(),
+                ],
+              ),
+              Row(
+                children: const [
+                  ChannelWidge(),
+                  SizedBox(width: 16.0),
+                  ChannelWidge(),
+                ],
+              ),
+              Row(
+                children: const [
+                  ChannelWidge(),
+                  SizedBox(width: 16.0),
+                  ChannelWidge(),
+                ],
+              ),
             ],
           )
         ),
       ]
     );
+    });
   }
 }
 

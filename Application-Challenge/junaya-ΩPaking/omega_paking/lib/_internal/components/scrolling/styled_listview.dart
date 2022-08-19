@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/components/spacing.dart';
+import 'package:omega_paking/_internal/components/styled_card.dart';
 import 'package:omega_paking/styles.dart';
 import 'package:omega_paking/themes.dart';
 import 'package:provider/provider.dart';
 import 'package:styled_widget/styled_widget.dart';
+import 'package:textstyle_extensions/textstyle_extensions.dart';
 
 import 'styled_scrollbar.dart';
 

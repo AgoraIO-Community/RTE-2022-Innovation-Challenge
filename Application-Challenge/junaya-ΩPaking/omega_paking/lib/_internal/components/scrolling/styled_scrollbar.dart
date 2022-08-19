@@ -1,10 +1,12 @@
 import 'dart:math';
 
-import 'package:flokk/_internal/components/mouse_hover_builder.dart';
-import 'package:flokk/_internal/components/simple_value_notifier.dart';
-import 'package:flokk/app_extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:omega_paking/_internal/components/mouse_hover_builder.dart';
+import 'package:omega_paking/_internal/components/simple_value_notifier.dart';
+import 'package:omega_paking/styles.dart';
+import 'package:omega_paking/themes.dart';
 import 'package:provider/provider.dart';
+import 'package:styled_widget/styled_widget.dart';
 
 class StyledScrollbar extends StatefulWidget {
   final double size;
@@ -50,14 +52,6 @@ class ScrollbarState extends State<StyledScrollbar> {
     if (oldWidget.contentSize != widget.contentSize) setState(() {});
     super.didUpdateWidget(oldWidget);
   }
-
-//  void calculateSize() {
-//    //[SB] Only hack I can find  to make the ScrollController update it's maxExtents.
-//    //Call this whenever the content changes, so the scrollbar can recalculate it's size
-//    widget.controller.jumpTo(widget.controller.position.pixels + 1);
-//    Future.microtask(() => widget.controller
-//        .animateTo(widget.controller.position.pixels - 1, duration: 100.milliseconds, curve: Curves.linear));
-//  }
 
   @override
   Widget build(BuildContext context) {

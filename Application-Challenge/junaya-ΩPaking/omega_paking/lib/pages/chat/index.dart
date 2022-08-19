@@ -5,6 +5,7 @@ import 'package:agora_rtc_engine/rtc_local_view.dart' as rtc_local_view;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as rtc_remote_view;
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:omega_paking/_internal/components/spacing.dart';
 import 'package:omega_paking/config/agora.config.dart' as config;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -218,6 +219,7 @@ class _State extends State<ChatPage> {
           style: style,
           child: Text(isJoined ? 'Leave' : 'Join', style: TextStyle(color: Colors.white),),
         ),
+        const VSpace(8),
         ElevatedButton(
           style: style,
           onPressed: _toggleMuteVideoLocal,
@@ -225,6 +227,7 @@ class _State extends State<ChatPage> {
             ? SvgPicture.asset('assets/icons/video_camera_off.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'UnmutedVideo')
             : SvgPicture.asset('assets/icons/video_camera_on.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'MutedVideo')
         ),
+        const VSpace(8),
         ElevatedButton(
           style: style,
           onPressed: _toggleMuteAudioLocal,
@@ -232,10 +235,12 @@ class _State extends State<ChatPage> {
             ? SvgPicture.asset('assets/icons/mic_off.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'UnmutedAudio')
             : SvgPicture.asset('assets/icons/mic.svg', color: Colors.white, height: 24, width: 24, semanticsLabel: 'MutedAudio')
         ),
+        const VSpace(8),
         ElevatedButton(
           onPressed: isJoined ? _switchEffect : null,
           child: Text('${playEffect ? 'Stop' : 'Play'} effect'),
         ),
+        const VSpace(8),
         ElevatedButton(
           style: style,
           onPressed: isJoined ? _enableVirtualBackground : null,
@@ -243,6 +248,7 @@ class _State extends State<ChatPage> {
             ? SvgPicture.asset('assets/icons/icon_virtual_bg.svg', color: Colors.white, height: 24, width: 24)
             : SvgPicture.asset('assets/icons/icon_virtual_bg.svg', color: Colors.white, height: 24, width: 24)
         ),
+        const VSpace(8),
         if (Platform.isAndroid || Platform.isIOS)
           ElevatedButton(
             style: style,

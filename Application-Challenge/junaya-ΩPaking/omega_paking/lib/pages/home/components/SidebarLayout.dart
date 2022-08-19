@@ -79,6 +79,9 @@ class SideBarLayout extends StatelessWidget {
                       ],
                     )
                   ),
+                  Switch(value: context.read<AppTheme>().isDark, onChanged: (bool v) {
+                    context.read<AppModel>().toggleTheme();
+                  }),
                   const SizedBox(height: 8.0),
                   ElevatedButton(
                     onPressed: () {

@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:textstyle_extensions/textstyle_extensions.dart';
+
+export 'package:textstyle_extensions/textstyle_extensions.dart';
 
 
 class Durations {
@@ -49,6 +52,11 @@ class Sizes {
 }
 
 class Fonts {
+  static const String lato = "Lato";
+
+  static const String quicksand = "Quicksand";
+
+  static const String emoji = "OpenSansEmoji";
 }
 
 class FontSizes {
@@ -65,8 +73,53 @@ class FontSizes {
   static const double s18 = 18 * scale;
 }
 
+
 class TextStyles {
+  static const TextStyle lato = TextStyle(
+    fontFamily: Fonts.lato,
+    fontWeight: FontWeight.w400,
+    letterSpacing: 0,
+    height: 1,
+    fontFamilyFallback: [
+      Fonts.emoji,
+    ],
+  );
+
+  static const TextStyle quicksand = TextStyle(
+    fontFamily: Fonts.quicksand,
+    fontWeight: FontWeight.w400,
+    fontFamilyFallback: [
+      Fonts.emoji,
+    ],
+  );
+
+  static TextStyle get T1 => quicksand.bold.size(FontSizes.s14).letterSpace(.7);
+
+  static TextStyle get T2 => lato.bold.size(FontSizes.s12).letterSpace(.4);
+
+  static TextStyle get H1 => lato.bold.size(FontSizes.s14);
+
+  static TextStyle get H2 => lato.bold.size(FontSizes.s12);
+
+  static TextStyle get Body1 => lato.size(FontSizes.s14);
+
+  static TextStyle get Body2 => lato.size(FontSizes.s12);
+
+  static TextStyle get Body3 => lato.size(FontSizes.s11);
+
+  static TextStyle get Callout => quicksand.size(FontSizes.s14).letterSpace(1.75);
+
+  static TextStyle get CalloutFocus => Callout.bold;
+
+  static TextStyle get Btn => quicksand.bold.size(FontSizes.s14).letterSpace(1.75);
+
+  static TextStyle get BtnSelected => quicksand.size(FontSizes.s14).letterSpace(1.75);
+
+  static TextStyle get Footnote => quicksand.bold.size(FontSizes.s11);
+
+  static TextStyle get Caption => lato.size(FontSizes.s11).letterSpace(.3);
 }
+
 
 class Shadows {
   static bool enabled = true;

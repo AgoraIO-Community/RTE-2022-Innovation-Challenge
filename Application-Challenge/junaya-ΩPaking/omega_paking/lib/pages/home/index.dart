@@ -87,7 +87,7 @@ class _WrapperDesktopView extends StatelessWidget {
               ChannelWidge(),
             ],
           )
-        )
+        ),
       ]
     );
   }

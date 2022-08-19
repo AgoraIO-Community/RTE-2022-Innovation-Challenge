@@ -3,11 +3,13 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../_internal/log.dart';
-import '../universal_file/universal_file.dart';
+// import '../_internal/log.dart';
+// import '../universal_file/universal_file.dart';
 
 abstract class AbstractModel extends ChangeNotifier {
-  UniversalFile? _file;
+
+  // UniversalFile? _file;
+  String _fileName = 'app';
 
   void reset([bool notify = true]) {
     copyFromJson({});
@@ -25,9 +27,7 @@ abstract class AbstractModel extends ChangeNotifier {
     if (_isSaveScheduled) return;
     _isSaveScheduled = true;
     await Future.delayed(const Duration(seconds: 1));
-    // save();
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('config', 'test');
+    save();
     _isSaveScheduled = false;
   }
 
@@ -35,23 +35,25 @@ abstract class AbstractModel extends ChangeNotifier {
   Future<void> load() async {
     // final file = _file;
     // if (file == null) return;
-
     // String string = await file.read().catchError((e, s) {
     //   Log.e("$e", stack: s);
     //   return "{}";
     // });
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? str = prefs.getString('config');
-    print(str);
-    print('-------');
-    // copyFromJson(jsonDecode(string));
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String str = prefs.getString(_fileName) ?? '{}';
+    copyFromJson(jsonDecode(str));
   }
 
-  Future<void> save() async => _file?.write(jsonEncode(toJson()));
+  Future<void> save() async {
+    // _file?.write(jsonEncode(toJson()));
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString(_fileName, jsonEncode(toJson()));
+  }
 
   //Enable file serialization, remember to override the to/from serialization methods as well
   void enableSerialization(String fileName) {
     // _file = UniversalFile(fileName);
+    _fileName = fileName;
   }
 
   Map<String, dynamic> toJson() {

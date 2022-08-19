@@ -52,13 +52,13 @@ class BootstrapCommand extends AbstractCommand {
         authSuccess = true;
       } else {
         // On desktop, refresh the authToken manually
-        authSuccess = await RefreshAuthTokensCommand(context).execute();
+        // TODO refresh
+        // authSuccess = await RefreshAuthTokensCommand(context).execute();
+        authSuccess = true;
       }
       // Check auth
       signInError = !authSuccess;
     }
-
-    return false;
 
     return !signInError && authModel.hasAuthKey;
   }

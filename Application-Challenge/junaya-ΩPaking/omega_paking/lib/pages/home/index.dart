@@ -3,6 +3,7 @@ import 'package:omega_paking/_internal/components/resposive.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/models/app_model.dart';
 import 'package:omega_paking/pages/chat/index.dart';
+import 'package:omega_paking/pages/home/components/SidebarLayout.dart';
 import 'package:omega_paking/styles.dart';
 import 'package:omega_paking/themes.dart';
 import 'package:provider/provider.dart';
@@ -68,21 +69,26 @@ class _WrapperDesktopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _HomePageState state = context.watch();
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      physics: StyledScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      controller: state.scrollController,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ChannelWidge(),
-          ChannelWidge(),
-          ChannelWidge(),
-          ChannelWidge(),
-          ChannelWidge(),
-        ],
-      )
+    return Row(
+      children: [
+        SideBarLayout(),
+        SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          physics: StyledScrollPhysics(),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          controller: state.scrollController,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ChannelWidge(),
+              ChannelWidge(),
+              ChannelWidge(),
+              ChannelWidge(),
+              ChannelWidge(),
+            ],
+          )
+        )
+      ]
     );
   }
 }

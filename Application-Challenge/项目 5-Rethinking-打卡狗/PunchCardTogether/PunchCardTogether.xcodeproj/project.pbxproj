@@ -53,6 +53,7 @@
 		409286C928A7895C00C448FE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409286C828A7895C00C448FE /* ProfileView.swift */; };
 		409286CC28A78B9400C448FE /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 409286CB28A78B9400C448FE /* Defaults */; };
 		409286CF28A7E77C00C448FE /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409286CE28A7E77C00C448FE /* LoginService.swift */; };
+		409A4F8928B248AA000275E0 /* MessageCenter+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409A4F8828B248AA000275E0 /* MessageCenter+Combine.swift */; };
 		409CCAE628A63FE5000F1257 /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CCAE528A63FE5000F1257 /* NetworkTest.swift */; };
 		40A4B9DB28963E6600B6B68B /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A4B9DA28963E6600B6B68B /* LaunchView.swift */; };
 		40A4B9DE28963EBC00B6B68B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A4B9DD28963EBC00B6B68B /* Color+Extension.swift */; };
@@ -141,6 +142,7 @@
 		409286C528A7885200C448FE /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
 		409286C828A7895C00C448FE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		409286CE28A7E77C00C448FE /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		409A4F8828B248AA000275E0 /* MessageCenter+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageCenter+Combine.swift"; sourceTree = "<group>"; };
 		409CCAE528A63FE5000F1257 /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		40A4B9DA28963E6600B6B68B /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		40A4B9DD28963EBC00B6B68B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 			children = (
 				40838F922890235900EDCDB8 /* MessageCenter.swift */,
 				406BA40A28B0D71400E157CE /* MessageCenter+RxSwift.swift */,
+				409A4F8828B248AA000275E0 /* MessageCenter+Combine.swift */,
 			);
 			path = MessageCenter;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 			files = (
 				406BA40028B0D21A00E157CE /* ConversationViewController.swift in Sources */,
 				40589F8128AD1B3C006041FC /* HeightPreferenceKey.swift in Sources */,
+				409A4F8928B248AA000275E0 /* MessageCenter+Combine.swift in Sources */,
 				4030E91828A4D9170021B26C /* EnvironmentStateObject.swift in Sources */,
 				40589F7628A910F0006041FC /* HeaderProfileView.swift in Sources */,
 				40A4B9EE289647F700B6B68B /* LoginButton.swift in Sources */,

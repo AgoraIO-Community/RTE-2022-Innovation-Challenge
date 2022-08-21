@@ -20,11 +20,15 @@ GPU：GTX1050TI
 AI算法：Yolo v3  
 其他：云虚拟主机（可暂时用我的）  
 ### 使用步骤
-1、安卓和windows分别下载到本地，安装到对应平台上；网盘下载地址稍后附上  
+1、安卓和windows分别下载到本地，安装到对应平台上；网盘下载地址  
+安卓：链接：https://pan.baidu.com/s/1wUIVpTCPul0ibx0CPfPS9Q 提取码：nz26  
+windows：链接：https://pan.baidu.com/s/1fvn3wIyf-C8NuAkjLNbicQ 提取码：ufqn  
 2、手边需要有一个UVC摄像头，支持OTG接入到手机（抱歉没有做调用本机摄像头，之前考虑做个终端的，没来得及）；类似这种：https://item.taobao.com/item.htm?spm=a230r.1.14.191.4eb73cccZjQiJ9&id=522001212720&ns=1&abbucket=8#detail  
 3、运行windows端Piloteer文件夹内Piloteer.exe即可；  
-4、安卓端安装应用，打开输入房间号即可（需要用网络和UVC摄像头）；
-
+4、安卓端安装应用，打开输入房间号即可（需要用网络和UVC摄像头）；  
+5、下载源代码（工程太大，gitlab传不完）  
+安卓：链接：https://pan.baidu.com/s/1gWSkzJwcVFdkNSWN0fQWVA 提取码：d10d  
+Unity3D：链接：https://pan.baidu.com/s/1KxQF-NLSAwzSnSi31P0beA 提取码：lcaj  
 ## 功能简介
 ### 移动端
 安卓端主要包含用户登录和音视频通话，为方便视障人员使用，尽量做了简化  
@@ -48,6 +52,8 @@ AI算法：Yolo v3
 ![image](https://user-images.githubusercontent.com/7076435/185788183-c37ca815-d32e-453a-89bf-54412578ff39.png)
 #### 数据库管理
 为了完成项目，应用了云虚拟主机、本地数据库等，对数据处理需要有相关专业知识
+![image](https://user-images.githubusercontent.com/7076435/185793388-b4865d45-dd01-4487-afd0-3d414241f9af.png)
+
 ## 技术栈
 <!-- 请给出该应用主要的技术栈，包括声网和环信（如有用） SDK 版本 -->
 ### 安卓开发

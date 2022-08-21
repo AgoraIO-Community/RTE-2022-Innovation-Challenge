@@ -11,12 +11,8 @@
 
 
 ## 功能简介
-<video width="1620" height="1080" controls>
-  <source src="assets/video1.mp4" type="video/mp4">
-</video>
-<video width="1620" height="1080" controls>
-  <source src="assets/video2.mp4" type="video/mp4">
-</video>
+![](assets/video1.mp4)
+![](assets/video2.mp4)
 
 
 ## 技术栈

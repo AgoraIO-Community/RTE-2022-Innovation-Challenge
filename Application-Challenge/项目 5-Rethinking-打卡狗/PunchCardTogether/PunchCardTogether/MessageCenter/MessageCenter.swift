@@ -1,0 +1,264 @@
+//
+//  MessageCenter.swift
+//  PunchCardTogether
+//
+//  Created by zang qilong on 2022/7/26.
+//
+
+import Foundation
+import HyphenateChat
+import SwiftUI
+import Defaults
+import Combine
+import RxSwift
+
+/*
+ APPKEY:1120220810133697#demo
+ Client ID:YXA6UQNtLP8QTtW-eYZASiOPzg
+ ClientSecret:YXA63uvCpJxsKKHv_jECqCHBNeLFxF0
+ */
+
+struct HyphenateConfig {
+    static let appkey = "1120220810133697#demo"
+}
+
+enum UserInfoState {
+    case downloading
+    case user(EMUserInfo)
+}
+
+enum ChatError: Error {
+    case chatManageNil
+    case groupManageNil
+    case createGroupFailed
+    case joinGroupFailed
+    case getGroupInfoFailed
+    case decodeModelFailed
+    case other(description: String)
+}
+
+final class MessageCenter: NSObject, ObservableObject {
+    static let shared = MessageCenter()
+    private let receivedMessages = PassthroughSubject<[EMChatMessage], Never>()
+    @Default(.loginUser) var user
+    private let lock = NSLock()
+    private var userCache = [String: UserInfoState]()
+    let conversationUpdates = PublishSubject<[EMConversation]>()
+    let messageUpdates = PublishSubject<[EMChatMessage]>()
+    
+    override init() {
+        super.init()
+    }
+    
+    func connect() {
+        debugPrint("prepare connect")
+        let options = EMOptions(appkey: HyphenateConfig.appkey)
+        options.apnsCertName = nil
+        let error = EMClient.shared().initializeSDK(with: options)
+        if let initError = error {
+            debugPrint("init sdk error \(initError)")
+        }
+        EMClient.shared().add(self, delegateQueue: nil)
+        EMClient.shared().chatManager?.add(self, delegateQueue: nil)
+    }
+    
+    func logout() {
+        EMClient.shared().logout(true)
+    }
+    
+    func login(user: User) {
+        debugPrint("login to em")
+        let loginError = EMClient.shared().login(withUsername: user.account, password: user.password)
+        if let error = loginError {
+            debugPrint("login failed error is \(error.errorDescription)")
+        }
+    }
+    
+    func loginPublisher(user: User) -> Future<Bool, Never> {
+        return Future { promise in
+            EMClient.shared().login(withUsername: user.account, password: user.password) { result, error in
+                if error == nil {
+                    promise(.success(true))
+                } else {
+                    promise(.success(false))
+                }
+            }
+        }
+    }
+    
+    func conversationsFromServer() -> Future<[EMConversation], ChatError> {
+        return Future { promise in
+            guard let manager = EMClient.shared().chatManager else {
+                promise(.failure(ChatError.chatManageNil))
+                return
+            }
+            manager.getConversationsFromServer { conversations, error in
+                if let list = conversations {
+                    promise(.success(list))
+                } else {
+                    let description = error?.description ?? "get conversations from server failed"
+                    promise(.failure(.other(description: description)))
+                }
+            }
+        }
+    }
+    
+    func messages(conversation: EMConversation) -> Future<[EMChatMessage], Never> {
+        return Future { promise in
+            conversation.loadMessagesStart(fromId: nil, count: 20, searchDirection: .down) { messages, error in
+                promise(.success(messages ?? []))
+            }
+        }
+    }
+    
+    func sendText(conversationId: String, text: String) -> Future<EMChatMessage, ChatError> {
+        return Future { promise in
+            guard let manager = EMClient.shared().chatManager else {
+                promise(.failure(ChatError.chatManageNil))
+                return
+            }
+            let textBody = EMTextMessageBody(text: text)
+            let userInfo = self.user?.userInfo()
+            let message = EMChatMessage(conversationID: conversationId, body: textBody, ext: userInfo)
+            manager.send(message, progress: nil) { message, error in
+                if let message = message {
+                    promise(.success(message))
+                } else {
+                    let description = error?.description ?? "send Text failed"
+                    promise(.failure(ChatError.other(description: description)))
+                }
+            }
+        }
+    }
+    
+    func sendImage(conversationId: String, imageData: Data) -> Future<EMChatMessage, ChatError> {
+        return Future { promise in
+            guard let manager = EMClient.shared().chatManager else {
+                promise(.failure(ChatError.chatManageNil))
+                return
+            }
+            let textBody = EMImageMessageBody(data: imageData, displayName: "")
+            let userInfo = self.user?.userInfo()
+            let message = EMChatMessage(conversationID: conversationId, body: textBody, ext: userInfo)
+            manager.send(message, progress: nil) { message, error in
+                if let message = message {
+                    promise(.success(message))
+                } else {
+                    let description = error?.description ?? "send image failed"
+                    promise(.failure(ChatError.other(description: description)))
+                }
+            }
+        }
+    }
+    
+    func joinGroup(groupId: String) -> Future<EMGroup, ChatError> {
+        return Future { promise in
+            EMClient.shared().groupManager?.joinPublicGroup(groupId, completion: { group, error in
+                if let group = group {
+                    promise(.success(group))
+                } else {
+                    promise(.failure(.joinGroupFailed))
+                }
+            })
+        }
+    }
+    
+    func updateUserInfo(nickName: String, avatar: String, gender: Int) {
+        guard let loginUser = user else {
+            return
+        }
+        let userInfo = EMUserInfo()
+        userInfo.userId = loginUser.account
+        userInfo.nickname = nickName
+        userInfo.avatarUrl = avatar
+        userInfo.gender = gender
+        EMClient.shared().userInfoManager?.updateOwn(userInfo, completion: { info, error in
+            
+        })
+    }
+    
+    func userInfo(userId: String, completion:@escaping (EMUserInfo?) -> Void) {
+        EMClient.shared().userInfoManager?.fetchUserInfo(byId: [userId], completion: { userDatas, error in
+            print("user data is \(userDatas)")
+            if let user = userDatas?[userId] as? EMUserInfo {
+                completion(user)
+            } else {
+                completion(nil)
+            }
+        })
+    }
+    
+    func createGroup(title: String, description: String) -> Future<EMGroup, ChatError> {
+        return Future { promise in
+            guard let manager = EMClient.shared().groupManager else {
+                promise(.failure(.createGroupFailed))
+                return
+            }
+            let options = EMGroupOptions()
+            options.maxUsers = 8
+            options.isInviteNeedConfirm = true
+            options.style = .publicOpenJoin
+            manager.createGroup(withSubject: title, description: "welcome", invitees: nil, message: "欢迎来到打卡群", setting: options, completion: {
+                group, error in
+                if let group = group {
+                    promise(.success(group))
+                } else {
+                    promise(.failure(.createGroupFailed))
+                }
+            })
+        }
+    }
+    
+    func groupInfo(groupId: String) -> Future<EMGroup, ChatError> {
+        return Future { promise in
+            EMClient.shared().groupManager?.getGroupSpecificationFromServer(withId: groupId, fetchMembers: false, completion: { group, error in
+                if let group = group {
+                    promise(.success(group))
+                } else {
+                    promise(.failure(.getGroupInfoFailed))
+                }
+            })
+        }
+    }
+}
+
+extension MessageCenter: EMClientDelegate {
+    func connectionStateDidChange(_ aConnectionState: EMConnectionState) {
+        debugPrint("connect state changed\(aConnectionState)")
+    }
+    
+    func autoLoginDidCompleteWithError(_ aError: EMError?) {
+        debugPrint("login error is \(aError)")
+    }
+}
+
+extension MessageCenter: EMChatManagerDelegate {
+    func conversationListDidUpdate(_ aConversationList: [EMConversation]) {
+        debugPrint("conver sationlist changed")
+        conversationUpdates.onNext(aConversationList)
+    }
+    
+    func messagesDidReceive(_ aMessages: [EMChatMessage]) {
+        debugPrint("receive message")
+        receivedMessages.send(aMessages)
+        messageUpdates.onNext(aMessages)
+    }
+}
+
+extension EMConversation {
+    func loadLatestMessages() async -> [EMChatMessage] {
+        await withCheckedContinuation({ continuation in
+            loadMessagesStart(fromId: nil, count: 20, searchDirection: EMMessageSearchDirection.up) { messages, error in
+                DispatchQueue.main.async {
+                    if let list = messages {
+                        continuation.resume(with: .success(list))
+                    } else {
+                        continuation.resume(with: .success([]))
+                    }
+                }
+            }
+        })
+        
+    }
+}
+

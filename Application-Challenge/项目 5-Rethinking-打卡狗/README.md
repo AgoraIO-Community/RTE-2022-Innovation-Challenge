@@ -11,11 +11,11 @@
 
 
 ## 功能简介
-<video width="320" height="240" controls>
-  <source src="video.mov" type="assets/video1.mp4">
+<video width="1620" height="1080" controls>
+  <source src="assets/video1.mp4" type="video/mp4">
 </video>
-<video width="320" height="240" controls>
-  <source src="video.mov" type="assets/video2.mp4">
+<video width="1620" height="1080" controls>
+  <source src="assets/video2.mp4" type="video/mp4">
 </video>
 
 
@@ -30,6 +30,8 @@
 2. Combine
 3. RxSwift
 4. UIKit
+
+打卡狗依赖声网的 RTCSDK 与 环信的IM SDK，构建群聊，打卡，视频连线等基础功能，实现打卡狗的一系列产品逻辑。
 
 SwiftUI 为 苹果新出的声明式 UI 框架，用以替代传统的 UIKit。
 Combine 为响应式编程框架。

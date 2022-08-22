@@ -7,7 +7,15 @@
 
 ## 安装部署指南
 服务端已部署公有云。
-移动端只需下载本工程，直接 build 即可运行。
+服务端代码：
+
+**punch-card-server**
+
+客户端代码：
+
+**PunchCardTogether**
+
+移动端只需打开`PunchCardTogether.xcworkspace`工程，打开直接 build 即可运行。
 
 
 ## 功能简介

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/pages/chat/index.dart';
 import 'package:omega_paking/styles.dart';
@@ -6,7 +7,11 @@ import 'package:omega_paking/themes.dart';
 import 'package:provider/provider.dart';
 
 class ChannelWidge extends StatelessWidget {
-  const ChannelWidge({Key? key}) : super(key: key);
+  String title;
+  String cover;
+  bool? isLive;
+
+  ChannelWidge(this.title, this.cover, isLive, {Key? key}) : super(key: key);
 
   
   @override
@@ -30,7 +35,7 @@ class ChannelWidge extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const Text('My Live', style: TextStyle(fontWeight: FontWeight.w500),),
+            Text(title, style: const TextStyle(fontWeight: FontWeight.w500),),
             const SizedBox(height: 8.0),
             Container(
               width: 124,
@@ -57,13 +62,16 @@ class ChannelWidge extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(62.0)),
               ),
-                child: Image.asset('assets/images/home.jpg', fit: BoxFit.cover),
+                child: Image.asset(cover, fit: BoxFit.cover),
               ),
             ),
             const SizedBox(height: 8.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
+                if (isLive == true) {
+                  Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
+                } else {
+                }
               },
               child: const Text('Enter'),
             ),

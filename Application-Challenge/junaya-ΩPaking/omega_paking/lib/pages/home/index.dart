@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/components/resposive.dart';
 import 'package:omega_paking/_internal/components/scrolling/styled_listview.dart';
+import 'package:omega_paking/_internal/components/spacing.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/models/app_model.dart';
 import 'package:omega_paking/pages/chat/index.dart';
@@ -82,27 +83,28 @@ class _WrapperDesktopView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(height: 32),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  ChannelWidge(),
-                  SizedBox(width: 16.0),
-                  ChannelWidge(),
+                children: [
+                  ChannelWidge('My Live', 'assets/images/img1.jpg'),
+                  const HSpace(16),
+                  ChannelWidge('Reading Live', 'assets/images/img2.jpg'),
                 ],
               ),
               Row(
-                children: const [
-                  ChannelWidge(),
-                  SizedBox(width: 16.0),
-                  ChannelWidge(),
+                children: [
+                  ChannelWidge('Math Live', 'assets/images/img3.jpg'),
+                  const HSpace(16),
+                  ChannelWidge('Science Live', 'assets/images/img4.jpg'),
                 ],
               ),
               Row(
-                children: const [
-                  ChannelWidge(),
-                  SizedBox(width: 16.0),
-                  ChannelWidge(),
+                children: [
+                  ChannelWidge('Go Live', 'assets/images/img5.jpg'),
+                  const HSpace(16),
+                  ChannelWidge('Writing Live', 'assets/images/img6.jpg'),
                 ],
               ),
             ],
@@ -125,11 +127,29 @@ class _WrapperView extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          ChannelWidge(),
-          ChannelWidge(),
-          ChannelWidge(),
-          ChannelWidge(),
-          ChannelWidge(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ChannelWidge('My Live', 'assets/images/img1.jpg'),
+              const HSpace(16),
+              ChannelWidge('My Live', 'assets/images/img2.jpg'),
+            ],
+          ),
+          Row(
+            children: [
+              ChannelWidge('My Live', 'assets/images/img3.jpg'),
+              const HSpace(16),
+              ChannelWidge('My Live', 'assets/images/img4.jpg'),
+            ],
+          ),
+          Row(
+            children: [
+              ChannelWidge('My Live', 'assets/images/img5.jpg'),
+              const HSpace(16),
+              ChannelWidge('My Live', 'assets/images/img6.jpg'),
+            ],
+          ),
         ],
       )
     );

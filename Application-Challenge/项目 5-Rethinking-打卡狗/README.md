@@ -32,9 +32,10 @@ https://user-images.githubusercontent.com/8814535/185785003-8dbb5556-bfa4-486a-a
 
 ## 技术栈
 后端架构：
-1. nodejs
-2. mongodb
+1. Nodejs
+2. Egg+mysql
 后端已部署服务器
+自行部署: 修改config/config.default.js 数据库和声网相关配置key。
 
 移动端架构：
 1. SwiftUI

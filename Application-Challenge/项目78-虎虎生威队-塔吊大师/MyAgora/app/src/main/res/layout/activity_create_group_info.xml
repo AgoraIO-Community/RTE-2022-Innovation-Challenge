@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.CreateGroupInfoActivity">
+
+
+    <TextView
+        android:id="@+id/tv_create_group_info_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/sw_50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/sw_10dp"
+        android:paddingEnd="@dimen/sw_10dp"
+        android:text="@string/group_name"
+        android:textSize="@dimen/sw_18sp"
+        android:layout_marginTop="@dimen/sw_10dp"
+        />
+
+    <EditText
+        android:id="@+id/et_create_group_info_name"
+        android:layout_width="0px"
+        android:layout_height="@dimen/sw_50dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_create_group_info_name"
+        app:layout_constraintStart_toEndOf="@+id/tv_create_group_info_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/input_group_name"
+        android:layout_marginEnd="@dimen/sw_10dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_create_group_info_introduction"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/sw_50dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_create_group_info_name"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/sw_10dp"
+        android:paddingEnd="@dimen/sw_10dp"
+        android:text="@string/group_introduction"
+        android:textSize="@dimen/sw_18sp"
+        android:layout_marginTop="@dimen/sw_20dp"
+        />
+
+    <EditText
+        android:id="@+id/et_create_group_info_introduction"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/sw_50dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_create_group_info_introduction"
+        app:layout_constraintStart_toEndOf="@+id/tv_create_group_info_introduction"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/input_group_introduction"
+        android:layout_marginEnd="@dimen/sw_10dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

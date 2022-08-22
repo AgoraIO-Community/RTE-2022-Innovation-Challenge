@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".activity.SettingActivity">
+
+    <com.agora.crane.widget.LayoutItem
+        android:id="@+id/layout_item_setting_role"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sw_20dp"
+        android:background="@color/white"
+        app:item_title="@string/set_role"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.agora.crane.widget.LayoutItem
+        android:id="@+id/layout_item_setting_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:item_title="@string/set_video"
+        app:layout_constraintTop_toBottomOf="@+id/layout_item_setting_role" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="@dimen/sw_10dp"
+        android:layout_marginEnd="@dimen/sw_10dp"
+        android:background="@color/bg_line"
+        app:layout_constraintTop_toBottomOf="@+id/layout_item_setting_role" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="@dimen/sw_10dp"
+        android:layout_marginEnd="@dimen/sw_10dp"
+        android:background="@color/bg_line"
+        app:layout_constraintTop_toBottomOf="@+id/layout_item_setting_video" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sw_50dp"
+        android:layout_marginTop="@dimen/sw_200dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/layout_item_setting_role">
+
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/logout"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sw_18sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

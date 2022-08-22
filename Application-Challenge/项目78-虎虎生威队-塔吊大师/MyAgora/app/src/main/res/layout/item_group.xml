@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sw_60dp"
+    android:background="@color/bg"
+    >
+
+    <com.agora.crane.widget.CircleImageView
+        android:id="@+id/iv_item_group_portrait"
+        android:layout_width="@dimen/sw_44dp"
+        android:layout_height="@dimen/sw_44dp"
+        android:layout_marginStart="@dimen/sw_15dp"
+        android:layout_marginTop="@dimen/sw_8dp"
+        android:layout_marginBottom="@dimen/sw_10dp"
+        android:src="@drawable/icon_group_portrait"
+        app:ease_radius="@dimen/sw_35dp"
+        app:es_shape_type="rectangle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_item_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sw_80dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sw_18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_item_group_portrait" />
+
+    <TextView
+        android:id="@+id/tv_item_group_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sw_80dp"
+        android:textSize="@dimen/sw_16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_item_group_portrait"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginStart="@dimen/sw_10dp"
+        android:layout_marginEnd="@dimen/sw_10dp"
+        android:background="@color/bg_line"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

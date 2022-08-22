@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment_conversation"
+        android:icon="@drawable/icon_conversation"
+        android:title="@string/conversation" />
+
+    <item
+        android:id="@+id/fragment_contact"
+        android:icon="@drawable/icon_contact"
+        android:title="@string/contact" />
+
+    <item
+        android:id="@+id/fragment_mine"
+        android:icon="@drawable/icon_mine"
+        android:title="@string/mine" />
+
+</menu>

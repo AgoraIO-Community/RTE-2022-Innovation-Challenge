@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.SettingRoleActivity">
+
+    <RadioGroup
+        android:id="@+id/rg_role"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sw_30dp"
+        android:gravity="start"
+        android:paddingStart="@dimen/sw_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RadioButton
+            android:id="@+id/rb_role_operator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_operator"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_role_construction"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_construction"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_role_camera_forward"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_camera_forward"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+        <RadioButton
+            android:id="@+id/rb_role_camera_back"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_camera_back"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+        <RadioButton
+            android:id="@+id/rb_role_camera_left"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_camera_left"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+        <RadioButton
+            android:id="@+id/rb_role_camera_right"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_camera_right"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+        <RadioButton
+            android:id="@+id/rb_role_camera_up"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_camera_up"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+        <RadioButton
+            android:id="@+id/rb_role_camera_down"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:text="@string/role_camera_down"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

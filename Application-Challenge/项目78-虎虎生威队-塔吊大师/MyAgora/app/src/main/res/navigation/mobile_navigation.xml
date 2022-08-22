@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation3"
+    app:startDestination="@+id/fragment_conversation">
+
+    <fragment
+        android:id="@+id/fragment_conversation"
+        android:name="com.agora.crane.fragment.ConversationFragment"
+        android:label="@string/conversation"
+        tools:layout="@layout/fragment_conversation" />
+
+    <fragment
+        android:id="@+id/fragment_contact"
+        android:name="com.agora.crane.fragment.ContactFragment"
+        android:label="@string/contact"
+        tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/fragment_mine"
+        android:name="com.agora.crane.fragment.MineFragment"
+        android:label="@string/mine"
+        tools:layout="@layout/fragment_mine" />
+</navigation>

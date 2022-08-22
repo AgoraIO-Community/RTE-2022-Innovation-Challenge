@@ -76,6 +76,22 @@
 		40A66675288D3A4400E79D9F /* PunchCardTogetherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A66674288D3A4400E79D9F /* PunchCardTogetherUITestsLaunchTests.swift */; };
 		40D4AF3828AD3ACE006635B9 /* RoundCorner+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D4AF3728AD3ACE006635B9 /* RoundCorner+Extension.swift */; };
 		83E25538686AE38D7CEBC9A5 /* Pods_PunchCardTogetherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 233F27DD94C2CB6D24375913 /* Pods_PunchCardTogetherTests.framework */; };
+		9237AEA928B22F1B00B2E29B /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9237AEA828B22F1B00B2E29B /* LiveViewController.swift */; };
+		9237AEAB28B22F6900B2E29B /* AgoraKeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9237AEAA28B22F6900B2E29B /* AgoraKeyCenter.swift */; };
+		9237AEAE28B235EA00B2E29B /* LiveMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9237AEAD28B235EA00B2E29B /* LiveMenuView.swift */; };
+		92A1CC3128AF763F0094B613 /* LiveViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1CC3028AF763F0094B613 /* LiveViewControllerWrapper.swift */; };
+		92A1CC3828AF91ED0094B613 /* AGEVideoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1CC3328AF91ED0094B613 /* AGEVideoLayout.swift */; };
+		92A1CC3928AF91ED0094B613 /* AGEVideoConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1CC3428AF91ED0094B613 /* AGEVideoConstraints.swift */; };
+		92A1CC3A28AF91ED0094B613 /* AGEEventsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1CC3528AF91ED0094B613 /* AGEEventsObserver.swift */; };
+		92A1CC3B28AF91ED0094B613 /* AGEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1CC3628AF91ED0094B613 /* AGEView.swift */; };
+		92A1CC3C28AF91ED0094B613 /* AGEVideoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A1CC3728AF91ED0094B613 /* AGEVideoContainer.swift */; };
+		92A6896A28AE5A1F00183C8A /* StatisticsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6895828AE5A1E00183C8A /* StatisticsInfo.swift */; };
+		92A6897228AE5A1F00183C8A /* AgoraExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6896128AE5A1E00183C8A /* AgoraExtension.swift */; };
+		92A6897328AE5A1F00183C8A /* VideoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6896228AE5A1F00183C8A /* VideoSession.swift */; };
+		92A6897528AE5A1F00183C8A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6896428AE5A1F00183C8A /* Settings.swift */; };
+		92A6897628AE5A1F00183C8A /* FileCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6896528AE5A1F00183C8A /* FileCenter.swift */; };
+		92A6897928AE5A1F00183C8A /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6896828AE5A1F00183C8A /* VideoView.swift */; };
+		92A6897E28AE5B9C00183C8A /* live.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A6897D28AE5B9C00183C8A /* live.xcassets */; };
 		9C0AE3891E7803C73C1236F3 /* Pods_PunchCardTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82926A2B7AD8DC30DCD89E2B /* Pods_PunchCardTogether.framework */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +186,22 @@
 		40D4AF3728AD3ACE006635B9 /* RoundCorner+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundCorner+Extension.swift"; sourceTree = "<group>"; };
 		61628CF96C02EE4072F92A4E /* Pods-PunchCardTogether-PunchCardTogetherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardTogether-PunchCardTogetherUITests.debug.xcconfig"; path = "Target Support Files/Pods-PunchCardTogether-PunchCardTogetherUITests/Pods-PunchCardTogether-PunchCardTogetherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		82926A2B7AD8DC30DCD89E2B /* Pods_PunchCardTogether.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PunchCardTogether.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9237AEA828B22F1B00B2E29B /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		9237AEAA28B22F6900B2E29B /* AgoraKeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraKeyCenter.swift; sourceTree = "<group>"; };
+		9237AEAD28B235EA00B2E29B /* LiveMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMenuView.swift; sourceTree = "<group>"; };
+		92A1CC3028AF763F0094B613 /* LiveViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewControllerWrapper.swift; sourceTree = "<group>"; };
+		92A1CC3328AF91ED0094B613 /* AGEVideoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEVideoLayout.swift; sourceTree = "<group>"; };
+		92A1CC3428AF91ED0094B613 /* AGEVideoConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEVideoConstraints.swift; sourceTree = "<group>"; };
+		92A1CC3528AF91ED0094B613 /* AGEEventsObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEEventsObserver.swift; sourceTree = "<group>"; };
+		92A1CC3628AF91ED0094B613 /* AGEView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEView.swift; sourceTree = "<group>"; };
+		92A1CC3728AF91ED0094B613 /* AGEVideoContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGEVideoContainer.swift; sourceTree = "<group>"; };
+		92A6895828AE5A1E00183C8A /* StatisticsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsInfo.swift; sourceTree = "<group>"; };
+		92A6896128AE5A1E00183C8A /* AgoraExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgoraExtension.swift; sourceTree = "<group>"; };
+		92A6896228AE5A1F00183C8A /* VideoSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoSession.swift; sourceTree = "<group>"; };
+		92A6896428AE5A1F00183C8A /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		92A6896528AE5A1F00183C8A /* FileCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCenter.swift; sourceTree = "<group>"; };
+		92A6896828AE5A1F00183C8A /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		92A6897D28AE5B9C00183C8A /* live.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = live.xcassets; sourceTree = "<group>"; };
 		CFC280F1A3706648FFDB1EBA /* Pods-PunchCardTogetherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardTogetherTests.debug.xcconfig"; path = "Target Support Files/Pods-PunchCardTogetherTests/Pods-PunchCardTogetherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D37F186201B02B0801A70C57 /* Pods-PunchCardTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardTogether.debug.xcconfig"; path = "Target Support Files/Pods-PunchCardTogether/Pods-PunchCardTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		DC60615230D8AFF5C6D3C947 /* Pods-PunchCardTogether.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardTogether.release.xcconfig"; path = "Target Support Files/Pods-PunchCardTogether/Pods-PunchCardTogether.release.xcconfig"; sourceTree = "<group>"; };
@@ -450,6 +482,7 @@
 		40A4B9D828963E5200B6B68B /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				9237AEA728B2265A00B2E29B /* Live */,
 				406BA40F28B0EDFF00E157CE /* Chat */,
 				406BA3FD28B0D20200E157CE /* Conversation */,
 				409286C728A7895400C448FE /* Profile */,
@@ -586,6 +619,53 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9237AEA728B2265A00B2E29B /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				92AD060D28B259D2006FBFF8 /* Data */,
+				9237AEAC28B235CF00B2E29B /* View */,
+				92A1CC3228AF91ED0094B613 /* AGEVideoLayout */,
+				9237AEA828B22F1B00B2E29B /* LiveViewController.swift */,
+				92A1CC3028AF763F0094B613 /* LiveViewControllerWrapper.swift */,
+				92A6897D28AE5B9C00183C8A /* live.xcassets */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		9237AEAC28B235CF00B2E29B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92A6896828AE5A1F00183C8A /* VideoView.swift */,
+				9237AEAD28B235EA00B2E29B /* LiveMenuView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92A1CC3228AF91ED0094B613 /* AGEVideoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				92A1CC3328AF91ED0094B613 /* AGEVideoLayout.swift */,
+				92A1CC3428AF91ED0094B613 /* AGEVideoConstraints.swift */,
+				92A1CC3528AF91ED0094B613 /* AGEEventsObserver.swift */,
+				92A1CC3628AF91ED0094B613 /* AGEView.swift */,
+				92A1CC3728AF91ED0094B613 /* AGEVideoContainer.swift */,
+			);
+			path = AGEVideoLayout;
+			sourceTree = "<group>";
+		};
+		92AD060D28B259D2006FBFF8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				92A6896128AE5A1E00183C8A /* AgoraExtension.swift */,
+				92A6895828AE5A1E00183C8A /* StatisticsInfo.swift */,
+				9237AEAA28B22F6900B2E29B /* AgoraKeyCenter.swift */,
+				92A6896528AE5A1F00183C8A /* FileCenter.swift */,
+				92A6896428AE5A1F00183C8A /* Settings.swift */,
+				92A6896228AE5A1F00183C8A /* VideoSession.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E5F450C200098D0F54FA12DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,6 +770,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 40A6664B288D3A4300E79D9F;
 			packageReferences = (
@@ -714,6 +795,7 @@
 				40A6665F288D3A4400E79D9F /* Preview Assets.xcassets in Resources */,
 				40A6665C288D3A4400E79D9F /* Assets.xcassets in Resources */,
 				40A4B9E12896403000B6B68B /* Alibaba-PuHuiTi-Heavy.ttf in Resources */,
+				92A6897E28AE5B9C00183C8A /* live.xcassets in Resources */,
 				40A4B9E82896437500B6B68B /* Alibaba-PuHuiTi-Bold.ttf in Resources */,
 				409286C328A7879000C448FE /* Alibaba-PuHuiTi-Medium.ttf in Resources */,
 			);
@@ -843,24 +925,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A1CC3828AF91ED0094B613 /* AGEVideoLayout.swift in Sources */,
 				406BA40028B0D21A00E157CE /* ConversationViewController.swift in Sources */,
 				40589F8128AD1B3C006041FC /* HeightPreferenceKey.swift in Sources */,
 				409A4F8928B248AA000275E0 /* MessageCenter+Combine.swift in Sources */,
+				92A6897928AE5A1F00183C8A /* VideoView.swift in Sources */,
+				92A1CC3928AF91ED0094B613 /* AGEVideoConstraints.swift in Sources */,
 				4030E91828A4D9170021B26C /* EnvironmentStateObject.swift in Sources */,
 				40589F7628A910F0006041FC /* HeaderProfileView.swift in Sources */,
+				92A1CC3128AF763F0094B613 /* LiveViewControllerWrapper.swift in Sources */,
+				92A1CC3B28AF91ED0094B613 /* AGEView.swift in Sources */,
 				40A4B9EE289647F700B6B68B /* LoginButton.swift in Sources */,
 				406BA4D528B1EACB00E157CE /* UIImagePicker+rx.swift in Sources */,
 				406BA40B28B0D71400E157CE /* MessageCenter+RxSwift.swift in Sources */,
 				406BA41228B0EE0F00E157CE /* ChatViewController.swift in Sources */,
 				4030E91928A4D9170021B26C /* QueryObservation.swift in Sources */,
+				40A4B9F42896762900B6B68B /* LoginInputView.swift in Sources */,
+				92A1CC3C28AF91ED0094B613 /* AGEVideoContainer.swift in Sources */,
 				406BA4D128B1419300E157CE /* CheckInView.swift in Sources */,
 				40A4B9F42896762900B6B68B /* LoginInputView.swift in Sources */,
+				9237AEAB28B22F6900B2E29B /* AgoraKeyCenter.swift in Sources */,
 				406BA40E28B0DBDC00E157CE /* ConversationWrapperView.swift in Sources */,
 				40A4B9F02896484600B6B68B /* InputProfileView.swift in Sources */,
 				405E322328AF6D4200F76503 /* SignRoomStatus.swift in Sources */,
 				4036C584289E0A6D006D6793 /* KagoAPI.swift in Sources */,
 				406BA41D28B0F66A00E157CE /* ChatMessage.swift in Sources */,
 				40A4B9E42896407300B6B68B /* PCFont.swift in Sources */,
+				9237AEA928B22F1B00B2E29B /* LiveViewController.swift in Sources */,
 				4036C580289E080A006D6793 /* HomeView.swift in Sources */,
 				40A4B9DE28963EBC00B6B68B /* Color+Extension.swift in Sources */,
 				409286C628A7885200C448FE /* FindView.swift in Sources */,
@@ -868,9 +959,14 @@
 				40D4AF3828AD3ACE006635B9 /* RoundCorner+Extension.swift in Sources */,
 				406BA41A28B0F03F00E157CE /* TextMessageTableViewCell.swift in Sources */,
 				40A4B9EC289647C600B6B68B /* LoginBottomView.swift in Sources */,
+				92A6897528AE5A1F00183C8A /* Settings.swift in Sources */,
+				9237AEAE28B235EA00B2E29B /* LiveMenuView.swift in Sources */,
 				40A4B9F72896796500B6B68B /* TemplateView.swift in Sources */,
+				92A6896A28AE5A1F00183C8A /* StatisticsInfo.swift in Sources */,
+				92A6897228AE5A1F00183C8A /* AgoraExtension.swift in Sources */,
 				40589F7F28AD17A9006041FC /* Publisher+Keyboard.swift in Sources */,
 				4036C587289E0C19006D6793 /* KagoTemplate.swift in Sources */,
+				92A6897628AE5A1F00183C8A /* FileCenter.swift in Sources */,
 				40589F7428A8E91E006041FC /* CreateGroupView.swift in Sources */,
 				4031C64828AFA0DB00E58C93 /* ChatGroup.swift in Sources */,
 				402F4CE928AE7BE10057640D /* ConversationCellViewModel.swift in Sources */,
@@ -879,6 +975,7 @@
 				40A4B9DB28963E6600B6B68B /* LaunchView.swift in Sources */,
 				4030E90C28A35CEF0021B26C /* AppDatabase.swift in Sources */,
 				409286C928A7895C00C448FE /* ProfileView.swift in Sources */,
+				92A1CC3A28AF91ED0094B613 /* AGEEventsObserver.swift in Sources */,
 				406BA42328B1027100E157CE /* HomeViewWrapper.swift in Sources */,
 				402F4CE728AE726F0057640D /* CreateGroupViewModel.swift in Sources */,
 				406BA41828B0EF9F00E157CE /* InputBarView.swift in Sources */,
@@ -894,6 +991,7 @@
 				4031DEB628AF251A003B27FB /* AlertTextField.swift in Sources */,
 				409286C128A784BE00C448FE /* DefaultsKey.swift in Sources */,
 				40A4B9EA2896457100B6B68B /* SelectAvatarView.swift in Sources */,
+				92A6897328AE5A1F00183C8A /* VideoSession.swift in Sources */,
 				40A66658288D3A4300E79D9F /* PunchCardTogetherApp.swift in Sources */,
 				409CCAE628A63FE5000F1257 /* NetworkTest.swift in Sources */,
 				40A4B9F2289648C100B6B68B /* LoginGradientView.swift in Sources */,
@@ -1060,7 +1158,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PunchCardTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				DEVELOPMENT_TEAM = 865L62UDE9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PunchCardTogether/Info.plist;
@@ -1097,7 +1195,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PunchCardTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				DEVELOPMENT_TEAM = 865L62UDE9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PunchCardTogether/Info.plist;

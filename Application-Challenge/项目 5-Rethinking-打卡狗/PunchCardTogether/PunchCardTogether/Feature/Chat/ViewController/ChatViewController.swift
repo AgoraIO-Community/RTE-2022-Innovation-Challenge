@@ -37,7 +37,7 @@ class ChatViewController: UIViewController, View {
     private lazy var tableView: UITableView = {
         let instance = UITableView(frame: .zero, style: .plain)
         instance.separatorStyle = .none
-        instance.backgroundColor = UIColor(rgb: 0xf5f5f5)
+        instance.backgroundView = UIImageView(image: UIImage(named: "classroom_bg"))
         instance.register(cellType: TextMessageTableViewCell.self)
         instance.register(cellType: ImageMessageTableViewCell.self)
         // instance.keyboardDismissMode = .onDrag
@@ -275,11 +275,38 @@ class ChatViewController: UIViewController, View {
             })
             .disposed(by: disposeBag)
         
+        inputBar.rx.signButtonClick
+            .map {
+                " 汪! "
+            }
+            .map {
+                Reactor.Action.sendTextMessage($0)
+            }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
         checkView.rx.imageButtonDidClick
             .subscribe(onNext: {
                 [weak self] in
                 guard let self = self else { return }
                 self.present(self.imagePicker, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        checkView.rx.liveButtonDidClick
+            .subscribe(onNext: {
+                [weak self] view in
+                guard let self = self else { return }
+                
+//                let storyboard = UIStoryboard.init(name: "LiveRoom", bundle: nil);
+//                let vc = storyboard.instantiateViewController(identifier: "LiveRoom")
+//                self.present(vc, animated: true)
+//                
+                let vc = LiveViewController()
+                vc.roomName = "8888"
+                
+                self.navigationController?.pushViewController(vc, animated: true);
+                
             })
             .disposed(by: disposeBag)
         

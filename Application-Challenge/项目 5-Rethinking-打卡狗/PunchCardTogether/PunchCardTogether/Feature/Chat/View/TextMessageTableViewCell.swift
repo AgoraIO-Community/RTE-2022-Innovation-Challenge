@@ -14,6 +14,8 @@ import Defaults
 class TextMessageTableViewCell: UITableViewCell, Reusable {
     private lazy var avatarImageView: UIImageView = {
         let instance = UIImageView(image: nil)
+        instance.clipsToBounds = true
+        instance.layer.cornerRadius = 55.0/2
         instance.contentMode = .scaleAspectFit
         instance.backgroundColor = UIColor(rgb: 0xf5f5f5)
         return instance
@@ -21,7 +23,7 @@ class TextMessageTableViewCell: UITableViewCell, Reusable {
     private lazy var nameLabel: UILabel = {
         let instance = UILabel()
         instance.font = PCFont.puhui.uifont(size: 14, style: .medium)
-        instance.textColor = UIColor(rgb: 0x282828)
+        instance.textColor = .white
         instance.numberOfLines = 0
         return instance
     }()
@@ -40,7 +42,8 @@ class TextMessageTableViewCell: UITableViewCell, Reusable {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = UIColor(rgb: 0xf5f5f5)
+        backgroundColor = .clear
+        selectionStyle = .none
         contentView.addSubview(avatarImageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(textContainerView)

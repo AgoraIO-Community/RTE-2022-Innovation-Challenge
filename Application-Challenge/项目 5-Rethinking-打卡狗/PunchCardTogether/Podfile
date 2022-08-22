@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '16.0'
+inhibit_all_warnings!
 
 target 'PunchCardTogether' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -9,18 +10,22 @@ target 'PunchCardTogether' do
   pod 'Moya/Combine'
   pod 'Moya/RxSwift'
   pod 'Kingfisher'
-  pod 'ToastSwiftUI'
+  pod 'ToastSwiftUI', :git => 'https://github.com/huynguyencong/ToastSwiftUI.git', :tag => '0.3.4' 
   pod 'Toast'
   pod 'Introspect'
   pod 'ReactorKit'
   pod 'RxDataSources'
   pod 'RxKeyboard'
-  pod 'SnapKit'
+  pod 'SnapKit', :git => 'https://gitee.com/mirrors/SnapKit.git', :tag => '5.6.0'
   pod 'Reusable'
   pod 'RxViewController'
   pod 'GrowingTextView'
   pod 'SVProgressHUD'
   # Pods for PunchCardTogether
+  pod 'Floaty', '~> 4.2.0'
+  pod 'AGEVideoLayout', '~> 1.0.2'
+  pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'
+  
 
   target 'PunchCardTogetherTests' do
     inherit! :search_paths

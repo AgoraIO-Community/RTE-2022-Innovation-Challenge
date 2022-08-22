@@ -11,6 +11,7 @@ import Reusable
 import RxSwift
 
 class ConversationTableViewCell: UITableViewCell, Reusable {
+    private lazy var containerView = UIView()
     private lazy var avatarImageView: UIImageView = {
        let instance = UIImageView(image: UIImage(named: "conversation1"))
         return instance
@@ -38,6 +39,7 @@ class ConversationTableViewCell: UITableViewCell, Reusable {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor(rgb: 0xf5f5f5)
         selectionStyle = .none
         buildLayout()
     }
@@ -52,10 +54,20 @@ class ConversationTableViewCell: UITableViewCell, Reusable {
     }
     
     private func buildLayout() {
-        contentView.addSubview(avatarImageView)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(timeLabel)
-        contentView.addSubview(contentLabel)
+        contentView.addSubview(containerView)
+        containerView.addSubview(avatarImageView)
+        containerView.addSubview(nameLabel)
+        containerView.addSubview(timeLabel)
+        containerView.addSubview(contentLabel)
+        
+        containerView.layer.borderWidth = 1.0
+        containerView.layer.borderColor = UIColor(rgb: 0xBDD7EF).cgColor
+        containerView.layer.cornerRadius = 7
+        containerView.backgroundColor = .white
+        containerView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(8)
+            make.top.bottom.equalToSuperview().inset(4)
+        }
         
         avatarImageView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 72, height: 72))

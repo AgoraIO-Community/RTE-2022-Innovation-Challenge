@@ -141,4 +141,8 @@ extension Reactive where Base == InputBarView {
     var signLongPress: Observable<Void> {
         return base.longPressAction.asObservable()
     }
+    
+    var signButtonClick: Observable<Void> {
+        return base.signButton.rx.tap.asObservable()
+    }
 }

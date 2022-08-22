@@ -38,11 +38,8 @@ enum ChatError: Error {
 }
 
 final class MessageCenter: NSObject, ObservableObject {
-    static let shared = MessageCenter()
-    private let receivedMessages = PassthroughSubject<[EMChatMessage], Never>()
     @Default(.loginUser) var user
-    private let lock = NSLock()
-    private var userCache = [String: UserInfoState]()
+    static let shared = MessageCenter()
     let conversationUpdates = PublishSubject<[EMConversation]>()
     let messageUpdates = PublishSubject<[EMChatMessage]>()
     
@@ -119,7 +116,6 @@ extension MessageCenter: EMChatManagerDelegate {
     
     func messagesDidReceive(_ aMessages: [EMChatMessage]) {
         debugPrint("receive message")
-        receivedMessages.send(aMessages)
         messageUpdates.onNext(aMessages)
     }
 }

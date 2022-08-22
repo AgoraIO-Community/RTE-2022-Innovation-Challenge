@@ -8,5 +8,9 @@
 		<string>Alibaba-PuHuiTi-Bold.ttf</string>
 		<string>Alibaba-PuHuiTi-Heavy.ttf</string>
 	</array>
+    <key>NSCameraUsageDescription</key>
+    <string>Request Camera Access</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Request Mic Access</string>
 </dict>
 </plist>

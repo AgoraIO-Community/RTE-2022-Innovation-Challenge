@@ -19,8 +19,15 @@
 
 
 ## 功能简介
-![](assets/video1.mp4)
-![](assets/video2.mp4)
+
+
+
+https://user-images.githubusercontent.com/8814535/185784983-b48bff9e-a7fb-4396-bd25-20095744547c.mov
+
+
+
+https://user-images.githubusercontent.com/8814535/185785003-8dbb5556-bfa4-486a-acd6-b3df759a2517.mov
+
 
 
 ## 技术栈

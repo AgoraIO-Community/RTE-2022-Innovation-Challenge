@@ -14,7 +14,7 @@ protocol Command {
 
 struct HyphenateInitializeCommand: Command {
     func execute() {
-        MessageCenter.shared.connect()
+        MessageCenter.shared.initSDK()
     }
 }
 

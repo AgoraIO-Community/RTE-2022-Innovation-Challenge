@@ -65,6 +65,7 @@ extension Reactive where Base == MessageCenter {
             let textBody = EMTextMessageBody(text: text)
             let userInfo = Defaults[.loginUser]?.userInfo()
             let message = EMChatMessage(conversationID: conversationId, body: textBody, ext: userInfo)
+            message.chatType = .groupChat
             manager.send(message, progress: nil) { message, error in
                 if let message = message {
                     observer.onNext(message)
@@ -86,6 +87,7 @@ extension Reactive where Base == MessageCenter {
             let imageBody = EMImageMessageBody(data: imageData, displayName: "")
             let userInfo = Defaults[.loginUser]?.userInfo()
             let message = EMChatMessage(conversationID: conversationId, body: imageBody, ext: userInfo)
+            message.chatType = .groupChat
             manager.send(message, progress: nil) { message, error in
                 if let message = message {
                     observer.onNext(message)

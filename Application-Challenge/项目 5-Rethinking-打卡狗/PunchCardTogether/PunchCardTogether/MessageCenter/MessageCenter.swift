@@ -47,7 +47,7 @@ final class MessageCenter: NSObject, ObservableObject {
         super.init()
     }
     
-    func connect() {
+    func initSDK() {
         debugPrint("prepare connect")
         let options = EMOptions(appkey: HyphenateConfig.appkey)
         options.apnsCertName = nil
@@ -57,6 +57,7 @@ final class MessageCenter: NSObject, ObservableObject {
         }
         EMClient.shared().add(self, delegateQueue: nil)
         EMClient.shared().chatManager?.add(self, delegateQueue: nil)
+        EMClient.shared().groupManager?.add(self, delegateQueue: nil)
     }
     
     func logout() {
@@ -98,6 +99,10 @@ final class MessageCenter: NSObject, ObservableObject {
     }
 }
 
+extension MessageCenter: EMGroupManagerDelegate {
+    
+}
+
 extension MessageCenter: EMClientDelegate {
     func connectionStateDidChange(_ aConnectionState: EMConnectionState) {
         debugPrint("connect state changed\(aConnectionState)")
@@ -110,7 +115,7 @@ extension MessageCenter: EMClientDelegate {
 
 extension MessageCenter: EMChatManagerDelegate {
     func conversationListDidUpdate(_ aConversationList: [EMConversation]) {
-        debugPrint("conver sationlist changed")
+        debugPrint("conversation updated")
         conversationUpdates.onNext(aConversationList)
     }
     

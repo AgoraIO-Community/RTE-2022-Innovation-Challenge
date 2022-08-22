@@ -34,6 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = HomeTabBarViewController()
         }
         addObserver()
+        if let user = Defaults[.loginUser] {
+            MessageCenter.shared.login(user: user)
+        }
         window?.makeKeyAndVisible()
         return true
     }

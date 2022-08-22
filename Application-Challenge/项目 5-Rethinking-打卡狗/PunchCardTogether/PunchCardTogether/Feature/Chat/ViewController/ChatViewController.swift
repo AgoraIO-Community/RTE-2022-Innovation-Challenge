@@ -90,6 +90,11 @@ class ChatViewController: UIViewController, View {
         buildLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.contentInset.bottom = inputBar.frame.height + 20
@@ -162,6 +167,7 @@ class ChatViewController: UIViewController, View {
                     message.conversationId == self?.conversationId
                 }
             }
+            .debug("receive messages")
             .map {
                 Reactor.Action.appendMessages($0)
             }

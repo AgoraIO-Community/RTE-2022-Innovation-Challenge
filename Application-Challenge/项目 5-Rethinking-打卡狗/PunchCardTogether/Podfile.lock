@@ -23,7 +23,6 @@ PODS:
   - AgoraRtcEngine_iOS/VirtualBackground (4.0.0-rc.1)
   - Alamofire (5.6.2)
   - Differentiator (5.0.0)
-  - Floaty (4.2.0)
   - GRDB.swift (5.26.0):
     - GRDB.swift/standard (= 5.26.0)
   - GRDB.swift/standard (5.26.0)
@@ -71,7 +70,6 @@ PODS:
 DEPENDENCIES:
   - AGEVideoLayout (~> 1.0.2)
   - AgoraRtcEngine_iOS (= 4.0.0-rc.1)
-  - Floaty (~> 4.2.0)
   - GRDB.swift
   - GrowingTextView
   - HyphenateChat
@@ -95,7 +93,6 @@ SPEC REPOS:
     - AgoraRtcEngine_iOS
     - Alamofire
     - Differentiator
-    - Floaty
     - GRDB.swift
     - GrowingTextView
     - HyphenateChat
@@ -135,7 +132,6 @@ SPEC CHECKSUMS:
   AgoraRtcEngine_iOS: 1b78af79120066c230cf9281d8587813ce6a8323
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
-  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   GRDB.swift: 1395cb3556df6b16ed69dfc74c3886abc75d2825
   GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
   HyphenateChat: 5d79b45587802839f56e5fa77565493ad51c7bd1
@@ -156,6 +152,6 @@ SPEC CHECKSUMS:
   ToastSwiftUI: 61cdf31b3c161e4f6f7179b5a469db6f9a5591be
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: d0cbcae284835ce0035213ef7096c52416839136
+PODFILE CHECKSUM: 9c0f1840f3d67989fccbb477525a827e95923a61
 
 COCOAPODS: 1.11.3

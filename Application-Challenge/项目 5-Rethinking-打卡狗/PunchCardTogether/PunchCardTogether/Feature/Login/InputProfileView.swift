@@ -83,6 +83,7 @@ struct InputProfileView: View {
             }
             
         }
+        .navigationBarHidden(true)
     }
     
     func selectedColor(gender: Gender) -> Color {

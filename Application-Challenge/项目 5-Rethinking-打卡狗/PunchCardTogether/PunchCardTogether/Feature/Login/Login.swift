@@ -171,7 +171,6 @@ struct Login: View {
                         pushToAvatar = true
                     }
                     .store(in: &cancellables)
-                ()
             }
         })
     }

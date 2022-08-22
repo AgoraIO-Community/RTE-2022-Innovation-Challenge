@@ -50,6 +50,7 @@ struct SelectAvatarView: View {
                 LoginBottomView()
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

@@ -1,5 +1,5 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
 import 'package:omega_paking/pages/chat/index.dart';
 import 'package:omega_paking/styles.dart';
@@ -9,9 +9,9 @@ import 'package:provider/provider.dart';
 class ChannelWidge extends StatelessWidget {
   String title;
   String cover;
-  bool? isLive;
+  bool isLive;
 
-  ChannelWidge(this.title, this.cover, isLive, {Key? key}) : super(key: key);
+  ChannelWidge(this.title, this.cover, this.isLive, {Key? key}) : super(key: key);
 
   
   @override
@@ -68,9 +68,11 @@ class ChannelWidge extends StatelessWidget {
             const SizedBox(height: 8.0),
             ElevatedButton(
               onPressed: () {
+                print('pressed $isLive');
                 if (isLive == true) {
                   Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
                 } else {
+                  BotToast.showText(text: "This channel is not live");
                 }
               },
               child: const Text('Enter'),

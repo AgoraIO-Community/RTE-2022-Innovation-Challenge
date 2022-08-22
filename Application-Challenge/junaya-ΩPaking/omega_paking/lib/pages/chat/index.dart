@@ -218,7 +218,7 @@ class _State extends State<ChatPage> {
         children: [
           ...displays.map((v) => ElevatedButton(onPressed: () {
              setState(() {
-                _selectedWindowId = v.id!;
+                _selectedWindowId = v.id;
                 _selectedDisplayId = -1;
               });
           }, child: Text('Display: ${v.id}'))),
@@ -237,7 +237,7 @@ class _State extends State<ChatPage> {
         children: [
           ...windows.map((v) => ElevatedButton(onPressed: () {
              setState(() {
-                _selectedWindowId = v.id!;
+                _selectedWindowId = v.id;
                 _selectedDisplayId = -1;
               });
           }, child: Text(v.name))),
@@ -268,7 +268,7 @@ class _State extends State<ChatPage> {
           ...recordings.map((v) {
             return ElevatedButton(onPressed: () {
               setState(() {
-                _selectedLoopBackRecordingDeviceName = v.deviceId!;
+                _selectedLoopBackRecordingDeviceName = v.deviceId;
               });
             }, child: Text(v.deviceName)
             );

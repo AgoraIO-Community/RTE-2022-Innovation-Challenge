@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/components/no_glow_scroll_behavior.dart';
@@ -14,7 +15,6 @@ import  'package:omega_paking/pages/welcome/index.dart';
 
 
 void main() {
-  
   /// Initialize models, negotiate dependencies
   runApp(
     MultiProvider(
@@ -71,6 +71,8 @@ class _MainAppState extends State<MainApp> {
     if (kIsWeb && !AppModel.enableShadowsOnWeb) {
       Shadows.enabled = false;
     }
+    
+    final botToastBuilder = BotToastInit();
 
     return Provider.value(
       value: theme,
@@ -81,19 +83,25 @@ class _MainAppState extends State<MainApp> {
         theme: theme.themeData,
         
         home: WelcomePage(key: _welcomePageKey),
+
+        navigatorObservers: [BotToastNavigatorObserver()],
+
+        builder: BotToastInit(),
         
-        builder: (_, navigator) {
-          if (navigator == null) return Container();
-          // Wrap root page in a builder, so we can make initial responsive tweaks based on MediaQuery
-          return Builder(builder: (c) {
-            //Responsive: Reduce size of our gutter scale when we're below a certain size
-            // Insets.gutterScale = c.size?.width < PageBreaks.TabletPortrait ? .5 : 1;
-            return ScrollConfiguration(
-              behavior: NoGlowScrollBehavior(),
-              child: navigator,
-            );
-          });
-        },
+        // builder: (_, navigator) {
+        //   if (navigator == null) return Container();
+        //   // Wrap root page in a builder, so we can make initial responsive tweaks based on MediaQuery
+        //   return Builder(builder: (c) {
+        //     //Responsive: Reduce size of our gutter scale when we're below a certain size
+        //     // Insets.gutterScale = c.size?.width < PageBreaks.TabletPortrait ? .5 : 1;
+        //     navigator = botToastBuilder(context, navigator); 
+        //     return navigator;
+        //     // return ScrollConfiguration(
+        //     //   behavior: NoGlowScrollBehavior(),
+        //     //   child: navigator,
+        //     // );
+        //   });
+        // },
       ),
     );
   }

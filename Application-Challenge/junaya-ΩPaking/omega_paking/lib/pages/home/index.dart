@@ -88,23 +88,23 @@ class _WrapperDesktopView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  ChannelWidge('My Live', 'assets/images/img1.jpg'),
+                  ChannelWidge('My Live', 'assets/images/img1.jpg', true),
                   const HSpace(16),
-                  ChannelWidge('Reading Live', 'assets/images/img2.jpg'),
+                  ChannelWidge('Reading Live', 'assets/images/img2.jpg', false),
                 ],
               ),
               Row(
                 children: [
-                  ChannelWidge('Math Live', 'assets/images/img3.jpg'),
+                  ChannelWidge('Math Live', 'assets/images/img3.jpg', false),
                   const HSpace(16),
-                  ChannelWidge('Science Live', 'assets/images/img4.jpg'),
+                  ChannelWidge('Science Live', 'assets/images/img4.jpg', false),
                 ],
               ),
               Row(
                 children: [
-                  ChannelWidge('Go Live', 'assets/images/img5.jpg'),
+                  ChannelWidge('Go Live', 'assets/images/img5.jpg', false),
                   const HSpace(16),
-                  ChannelWidge('Writing Live', 'assets/images/img6.jpg'),
+                  ChannelWidge('Writing Live', 'assets/images/img6.jpg', false),
                 ],
               ),
             ],
@@ -131,23 +131,23 @@ class _WrapperView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ChannelWidge('My Live', 'assets/images/img1.jpg'),
+              ChannelWidge('My Live', 'assets/images/img1.jpg', true),
               const HSpace(16),
-              ChannelWidge('My Live', 'assets/images/img2.jpg'),
+              ChannelWidge('My Live', 'assets/images/img2.jpg', false),
             ],
           ),
           Row(
             children: [
-              ChannelWidge('My Live', 'assets/images/img3.jpg'),
+              ChannelWidge('My Live', 'assets/images/img3.jpg', false),
               const HSpace(16),
-              ChannelWidge('My Live', 'assets/images/img4.jpg'),
+              ChannelWidge('My Live', 'assets/images/img4.jpg', false),
             ],
           ),
           Row(
             children: [
-              ChannelWidge('My Live', 'assets/images/img5.jpg'),
+              ChannelWidge('My Live', 'assets/images/img5.jpg', false),
               const HSpace(16),
-              ChannelWidge('My Live', 'assets/images/img6.jpg'),
+              ChannelWidge('My Live', 'assets/images/img6.jpg', false),
             ],
           ),
         ],

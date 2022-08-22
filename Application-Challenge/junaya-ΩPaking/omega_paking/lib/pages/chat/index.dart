@@ -20,10 +20,10 @@ class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _State();
+  State<StatefulWidget> createState() => _ChatPageState();
 }
 
-class _State extends State<ChatPage> {
+class _ChatPageState extends State<ChatPage> {
   late final RtcEngine _engine;
 
   bool isJoined = false;
@@ -212,18 +212,26 @@ class _State extends State<ChatPage> {
     if (displays.isEmpty || !(Platform.isWindows || Platform.isMacOS)) {
       return Container();
     }
-   
-    return Container(
-      child: Column(
-        children: [
-          ...displays.map((v) => ElevatedButton(onPressed: () {
-             setState(() {
-                _selectedWindowId = v.id;
-                _selectedDisplayId = -1;
-              });
-          }, child: Text('Display: ${v.id}'))),
-        ],
-      ),  
+    final dropDownMenus = <DropdownMenuItem<int>>[];
+    dropDownMenus.add(const DropdownMenuItem(
+      child: Text('please select display id'),
+      value: -1,
+    ));
+    for (var v in displays) {
+      dropDownMenus.add(DropdownMenuItem(
+        child: Text('Display:${v.id}'),
+        value: v.id,
+      ));
+    }
+    return DropdownButton<int>(
+      items: dropDownMenus,
+      value: _selectedDisplayId,
+      onChanged: (v) {
+        setState(() {
+          _selectedDisplayId = v!;
+          _selectedWindowId = -1;
+        });
+      },
     );
   }
 
@@ -231,18 +239,29 @@ class _State extends State<ChatPage> {
     if (windows.isEmpty || !(Platform.isWindows || Platform.isMacOS)) {
       return Container();
     }
-
-    return Container(
-      child: Column(
-        children: [
-          ...windows.map((v) => ElevatedButton(onPressed: () {
-             setState(() {
-                _selectedWindowId = v.id;
-                _selectedDisplayId = -1;
-              });
-          }, child: Text(v.name))),
-        ],
-      ),  
+    final dropDownMenus = <DropdownMenuItem<int>>[];
+    dropDownMenus.add(const DropdownMenuItem(
+      child: Text('please select window id'),
+      value: -1,
+    ));
+    for (var v in windows) {
+      dropDownMenus.add(DropdownMenuItem(
+        child: Text(v.name),
+        value: v.id,
+      ));
+    }
+    return DropdownButton<int>(
+      items: dropDownMenus,
+      value: _selectedWindowId,
+      icon: const Icon(Icons.arrow_downward),
+      elevation: 16,
+      style: const TextStyle(color: Colors.deepPurple),
+      onChanged: (v) {
+        setState(() {
+          _selectedWindowId = v!;
+          _selectedDisplayId = -1;
+        });
+      },
     );
   }
 
@@ -262,19 +281,25 @@ class _State extends State<ChatPage> {
     if (recordings.isEmpty || !(Platform.isWindows || Platform.isMacOS)) {
       return Container();
     }
-    return Container(
-      child: Column(
-        children: [
-          ...recordings.map((v) {
-            return ElevatedButton(onPressed: () {
-              setState(() {
-                _selectedLoopBackRecordingDeviceName = v.deviceId;
-              });
-            }, child: Text(v.deviceName)
-            );
-          }),
-        ],
-      ),  
+    final dropDownMenus = <DropdownMenuItem<String>>[];
+    dropDownMenus.add(const DropdownMenuItem(
+      child: Text('select loopBackRecording(Optional)'),
+      value: "",
+    ));
+    for (var v in recordings) {
+      dropDownMenus.add(DropdownMenuItem(
+        child: Text('Window:${v.deviceName}'),
+        value: v.deviceName,
+      ));
+    }
+    return DropdownButton<String>(
+      items: dropDownMenus,
+      value: _selectedLoopBackRecordingDeviceName,
+      onChanged: (v) {
+        setState(() {
+          _selectedLoopBackRecordingDeviceName = v!;
+        });
+      },
     );
   }
 
@@ -335,7 +360,8 @@ class _State extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+      body: Stack(
       children: [
         Container(
           child: _renderVideo(),
@@ -354,9 +380,7 @@ class _State extends State<ChatPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _displayDropDown(),
-              _windowDropDown(),
-              _loopBackRecordingDropDown(),
+              // _loopBackRecordingDropDown(),
             ]
           ),
         ),
@@ -378,7 +402,7 @@ class _State extends State<ChatPage> {
           ),
         )
       ],
-    );
+    ));
   }
 
   Widget _groupButtons() {
@@ -437,9 +461,12 @@ class _State extends State<ChatPage> {
           ElevatedButton(
             style: style,
             onPressed: screenSharing ? _stopScreenShare : _startScreenShare,
-            child: SvgPicture.asset('assets/icons/video_switch.svg', height: 24, width: 24, color: switchCamera ? Colors.white : Colors.black),
+            child: screenSharing 
+              ? SvgPicture.asset('assets/icons/icon_screenshare_stop.svg', height: 24, width: 24, color: Colors.white)
+              : SvgPicture.asset('assets/icons/icon_screenshare_start.svg', height: 24, width: 24, color: Colors.white),
           ),
-       
+        if (!(Platform.isAndroid || Platform.isIOS))
+          _windowDropDown()
       ]
     );
   }

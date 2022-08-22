@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <View
+        android:id="@+id/devided_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/action_bar_devided_line" />
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/devided_line"></com.baidu.mapapi.map.MapView>
+
+    <LinearLayout
+        android:id="@+id/diyi"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/one_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp12"
+            android:layout_marginRight="@dimen/dp8"
+            android:layout_marginBottom="@dimen/dp12"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/start_one_Loc"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/continuous_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp12"
+            android:layout_marginRight="@dimen/dp8"
+            android:layout_marginBottom="@dimen/dp12"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/start_continue_Loc"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/shu_ru"
+        android:layout_below="@id/diyi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numeric="integer"
+        android:layout_centerVertical="true"
+        android:hint="空"
+        android:textColor="@color/color_black"
+        android:textColorHint="@color/color_btn_press"
+        tools:ignore="Deprecated" />
+    <RelativeLayout
+        android:id="@+id/baiduMapLin1"
+        android:layout_below="@id/shu_ru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:layout_weight="0.5">
+            <Button
+                android:id="@+id/an_jian"
+                android:alpha="0.5"
+                android:layout_width="100dp"
+                android:layout_height="62dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="彼方位置"
+                android:textSize="@dimen/dp18" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal|right"
+            android:layout_weight="0.5">
+            <Button
+                android:id="@+id/an_jian2"
+                android:alpha="0.5"
+                android:layout_width="100dp"
+                android:layout_height="62dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="发送"
+                android:textSize="@dimen/dp18" />
+
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/xian_shi"
+        android:layout_below="@id/baiduMapLin1"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="空"
+        android:textSize="@dimen/dp18"
+        />
+
+    <RelativeLayout
+        android:id="@+id/poi_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:layout_marginTop="300dp"
+        android:layout_marginRight="@dimen/dp15"
+        android:layout_marginBottom="15dp"
+        android:background="#D9ffffff"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:id="@+id/tile_tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp35"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/one_Loc_tile"
+                android:textColor="#3E3D3D"
+                android:textFontWeight="12"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/continue_Loc_tile"
+                android:textColor="#3E3D3D"
+                android:textFontWeight="12"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line_view"
+            android:layout_width="@dimen/dp330"
+            android:layout_height="1px"
+            android:layout_below="@id/tile_tv"
+            android:layout_centerHorizontal="true"
+            android:background="#B3BCBABA" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/line_view"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/one_loc_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:lineSpacingExtra="@dimen/dp3"
+                    android:paddingTop="@dimen/dp5"
+                    android:textColor="@color/color_black"
+                    android:textFontWeight="12"
+                    android:textSize="13sp" />
+
+            </ScrollView>
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/continuoue_loc_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:lineSpacingExtra="@dimen/dp3"
+                    android:paddingTop="@dimen/dp5"
+                    android:textColor="@color/color_black"
+                    android:textFontWeight="12"
+                    android:textSize="13sp" />
+
+            </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

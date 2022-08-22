@@ -22,7 +22,7 @@ target 'PunchCardTogether' do
   pod 'GrowingTextView'
   pod 'SVProgressHUD'
   # Pods for PunchCardTogether
-  pod 'Floaty', '~> 4.2.0'
+  # pod 'Floaty', '~> 4.2.0'
   pod 'AGEVideoLayout', '~> 1.0.2'
   pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'
   

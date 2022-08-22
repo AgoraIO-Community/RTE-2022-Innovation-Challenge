@@ -20,7 +20,7 @@ class LiveViewController: UIViewController {
     
     private lazy var broadcastersView: AGEVideoContainer = {
         let container = AGEVideoContainer(frame: .zero)
-        container.backgroundColor = .blue
+        container.backgroundColor = .black
         return container
     }()
 
@@ -138,7 +138,8 @@ private extension LiveViewController {
 
         
         broadcastersView.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(menuView.snp.top)
         }
         

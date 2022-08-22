@@ -1,5 +1,5 @@
 //
-//  KeyCenter.swift
+//  VideoView.swift
 //  PunchCardTogether
 //
 //  Created by liaoyp on 2022/8/21.
@@ -39,7 +39,10 @@ class VideoView: UIView {
 
 extension VideoView {
     func update(with info: StatisticsInfo) {
-        infoLabel?.text = info.description()
+        
+        debugPrint(info.description())
+        // UI上不展示
+//        infoLabel?.text = info.description()
     }
 }
 
@@ -58,14 +61,14 @@ private extension VideoView {
     
     func addAvatarView() {
         avatar = UIImageView()
-        avatar.layer.cornerRadius = 40
+        avatar.layer.cornerRadius = 30
         avatar.layer.masksToBounds = true
-        avatar.backgroundColor = .cyan
-        avatar.image = UIImage.init(named: "avatar2")
-        videoView.addSubview(avatar)
+        let number: Int = Int(arc4random_uniform(9))
+        avatar.image = UIImage.init(named: "avatar\(number)")
+        self.addSubview(avatar)
         
         avatar.snp.makeConstraints { make in
-            make.size.equalTo(CGSize(width: 88, height: 88))
+            make.size.equalTo(CGSize(width: 60, height: 60))
             make.centerX.equalToSuperview()
             make.top.equalTo(videoView.snp.top)
         }

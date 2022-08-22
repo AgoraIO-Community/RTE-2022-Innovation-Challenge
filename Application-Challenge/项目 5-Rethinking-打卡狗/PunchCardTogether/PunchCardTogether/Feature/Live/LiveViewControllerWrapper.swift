@@ -1,5 +1,5 @@
 //
-//  LiveRoomUIBridgingView.swift
+//  LiveViewControllerWrapper.swift
 //  PunchCardTogether
 //
 //  Created by liaoyp on 2022/8/19.

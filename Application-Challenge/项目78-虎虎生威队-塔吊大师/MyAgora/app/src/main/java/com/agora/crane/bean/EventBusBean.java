@@ -12,6 +12,11 @@ public class EventBusBean {
     private String content;
 
     /**
+     * 添加好友成功
+     */
+    public static final int TYPE_ADD_FRIEND_SUCCESS = 10;
+
+    /**
      * 创建群聊成功
      */
     public static final int TYPE_CREATE_GROUP_SUCCESS = 11;

@@ -178,12 +178,17 @@ public class ContactFragment extends BaseFragment<FragmentContactBinding> {
             switch (bean.getType()) {
                 //接收到创建群聊成功，则此刷新群组列表
                 case EventBusBean.TYPE_CREATE_GROUP_SUCCESS:
-                //接收到加入群聊成功，则此刷新群组列表
+                    //接收到加入群聊成功，则此刷新群组列表
                 case EventBusBean.TYPE_JOIN_GROUP_SUCCESS:
-                //接收到退出/解散群聊成功，则此刷新群组列表
+                    //接收到退出/解散群聊成功，则此刷新群组列表
                 case EventBusBean.TYPE_LEAVE_GROUP_SUCCESS:
                     new Thread(() -> {
                         getGroup();
+                    }).start();
+                    break;
+                case EventBusBean.TYPE_ADD_FRIEND_SUCCESS:
+                    new Thread(() -> {
+                        getFriend();
                     }).start();
                     break;
             }

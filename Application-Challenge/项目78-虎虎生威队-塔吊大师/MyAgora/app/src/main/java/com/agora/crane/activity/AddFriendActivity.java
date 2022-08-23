@@ -12,11 +12,14 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
 import com.agora.crane.R;
+import com.agora.crane.bean.EventBusBean;
 import com.agora.crane.databinding.ActivityAddFriendBinding;
 import com.agora.crane.utils.ToastUtil;
 import com.agora.crane.utils.WindowUtil;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.chat.EMClient;
+
+import org.greenrobot.eventbus.EventBus;
 
 
 /**
@@ -144,6 +147,7 @@ public class AddFriendActivity extends BaseActivity<ActivityAddFriendBinding> im
                     ToastUtil.show(getString(R.string.send_add_friend_message_success));
                     mBinding.etAddFriend.setText("");
                     mBinding.clAdd.setVisibility(View.GONE);
+                    EventBus.getDefault().post(new EventBusBean(EventBusBean.TYPE_ADD_FRIEND_SUCCESS));
                 });
 
             }

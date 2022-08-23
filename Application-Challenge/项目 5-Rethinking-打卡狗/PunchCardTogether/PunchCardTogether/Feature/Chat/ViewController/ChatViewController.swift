@@ -88,6 +88,9 @@ class ChatViewController: UIViewController, View {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildLayout()
+        
+        //提前获取最新直播间Token
+        RtcTokenService().updateToken(roomId: self.conversationId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -309,8 +312,7 @@ class ChatViewController: UIViewController, View {
 //                self.present(vc, animated: true)
 //                
                 let vc = LiveViewController()
-                vc.roomName = "8888"
-                
+                vc.roomName = "test"
                 self.navigationController?.pushViewController(vc, animated: true);
                 
             })

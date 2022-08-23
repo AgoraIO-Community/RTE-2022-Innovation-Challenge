@@ -10,6 +10,7 @@ import AgoraRtcKit
 import AGEVideoLayout
 import SnapKit
 import AgoraRtcKit
+import Toast
 
 class LiveViewController: UIViewController {
        
@@ -87,7 +88,6 @@ class LiveViewController: UIViewController {
         updateButtonsVisiablity()
         loadAgoraKit()
         
-     
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -402,5 +402,6 @@ extension LiveViewController: AgoraRtcEngineDelegate {
     /// Reports an error during SDK runtime.
     func rtcEngine(_ engine: AgoraRtcEngineKit, didOccurError errorCode: AgoraErrorCode) {
         print("warning code: \(errorCode.description)")
+        self.view.makeToast("Token异常，请重新进入: \(errorCode.description)", duration: 3, position: CSToastPositionCenter)
     }
 }

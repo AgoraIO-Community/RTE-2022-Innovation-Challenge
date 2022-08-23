@@ -92,6 +92,7 @@
 		92A6897628AE5A1F00183C8A /* FileCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6896528AE5A1F00183C8A /* FileCenter.swift */; };
 		92A6897928AE5A1F00183C8A /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6896828AE5A1F00183C8A /* VideoView.swift */; };
 		92A6897E28AE5B9C00183C8A /* live.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A6897D28AE5B9C00183C8A /* live.xcassets */; };
+		92AE19EC28B4AE6900109716 /* RTCTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AE19EB28B4AE6800109716 /* RTCTokenService.swift */; };
 		9C0AE3891E7803C73C1236F3 /* Pods_PunchCardTogether.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82926A2B7AD8DC30DCD89E2B /* Pods_PunchCardTogether.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +203,7 @@
 		92A6896528AE5A1F00183C8A /* FileCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCenter.swift; sourceTree = "<group>"; };
 		92A6896828AE5A1F00183C8A /* VideoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		92A6897D28AE5B9C00183C8A /* live.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = live.xcassets; sourceTree = "<group>"; };
+		92AE19EB28B4AE6800109716 /* RTCTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTCTokenService.swift; sourceTree = "<group>"; };
 		CFC280F1A3706648FFDB1EBA /* Pods-PunchCardTogetherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardTogetherTests.debug.xcconfig"; path = "Target Support Files/Pods-PunchCardTogetherTests/Pods-PunchCardTogetherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D37F186201B02B0801A70C57 /* Pods-PunchCardTogether.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardTogether.debug.xcconfig"; path = "Target Support Files/Pods-PunchCardTogether/Pods-PunchCardTogether.debug.xcconfig"; sourceTree = "<group>"; };
 		DC60615230D8AFF5C6D3C947 /* Pods-PunchCardTogether.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PunchCardTogether.release.xcconfig"; path = "Target Support Files/Pods-PunchCardTogether/Pods-PunchCardTogether.release.xcconfig"; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 		92AD060D28B259D2006FBFF8 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				92AE19EA28B4AE4B00109716 /* Service */,
 				92A6896128AE5A1E00183C8A /* AgoraExtension.swift */,
 				92A6895828AE5A1E00183C8A /* StatisticsInfo.swift */,
 				9237AEAA28B22F6900B2E29B /* AgoraKeyCenter.swift */,
@@ -664,6 +667,14 @@
 				92A6896228AE5A1F00183C8A /* VideoSession.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		92AE19EA28B4AE4B00109716 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				92AE19EB28B4AE6800109716 /* RTCTokenService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E5F450C200098D0F54FA12DE /* Frameworks */ = {
@@ -987,6 +998,7 @@
 				4030E91728A4D9170021B26C /* Query.swift in Sources */,
 				409286BE28A740D200C448FE /* User.swift in Sources */,
 				409286CF28A7E77C00C448FE /* LoginService.swift in Sources */,
+				92AE19EC28B4AE6900109716 /* RTCTokenService.swift in Sources */,
 				406BA41528B0EE6D00E157CE /* ChatReactor.swift in Sources */,
 				4031DEB628AF251A003B27FB /* AlertTextField.swift in Sources */,
 				409286C128A784BE00C448FE /* DefaultsKey.swift in Sources */,
@@ -1158,7 +1170,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PunchCardTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = XDGAK6XCMW;
+				DEVELOPMENT_TEAM = 865L62UDE9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PunchCardTogether/Info.plist;

@@ -42,7 +42,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
                 LoginActivity.skipActivity(SplashActivity.this);
             }
             finish();
-        }, 200);
+        }, 2000);
     }
 
     @Override

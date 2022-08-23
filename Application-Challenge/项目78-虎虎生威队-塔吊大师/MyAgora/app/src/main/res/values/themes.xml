@@ -26,7 +26,7 @@
 
     <style name="Theme.AppSplash" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@drawable/splash_bg</item>
+        <item name="android:windowBackground">@drawable/splash_bg1</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 

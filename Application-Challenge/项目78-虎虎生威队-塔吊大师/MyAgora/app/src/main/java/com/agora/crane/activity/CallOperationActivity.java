@@ -36,7 +36,6 @@ import com.agora.crane.net.IRequestCallback;
 import com.agora.crane.net.NetUtil;
 import com.agora.crane.utils.Constant;
 import com.agora.crane.utils.GsonUtil;
-import com.agora.crane.utils.HLog;
 import com.agora.crane.utils.UserManager;
 import com.agora.crane.utils.WindowUtil;
 import com.agora.crane.widget.LayoutVideo;
@@ -92,18 +91,18 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
     private LayoutVideo currentView;
 
     /**
-     * userId
+     * 现场施工uid
      */
-    private int userId;
+    private int constructionId;
+    private boolean muteSound = false;
 
     /**
      * 界面跳转
      *
      * @param mActivity 上个界面
      */
-    public static void skipActivity(Activity mActivity, int userId, String channelName) {
+    public static void skipActivity(Activity mActivity, String channelName) {
         Intent mIntent = new Intent(mActivity, CallOperationActivity.class);
-        mIntent.putExtra("userId", userId);
         mIntent.putExtra("channelName", channelName);
         mActivity.startActivity(mIntent);
     }
@@ -124,7 +123,7 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
         @Override
         public void onNetworkQuality(int uid, int txQuality, int rxQuality) {
             super.onNetworkQuality(uid, txQuality, rxQuality);
-            //  mBinding.layoutForward.setNetworkQuality(txQuality);
+            setNetworkQuality(uid, rxQuality);
         }
     };
 
@@ -147,7 +146,8 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
         requestPermission(new String[]{Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO}, PERMISSION_CODE);
         setOnClickViewList(mBinding.layoutForward, mBinding.layoutBack, mBinding.layoutLeft, mBinding.layoutRight,
                 mBinding.layoutUp, mBinding.layoutDown, mBinding.viewMaskCallOperation,
-                mBinding.tvCallOperationHangUp, mBinding.tvCallOperationPickUp,mBinding.clCallOperationCallToConstruction);
+                mBinding.tvCallOperationHangUp, mBinding.tvCallOperationPickUp,
+                mBinding.clCallOperationCallToConstruction, mBinding.ivCallOperationSound);
         EventBus.getDefault().register(this);
         mBinding.waveViewCallOperation.setDuration(6000);
         mBinding.waveViewCallOperation.setStyle(Paint.Style.FILL);
@@ -162,7 +162,6 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
     @Override
     protected void setListener() {
         super.setListener();
-        userId = getIntent().getIntExtra("userId", 0);
         channelName = getIntent().getStringExtra("channelName");
         setPermissionList(new PermissionListener() {
             @Override
@@ -248,7 +247,7 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
      * 接受
      */
     private void pickUp() {
-       mBinding.tvCallOperationCall.setText(getString(R.string.call_to_operator_pick_up));
+        mBinding.tvCallOperationCall.setText(getString(R.string.call_to_operator_pick_up));
     }
 
     /**
@@ -275,7 +274,7 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
             mBinding.tvCallOperationHangUp.setVisibility(View.VISIBLE);
         } else if (content.contains(ORDER_HANG_UP)) {
             hangUp();
-        }else if(content.contains(ORDER_PICK_UP)){
+        } else if (content.contains(ORDER_PICK_UP)) {
             mBinding.waveViewCallOperation.stop();
             mBinding.tvCallOperationPickUp.setVisibility(View.GONE);
             mBinding.tvCallOperationCall.setText(getString(R.string.call_to_operator_pick_up));
@@ -344,6 +343,7 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
                 surfaceView.setZOrderMediaOverlay(true);
                 container.addView(surfaceView);
                 mRtcEngine.setupRemoteVideo(new VideoCanvas(surfaceView, VideoCanvas.RENDER_MODE_HIDDEN, uid));
+                constructionId = uid;
                 break;
             case Constant.CODE_ROLE_CAMERA_FORWARD:
                 mBinding.layoutForward.setUid(uid, mRtcEngine);
@@ -366,8 +366,65 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
             default:
                 break;
         }
-
     }
+
+    /**
+     * 设置接收质量
+     *
+     * @param uid       用户ID
+     * @param rxQuality 接收质量
+     */
+    private void setNetworkQuality(int uid, int rxQuality) {
+        switch (uid) {
+            case Constant.CODE_ROLE_CONSTRUCTION:
+                setNetworkQuality(rxQuality);
+                break;
+            case Constant.CODE_ROLE_CAMERA_FORWARD:
+                mBinding.layoutForward.setNetworkQuality(rxQuality);
+                break;
+            case Constant.CODE_ROLE_CAMERA_BACK:
+                mBinding.layoutBack.setNetworkQuality(rxQuality);
+                break;
+            case Constant.CODE_ROLE_CAMERA_LEFT:
+                mBinding.layoutLeft.setNetworkQuality(rxQuality);
+                break;
+            case Constant.CODE_ROLE_CAMERA_RIGHT:
+                mBinding.layoutRight.setNetworkQuality(rxQuality);
+                break;
+            case Constant.CODE_ROLE_CAMERA_UP:
+                mBinding.layoutUp.setNetworkQuality(rxQuality);
+                break;
+            case Constant.CODE_ROLE_CAMERA_DOWN:
+                mBinding.layoutDown.setNetworkQuality(rxQuality);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 设置现场施工网络状态
+     *
+     * @param txQuality 网络质量
+     */
+    public void setNetworkQuality(int txQuality) {
+        switch (txQuality) {
+            case IRtcEngineEventHandler.Quality.EXCELLENT:
+                mBinding.ivCallOperationNetwork.setImageResource(R.drawable.net_word_4);
+                break;
+            case IRtcEngineEventHandler.Quality.GOOD:
+            case IRtcEngineEventHandler.Quality.POOR:
+                mBinding.ivCallOperationNetwork.setImageResource(R.drawable.net_word_3);
+                break;
+            case IRtcEngineEventHandler.Quality.BAD:
+                mBinding.ivCallOperationNetwork.setImageResource(R.drawable.net_word_2);
+                break;
+            default:
+                mBinding.ivCallOperationNetwork.setImageResource(R.drawable.net_word_1);
+                break;
+        }
+    }
+
 
     /**
      * 点击事件
@@ -419,6 +476,15 @@ public class CallOperationActivity extends BaseActivity<ActivityCallOperationBin
             case R.id.cl_call_operation_call_to_construction:
                 sendOrder(ORDER_CALL);
                 mBinding.tvCallOperationCall.setText(getString(R.string.call_to_operator_ing));
+                return;
+            case R.id.iv_call_operation_sound:
+                if (mRtcEngine != null) {
+                    int muteResult = mRtcEngine.muteRemoteAudioStream(constructionId, !muteSound);
+                    if (Constant.MUTE_SUCCESS_CODE == muteResult) {
+                        muteSound = !muteSound;
+                        mBinding.ivCallOperationSound.setImageResource(muteSound ? R.drawable.sound_close : R.drawable.sound_open);
+                    }
+                }
                 return;
             default:
                 break;

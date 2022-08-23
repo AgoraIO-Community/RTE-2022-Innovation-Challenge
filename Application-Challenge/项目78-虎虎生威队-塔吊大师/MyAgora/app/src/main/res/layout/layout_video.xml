@@ -46,7 +46,8 @@
                     android:id="@+id/iv_sound"
                     android:layout_width="@dimen/sw_20dp"
                     android:layout_height="@dimen/sw_20dp"
-                    android:background="@drawable/sound_open" />
+                    android:padding="@dimen/sw_3dp"
+                    android:src="@drawable/sound_open" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -63,7 +64,8 @@
                     android:id="@+id/iv_network"
                     android:layout_width="@dimen/sw_20dp"
                     android:layout_height="@dimen/sw_20dp"
-                    android:background="@drawable/net_word_4" />
+                    android:padding="@dimen/sw_3dp"
+                    android:src="@drawable/net_word_4" />
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

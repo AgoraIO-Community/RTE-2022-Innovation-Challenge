@@ -31,8 +31,6 @@ public class LayoutVideo extends ConstraintLayout {
     private int uid;
     private boolean muteSound = false;
 
-    private SurfaceView mSurfaceView;
-
     public LayoutVideo(@NonNull Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
@@ -52,6 +50,9 @@ public class LayoutVideo extends ConstraintLayout {
      */
     private void setListener() {
         mBinding.ivSound.setOnClickListener(view -> {
+            if (mRtcEngine == null) {
+                return;
+            }
             int muteResult = mRtcEngine.muteRemoteAudioStream(uid, !muteSound);
             if (Constant.MUTE_SUCCESS_CODE == muteResult) {
                 muteSound = !muteSound;
@@ -99,17 +100,17 @@ public class LayoutVideo extends ConstraintLayout {
     public void setNetworkQuality(int txQuality) {
         switch (txQuality) {
             case IRtcEngineEventHandler.Quality.EXCELLENT:
-                mBinding.ivNetwork.setBackgroundResource(R.drawable.net_word_4);
+                mBinding.ivNetwork.setImageResource(R.drawable.net_word_4);
                 break;
             case IRtcEngineEventHandler.Quality.GOOD:
             case IRtcEngineEventHandler.Quality.POOR:
-                mBinding.ivNetwork.setBackgroundResource(R.drawable.net_word_3);
+                mBinding.ivNetwork.setImageResource(R.drawable.net_word_3);
                 break;
             case IRtcEngineEventHandler.Quality.BAD:
-                mBinding.ivNetwork.setBackgroundResource(R.drawable.net_word_2);
+                mBinding.ivNetwork.setImageResource(R.drawable.net_word_2);
                 break;
             default:
-                mBinding.ivNetwork.setBackgroundResource(R.drawable.net_word_1);
+                mBinding.ivNetwork.setImageResource(R.drawable.net_word_1);
                 break;
         }
     }

@@ -125,7 +125,7 @@ public class ChatActivity extends BaseActivity<ActivityChatBinding> {
                     showPopupUnsetRole();
                 } else {
                     if (ROLE_OPERATOR.equals(role)) {
-                        CallOperationActivity.skipActivity(mContext, getCodeRole(), conversationId);
+                        CallOperationActivity.skipActivity(mContext, conversationId);
                     } else if (ROLE_CONSTRUCTION.equals(role)) {
                         CallConstructionActivity.skipActivity(mContext, conversationId);
                     } else {

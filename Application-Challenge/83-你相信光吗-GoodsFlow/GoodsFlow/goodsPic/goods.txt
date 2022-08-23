@@ -1,0 +1,37 @@
+{
+    "goods":[
+        {
+            "goodsid":"0",
+            "title":"九成新吹风机",
+            "des":"详情可私聊",
+            "address":"浙江-杭州-滨江区",
+            "phoneNum":"1234567",
+            "imgName":"goods0",
+            "timestamp":1621321822,
+            "name":"吹风机",
+            "category":"送货上门"
+        },
+        {
+            "goodsid":"1",
+            "title":"搬家急出小电驴，价格可谈",
+            "des":"详情可私聊",
+            "address":"浙江-杭州-滨江区",
+            "phoneNum":"1234567",
+            "imgName":"goods1",
+            "timestamp":1621321822,
+            "name":"小电驴",
+            "category":"送货上门"
+        },
+        {
+            "goodsid":"2",
+            "title":"270出动森卡带",
+            "des":"详情可私聊",
+            "address":"浙江-杭州-滨江区",
+            "phoneNum":"1234567",
+            "imgName":"goods2",
+            "timestamp":1621321822,
+            "name":"动森卡带",
+            "category":"上门自取"
+        }
+    ]
+}

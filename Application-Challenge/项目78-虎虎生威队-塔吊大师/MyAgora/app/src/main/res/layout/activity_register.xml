@@ -96,6 +96,7 @@
         android:hint="@string/input_password"
         android:textSize="@dimen/sw_15sp"
         android:background="@null"
+        android:inputType="textPassword"
         />
 
     <ImageView

@@ -33,9 +33,9 @@ AGORA_APKKEY=xxxxxxxxx
    4. 切换摄像头
    5. 后置摄像头打开手电
 ### 核心功能介绍
-[功能面板](https://mmbiz.qpic.cn/sz_mmbiz_jpg/MuMjFf2EKibF8gulraToONxSeFFymAOcFZGwWTKgn5Ou1fvNI29Oxvrtj9Dbxicvgia5VWD96KXnticILibEaVeZbYw/0?wx_fmt=jpeg)
-[标注](https://mmbiz.qpic.cn/sz_mmbiz_jpg/MuMjFf2EKibF8gulraToONxSeFFymAOcFlchg7SFpyLo5eN5byQT1orxcobNeeVrfImG8YfjfsuibjTPO1f9lsPA/0?wx_fmt=jpeg)
-[画中画模式](https://mmbiz.qpic.cn/sz_mmbiz_jpg/MuMjFf2EKibF8gulraToONxSeFFymAOcFIVghje4TY4m8nebWJicpIgJQLscJvEUUMrQIxFoVibm2BXiaWFeaNp8hw/0?wx_fmt=jpeg)
+![功能面板](https://mmbiz.qpic.cn/sz_mmbiz_jpg/MuMjFf2EKibF8gulraToONxSeFFymAOcFZGwWTKgn5Ou1fvNI29Oxvrtj9Dbxicvgia5VWD96KXnticILibEaVeZbYw/0?wx_fmt=jpeg)
+![标注](https://mmbiz.qpic.cn/sz_mmbiz_jpg/MuMjFf2EKibF8gulraToONxSeFFymAOcFlchg7SFpyLo5eN5byQT1orxcobNeeVrfImG8YfjfsuibjTPO1f9lsPA/0?wx_fmt=jpeg)
+![画中画模式](https://mmbiz.qpic.cn/sz_mmbiz_jpg/MuMjFf2EKibF8gulraToONxSeFFymAOcFIVghje4TY4m8nebWJicpIgJQLscJvEUUMrQIxFoVibm2BXiaWFeaNp8hw/0?wx_fmt=jpeg)
 ## 技术栈
 
 ### 开发语言

@@ -30,6 +30,7 @@ enum KagoAPI {
     case isSignInRoom(roomId: String)
     case createRoom(roomName: String, roomId: String)
     case joinRoom(roomId: String)
+    case createRtcToken(rooId: String)
 }
 
 extension KagoAPI: TargetType {
@@ -47,6 +48,8 @@ extension KagoAPI: TargetType {
             return "api/room/create"
         case .joinRoom:
             return "api/room/user/join"
+        case .createRtcToken:
+            return "api/rtm/create"
         }
     }
     
@@ -73,6 +76,8 @@ extension KagoAPI: TargetType {
             return .requestParameters(parameters: ["name": roomName,"type": "1", "rule_count": "20", "rule_time": "0624", "rule_type": "1,2,3", "desc": "kago", "room_id": roomId], encoding: URLEncoding.default)
         case let .joinRoom(roomId):
             return .requestParameters(parameters: ["room_id": roomId], encoding: URLEncoding.default)
+        case let .createRtcToken(rooId: roomId):
+            return .requestParameters(parameters: ["id": roomId], encoding: URLEncoding.default)
         }
     }
     

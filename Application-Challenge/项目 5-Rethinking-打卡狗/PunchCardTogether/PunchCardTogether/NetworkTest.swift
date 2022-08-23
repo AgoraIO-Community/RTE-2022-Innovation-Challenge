@@ -15,7 +15,6 @@ struct NetworkResponse: Codable {
 
 final class NetworkTest: ObservableObject {
     var cancellables = Set<AnyCancellable>()
-    
     func testRegister() {
         provider.requestPublisher(KagoAPI.register(account: "18611693632", password: "12345zql"))
             .sink { error in
@@ -28,6 +27,17 @@ final class NetworkTest: ObservableObject {
     
     func testLogin() {
         provider.requestPublisher(KagoAPI.login(account: "18611693632", password: "12345zql"))
+            .map(NetworkResponse.self)
+            .sink { error in
+                debugPrint("error is \(error)")
+            } receiveValue: { network in
+                debugPrint(network)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func testCreateRtcToken() {
+        provider.requestPublisher(KagoAPI.createRtcToken(rooId: "teset"))
             .map(NetworkResponse.self)
             .sink { error in
                 debugPrint("error is \(error)")

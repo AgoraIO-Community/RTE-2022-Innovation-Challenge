@@ -12,7 +12,7 @@ struct LiveViewControllerWrapper: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> some UIViewController {
         let vc =  LiveViewController()
-        vc.roomName = "8888"
+        vc.roomName = "test"
         return vc
     }
     

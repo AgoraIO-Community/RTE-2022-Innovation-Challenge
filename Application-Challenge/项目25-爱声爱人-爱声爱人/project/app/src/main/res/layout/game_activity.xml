@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.game.GameActivity">
+
+    <FrameLayout
+        android:id="@+id/unity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="31dp"
+        android:onClick="onClick"
+        android:src="@mipmap/back"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <include
+        android:id="@+id/card"
+        layout="@layout/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toStartOf="@+id/users"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/users"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="onClick"
+        android:src="@mipmap/user_list"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toStartOf="@+id/mic"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/mic"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="4dp"
+        android:onClick="onClick"
+        android:src="@mipmap/microphone_on"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toStartOf="@+id/speaker"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/speaker"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="21dp"
+        android:onClick="onClick"
+        android:src="@mipmap/voice_on"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

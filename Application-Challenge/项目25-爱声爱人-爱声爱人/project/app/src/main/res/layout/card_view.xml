@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="99dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_container_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:src="@mipmap/girl"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintStart_toStartOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:src="@mipmap/medal_small"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar"
+        app:layout_constraintEnd_toEndOf="@+id/avatar" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="9dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxEms="4"
+        android:singleLine="true"
+        android:textColor="#ff5b0a55"
+        android:textSize="7sp"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="@+id/bg"
+        tools:text="Maturlala" />
+
+    <TextView
+        android:id="@+id/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="4dp"
+        android:onClick="onClick"
+        android:text="语聊模式"
+        android:textColor="#ff000000"
+        android:textSize="6sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintStart_toEndOf="@+id/avatar" />
+
+    <ImageView
+        android:id="@+id/tips"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:onClick="onClick"
+        android:src="@mipmap/tips1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/mode"
+        app:layout_constraintStart_toEndOf="@id/mode"
+        app:layout_constraintTop_toTopOf="@+id/mode" />
+
+    <ImageView
+        android:id="@+id/role"
+        android:layout_width="26dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="7dp"
+        android:onClick="onClick"
+        android:src="@mipmap/offbtn"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintEnd_toEndOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

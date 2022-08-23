@@ -56,13 +56,6 @@ class _HomePageStateView extends StatelessWidget {
         tablet: _WrapperDesktopView(),
         desktop: _WrapperDesktopView(),
       ),
-      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.read<AppModel>().toggleTheme();
-        },
-        child: const Icon(Icons.settings, color: Colors.white,),
-      ),
     );
   }
 }

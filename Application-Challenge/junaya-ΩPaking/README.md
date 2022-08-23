@@ -8,8 +8,16 @@
 
 ## 使用指南
 <!-- 请描述该应用的使用步骤，包括下载、依赖安装、参数及软硬件配置（如有）等 -->
+在该路径下配置，声网后台 token `RTE-2022-Innovation-Challenge/Application-Challenge/JunaYa-ΩPaking/omega_paking/lib/config/agora.config.dart`
+
+dev
 > * `flutter pub get`
 > * `flutter run`
+
+build
+> * flutter run ios
+> * flutter run macos
+
 
 ## 功能简介
 <!-- 请给出该应用的主要功能点 -->
@@ -18,7 +26,7 @@ todo
 [x] 登录
 [x] 平台首页（教学直播间列表）
 [x] 进入直播间
-[x] 分享（仅 macOS、win、Linux）
+[x] 分享屏幕（仅 macOS、win、Linux）
 [] 内嵌网页白板
 
 ## 技术栈

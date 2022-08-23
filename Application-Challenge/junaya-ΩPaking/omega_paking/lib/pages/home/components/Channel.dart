@@ -1,7 +1,8 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/material.dart';
 import 'package:omega_paking/_internal/page_routes.dart';
-import 'package:omega_paking/pages/Dropdown.dart';
+import 'package:omega_paking/commands/bootstrap_command.dart';
 import 'package:omega_paking/pages/chat/index.dart';
 import 'package:omega_paking/styles.dart';
 import 'package:omega_paking/themes.dart';
@@ -72,9 +73,9 @@ class ChannelWidge extends StatelessWidget {
                 print('pressed $isLive');
                 if (isLive == true) {
                   Navigator.push<void>(context, PageRoutes.fade(() => ChatPage(), Durations.slow.inMilliseconds * .001));
+                  DesktopWindow.setFullScreen(true);
                 } else {
-                  Navigator.push<void>(context, PageRoutes.fade(() => DropDown(), Durations.slow.inMilliseconds * .001));
-                  // BotToast.showText(text: "This channel is not live");
+                  BotToast.showText(text: "This channel is not live");
                 }
               },
               child: const Text('Enter'),

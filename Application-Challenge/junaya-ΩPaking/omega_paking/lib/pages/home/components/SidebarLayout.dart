@@ -46,21 +46,7 @@ class SideBarLayout extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Text('Side btn'),
-                    SizedBox(height: 8.0),
-                    Text('Side btn'),
-                    SizedBox(height: 8.0),
-                    Text('Side btn'),
-                    SizedBox(height: 8.0),
-                    Text('Side btn'),
-                    SizedBox(height: 8.0),
-                    Text('Side btn'),
-                    SizedBox(height: 8.0),
-                    Text('Side btn'),
-                    SizedBox(height: 8.0),
-                    Text('Side btn'),
-                    SizedBox(height: 8.0),
-                    Text('Side btn'),
+                    Text('TODO'),
                     SizedBox(height: 8.0),
                   ],
                 )

@@ -124,13 +124,24 @@ public class RegisterActivity extends BaseActivity<ActivityRegisterBinding> {
             ToastUtil.show(getString(R.string.please_input_password));
             return;
         }
+        showLoading("");
         new Thread(() -> {
             try {
                 EMClient.getInstance().createAccount(userName, password);
+                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                    runOnUiThread(() -> {
+                        hideLoading();
+                        ToastUtil.show(getString(R.string.register_success));
+                        finish();
+                    });
+                },1000);
             } catch (HyphenateException e) {
                 e.printStackTrace();
+                runOnUiThread(() -> {
+                    hideLoading();
+                    ToastUtil.show(getString(R.string.register_failure) + e.toString());
+                });
             }
         }).start();
-
     }
 }

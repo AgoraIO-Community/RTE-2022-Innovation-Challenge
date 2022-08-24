@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">integrated_version</string>
+    <string name="start_record">开始录音</string>
+    <string name="stop_record">停止录音</string>
+    <string name="start_play">播放</string>
+    <string name="stop_play">停止</string>
+
+    <string name="tile_name">全球定位（单次/连续）</string>
+    <string name="PingFang_SC_Medium">PingFang-SC-Medium</string>
+    <string name="start_one_Loc">开始单次定位</string>
+    <string name="stop_one_Loc">计算距离</string>
+    <string name="start_continue_Loc">开始连续定位</string>
+    <string name="stop_continue_Loc">停止连续定位</string>
+    <string name="continue_Loc_tile">连续定位</string>
+    <string name="one_Loc_tile">单次定位</string>
+
+    <string name="loopback">音频耳返</string>
+    <string name="closemicrophone">关闭麦克风</string>
+    <string name="speaker">扬声器</string>
+    <string name="chanel_support_char" translatable="false">qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890 !#$%()+-:;&lt;=.>?@[]^_{}|~,&amp;</string>
+    <string name="channel_id">频道ID</string>
+    <string name="join">加入</string>
+    <string name="leave">离开</string>
+    <string name="openmicrophone">打开麦克风</string>
+    <string name="earpiece">听筒</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test">test\ntest</string>
+    <string name="jieMianShuoMing">1.最好不要点返回键，从按键跳转界面。\n 2.三种应用输入编码不同，解码也不同，底层通信原理一样。\n
+        3.三种分别是地址，普通输入，移动网网络基本参数。\n 4.传输完后才能解码，不然信息不全。\n 5.若发送位置，请先打开地图界面获取位置再跳转。
+     \n 6.默认位置是为了调试用，并不准确</string>>
+
+</resources>

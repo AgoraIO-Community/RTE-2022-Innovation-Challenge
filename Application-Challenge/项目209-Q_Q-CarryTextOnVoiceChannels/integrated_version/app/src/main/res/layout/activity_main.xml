@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取定位地图" />
+
+    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保留按键，暂时无用" />
+
+    <Button
+        android:id="@+id/btn_agora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="agora语音通话" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:text="@string/jieMianShuoMing"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+
+
+
+    </LinearLayout>

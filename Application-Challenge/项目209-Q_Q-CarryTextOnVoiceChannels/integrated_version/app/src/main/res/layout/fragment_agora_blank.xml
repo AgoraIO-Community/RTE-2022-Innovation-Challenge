@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+    <EditText
+        android:id="@+id/freq_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="捕获经纬度"
+        android:textColorHint="@color/purple_700"
+        android:background="#00ff00"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relative1"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/freq_input">
+        <EditText
+                android:id="@+id/angle_input"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:hint="自输入信息"
+                android:textColorHint="@color/purple_700"
+                android:background="#EE82EE"
+            />
+        <EditText
+            android:id="@+id/angle_input2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:hint="校验码"
+            android:textColorHint="@color/purple_700"
+            android:background="#FFB6C1"
+            />
+</LinearLayout>
+    <EditText
+        android:id="@+id/time_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="捕获信号移动网参数"
+        android:textColorHint="@color/purple_700"
+        android:layout_below="@+id/relative1"
+        android:background="#ffffff"
+        />
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_below="@+id/time_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:gravity="center" >
+        <Button
+            android:id="@+id/transmissionRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消频"
+            />
+
+        <Button
+            android:id="@+id/transmission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="发送地图" />
+        <Button
+            android:id="@+id/transmissionLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转地图"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_below="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center" >
+        <Button
+            android:id="@+id/UnicodeEncode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="捕获输入"
+            />
+
+        <Button
+            android:id="@+id/UnicodeDecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="解码输入" />
+        <Button
+            android:id="@+id/rsrpEncode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="捕获信号"
+            />
+        <Button
+            android:id="@+id/rsrpDecode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="解码信号"
+            />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/freq_angle_output"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/linear2"
+        android:background="#00ff00"
+        android:text="捕获原始码元区" />
+    <TextView
+        android:id="@+id/freq_angle_output2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/freq_angle_output"
+        android:background="#98FB98"
+        android:text="解码经纬度区域" />
+    <TextView
+        android:id="@+id/freq_angle_output3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/freq_angle_output2"
+        android:background="#00FA9A"
+        android:text="捕获解码自输入信息区" />
+    <TextView
+        android:id="@+id/freq_angle_output4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/freq_angle_output3"
+        android:background="#00BFFF"
+        android:text="捕获移动网参数区" />
+
+
+
+    <Switch
+        android:id="@+id/loopback"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="200dp"
+        android:enabled="false"
+        android:text="@string/loopback" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_mute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/closemicrophone"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:enabled="false"
+        android:layout_marginBottom="64dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_speaker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speaker"
+        android:enabled="false"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/btn_mute"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_join"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_channel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:digits="@string/chanel_support_char"
+            android:hint="@string/channel_id" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/join" />
+
+    </LinearLayout>
+
+</RelativeLayout>

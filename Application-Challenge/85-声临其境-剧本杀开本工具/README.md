@@ -22,6 +22,8 @@
 
 ## 功能简介
  
+!()[https://scripts-res.oss-cn-shanghai.aliyuncs.com/demo.png]
+
 - 项目角色：使用项目工具的用户分为【主持人】和【玩家】
 
 【主持人】即第一个打开页面进入房间的用户，会进行新房间的创建。

@@ -29,7 +29,8 @@ https://user-images.githubusercontent.com/8814535/185784983-b48bff9e-a7fb-4396-b
 https://user-images.githubusercontent.com/8814535/185785003-8dbb5556-bfa4-486a-acd6-b3df759a2517.mov
 
 
-
+## 使用指南
+![](assets/tutorial.PNG)
 ## 技术栈
 后端架构：
 1. Nodejs

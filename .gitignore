@@ -10,7 +10,7 @@ Pods
 Thumbs.db
 **.log
 node_modules/
-public/
+# public/
 .deploy*/
 .vscode/
 yarn.lock

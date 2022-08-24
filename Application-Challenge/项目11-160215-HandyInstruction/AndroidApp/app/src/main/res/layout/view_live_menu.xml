@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+  <LinearLayout
+    android:id="@+id/ll_draw"
+    android:layout_width="wrap_content"
+    android:layout_height="64dip"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bg_translucency_round_n"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    <LinearLayout
+      android:id="@+id/llColorPick"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="14dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@drawable/ic_live_pick_color_selector" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_pickcolor"
+        android:textColor="@color/text_color_live_menu_selector"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llEraser"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="14dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/ivEraser"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@drawable/ic_live_eraser_selector" />
+
+      <TextView
+        android:id="@+id/tvEraser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_eraser"
+        android:textColor="@color/text_color_live_menu_selector"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llClear"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:padding="8dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_live_draw_clear" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_clear"
+        android:textColor="@color/main_color_white"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llClose"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dip"
+      android:layout_marginRight="16dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@mipmap/ic_live_draw_close" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_close"
+        android:textColor="@color/main_color_white"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_menu"
+    android:layout_width="wrap_content"
+    android:layout_height="64dip"
+    android:layout_gravity="bottom"
+    android:background="@drawable/bg_translucency_round_n"
+    android:orientation="horizontal"
+    android:visibility="visible">
+
+    <LinearLayout
+      android:id="@+id/llBrush"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="16dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@mipmap/ic_live_menu_draw" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_label"
+        android:textColor="@color/text_color_live_menu_selector"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llFrameMode"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="14dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/ivFrameMode"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@drawable/ic_live_menu_more_selector" />
+
+      <TextView
+        android:id="@+id/tvFrameMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_menu_more_guide_pip"
+        android:textColor="@color/text_color_live_menu_selector"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+    <LinearLayout
+      android:id="@+id/llCamera"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="14dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/ivCamera"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@drawable/ic_live_menu_switch_selector" />
+
+      <TextView
+        android:id="@+id/tvCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_menu_camera"
+        android:textColor="@color/text_color_live_menu_selector"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llFlashlight"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="14dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/ivFlashlight"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@drawable/ic_live_menu_camera_selector" />
+
+      <TextView
+        android:id="@+id/tvFlashlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_menu_flashlight"
+        android:textColor="@color/text_color_live_menu_selector"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llMike"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="14dip"
+      android:layout_marginRight="16dip"
+      android:gravity="center_horizontal"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/ivMike"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:src="@drawable/ic_live_menu_mic_selector" />
+
+      <TextView
+        android:id="@+id/tvMike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/_text_livestudio_menu_mike_close_state"
+        android:textColor="@color/text_color_live_menu_selector"
+        android:textSize="@dimen/main_textsize_level11" />
+    </LinearLayout>
+  </LinearLayout>
+
+</merge>

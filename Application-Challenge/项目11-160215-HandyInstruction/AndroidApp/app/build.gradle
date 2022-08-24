@@ -1,0 +1,135 @@
+plugins {
+  id 'com.android.application'
+}
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+android {
+  //加载资源
+  Properties properties = new Properties()
+  InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream() ;
+  properties.load( inputStream )
+
+  signingConfigs {
+    debug {
+      storeFile file(properties.getProperty('DEBUG_STORE_FILE_PATH', './keystore/sdkdemo.jks'))
+      storePassword properties.getProperty('DEBUG_STORE_PASSWORD', '123456')
+      keyAlias = properties.getProperty('DEBUG_KEY_ALIAS', 'easemob')
+      keyPassword properties.getProperty('DEBUG_KEY_PASSWORD', '123456')
+    }
+    release {
+      storeFile file(properties.getProperty('DEBUG_STORE_FILE_PATH', './keystore/sdkdemo.jks'))
+      storePassword properties.getProperty('DEBUG_STORE_PASSWORD', '123456')
+      keyAlias = properties.getProperty('DEBUG_KEY_ALIAS', 'easemob')
+      keyPassword properties.getProperty('DEBUG_KEY_PASSWORD', '123456')
+    }
+  }
+  compileSdkVersion 29
+  buildToolsVersion "29.0.3"
+
+  defaultConfig {
+    applicationId "com.qingkouwei.handyinstruction"
+    minSdkVersion 26
+    targetSdkVersion 29
+    versionCode 1
+    versionName "1.0"
+    multiDexEnabled true
+    //为了兼容5.0以下使用vector图标
+    vectorDrawables.useSupportLibrary = true
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    //指定room.schemaLocation生成的文件路径  处理Room 警告 Schema export Error
+    javaCompileOptions {
+      annotationProcessorOptions {
+        arguments = [
+            "room.schemaLocation":"$projectDir/schemas".toString(),
+            "room.incremental":"true",
+            "room.expandProjection":"true"]
+      }
+    }
+    manifestPlaceholders = [EASEMOB_APPKEY: properties.getProperty("EASEMOB_APPKEY", "******"),
+        AGORA_APPKEY: properties.getProperty("AGORA_APKKEY", "******"),
+        BAIDU_LOCATION_APPKEY: properties.getProperty("BAIDU_LOCATION_APPKEY", "******")
+    ]
+    ndk {
+      abiFilters  "arm64-v8a","armeabi-v7a","x86","x86_64"
+    }
+    //用于设置使用as打包so时指定输出目录
+    externalNativeBuild {
+      ndkBuild {
+        //                arguments "NDK_LIBS_OUT=libs", "all"
+        abiFilters  "arm64-v8a","armeabi-v7a","x86","x86_64"
+      }
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      signingConfig signingConfigs.release
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  lintOptions {
+    abortOnError false
+  }
+  packagingOptions {//加上这写代码
+    pickFirst 'lib/x86/libsqlite.so'
+    pickFirst 'lib/x86_64/libsqlite.so'
+    pickFirst 'lib/armeabi-v7a/libsqlite.so'
+    pickFirst 'lib/arm64-v8a/libsqlite.so'
+    pickFirst 'lib/x86/libhyphenate.so'
+    pickFirst 'lib/x86_64/libhyphenate.so'
+    pickFirst 'lib/armeabi-v7a/libhyphenate.so'
+    pickFirst 'lib/arm64-v8a/libhyphenate.so'
+  }
+}
+
+dependencies {
+
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation 'androidx.appcompat:appcompat:1.2.0'
+  implementation 'com.google.android.material:material:1.2.1'
+  implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.41"
+  //ViewModel and LiveData
+  implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+  // google bottom navigation bar
+  implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
+  implementation 'androidx.navigation:navigation-fragment:2.3.2'
+  implementation 'androidx.navigation:navigation-ui:2.3.2'
+  // resolve 64k limit
+  implementation 'com.android.support:multidex:1.0.3'
+
+  implementation 'com.google.code.gson:gson:2.6.2'
+  implementation 'commons-codec:commons-codec:1.6'
+  implementation 'androidx.annotation:annotation:1.1.0'
+  // fresh and load more
+  api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+  implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+  // room
+  implementation "androidx.room:room-runtime:2.4.0-alpha04"
+  annotationProcessor "androidx.room:room-compiler:2.4.0-alpha04"
+  // parse
+  implementation 'com.parse:parse-android:1.13.1'
+
+  implementation 'io.hyphenate:ease-im-kit:3.9.4'
+  // EaseIMKit依赖，必须添加环信IM SDK
+  implementation('io.hyphenate:hyphenate-chat:3.9.4'){
+    exclude group: 'io.agora.rtc', module: 'full-rtc-basic'
+  }
+  implementation 'io.agora.rtc:full-rtc-basic:3.6.2'
+
+  implementation 'com.github.bumptech.glide:glide:4.9.0'
+}
+repositories {
+  mavenCentral()
+  flatDir{
+    dirs 'libs'
+  }
+}

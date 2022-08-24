@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:background="@color/common_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hyphenate.easeui.widget.EaseTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/em_common_title_bar_height"
+        app:titleBarTitle="@string/push_settings"
+        app:titleBarDisplayHomeAsUpEnabled="true"
+        android:background="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|left"
+            android:padding="10dip"
+            android:text="@string/push_no_disturb"
+            android:textColor="@color/btn_gray_pressed" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="@drawable/demo_default_divider_list" />
+    </LinearLayout>
+
+    <com.qingkouwei.handyinstruction.common.widget.SwitchItemView
+        android:id="@+id/switch_push_no_disturb"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/em_common_item_height"
+        app:switchItemTitle="@string/offline_push_no_disturb"
+        app:switchItemTitleSize="14sp"
+        app:switchItemClickable="false"
+        android:background="@color/white"/>
+
+    <com.qingkouwei.handyinstruction.common.widget.ArrowItemView
+        android:id="@+id/item_push_time_range"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/em_common_item_height"
+        app:arrowItemTitle="@string/demo_no_disturb_time"
+        app:arrowItemContent="@string/offline_default_time_range"
+        app:arrowItemTitleSize="14sp"
+        android:visibility="gone"
+        android:background="@color/white"/>
+
+</LinearLayout>

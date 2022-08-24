@@ -1,0 +1,157 @@
+PODS:
+  - AGEVideoLayout (1.0.4)
+  - AgoraRtcEngine_iOS (4.0.0-rc.1):
+    - AgoraRtcEngine_iOS/AINS (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/AudioBeauty (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/ClearVision (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/ContentInspect (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/PVC (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/ReplayKit (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/RtcBasic (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/SpatialAudio (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/SuperResolution (= 4.0.0-rc.1)
+    - AgoraRtcEngine_iOS/VirtualBackground (= 4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/AINS (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/AudioBeauty (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/ClearVision (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/ContentInspect (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/PVC (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/ReplayKit (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/RtcBasic (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/SpatialAudio (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/SuperResolution (4.0.0-rc.1)
+  - AgoraRtcEngine_iOS/VirtualBackground (4.0.0-rc.1)
+  - Alamofire (5.6.2)
+  - Differentiator (5.0.0)
+  - GRDB.swift (5.26.0):
+    - GRDB.swift/standard (= 5.26.0)
+  - GRDB.swift/standard (5.26.0)
+  - GrowingTextView (0.7.2)
+  - HyphenateChat (3.9.5)
+  - Introspect (0.1.4)
+  - Kingfisher (7.3.2)
+  - Moya/Combine (15.0.0):
+    - Moya/Core
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
+  - ReactorKit (3.2.0):
+    - RxSwift (~> 6.0)
+    - WeakMapTable (~> 1.1)
+  - Reusable (4.1.2):
+    - Reusable/Storyboard (= 4.1.2)
+    - Reusable/View (= 4.1.2)
+  - Reusable/Storyboard (4.1.2)
+  - Reusable/View (4.1.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - RxViewController (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - SnapKit (5.6.0)
+  - SVProgressHUD (2.2.5)
+  - Toast (4.0.0)
+  - ToastSwiftUI (0.3.3)
+  - WeakMapTable (1.2.0)
+
+DEPENDENCIES:
+  - AGEVideoLayout (~> 1.0.2)
+  - AgoraRtcEngine_iOS (= 4.0.0-rc.1)
+  - GRDB.swift
+  - GrowingTextView
+  - HyphenateChat
+  - Introspect
+  - Kingfisher
+  - Moya/Combine
+  - Moya/RxSwift
+  - ReactorKit
+  - Reusable
+  - RxDataSources
+  - RxKeyboard
+  - RxViewController
+  - SnapKit (from `https://gitee.com/mirrors/SnapKit.git`, tag `5.6.0`)
+  - SVProgressHUD
+  - Toast
+  - ToastSwiftUI (from `https://github.com/huynguyencong/ToastSwiftUI.git`, tag `0.3.4`)
+
+SPEC REPOS:
+  trunk:
+    - AGEVideoLayout
+    - AgoraRtcEngine_iOS
+    - Alamofire
+    - Differentiator
+    - GRDB.swift
+    - GrowingTextView
+    - HyphenateChat
+    - Introspect
+    - Kingfisher
+    - Moya
+    - ReactorKit
+    - Reusable
+    - RxCocoa
+    - RxDataSources
+    - RxKeyboard
+    - RxRelay
+    - RxSwift
+    - RxViewController
+    - SVProgressHUD
+    - Toast
+    - WeakMapTable
+
+EXTERNAL SOURCES:
+  SnapKit:
+    :git: https://gitee.com/mirrors/SnapKit.git
+    :tag: 5.6.0
+  ToastSwiftUI:
+    :git: https://github.com/huynguyencong/ToastSwiftUI.git
+    :tag: 0.3.4
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :git: https://gitee.com/mirrors/SnapKit.git
+    :tag: 5.6.0
+  ToastSwiftUI:
+    :git: https://github.com/huynguyencong/ToastSwiftUI.git
+    :tag: 0.3.4
+
+SPEC CHECKSUMS:
+  AGEVideoLayout: a0122fa3fde4fac227b08da8bee0c3fe8de1682c
+  AgoraRtcEngine_iOS: 1b78af79120066c230cf9281d8587813ce6a8323
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  GRDB.swift: 1395cb3556df6b16ed69dfc74c3886abc75d2825
+  GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
+  HyphenateChat: 5d79b45587802839f56e5fa77565493ad51c7bd1
+  Introspect: b62c4dd2063072327c21d618ef2bedc3c87bc366
+  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  ReactorKit: e8b11d6b9c415405f381669b095c154a05b59eca
+  Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxKeyboard: 4f5863f43b4ff0cbb2a20b94688d6b80c8a43c14
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  ToastSwiftUI: 61cdf31b3c161e4f6f7179b5a469db6f9a5591be
+  WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
+
+PODFILE CHECKSUM: 9c0f1840f3d67989fccbb477525a827e95923a61
+
+COCOAPODS: 1.11.3

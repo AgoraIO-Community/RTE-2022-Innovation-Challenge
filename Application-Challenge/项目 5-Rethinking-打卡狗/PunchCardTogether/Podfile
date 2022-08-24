@@ -1,0 +1,47 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '16.0'
+inhibit_all_warnings!
+
+target 'PunchCardTogether' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'HyphenateChat'
+  pod 'GRDB.swift'
+  pod 'Moya/Combine'
+  pod 'Moya/RxSwift'
+  pod 'Kingfisher'
+  pod 'ToastSwiftUI', :git => 'https://github.com/huynguyencong/ToastSwiftUI.git', :tag => '0.3.4' 
+  pod 'Toast'
+  pod 'Introspect'
+  pod 'ReactorKit'
+  pod 'RxDataSources'
+  pod 'RxKeyboard'
+  pod 'SnapKit', :git => 'https://gitee.com/mirrors/SnapKit.git', :tag => '5.6.0'
+  pod 'Reusable'
+  pod 'RxViewController'
+  pod 'GrowingTextView'
+  pod 'SVProgressHUD'
+  # Pods for PunchCardTogether
+  # pod 'Floaty', '~> 4.2.0'
+  pod 'AGEVideoLayout', '~> 1.0.2'
+  pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'
+  
+
+  target 'PunchCardTogetherTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'PunchCardTogetherUITests' do
+    # Pods for testing
+  end
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+    end
+  end
+end

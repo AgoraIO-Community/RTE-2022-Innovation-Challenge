@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "kago_signin_icon_white.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

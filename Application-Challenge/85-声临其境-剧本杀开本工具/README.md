@@ -7,6 +7,7 @@
 项目简介：本项目是基于 [community-app-template](https://github.com/netless-io/community-app-template) 模版 React 分支开发的【剧本杀打本工具】
 
 项目网页预览：[项目网址](https://rte-2022-six.vercel.app/)
+
 项目视频预览：[视频网址](https://scripts-res.oss-cn-shanghai.aliyuncs.com/rte2022_03.mp4)
 
 ## 安装部署指南
@@ -23,7 +24,7 @@
 
 ## 功能简介
  
-![这是图片](https://scripts-res.oss-cn-shanghai.aliyuncs.com/demo.png 项目预览)
+![这是图片](https://scripts-res.oss-cn-shanghai.aliyuncs.com/demo.png)
 
 - 项目角色：使用项目工具的用户分为【主持人】和【玩家】
 

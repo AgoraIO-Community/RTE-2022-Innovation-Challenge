@@ -1,0 +1,36 @@
+{
+  "name": "main",
+  "private": true,
+  "scripts": {
+    "dev": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "build":"meteor build ../dist-mcore --server-only --architecture os.linux.x86_64",
+    "builddir":"meteor build --directory ../dist-m --server-only --architecture os.linux.x86_64"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.9",
+    "agora-access-token": "^2.0.4",
+    "axios": "^0.27.2",
+    "crypto-js": "^4.1.1",
+    "hjcore": "git+https://gitee.com/snowwolfjay/ts-utils.git",
+    "meteor-node-stubs": "^1.2.1",
+    "rxjs": "^7.5.6"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.0.2",
+    "@types/meteor": "^2.7.*",
+    "@types/meteor-collection-hooks": "^0.8.6",
+    "@types/meteor-publish-composite": "0.0.37",
+    "@types/mocha": "^8.2.3",
+    "cross-env": "^7.0.3",
+    "typescript": "^4.6.3"
+  },
+  "meteor": {
+    "mainModule": {
+      "server": "server/main.ts"
+    },
+    "testModule": "tests/main.ts"
+  }
+}

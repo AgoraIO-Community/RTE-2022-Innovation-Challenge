@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "常用电话",
+  "usingComponents": {
+    "navbar": "../../../components/navbar/index"
+  }
+}

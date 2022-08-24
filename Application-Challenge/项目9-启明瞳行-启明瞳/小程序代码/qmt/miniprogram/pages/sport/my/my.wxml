@@ -1,0 +1,96 @@
+<!--pages/sport/my/my.wxml-->
+
+<navbar subPage="true" helpType="2" title="{{title}}"></navbar>
+<view class='userinfo' style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+</view>
+
+<view class="container sport-container">
+  <!--banner info-->
+  <view class="banner-info">
+    <label class="banner-btn" bindtap="onShowBannerInfo">活动简介</label>
+    <image src="{{activity.image}}" class="banner-info__image"></image>
+  </view>
+  <!--banner info-->
+  <!--user info-->
+  <view class="userinfo">
+    <!-- <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image> -->
+  </view>
+  <!--user info-->
+  <!--daily step-->
+  <view class="daily-step">
+    <view class="daily-step__continer">
+      <button type="primary" class="daily-step__button" bindtap="onSubmit">马上捐步</button>
+      <view class="daily-step__text small">
+        满 <label class="font-yellow"> {{activity.sport_limit}} </label> 
+        步即可捐赠步数
+      </view>
+    </view>
+  </view>
+  <!--daily step-->
+  <!--rank-->
+  <view class="rank rank-container">
+    <view class="rank-header">
+      <view class="rank-header__line"></view>
+      <view class="rank-header__text">达人榜单</view>
+    </view>
+    <view class="rank-list">
+      <block wx:for="{{topDonates}}" wx:key="unique" wx:for-index="idx">
+        <view class="rank-item">
+          <view class="rank-item__left">
+            <image src="{{item.avatar_url}}" class="rank-avatar"></image>
+            <label class="rank-item__nickname">{{item.nickname}}</label>
+            <label class="rank-item__step">今日捐赠 <text class="font-green">{{item.step}}</text> 步</label>
+          </view>
+          <view class="rank-item__right">
+            <block wx:if="{{idx == 0}}">
+              <image src="../../images/gold-medal.png"></image>
+            </block>
+            <block wx:elif="{{idx == 1}}">
+              <image src="../../images/sliver-medal.png"></image>
+            </block>
+            <block wx:elif="{{idx == 2}}">
+              <image src="../../images/copper-medal.png"></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="rank-footer"></view>
+  </view>
+  <!--rank-->
+
+  <modal class="modal" hidden="{{modal.hidden}}" no-cancel confirmText="">  
+    <view class="modal-header">
+      <label class="modal-header__cancel" bindtap="onModalHide">X</label>
+    </view>
+    <view class="modal-body">   
+       <block wx:if="{{modal.typo != 4}}">
+        <view class="modal-title">{{activity.name}}提醒您</view>
+      </block> 
+      <view wx:if="{{modal.typo == 0}}"> 
+        <view>今日捐赠 {{modal.data.step}} 步, 折合{{modal.data.exchange_money}}</view>
+        <view>累计捐赠 {{modal.data.total}} 步</view>
+        <view>打败全国 {{modal.data.defeat}} 对手</view>
+      </view>
+      <view wx:elif="{{modal.typo == 1}}"> 
+        今天已运动 <label>{{modal.data.step}}</label> 步，还差 {{modal.data.left}} 步可捐赠！
+      </view>
+      <view wx:elif="{{modal.typo == 2}}"> 
+        每日只能捐赠一次，确认是否重复捐赠！
+      </view>
+      <view wx:elif="{{modal.typo == 3}}"> 
+        <block wx:if="{{modal.message}}">
+          {{modal.message}}
+        </block>
+        <block wx:else>
+          系统繁忙，请稍后重试！
+        </block>
+      </view>
+      <view wx:elif="{{modal.typo == 4}}" class="banner-info__description"> 
+        <block wx:for="{{activity.description}}" wx:key="unique" wx:for-index="idx">
+          <view>{{item}}</view>
+        </block>
+      </view>
+    </view>
+  </modal>  
+</view>

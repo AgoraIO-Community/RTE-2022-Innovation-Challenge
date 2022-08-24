@@ -1,0 +1,21 @@
+{
+  "name": "qmtwx",
+  "version": "1.0.0",
+  "description": "启明瞳小程序",
+  "main": "qmt.js",
+  "dependencies": {
+    "@paddlejs/paddlejs-backend-webgl": "^1.1.9",
+    "@paddlejs/paddlejs-core": "^2.1.10",
+    "paddlejs": "^1.0.17",
+    "umtrack-wx": "^2.5.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.code.tencent.com/qmminipro/qmt.git"
+  },
+  "author": "深圳启明无障碍科技有公司",
+  "license": "ISC"
+}

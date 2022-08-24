@@ -1,0 +1,59 @@
+<view class="page">
+  <view class="page__bd">
+
+    <view class="weui-cells__title">操作设置</view>
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='openSetting'>
+        <view class="weui-cell__bd">打开设置</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='scanCode'>
+        <view class="weui-cell__bd">打开扫一扫</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='make110Phone'>
+        <view class="weui-cell__bd">报警电话</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+    </view>
+
+
+    <view class="weui-cells__title">关于我们</view>
+    <view class="weui-cells weui-cells_after-title">
+
+      <navigator url="/pages/webview/webview?url=https://mp.weixin.qq.com/s/gd4ra3Cx-SRhkJqFCzw1gw&title=服务条款隐私声明" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <text>服务条款隐私声明</text>
+        </view>
+        <view class="weui-cell__ft ∏weui-cell__ft_in-access"></view>
+      </navigator>
+
+      <!-- <navigator url="/pages/webview/webview?url=gd4ra3Cx-SRhkJqFCzw1gw&title=隐私声明" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <text>隐私声明</text>
+        </view>
+        <view class="weui-cell__ft ∏weui-cell__ft_in-access"></view>
+      </navigator> -->
+
+      <!-- <navigator url="/pages/webview/webview?url=gd4ra3Cx-SRhkJqFCzw1gw&title=使用说明" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <text>使用说明</text>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+       -->
+      <navigator url="/pages/webview/webview?url=https://mp.weixin.qq.com/s/gd4ra3Cx-SRhkJqFCzw1gw&title=关于我们" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <text>关于我们</text>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+
+  </view>
+ 
+</view>

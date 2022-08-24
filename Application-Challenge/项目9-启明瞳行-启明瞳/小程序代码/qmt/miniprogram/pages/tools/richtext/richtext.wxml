@@ -1,0 +1,24 @@
+
+
+<navbar subPage="true" helpType="1" title="文章内容"></navbar>
+
+<view class="container">
+    <view class='head' style="top: {{sysInfo.height + sysInfo.statusBarHeight + 3}}px">
+        <rich-text nodes='<img class="word_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_fontsize1.png" alt="30号字体">' data-fontsize='30' bindtap='bindWordTap'></rich-text>
+        <rich-text nodes='<img class="word_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_fontsize2.png" alt="40号字体">' data-fontsize='40' bindtap='bindWordTap'></rich-text>
+        <rich-text nodes='<img class="word_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_fontsize3.png" alt="50号字体">' data-fontsize='50' bindtap='bindWordTap'></rich-text>
+        <rich-text nodes='<img class="word_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_fontsize4.png" alt="60号字体">' data-fontsize='60' bindtap='bindWordTap'></rich-text>
+        <rich-text nodes='<img class="word_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_fontsize5.png" alt="100号字体">' data-fontsize='100' bindtap='bindWordTap'></rich-text>
+        <rich-text nodes='<img class="word_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_fontsize6.png" alt="120号字体">' data-fontsize='120' bindtap='bindWordTap'></rich-text>
+    </view>
+    <view class='content_container' style="font-size: {{fontSize}}; margin-top: {{sysInfo.height + sysInfo.statusBarHeight + 3}}px">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+    <view class='foot'>
+        <button style="padding: 0;margin: 0;width: 32px;height: 32px;border: none;" class="share_button" open-type="share" plain="true" size="mini">
+            <rich-text nodes='<img class="share_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_share.png" alt="转发">' ></rich-text>
+        </button>
+        <rich-text nodes='<img class="sound_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_voice.png" alt="播报">' class="sound_icon" bindtap='bindSoundTap'></rich-text>
+        <rich-text nodes='<img class="copy_icon" src="https://lg-8d7pfbfk-1256074910.cos.ap-shanghai.myqcloud.com/ic_copy.png" alt="复制">'  bindtap='bindCopyTap'></rich-text>
+    </view>
+</view>

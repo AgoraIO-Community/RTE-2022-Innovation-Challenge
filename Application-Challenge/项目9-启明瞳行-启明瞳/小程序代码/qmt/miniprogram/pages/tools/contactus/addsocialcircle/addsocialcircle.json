@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "加入群聊",
+  "usingComponents": {
+    "navbar": "../../../../components/navbar/index",
+    "cell": "plugin://contactPlugin/cell",
+    "chatGroup": "plugin://chatGroupPlugin/cell"
+  }
+}

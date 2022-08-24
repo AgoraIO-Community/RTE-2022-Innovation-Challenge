@@ -1,0 +1,115 @@
+<!--miniprogram/pages/tools/tel/tel.wxml-->
+<navbar subPage="true" helpType="1" title="常用电话"></navbar>
+
+<view class="page__bd" style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+
+  <view class="weui-panel">
+    <view class="weui-panel__hd">火车订票</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <navigator bindtap='makePhoneCall' data-number="95105105" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_train.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>电话购票</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+          <navigator bindtap='makePhoneCall' data-number="12306" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_train.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>客服电话</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+        </view>
+      </view>
+    </view>
+
+
+    <view class="weui-panel__hd">网约车</view>
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_small-appmsg">
+        <view class="weui-cells weui-cells_in-small-appmsg">
+          <navigator bindtap='makePhoneCall' data-number="400-000-0999" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_local_taxi.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>滴滴出行</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+          <navigator bindtap='makePhoneCall' data-number="101-001-66" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_local_taxi.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>美团打车</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+          <navigator bindtap='makePhoneCall' data-number="10101111" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_local_taxi.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>神州专车</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+          <navigator bindtap='makePhoneCall' data-number="10105678" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_local_taxi.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>首汽约车</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+          <navigator bindtap='makePhoneCall' data-number="400-608-1111" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_local_taxi.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>曹操专车</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+
+          <navigator bindtap='makePhoneCall' data-number="400-1630666" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_local_taxi.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>嘀嗒拼车</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+          <navigator bindtap='makePhoneCall' data-number="400-821-8866" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+              <image src="/image/ic_local_taxi.png" style="width: 20px;height: 20px;margin-right: 5px" />
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>享道出行</view>
+            </view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+          </navigator>
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

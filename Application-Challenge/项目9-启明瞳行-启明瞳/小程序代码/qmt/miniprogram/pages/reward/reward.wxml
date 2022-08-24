@@ -1,0 +1,19 @@
+<!--miniprogram/pages/reward/reward.wxml-->
+<view class="page">
+	<navbar subPage="true" app="{{focusInfo[9]}}" helpType="1" title="{{title}}"></navbar>
+	<view class="page_bd">
+		<image src="/image/ic_qmt.png" class="ic_qmt" style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight + 16}}px"></image>
+		<text class="zjn_text" aria-role="text"  aria-label="周江南">周江南</text>
+		<text class="zjn_word_text" aria-role="text"  aria-label="您的支持就是我的动力">“您的支持就是我的动力”</text>
+		<text class="reward_text" aria-role="text"  aria-label="赞赏金额">赞赏金额</text>
+		<view class="reward_container">
+			<view wx:for="{{rewardMatrix}}" wx:key="unique" wx:for-index="idx"  class="reward_item_row_container">
+				<view wx:for="{{item}}" wx:key="unique" bindtap="selectRewardAmount" data-rewardAmount="{{item}}" data-index="{{idx}}_{{index}}" class="reward_item_container" aria-role="button"  aria-label="{{item}}元" style="{{((idx == selectedIndex0) && (index == selectedIndex1)) ? 'background-color: lightyellow' : ''}}">
+					<text>{{item}}元</text>
+				</view>
+			</view>
+		</view>
+		<text class="other_text" bindtap="gotoOtherReward" aria-role="text"  aria-label="其他金额">其他金额</text>
+		<!-- <text class="receive_text" aria-role="text" aria-label="收到{{rewardCount}}次赞赏">收到{{rewardCount}}次赞赏</text> -->
+	</view>
+</view>

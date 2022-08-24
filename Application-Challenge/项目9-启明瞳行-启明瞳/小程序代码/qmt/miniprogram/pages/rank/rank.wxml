@@ -1,0 +1,19 @@
+<view class="navbar" style="padding-top: {{paddingTop}}px;height: {{height}}px">
+    <button bindtap="main()"><text>启明瞳小程序</text></button>
+</view>
+
+<view class="container" style="margin-top: {{paddingTop + height}}px">
+    <table>
+        <tr class="myScore">
+            <td>第{{myScore.rank}}名</td>
+            <td>{{myScore.nickname}}</td>
+            <td>{{myScore.score}}分</td>
+        </tr>
+        <tr wx:for="{{scores}}" wx:key="{{item.rank}}">
+            <td>第{{item.rank}}名</td>
+            <td>{{item.nickname}}</td>
+            <td>{{item.score}}分</td>
+        </tr>
+    </table>
+    <button type="primary" style="width: 90%" bindtap="jumpToGame">去玩跳一跳小游戏</button>
+</view>

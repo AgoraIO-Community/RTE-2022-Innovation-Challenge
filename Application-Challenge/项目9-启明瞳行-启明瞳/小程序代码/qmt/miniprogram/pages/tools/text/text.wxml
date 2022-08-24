@@ -1,0 +1,25 @@
+<navbar subPage="true" helpType="1" title="文本信息"></navbar>
+
+<view class="container" style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+  <view class='head' style="top: {{sysInfo.height + sysInfo.statusBarHeight + 3}}px">
+    <image class="word_icon" src="../../../image/ic_text_fields_24px.svg" aria-role="button" aria-label="30号字体" data-fontsize='30' bindtap='bindWordTap' />
+    <image class="word_icon" src="../../../image/ic_text_fields_24px.svg" aria-role="button" aria-label="40号字体" data-fontsize='40' bindtap='bindWordTap' />
+    <image class="word_icon" src="../../../image/ic_text_fields_24px.svg" aria-role="button" aria-label="50号字体" data-fontsize='50' bindtap='bindWordTap' />
+    <image class="word_icon" src="../../../image/ic_text_fields_24px.svg" aria-role="button" aria-label="60号字体" data-fontsize='60' bindtap='bindWordTap' />
+    <image class="word_icon" src="../../../image/ic_text_fields_24px.svg" aria-role="button" aria-label="100号字体" data-fontsize='100' bindtap='bindWordTap' />
+    <image class="word_icon" src="../../../image/ic_text_fields_24px.svg" aria-role="button" aria-label="120号字体" data-fontsize='120' bindtap='bindWordTap' />
+  </view>
+  <view class='content_container'>
+    <text class='content' style='font-size: {{fontSize}}'>{{text}}</text>
+  </view>
+  <view class='foot'>
+    <button style="padding: 0;margin: 0;width: 32px;height: 32px;border: none;" class="share_button" open-type="share" plain="true" size="mini">   
+      <image class="share_icon" src="../../../image/ic_share_24px.svg" aria-role="button" aria-label="分享"  />
+    </button>
+  
+    <image  class="sound_icon" src="../../../image/ic_volume_up_18px.svg" aria-role="button" aria-label="播报"  />
+   
+    <image  class="copy_icon" src="../../../image/ic_content_copy_48px.svg" aria-role="button" aria-label="复制"  />
+
+  </view>
+</view>

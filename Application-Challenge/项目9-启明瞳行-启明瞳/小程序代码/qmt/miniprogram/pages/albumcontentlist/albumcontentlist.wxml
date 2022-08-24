@@ -1,0 +1,20 @@
+<!--miniprogram/pages/list/list.wxml-->
+<navbar subPage="true" helpType="4" title="{{title}}"></navbar>
+<view style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px"></view>
+<block wx:for="{{albumContentList}}" wx:key = "url" >
+    <navigator url="/pages/tools/richtext/richtext?id={{item.id}}&appName={{item.appName}}" class="navigator">
+        <view class="weui-cell__hd">
+            <image src="{{item.thumbUrl}}" style="width: 60px;height: 60px;margin-right: 10px" />
+        </view>
+        <view style="width: 100%">
+            <view class="navigator-text">{{item.title}}</view>
+            <view>
+                <view style="font-size: 14px; color: gray; float: left; margin-right: 10px">{{item.updateTime}}</view>
+                <view style="font-size: 14px; color: gray; float: left">{{item.author}}</view>
+            </view>
+
+        </view>
+
+    </navigator>
+</block>
+

@@ -1,0 +1,120 @@
+{
+  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "setting": {
+    "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
+    "es6": false,
+    "postcss": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "autoAudits": false,
+    "newFeature": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "useIsolateContext": true,
+    "nodeModules": false,
+    "enhance": true,
+    "useMultiFrameRuntime": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "ignoreUploadUnusedFiles": true,
+    "checkInvalidKey": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useStaticServer": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false
+  },
+  "compileType": "miniprogram",
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "小程序关联公众号",
+          "pathName": "pages/qmt/qmt",
+          "query": "",
+          "scene": "1011"
+        },
+        {
+          "name": "扫小程序码场景",
+          "pathName": "pages/qmt/qmt",
+          "query": "",
+          "scene": "1047"
+        },
+        {
+          "name": "showhelp外部跳入指定页面模式",
+          "pathName": "pages/showhelp/showhelp",
+          "query": "helpInfoId=1229&offerHelpInfoId=1375",
+          "scene": "1014"
+        },
+        {
+          "name": "audioplayer外部跳入指定页面模式",
+          "pathName": "pages/audioplayer/audioplayer",
+          "query": "initFlag=1&albumId=3330975&trackId=11174256",
+          "scene": 1014
+        },
+        {
+          "name": "qmt",
+          "pathName": "pages/qmt/qmt",
+          "query": ""
+        },
+        {
+          "name": "discovery",
+          "pathName": "pages/discovery/discovery",
+          "query": ""
+        },
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "scancode",
+          "pathName": "pages/tools/scancode/scancode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tools/contactus/contactus",
+          "pathName": "pages/tools/contactus/contactus",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/otherreward/otherreward",
+          "pathName": "pages/otherreward/otherreward",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "srcMiniprogramRoot": "miniprogram/",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "projectname": "%E5%90%AF%E6%98%8E%E7%9E%B3",
+  "libVersion": "2.24.1",
+  "appid": "wxce8e592adfc78ceb"
+}

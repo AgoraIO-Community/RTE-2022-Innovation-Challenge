@@ -1,0 +1,12 @@
+<!-- <video  wx:if="isShowVideo" src="{{videoSrc}} " style="width: 100%; height: 0%;"></video> -->
+<form bindsubmit="send" report-submit='true'>
+  <camera wx:if="{{camerashow}}" device-position="{{device}}" flash="auto" binderror="error" style="width: 100%; height: 100%;">
+    <cover-view class='coverview'>
+      <button class="list" bindtap="back">返回主页</button>
+      <button class="list" bindtap="checkDevice">切换摄像头</button>
+      <button form-type="submit" class="list lsitflex3" bindtap="video">{{videoShow}}</button>
+      <!-- <button class="list" bindtap="play">播放</button> -->
+    </cover-view>
+  </camera>
+</form>
+<audio  src="{{src}}" id="audio" ></audio>

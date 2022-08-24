@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "文本信息",
+  "usingComponents": {
+    "navbar": "../../../components/navbar/index"
+  }
+}

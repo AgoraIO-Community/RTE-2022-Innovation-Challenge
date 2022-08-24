@@ -1,0 +1,164 @@
+<!--pages/my/my.wxml-->
+
+<view class="page">
+	<navbar app="{{focusInfo[9]}}" helpType="1" title="{{title}}"></navbar>
+	<view class='page_bd' style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+
+  
+		<view class="weui-cells weui-cells_after-title content_0">
+			<view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+				<view class="weui-cell__hd user_avatar">
+					<image src="{{logged ? userInfo.avatarUrl : '/image/ic_user_unlogin.png'}}" style="margin-right: 5px;vertical-align: middle;width:64px; height: 64px;" aria-hidden='true' />
+
+					<!-- <image  src="{{userInfo.avatarUrl}}" aria-hidden='true'></image> -->
+				</view>
+				<view class="weui-cell__bd userName_container">
+					<view>
+						<text class='userName'>{{userInfo.nickName}}</text>
+					</view>
+				</view>
+				<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+			</view>
+		</view>
+
+	</view>
+
+
+  <ace-cells title="我的数据">
+   <!-- <ace-cell link hover value="我的设置">
+    <button class='fullfill_button' open-type='openSetting' aria-label="设置">
+					</button>
+   </ace-cell> -->
+    <ace-cell link hover url='/pages/getHistoryList/getHistoryList' value="我的求助历史" />
+    <ace-cell link hover url='/pages/sport/my/my' value="我的运动数据" />
+  </ace-cells>
+
+	<view class="weui-panel__bd">
+		<view class="weui-media-box weui-media-box_small-appmsg">
+			<view class="weui-cells weui-cells_in-small-appmsg">
+				<navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_settings.png" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>我的设置</view>
+					</view>
+					<button class='fullfill_button' open-type='openSetting' aria-label="我的设置">
+					</button>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+
+
+	<view class="weui-panel__hd">加下面微信联系我们</view>
+	<cell bind:startmessage='startmessage' contactText='2' bind:completemessage="completemessage" plugid='bc133f1dcb26ca36e4f56d1f8961f127' paddingStyle='5' />
+	<cell bind:startmessage='startmessage' buttonText='3' bind:completemessage="completemessage" plugid='f1a6a053a4e7a45b0abc03bad45288ca' paddingStyle='5' />
+	<cell bind:startmessage='startmessage' buttonText='1' bind:completemessage="completemessage" plugid='93053d1ef78e9ca7f5f90185c1274737' paddingStyle='5' />
+
+
+	<view class="weui-panel__hd">推荐与反馈</view>
+	<view class="weui-panel__bd">
+		<view class="weui-media-box weui-media-box_small-appmsg">
+			<view class="weui-cells weui-cells_in-small-appmsg">
+				<navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_share.png" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>分享好友</view>
+					</view>
+					<button class='fullfill_button' open-type='share' aria-label="分享好友">
+					</button>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+       <!-- todo   跟换企业客服的功能 -->
+				<!-- <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_forum.png" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>客服聊天</view>
+					</view>
+					<button class='fullfill_button' open-type='contact' aria-label="客服聊天"></button>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator> -->
+
+			</view>
+		</view>
+	</view>
+
+	<view class="weui-panel__hd">关于我们</view>
+	<view class="weui-panel__bd">
+		<view class="weui-media-box weui-media-box_small-appmsg">
+			<view class="weui-cells weui-cells_in-small-appmsg">
+
+				<navigator url="/pages/reward/reward" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_good.svg" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>打赏启明瞳开发者</view>
+					</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+
+				<navigator bindtap='setClipboard' data-content="qmtfwh" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_visibility.png" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>复制启明瞳微信号</view>
+					</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+
+				<navigator bindtap='setClipboard' data-content="704750180" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_group_add.png" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>复制QQ群号</view>
+					</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+
+				<navigator url="/pages/webview/webview?url=https://mp.weixin.qq.com/s/gd4ra3Cx-SRhkJqFCzw1gw&title=服务条款隐私声明" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_priority.png" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>服务条款</view>
+					</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+
+				<navigator url='/pages/webview/webview?url=https://mp.weixin.qq.com/s/gd4ra3Cx-SRhkJqFCzw1gw&title=关于我们' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+					<view class="weui-cell__hd">
+						<image src="/image/ic_person.png" style="width: 20px;height: 20px;margin-right: 5px" />
+					</view>
+					<view class="weui-cell__bd weui-cell_primary">
+						<view>关于我们</view>
+					</view>
+					<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+				</navigator>
+
+				<!-- 当页面中的跳转路径（/pages/fm/find/find）与app.json中配置的tabBar 相重复时，页面中的跳转会失效 -->
+				<!-- <navigator target='self' open-type='navigate' url="/pages/audioplayer/audioplayer?albumId=3330975&trackId=84563825&initFlag=1" class="weui-cell weui-cell_access" hover-class="weui-cell_active" aria-label='点击跳转'>
+          <view class="weui-cell__hd">
+            <image src="/image/ic_person.png" style="width: 20px;height: 20px;margin-right: 5px" />
+          </view>
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>测试播放器</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator> -->
+
+			</view>
+		</view>
+	</view>
+
+	<ace-tabbar selected='3'></ace-tabbar>
+
+</view>

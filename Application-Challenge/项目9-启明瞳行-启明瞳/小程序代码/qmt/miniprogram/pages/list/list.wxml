@@ -1,0 +1,10 @@
+<!--miniprogram/pages/list/list.wxml-->
+<navbar subPage="true" helpType="4" title="{{title}}"></navbar>
+<view style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px"></view>
+<block wx:for="{{listArray}}" wx:key = "url" >
+ <navigator url="/pages/webview/webview?url={{item.url}}&title={{item.title}}" class="navigator">
+    <view class="navigator-text">{{item.title}}</view>
+    <view class="navigator-arrow"></view>
+  </navigator>
+</block>
+

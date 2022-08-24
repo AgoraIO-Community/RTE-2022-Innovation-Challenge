@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "咨询",
+  "usingComponents": {
+    "navbar": "../../components/navbar/index"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "输入注册账号的手机号",
+  "usingComponents": {
+    "navbar": "../../components/navbar/index"
+  }
+}

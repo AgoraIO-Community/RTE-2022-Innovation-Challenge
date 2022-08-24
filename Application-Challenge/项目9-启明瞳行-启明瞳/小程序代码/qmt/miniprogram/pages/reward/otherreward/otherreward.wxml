@@ -1,0 +1,16 @@
+<!--miniprogram/pages/otherreward/otherreward.wxml-->
+<!--miniprogram/pages/reward/reward.wxml-->
+<view class="page">
+	<navbar  subPage="true" app="{{focusInfo[9]}}" helpType="1" title="{{title}}"></navbar>
+	<view class="page_bd">
+		<image src="/image/ic_qmt.png" class="ic_qmt" style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight + 16}}px"></image>
+		<text class="zjn_text" aria-role="text" aria-label="周江南">给周江南赞赏</text>
+		<view class="reward_input_container">
+			<input class="reward_input" type="number" confirm-type="done" bindconfirm="rewardConfirm" bindinput="rewardInput"></input>
+			<text class="reward_unit">元</text>
+		</view>
+    <view class="submit_button_container" aria-role="button" aria-label="赞赏">
+      <button class="submit_button" bindtap="rewardSubmit">赞赏</button>
+    </view>
+	</view>
+</view>

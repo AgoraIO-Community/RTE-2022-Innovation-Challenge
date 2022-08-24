@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "voice-view": "../../components/voice-view/voice-view",
+    "navbar": "../../components/navbar/index",
+    "message-input": "../../components/message-input/index"
+  },
+"navigationBarTitleText": "帮助"
+}

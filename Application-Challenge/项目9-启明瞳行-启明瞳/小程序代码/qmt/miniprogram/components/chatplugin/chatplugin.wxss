@@ -1,0 +1,42 @@
+/* components/chatplugin/chatplugin.wxss */
+/* 加企业微信外部群插件 */
+.chat-plugin {
+  margin: 20rpx;
+  border-radius: 10rpx;
+  background-image: 
+  radial-gradient(
+    circle at calc(100vw - 40rpx) 8rpx, 
+    transparent 6rpx, 
+    #3e88f2 6rpx, 
+    #3e88f2 0rpx);
+    background-position: 0 0;
+    background-size: calc(100vw - 40rpx) 18rpx;
+    background-repeat: no-repeat repeat;
+  width: calc(100vw - 40rpx);
+  height: 160rpx;
+  display: flex;
+  align-items: center;
+}
+.chat-plugin-yline {
+  width: 2rpx;
+  /* background-color: white; */
+  height: 100%;
+  margin-right: 40rpx;
+  border-left: 2rpx dashed #ffffff;
+}
+.chat-plugin-text {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: black;
+  flex-grow: 1;
+}
+.chat-plugin-item{
+  margin-left: 20rpx;
+  font-size: 20rpx;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 2;
+}

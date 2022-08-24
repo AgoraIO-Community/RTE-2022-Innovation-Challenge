@@ -1,0 +1,61 @@
+/* pages/bindingphone/inputphone.wxss */
+.section{
+  font-size:14px;
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  width:95%;
+}
+.section_right{
+  float:right;
+margin-top:-21px;
+}
+.xzdq{
+  width: 0;
+  display: none;
+}
+.section_right image{
+  width: 10px;
+  height: 10px;
+}
+
+.section_1{
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+}
+.section_title{
+  float:left;
+  line-height: 26px;
+  width:30%;
+}
+.section_input{
+   display: flex;
+   width: 70%;
+}
+
+.btn-area{
+  margin:18px;
+
+}
+.btn-area button{
+  color: #fff;
+}
+ .btn-area{
+  color:#ffffff !important;
+} 
+
+.section_input input{
+  font-size: 16px;
+}
+
+.jiantou image{
+  width: 10px;
+  height: 10px;
+}
+
+
+.sj_btn{
+  background:#FF6347;
+  color:#fff;
+  font-size:26rpx;
+}

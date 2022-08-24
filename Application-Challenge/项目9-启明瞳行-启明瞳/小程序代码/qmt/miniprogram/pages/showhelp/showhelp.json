@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "求助信息汇总",
+  "usingComponents": {
+    "navbar": "../../components/navbar/index",
+    "i-rate": "../../components/rate/index",
+    "i-cell-group": "../../components/cell-group/index",
+    "i-cell": "../../components/cell/index",
+    "voice-view": "../../components/voice-view/voice-view"
+  }
+}

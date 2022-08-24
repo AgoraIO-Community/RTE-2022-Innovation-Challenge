@@ -1,0 +1,10 @@
+<navbar subPage="true" helpType="3" title="短视频求助"></navbar>
+
+<video wx:if="{{isShowVideo}}" style="width: 100%; height: 90%;  margin-top: 10%" src="{{videoSrc}} "></video>
+<camera wx:if="{{camerashow}}" device-position="back" flash="auto" binderror="error"
+  style="width: 100%; height: 82%;  margin-bottom: 10%">
+</camera>
+<view class='bottom-content'>
+  <button type="default" class='grid' aria-role="button" bindtap="video">{{isRecord ? '结束拍摄' : '拍摄'}}</button>
+  <button aria-role="button" type="default" bindtap="subscribeMessage">发送给志愿者</button>
+</view>

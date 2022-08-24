@@ -1,0 +1,55 @@
+<!--miniprogram/pages/voiproom/voiproom.wxml-->
+<navbar subPage="true" helpType="3" bind:app="openApp" bind:share="share"  title="视频通话求助"></navbar>
+<view style="margin-top:{{sysInfo.height + sysInfo.statusBarHeight}}px; ">
+      <block wx:for="{{openIdList}}"  wx:key="*this"  >
+        <view wx:if="{{index === 0 }}" > 
+          <voip-room style="width:100%" openid="{{ askOpenid }}" flash="{{flash}}" mode="{{selfOpenId === item ? 'camera' : 'video'}}" device-position="{{devicePosition}}" binderror="consoleError"></voip-room>
+         </view>
+         <!-- <view wx:else>  -->
+          <!-- <voip-room openid="{{ item }}" mode="{{selfOpenId === item ? 'camera' : 'video'}}" device-position="back" binderror="consoleError"></voip-room> -->
+         <!-- </view> -->
+    </block>
+  </view>
+
+
+<view style="display:none;color:#fff">
+  {{openIdList.length}} - {{joinVoIPChat}}
+  <view>{{openIdList}}</view>
+  <view>signature:{{signature}}</view>
+  <view>nonceStr:{{nonceStr}}</view>
+  <view>timeStamp:{{timeStamp}}</view>
+  <view>groupId:{{groupId}}</view>
+  <view>cid:{{cid}}</view>
+  <view>selfOpenId:{{selfOpenId}}</view>
+  <view>session_key:{{session_key}}</view>
+</view>
+<view style="height:60px;"></view>
+
+<!-- <view class="volunteer_avatar">
+  <button wx:if="{{cid != selfOpenId}}" open-type="share"> 
+    分享到亲友群寻求帮助
+  </button>
+</view> -->
+
+<view class="share_addhelper">
+  <button wx:if="{{cid == selfOpenId}}" open-type="share"> 
+    分享到亲友群寻求帮助
+  </button>
+</view>
+<view class="room_menu">
+  <view bindtap="goMuteConfig" data-v="muteMicrophone" aria-role="button" aria-label="{{room_menu[0]}}"><image src="{{room_menu[0] === '麦克风已打开' ? '../../image/ic_keyboard_voice.svg' : '../../image/ic_settings_voice.svg'}}"></image></view>
+  <view bindtap="goMuteConfig" data-v="muteEarphone" aria-role="button" aria-label="{{room_menu[3]}}" ><image src="{{room_menu[3] === '声音已打开' ? '../../image/ic_volume_up_l.svg' : '../../image/ic_volume_off.svg'}}"></image></view>
+  <!-- <view bindtap="checkFlash" aria-role="button" aria-label="{{flash === true ? '闪光灯已打开' : '闪光灯已关闭'}}"><image src="../../image/ic_lightbulb_outline.svg"></image></view> -->
+  <view bindtap="checkDevice" wx:if="{{askOpenid === selfOpenId}}" aria-role="button" aria-label="{{devicePosition === 'back' ? '切换到前置摄像头' : '切换到后置摄像头'}}"><image src="../../image/switchCam.svg"></image></view>
+  <view bindtap="goExit" wx:if="{{selfOpenId == cid}}" aria-role="button" aria-label="结束求助"><image src="../../image/ic_exit_to_app.svg"></image></view>
+  <view bindtap="goExit" aria-role="button" aria-label="退出帮助"  wx:else><image src="../../image/ic_exit_to_app.svg"></image></view>
+</view>
+
+<wxs module="m1">
+  function defineIndexOf(str, val) {
+    return str.indexOf(val);
+  }
+  module.exports = {
+    indexOf: defineIndexOf
+  }
+</wxs>

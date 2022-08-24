@@ -1,0 +1,21 @@
+<!--pages/bindingphone/inputphone.wxml-->
+<navbar subPage="true" app="{{focusInfo[2]}}" helpType="1" title="绑定手机号"></navbar>
+<view class='userinfo' style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+
+</view>
+
+<view class="content" aria-hidden="{{ariaHidden}}">
+ <form bindsubmit="savePhone">
+   <view class="btn-area">
+   </view>
+   <view class="section">
+     <view class="section_title">注册手机号：</view>
+     <input class="section_input" name="mobile" type="number" maxlength="11" value="{{mobile}}" confirm-type="done"
+       placeholder="请输入注册账号的手机号" focus="true"  bindconfirm= "savePhone">
+     </input>
+   </view>
+   <view class="btn-area">
+     <button formType="submit" style='background-color:#04be01;'>确认去注册账户</button>
+   </view>
+ </form>
+</view>

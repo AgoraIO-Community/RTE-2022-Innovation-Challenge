@@ -1,0 +1,38 @@
+/**videohelp.wxss**/
+
+page {
+  background-color: #000;
+  height: 100%;
+  position: fixed;
+}
+
+.coverview {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  position: relative;
+  width: 100%;
+  background: none;
+  border: none;
+  flex: 1;
+  font-size: 100rpx;
+}
+
+.lsitflex2 {
+  flex: 2;
+}
+.lsitflex3 {
+  flex: 3;
+}
+
+
+.bottom-content {
+  position: fixed;
+  background-color: #000;
+  bottom: 0rpx;
+  width: 100%;
+}

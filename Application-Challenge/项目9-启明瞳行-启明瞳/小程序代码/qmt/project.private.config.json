@@ -1,0 +1,144 @@
+{
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": true,
+    "autoAudits": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "小程序关联公众号",
+          "pathName": "pages/qmt/qmt",
+          "query": "",
+          "scene": "1011"
+        },
+        {
+          "name": "扫小程序码场景",
+          "pathName": "pages/qmt/qmt",
+          "query": "",
+          "scene": "1047"
+        },
+        {
+          "name": "showhelp外部跳入指定页面模式",
+          "pathName": "pages/showhelp/showhelp",
+          "query": "helpInfoId=1229&offerHelpInfoId=1375",
+          "scene": "1014"
+        },
+        {
+          "name": "audioplayer外部跳入指定页面模式",
+          "pathName": "pages/audioplayer/audioplayer",
+          "query": "initFlag=1&albumId=3330975&trackId=11174256",
+          "scene": 1014
+        },
+        {
+          "name": "my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "discovery",
+          "pathName": "pages/discovery/discovery",
+          "query": ""
+        },
+        {
+          "name": "pages/getHistoryList/getHistoryList",
+          "pathName": "pages/getHistoryList/getHistoryList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/videochatehelp/videochatehelp",
+          "pathName": "pages/videochatehelp/videochatehelp",
+          "query": "channel=llc",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/otherreward/otherreward",
+          "pathName": "pages/otherreward/otherreward",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/askhelp/askhelp",
+          "pathName": "pages/askhelp/askhelp",
+          "query": "",
+          "scene": 1173,
+          "referrerInfo": {
+            "materials": [
+              {
+                "type": "image/jpeg",
+                "path": "C:\\Users\\Administrator\\Desktop\\780.jpg",
+                "name": "780.jpg",
+                "size": 103387
+              }
+            ]
+          }
+        },
+        {
+          "name": "pages/inp",
+          "pathName": "pages/getHistoryInfo/getHistoryInfo",
+          "query": "helpid=5916",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/getHistoryInfo/getHistoryInfo",
+          "query": "helpid=5941&imgHash=1088",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/askhelp/askhelp",
+          "query": "imgUrl=http%3A%2F%2Ftmp%2FK0kopofSqt8M7137b2798ab3f935315c8301720b7515.jpg&doType=ocr",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "rank",
+          "pathName": "pages/rank/rank",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "微信运动",
+          "pathName": "pages/sport/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/fm/find/find",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/tools/text/text",
+          "query": "text=%E6%AD%A4%E4%BA%BA%E5%83%8F%E5%B9%B4%E9%BE%84%E7%BA%A637%EF%BC%8C%E9%9D%A2%E9%83%A8%E8%A1%A8%E6%83%85%E4%B8%BA%E6%97%A0%E6%83%85%E7%BB%AA%EF%BC%8C%E6%80%A7%E5%88%AB%E4%B8%BA%E7%94%B7%EF%BC%8C%E5%9B%BE%E7%89%87%E5%BE%97%E5%88%86%E4%B8%BA46.07%2C",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/tools/contactus/contactus",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "projectname": "%E5%90%AF%E6%98%8E%E7%9E%B3%E5%A3%B0%E7%BD%91",
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "2.25.1"
+}

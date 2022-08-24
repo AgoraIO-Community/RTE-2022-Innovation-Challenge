@@ -1,0 +1,54 @@
+/* pages/my/my.wxss */
+
+/* pages/mission_1/mission_1.wxss */
+
+.user_avatar {
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 64px;
+  height: 64px;
+}
+
+.content_1 {
+  margin-top: 24px;
+}
+
+.content_2 {
+  margin-top: -1px;
+}
+
+.content_3 {
+  margin-top: 56px;
+}
+
+.userName_container {
+  margin-left: 8px;
+}
+
+.userAccount {
+  color: grey;
+  font-size: 12px;
+}
+
+.fullfill_button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fullfill_button::after {
+  border: none;
+}
+
+.fullfill_button_container {
+  height: 24px;
+}
+
+.fullfill_button_text {
+  position: absolute;
+  left: 16px;
+}
+

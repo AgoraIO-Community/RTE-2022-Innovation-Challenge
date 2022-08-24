@@ -1,0 +1,3 @@
+<!--pages/webview/webview.wxml-->
+<web-view src="{{url}}"></web-view>
+<ad unit-id="adunit-a080609513cd1b6c" ad-intervals="30"></ad>

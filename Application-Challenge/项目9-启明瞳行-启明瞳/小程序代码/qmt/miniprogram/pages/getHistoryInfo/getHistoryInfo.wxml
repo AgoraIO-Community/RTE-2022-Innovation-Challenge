@@ -1,0 +1,83 @@
+<navbar subPage="true" helpType="3" title="帮助"></navbar>
+<view style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px;width:100%;height:{{sysInfo.screenHeight - sysInfo.height - sysInfo.statusBarHeight}}px">
+
+  <!-- 智能识别 开始 -->
+  <view class="container" aria-label="{{item.text}}">
+    <scroll-view class="scrool-view" scroll-y="true" scroll-x="false" scroll-into-view="{{scrolltop}}" enable-back-to-top="true" aria-label="{{item.text}}">
+      <view class="chat-list" aria-label="{{item.text}}">
+        <block wx:for="{{chatList}}" wx:key="time">
+          <!-- 回复输出 -->
+          <view id="roll{{index + 1}}" class="chat-left" wx:if="{{item.avatar}}" aria-role="text" aria-label="{{item.nickname}}回答：{{item.text}}">
+            <image class="avatar-img-left" src="{{item.avatar}}" alt="头像"></image>
+            <view wx:if="{{item.orientation === 'l'}}">
+              <view wx:for="{{item.text}}" wx:key="ai" wx:for-item="tmp" wx:for-index="idx">
+                <view class='chat-text-left' data-text='{{tmp}}' bindtap='bindTextTap'>
+                  <text>{{tmp}}</text>
+                </view>
+              </view>
+            </view>
+            <view wx:if="{{item.orientation == 'f'}}">
+              <voice-view id="voice-view" url="{{item.text[0]}}" length="{{item.duration}}" playing="{{playing}}" bind:voiceClickss='voiceClick' index="{{index}}" class="chat-voice-left"></voice-view>
+            </view>
+          </view>
+          <!-- 用户输入 -->
+          <view id="roll{{index + 1}}" class="chat-right">
+            <!-- 语音输入 -->
+            <view wx:if="{{item.orientation == 'v'}}">
+              <view class="avatar-img-right" aria-hidden='true'>
+                <image src="{{userInfo.avatarUrl}}" aria-hidden='true'></image>
+              </view>
+              <voice-view url="{{item.text}}" length="{{item.duration}}" playing="{{item.playing}}" bind:voiceClickss='voiceClick' index="{{index}}" class="chat-voice-right"></voice-view>
+            </view>
+            
+            <!-- 点击识别方式按钮自动打印提示 -->
+            <view wx:if="{{item.orientation === 'a'}}">
+              <!-- 用户头像 -->
+              <!-- <image class="avatar-img-right" src="/image/ic_user_default.png"></image> -->
+              <view class="avatar-img-right" aria-label="我的头像图片" aria-hidden='true'>
+                <image src="{{userInfo.avatarUrl}}" aria-hidden='true'></image>
+              </view>
+
+              <view class='chat-text-right' data-text='{{item.text}}' bindtap='bindTextTap'>
+                <text>{{item.text}}</text>
+              </view>
+            </view>
+            <!-- 图片 -->
+            <view wx:if="{{item.orientation === 'p'}}" aria-role="text" aria-label="{{item.nickname}}发起求助图片">
+              <!-- 用户头像 -->
+              <!-- <image class="avatar-img-right" src="/image/ic_user_default.png"></image> -->
+              <view class="avatar-img-right" aria-label="我的头像图片，点击进去" aria-hidden='true'>
+                <image src="{{userInfo.avatarUrl}}" aria-hidden='true'></image>
+              </view>
+              <view class='request-img-wrapper'>
+                <image src='{{item.text}}' mode='aspectFit' class="request-img" bindload='testPreLoad' bindtap='previewImg'></image>
+              </view>
+            </view>
+            <!-- 视频输入 -->
+            <view wx:if="{{item.orientation == 'o'}}">
+              <view class="avatar-img-right" bindtap='toMy'>
+                <image src="{{userInfo.avatarUrl}}" aria-hidden='true'></image>
+              </view>
+              <view class='request-img-wrapper'>
+                <video src="{{item.text}}" controls="true" play-btn-position="center" show-play-btn="true" show-center-play-btn="true"></video>
+              </view>
+            </view>
+            <!-- 文本输入 -->
+            <view class='chat-right' wx:if="{{item.orientation === 'r'}}">
+              <!-- 用户头像 -->
+              <!-- <image class="avatar-img-right" src="/image/ic_user_default.png"></image> -->
+              <view class="avatar-img-right" aria-hidden="true">
+                <image src="{{userInfo.avatarUrl}}" aria-hidden='true'></image>
+              </view>
+              <view class='chat-text-right' aria-label="{{item.nickname}}：{{item.text}}">
+                <text>{{item.text}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+
+
+</view>

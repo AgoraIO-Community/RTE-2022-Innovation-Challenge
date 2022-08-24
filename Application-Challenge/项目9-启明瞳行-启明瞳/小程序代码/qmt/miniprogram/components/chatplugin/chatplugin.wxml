@@ -1,0 +1,7 @@
+<!--components/chatplugin/chatplugin.wxml-->
+<view class="chat-plugin">
+  <text class="chat-plugin-text">{{text}}</text>
+  <view class="discount-chat-plugin-yline"></view>
+  <addGroup class="chat-plugin-item" bind:startmessage='startmessage' bind:completemessage="completemessage"
+    plugid='{{plugid}}' />
+</view>

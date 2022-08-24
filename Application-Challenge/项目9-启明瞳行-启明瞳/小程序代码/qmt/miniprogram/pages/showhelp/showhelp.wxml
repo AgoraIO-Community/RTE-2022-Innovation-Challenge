@@ -1,0 +1,88 @@
+<navbar subPage="true" helpType="3" bind:app="openApp" bind:share="share"  title="志愿者回复"></navbar>
+
+
+<!----------------------------页面上部分---------------------------------->
+<view class="page-head">
+  <view class='page-head-title'>我的问题</view>
+  <view class='page-head-box'>
+    <view class='page-head-img'>
+      <image wx:if="{{imageUrl}}" src='{{imageUrl}}' mode='top' class='head-image' aria-label="我的求助图片"></image>
+      <video wx:if="{{videoUrl}}" src="{{videoUrl}}" mode='top' class='head-image' aria-label="我的求助视频"></video>
+    </view>
+    <view class='question-box'>
+      <view wx:if="{{!!questionContent}}">
+        <text class='question'>{{questionContent}}</text>
+      </view>
+      <view wx:elif="{{!!questionVoiceUrl}}">
+        <voice-view url="{{questionVoiceUrl}}" length='8' playing="{{playing}}" index="0"
+          bind:voiceClickss='voiceClick' />
+      </view>
+      <view wx:else="{{!!questionVideoUrl}}"></view>
+    </view>
+    <!-- <view aria-role="button" aria-label="{{askername}}于{{askTime}}提问："> -->
+      <image src='{{askerAvatarUrl}}' class="headImg" mode='widthFix' aria-label="我的头像，点击进入我的界面" bindtap='toMe'></image>
+      <view class='askerinfo'>
+        <text class='askerName'>{{askername}}</text>
+        <view class='askTime'>{{askTime}}</view>
+      <!-- </view> -->
+    </view>
+
+
+  </view>
+</view>
+
+<!---------------------------------志愿者的回答内容------------------------------------->
+<view class='page-body'>
+  <view class='page-head-title'>志愿者的回复</view>
+  <view class="response">
+
+    <view wx:if="{{!!answerVoiceUrl}}" class='answerText'>
+      <voice-view url="{{answerVoiceUrl}}" length='8' playing="{{playing}}" index="0" bind:voiceClickss='voiceClick' />
+    </view>
+    <view wx:elif="{{!!helpText}}" class='answerText'>
+      <text>{{helpText}}</text>
+    </view>
+    <!-- <view aria-role="button" aria-label='{{nickname}}于{{createTime}}的回复：'> -->
+      <image src='{{avatarUrl}}' class="answer-headImg" aria-label='志愿者{{nickname}}的头像'></image>
+      <view class='answerInfo'>
+        <text class='answerName'>{{nickname}}</text>
+        <text class='answerTime'>{{createTime}}</text>
+      <!-- </view> -->
+    </view>
+
+
+  </view>
+  <!-- 评分打星 -->
+  <!-- <view aria-label="评分键" style='width:100%'  class='cell-group'>
+    <i-cell-group class='cell-group' aria-label="评分键">
+      <i-rate bind:change="onChange" value="{{gradePoint}}" size="45">
+      </i-rate>
+    </i-cell-group>
+  </view> -->
+
+  <view class='star-group' aria-label="对志愿者服务进行评分选择框">
+    <image src="../../image/ic_{{ gradePoint >= 1 ? 'star' : 'star_non' }}.png" data-index='1' aria-role='button'
+      aria-label="评1分" class="star_icon" bindtap="giveMark"></image>
+    <image src="../../image/ic_{{ gradePoint >= 2 ? 'star' : 'star_non' }}.png" data-index='2' aria-role='button'
+      aria-label="评2分" class="star_icon" bindtap="giveMark"></image>
+    <image src="../../image/ic_{{ gradePoint >= 3 ? 'star' : 'star_non' }}.png" data-index='3' aria-role='button'
+      aria-label="评3分" class="star_icon" bindtap="giveMark"></image>
+    <image src="../../image/ic_{{ gradePoint >= 4 ? 'star' : 'star_non' }}.png" data-index='4' aria-role='button'
+      aria-label="评4分" class="star_icon" bindtap="giveMark"></image>
+    <image src="../../image/ic_{{ gradePoint >= 5 ? 'star' : 'star_non' }}.png" data-index='5' aria-role='button'
+      aria-label="评5分" class="star_icon" bindtap="giveMark"></image>
+
+  </view>
+
+</view>
+
+<view class="bottom-box">
+  <image src="../../image/ic_arrow_back_18px.svg" aria-role="button" aria-label="上一条，双击后在上面查看帮助详情" class='weui-grid'
+    bindtap="bindPrev"></image>
+  <navigator url="/pages/qmt/qmt" open-type="switchTab" aria-label="重新拍照">
+    <image src="../../image/ic_radio_button_chec.svg" aria-role="button" aria-label="重新拍照" class='weui-grid'
+      bindtap="chooseImage"></image>
+  </navigator>
+  <image src="../../image/ic_arrow_forward_18px.svg" aria-role="button" aria-label="下一条，双击后在上面查看帮助详情" class='weui-grid'
+    bindtap="bindNext"></image>
+</view>

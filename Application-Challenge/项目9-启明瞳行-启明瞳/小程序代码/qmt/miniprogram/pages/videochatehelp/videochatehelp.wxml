@@ -1,0 +1,21 @@
+<!--miniprogram/pages/videochathelp/videochatehelp.wxml-->
+<navbar subPage="true" helpType="4" title="视频客服求助"></navbar>
+
+<view id="main" class="content agora-bg flex-center-column">
+  <view id="video-container" class="video-container n{{totalUser}}" aria-label="实时视频求助界面">
+     <block wx:for="{{media}}" wx:key="key">
+        <agora-pusher wx:if="{{item.type === 0 && !item.holding}}" id="rtc-pusher" x="0" y="0" width="{{screen_width}}" height="{{screen_height}}" url="{{item.url}}" muted="{{muted}}" beauty="{{beauty}}" debug="{{debug}}" bindpushfailed="onPusherFailed">
+        </agora-pusher>
+
+    </block> 
+  </view>
+  <view class="footer flex-center-column">
+    <view class="toolbar">
+      <button plain="true" class="mic {{muted?'muted': ''}} btn" bindtap='onMute' aria-label="{{muted?'打开话筒': '关闭话筒'}}"></button>
+      <button plain="true" hover-class="hover" class="camera btn" bindtap='onSwitchCamera' aria-label="切换摄像头"></button>
+      <button plain="true" hover-class="hover" class="hangup btn" bindtap='onLeave' aria-label="退出房间"></button>
+      <!-- <button plain="true" class="makeup {{beauty === 5 ?'':'off'}} btn" bindtap='onMakeup' aria-label="送礼物，正在内测"></button>
+      <button plain="true" hover-class="hover" class="log btn" bindtap='onSubmitLog' aria-label="更多功能，"></button> -->
+    </view>
+  </view>
+</view>

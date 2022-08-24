@@ -1,0 +1,87 @@
+{
+  "pages": [
+    "pages/qmt/qmt",
+    "pages/askhelp/askhelp",
+    "pages/getHistoryList/getHistoryList",
+    "pages/getHistoryInfo/getHistoryInfo",
+    "pages/chat/chat",
+    "pages/audioplayer/audioplayer",
+    "pages/videohelp/videohelp",
+    "pages/videochatehelp/videochatehelp",
+    "pages/login/login",
+    "pages/bindingphone/bindingphone",
+    "pages/bindingphone/inputphone",
+    "pages/video/video",
+    "pages/setting/setting",
+    "pages/webview/webview",
+    "pages/list/list",
+    "pages/albumcontentlist/albumcontentlist",
+    "pages/showhelp/showhelp",
+    "pages/rank/rank",
+    "pages/logs/logs",
+    "pages/reward/reward",
+    "pages/reward/otherreward/otherreward",
+    "pages/voiproom/voiproom",
+    "pages/sport/my/my",
+    "pages/my/my"
+  ],
+
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "启明瞳",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "connectSocket": 60000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于启明瞳小程序提示您所在的位置"
+    }
+  },
+  "functionalPages": {
+    "independent": true
+  },
+  "plugins": {
+    "xmly-plugin": {
+      "version": "3.3.3",
+      "provider": "wxc6a13dda5815c529"
+    },
+    "WechatSI": {
+      "version": "0.3.5",
+      "provider": "wx069ba97219f66d99"
+    },
+    "contactPlugin": {
+      "version": "1.4.5",
+      "provider": "wx104a1a20c3f81ec2"
+    },
+    "chatGroupPlugin": {
+      "version": "1.1.2",
+      "provider": "wxaae6519cee98d824"
+    },
+    "netdiskShare": {
+      "version": "1.2.4",
+      "provider": "wx8c873f830774d652"
+    }
+  },
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "supportedMaterials": [
+    {
+      "materialType": "image/*",
+      "name": "用${nickname}图片识别",
+      "desc": "主要供盲人识别物体",
+      "path": "pages/askhelp/askhelp"
+    }
+  ]
+}

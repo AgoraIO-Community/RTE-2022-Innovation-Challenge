@@ -95,6 +95,7 @@ class ImageMessageTableViewCell: UITableViewCell, Reusable {
             signinLabel.snp.makeConstraints { make in
                 make.left.equalTo(signInImageView.snp.right).offset(12)
                 make.centerY.equalTo(signInImageView)
+                make.right.equalToSuperview().inset(12)
             }
             
             uploadImageView.snp.remakeConstraints { make in
@@ -128,6 +129,7 @@ class ImageMessageTableViewCell: UITableViewCell, Reusable {
             signinLabel.snp.makeConstraints { make in
                 make.left.equalTo(signInImageView.snp.right).offset(12)
                 make.centerY.equalTo(signInImageView)
+                make.right.equalToSuperview().inset(12)
             }
             
             uploadImageView.snp.remakeConstraints { make in

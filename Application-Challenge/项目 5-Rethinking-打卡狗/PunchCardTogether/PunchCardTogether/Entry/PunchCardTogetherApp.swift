@@ -25,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         CommandsFactory.build().forEach { $0.execute() }
         AppNavigationBarStyle.standard.apply()
-        UITableView.appearance().keyboardDismissMode = .onDrag
-        UITabBar.appearance().backgroundColor = .white
-        UITabBar.appearance().isTranslucent = false
+
         if Defaults[.loginUser] == nil {
             window?.rootViewController = UIHostingController(rootView: Login())
         } else {
@@ -37,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let user = Defaults[.loginUser] {
             MessageCenter.shared.login(user: user)
         }
+        window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()
         return true
     }
@@ -71,6 +70,10 @@ enum AppNavigationBarStyle {
         case .standard:
             appearance.configureWithOpaqueBackground()
             appearance.backgroundColor = .white
+            
+            UITableView.appearance().keyboardDismissMode = .onDrag
+            UITabBar.appearance().backgroundColor = .white
+            UITabBar.appearance().isTranslucent = false
         }
         let itemButtonApperance = UIBarButtonItemAppearance()
         itemButtonApperance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear, .font: UIFont.systemFont(ofSize: 0.1)]

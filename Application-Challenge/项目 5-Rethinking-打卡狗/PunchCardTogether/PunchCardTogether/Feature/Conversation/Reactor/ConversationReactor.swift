@@ -34,7 +34,8 @@ final class ConversationReactor: Reactor {
         case .refreshConversations:
             return MessageCenter.shared.rx.conversationList()
                 .flatMap { conversations -> Observable<Mutation> in
-                    let items = conversations.map {
+                    let withoutDuplicates = conversations.filterDuplicates()
+                    let items = withoutDuplicates.map {
                         ConversationItem(conversation: $0)
                     }
                     return Observable<Mutation>.just(.setConversations(items))
@@ -77,5 +78,20 @@ final class ConversationReactor: Reactor {
             }
         }
         return state
+    }
+}
+
+extension Array where Element: EMConversation {
+    func filterDuplicates() -> Array<Element> {
+        var result = [Element]()
+        self.forEach { conversation in
+            let exists = result.first(where: { ele in
+                ele.conversationId == conversation.conversationId
+            })
+            if exists == nil {
+                result.append(conversation)
+            }
+        }
+        return result
     }
 }

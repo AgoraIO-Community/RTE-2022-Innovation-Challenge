@@ -1170,12 +1170,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PunchCardTogether/Preview Content\"";
-				DEVELOPMENT_TEAM = 865L62UDE9;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PunchCardTogether/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Kago;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "是否允许 Kago 读取您的相册？";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Request Camera Access";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Request Mic Access";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "是否允许 Kago 读取您的相册？";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1213,6 +1215,8 @@
 				INFOPLIST_FILE = PunchCardTogether/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Kago;
 				INFOPLIST_KEY_NSAppleMusicUsageDescription = "是否允许 Kago 读取您的相册？";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Request Camera Access";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Request Mic Access";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "是否允许 Kago 读取您的相册？";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1284,7 +1288,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 865L62UDE9;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.guluoying.PunchCardTogetherUITests;
@@ -1303,7 +1307,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 865L62UDE9;
+				DEVELOPMENT_TEAM = XDGAK6XCMW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.guluoying.PunchCardTogetherUITests;

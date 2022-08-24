@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "龙岗体验关爱工程无障碍运动",
+  "usingComponents": {
+    "navbar": "../../../components/navbar/index",
+    "ace-cells": "../../../components/ace-cells/ace-cells",
+    "ace-cell": "../../../components/ace-cell/ace-cell",
+    "ace-tabbar": "../../../components/ace-tabbar/ace-tabbar"
+  }
+}

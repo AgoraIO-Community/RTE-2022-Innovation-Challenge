@@ -1,0 +1,34 @@
+/**index.wxss**/
+
+page {
+  background-color: #000;
+  height: 100%;
+  position: fixed;
+}
+
+.progress-box {
+  display: flex;
+  height: 50rpx;
+  margin-bottom: 60rpx;
+}
+
+.bottom-content {
+  position: fixed;
+  background-color: #000;
+  bottom: 0rpx;
+  width: 100%;
+}
+
+.grid {
+  position: relative;
+  float: left;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  padding-top: 2rpx;
+  padding-bottom: 2prx;
+  width: 100%;
+  box-sizing: border-box;
+  border-color: #000;
+  background-size: cover;
+  text-align: center;
+}

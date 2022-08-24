@@ -1,0 +1,8 @@
+<!--miniprogram/components/ace-tabbar-->
+<view class="tab-bar">
+  <view class="tab-bar-border"></view>
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab" aria-role="radio" aria-label="{{item.text}}栏" aria-checked="{{selected === index}}">
+    <image src="{{selected === index ? item.selectedIconPath : item.iconPath}}" aria-hidden="true"></image>
+    <view style="color: {{selected === index ? selectedColor : color}}" aria-hidden="true">{{item.text}}</view>
+  </view>
+</view>

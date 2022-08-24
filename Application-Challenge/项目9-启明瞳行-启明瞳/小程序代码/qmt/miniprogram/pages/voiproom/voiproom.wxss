@@ -1,0 +1,76 @@
+/* miniprogram/pages/voiproom/voiproom.wxss */
+page {
+  background: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.view_room {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+voip-room {
+  flex: 0 1 100%;
+  height: 75vh;
+}
+
+/* .ask-room{
+  width: 100vh;
+} */
+.view-room {
+  visibility: hidden;
+}
+
+.share_addhelper {
+  flex: 1;
+  position: fixed;
+  left: 0;
+  bottom: 8vh;
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  background: #000;
+  border-top: 1px solid #111;
+}
+
+.share_addhelper button {
+  flex: 1;
+  display: block;
+  color: #000;
+  margin: auto;
+  font-size: 16px;
+}
+
+.room_menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 8vh;
+  background: #000;
+  border-top: 1px solid #111;
+}
+
+.room_menu view,
+.room_menu navigator {
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  padding-top: 10px;
+  font-size: 10px;
+}
+
+.room_menu text {
+  display: block;
+  margin: auto;
+  font-size: 16px;
+}
+
+
+.room_esc {
+  text-align: center;
+  color: #999;
+  padding-top: 99px;
+}

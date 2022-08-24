@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "启明瞳",
+  "usingComponents": {
+    "navbar": "../../components/navbar/index",
+    "ace-tabbar": "../../components/ace-tabbar/ace-tabbar"
+  }
+}

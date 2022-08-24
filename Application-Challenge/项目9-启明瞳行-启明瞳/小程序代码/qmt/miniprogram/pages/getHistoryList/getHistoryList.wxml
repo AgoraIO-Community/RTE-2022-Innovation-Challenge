@@ -1,0 +1,14 @@
+
+
+<navbar subPage="true" helpType="2" title="求助历史记录"></navbar>
+<view class='userinfo' style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+
+</view>
+
+<view>
+  <ace-cells title="求助历史纪录">
+    <ace-cell wx:for="{{historyList}}" wx:key="id" link hover bindtap='todetail' data-id="{{item.id}}" data-imgurl="{{item.imageUrl}}"
+      value="{{item.createTime}}" />
+  </ace-cells>
+
+</view>

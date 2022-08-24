@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "navbar": "../../components/navbar/index",
+    "cell": "plugin://contactPlugin/cell",
+    "ace-cells": "../../components/ace-cells/ace-cells",
+    "ace-cell": "../../components/ace-cell/ace-cell",
+    "ace-tabbar": "../../components/ace-tabbar/ace-tabbar"
+  }
+}

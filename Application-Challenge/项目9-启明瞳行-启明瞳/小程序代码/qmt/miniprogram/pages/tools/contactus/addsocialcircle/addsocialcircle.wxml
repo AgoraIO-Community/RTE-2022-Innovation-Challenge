@@ -1,0 +1,14 @@
+<view class="page">
+  <navbar  subPage="true" app="{{focusInfo[9]}}" helpType="1" title="{{title}}"></navbar>
+  <view class='page_bd' style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+  </view>
+
+ <view class="weui-panel__hd">以下是启明圈的部分社交群，可以在以下群里面聊天交友，下载应用获取最新助盲信息</view>
+
+  <view class="weui-panel__hd">{{groupIntro}}</view>
+  <chatGroup bind:startmessage='startmessage' bind:completemessage="completemessage" plugid="{{groupId}}" />
+</view>
+
+ <view class="weui-panel__hd">{{myCardIntro}}</view>
+  <cell bind:startmessage='startmessage' buttonText='1' bind:completemessage="completemessage" plugid='{{myCardId}}' />
+   

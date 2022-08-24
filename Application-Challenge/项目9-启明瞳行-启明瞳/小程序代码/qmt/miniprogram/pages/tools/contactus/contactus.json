@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "联系我们",
+  "usingComponents": {
+    "navbar": "../../../components/navbar/index",
+    "cell": "plugin://contactPlugin/cell",
+    "chatGroup": "plugin://chatGroupPlugin/cell",
+    "ace-cells": "../../../components/ace-cells/ace-cells",
+    "ace-cell": "../../../components/ace-cell/ace-cell"
+ 
+  }
+}

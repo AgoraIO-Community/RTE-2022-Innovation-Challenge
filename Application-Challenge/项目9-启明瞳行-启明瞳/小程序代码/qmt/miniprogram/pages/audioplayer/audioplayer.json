@@ -1,0 +1,9 @@
+{
+  
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "",
+  "usingComponents":{
+        "i-icon": "../../components/icon/index",
+        "navbar": "../../components/navbar/index"
+  }
+}

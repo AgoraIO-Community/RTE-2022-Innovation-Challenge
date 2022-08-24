@@ -1,0 +1,28 @@
+/* miniprogram/components/voice-view.wxss */
+/* components/voice-view.wxss */
+.voices {
+  padding: 10rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.voices .voice {
+  width: 320rpx;
+  height: 100rpx;
+  /* background: rgba(35, 69, 156, 1); */
+  background:#34A853;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.voices .voice-hover{
+  /* background: rgb(28, 54, 121); */
+    background:rgb(50, 155, 1);
+}
+ 
+.voices .voice image {
+  width: 40rpx;
+  height:40rpx;
+}

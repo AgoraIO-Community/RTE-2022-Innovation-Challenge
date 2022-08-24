@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "navigationBarTitleText": "Rate 评分",
+  "usingComponents": {
+    "i-rate": "../rate/index",
+    "i-cell-group": "../cell-group/index",
+    "i-cell": "../cell/index",
+    "i-icon": "../icon/index"
+  }
+}

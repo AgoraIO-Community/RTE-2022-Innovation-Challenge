@@ -1,0 +1,58 @@
+tr {
+    display: block;
+}
+.container {
+    padding: 100rpx 0;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    background-color: black;
+}
+.navbar button{
+    padding:0;
+    margin:0;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+    background: transparent;
+}
+.navbar text{
+    padding-left: 6rpx;
+    font-size: 36rpx;
+    color: #fff;
+}
+table {
+    width:100%;
+    margin-bottom: 20rpx;
+}
+table tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 36rpx;
+    border-radius: 24rpx;
+    background-color: rgba(56, 56, 56, 1);
+    line-height: 76rpx;
+    margin-bottom: 2rpx;
+    color: #fff;
+}
+table tr td:first-child {
+    color: rgba(127, 167, 228, 1);
+}
+.myScore {
+    margin-bottom: 16rpx;
+}
+.myScore td{
+    color: #fff !important;
+}
+table tr:nth-child(2) td:first-child{
+    color: rgba(229, 173, 0, 1);
+}
+table tr:nth-child(3) td:first-child{
+    color: rgba(179, 182, 249, 1);
+}
+table tr:nth-child(4) td:first-child{
+    color: rgba(215, 150, 110, 1);
+}

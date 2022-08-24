@@ -1,0 +1,122 @@
+<view class="page" aria-hidden="{{ariaHidden}}">
+  <navbar  subPage="true" app="{{focusInfo[9]}}" helpType="1" title="{{title}}"></navbar>
+  <view class='page_bd' style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+  </view>
+
+<!-- <view class="weui-panel__hd">加下面联系我们的按钮，允许使用启明店
+按照收到企业微信的通知去扫码点击关注联系我们，我们会提供免费助盲应用</view> -->
+
+
+<!-- https://work.weixin.qq.com/wework_admin/frame#csPlugin/miniApp
+樊洪涛：362d922a0d47aedad3e6ada7e37292b6
+露露：a820b560fda16b739b740c641eeb4533
+周江南：36ec8cefa07c1131d4114a8ed7e18b4e
+运营部门：fb6d802b25fdfd145a90e9a2bea840ab
+-->
+<!-- 运营部门：fb6d802b25fdfd145a90e9a2bea840ab -->
+<cell bind:startmessage='startmessage' contactText='2' bind:completemessage="completemessage" plugid='fb6d802b25fdfd145a90e9a2bea840ab' paddingStyle='5' />
+<!-- 樊洪涛：362d922a0d47aedad3e6ada7e37292b6 -->
+<cell bind:startmessage='startmessage' buttonText='1' bind:completemessage="completemessage" plugid='362d922a0d47aedad3e6ada7e37292b6' paddingStyle='5' />
+<!-- 露露：a820b560fda16b739b740c641eeb4533 -->
+<cell bind:startmessage='startmessage' buttonText='1' bind:completemessage="completemessage" plugid='a820b560fda16b739b740c641eeb4533' paddingStyle='5' />
+<!-- 周江南：36ec8cefa07c1131d4114a8ed7e18b4e -->
+<cell bind:startmessage='startmessage' buttonText='3' bind:completemessage="completemessage" plugid='36ec8cefa07c1131d4114a8ed7e18b4e' paddingStyle='5' />
+
+<!--启明产品体验反馈群 https://work.weixin.qq.com/gm/f2b22391e5d0a7ad34a9dd576b66c384 -->
+<view class="weui-panel__hd">激活下面加入群聊按钮，长按识别二维码可加入启明产品体验群 </view>
+<chatGroup bind:startmessage='startmessage' bind:completemessage="completemessage" plugid='f2b22391e5d0a7ad34a9dd576b66c384' />
+<!-- 启明无障碍购物群 https://work.weixin.qq.com/gm/5b784a506a8eb5ec3358449fb9eb3e39 -->
+<view class="weui-panel__hd">激活下面加入群聊按钮，长按识别二维码可加入启明无障碍购物群</view>
+<chatGroup bind:startmessage='startmessage' bind:completemessage="completemessage" plugid='5b784a506a8eb5ec3358449fb9eb3e39' />
+
+<ace-cells>
+  <ace-cell link='true' value="联系启明店客服" class="function_list" bindtap="openQYWXChat">
+  </ace-cell>
+  <ace-cell link='true' value="联系启明店售后客服" class="function_list" bindtap="openQYWXAfterSalesServiceChat">
+  </ace-cell>
+  <ace-cell link='true' value="联系启明应用APP客服" class="function_list" bindtap="openQYWXAPPServiceChat">
+  </ace-cell>
+</ace-cells>
+
+<view class="weui-panel__hd">点击下面按钮可以复制各大盲人的自媒体账号，然后在微信里面搜索公众号去关注</view>
+<view class="weui-panel__bd">
+  <view class="weui-media-box weui-media-box_small-appmsg">
+    <ace-cells class="weui-cells weui-cells_in-small-appmsg">
+      <ace-cell value="复制启明瞳微信号" bindtap='setClipboard' data-content="启明瞳" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <!-- <view class="weui-cell__hd">
+          <image src="/image/ic_visibility.png" style="width: 20px;height: 20px;margin-right: 5px" />
+        </view> -->
+        <!-- <view class="weui-cell__bd weui-cell_primary">
+          <view>复制启明瞳微信号</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
+      </ace-cell>
+
+      <ace-cell value="复制盲人新世界订阅号" bindtap='setClipboard' data-content="盲人新世界" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <!-- <view class="weui-cell__hd">
+          <image src="/image/ic_visibility.png" style="width: 20px;height: 20px;margin-right: 5px" />
+        </view> -->
+        <!-- <view class="weui-cell__bd weui-cell_primary">
+          <view>复制盲人新世界订阅号</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
+      </ace-cell>
+      <ace-cell value="复制无障碍微信订阅号" bindtap='setClipboard' data-content="无障碍" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <!-- <view class="weui-cell__hd">
+          <image src="/image/ic_visibility.png" style="width: 20px;height: 20px;margin-right: 5px" />
+        </view> -->
+        <!-- <view class="weui-cell__bd weui-cell_primary">
+          <view>复制无障碍微信订阅号</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
+      </ace-cell>
+
+    </ace-cells>
+  </view>
+</view>
+
+<view class="weui-panel__hd">点击下面按钮可以复制QQ群号码，加入群聊</view>
+<view class="weui-panel__bd">
+  <view class="weui-media-box weui-media-box_small-appmsg">
+    <ace-cells class="weui-cells weui-cells_in-small-appmsg">
+
+      <ace-cell value="复制无障碍科技官方QQ群" bindtap='setClipboard' data-content="704750180" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <!-- <view class="weui-cell__hd">
+          <image src="/image/ic_visibility.png" style="width: 20px;height: 20px;margin-right: 5px" />
+        </view> -->
+        <!-- <view class="weui-cell__bd weui-cell_primary">
+          <view>复制无障碍科技官方QQ群</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
+      </ace-cell>
+
+      <ace-cell value="复制无障碍新产品体验QQ群" bindtap='setClipboard' data-content="738321910" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <!-- <view class="weui-cell__hd">
+          <image src="/image/ic_group_add.png" style="width: 20px;height: 20px;margin-right: 5px" />
+        </view> -->
+        <!-- <view class="weui-cell__bd weui-cell_primary">
+          <view>复制无障碍新产品体验QQ群</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
+      </ace-cell>
+
+
+
+
+      <ace-cell value="复制启明行内测QQ群" bindtap='setClipboard' data-content="738380983" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <!-- <view class="weui-cell__hd">
+          <image src="/image/ic_group_add.png" style="width: 20px;height: 20px;margin-right: 5px" />
+        </view> -->
+        <!-- <view class="weui-cell__bd weui-cell_primary">
+          <view>复制启明行内测QQ群</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
+      </ace-cell>
+    </ace-cells>
+  </view>
+</view>
+
+
+
+
+</view>

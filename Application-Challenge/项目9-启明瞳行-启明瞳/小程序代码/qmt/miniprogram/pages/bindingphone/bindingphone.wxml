@@ -1,0 +1,18 @@
+<!--pages/bindingphone/bindingphone.wxml-->
+<navbar subPage="true" app="{{focusInfo[2]}}" helpType="1" title="绑定手机号"></navbar>
+<view class='userinfo' style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+
+
+</view>
+<view class="after-navber">
+	<view style="padding: 0 60rpx">
+
+		<view style="font-size: 13pt;margin-bottom: 40rpx" aria-hidden= "true">申请获取以下权限</view>
+		<view style="color: #888;margin-bottom: 88rpx" aria-label="激活下面授权获取手机号，再激活底部弹框允许按钮就绑定手机号完成注册，如有问题，可以激活手动输入手机号按钮，也激活最底部的联系微信客服去说明手机号的问题">获取你的手机号 </view>
+		<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" bindtap="getmsg" class="login-btn" >直接授权获取手机号</button>
+
+		<button  bindtap="goInputPhone"  style="margin-top:40rpx" class="login-btn" >手动输入手机号</button>
+	</view>
+</view>
+
+<view class="bottom" aria-role="button" aria-label="联系微信客服,请说明你绑定手机号的问题" bindtap="openQYWXChat">联系微信客服</view>

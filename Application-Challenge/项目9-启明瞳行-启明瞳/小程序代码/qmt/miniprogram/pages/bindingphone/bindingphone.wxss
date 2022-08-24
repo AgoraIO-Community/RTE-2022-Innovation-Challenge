@@ -1,0 +1,15 @@
+/* pages/bindingphone/bindingphone.wxss */
+body{ background: #fff; }
+.login-btn{ border: none; height: 88rpx; line-height: 88rpx; background: #04be01; color: #fff; font-size: 11pt; border-radius: 999rpx; }
+.login-btn::after{ display: none; }
+.login-btn.button-hover { box-shadow: inset 0 5rpx 30rpx rgba(0,0,0,.15); }
+/* 在屏幕最底部显示 */
+.bottom {
+  position: absolute;
+  bottom: 2rpx;
+  padding: 18rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 10pt;
+  color: #3e88f2;
+}

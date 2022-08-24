@@ -1,0 +1,10 @@
+<!-- 仿微信语音播放 -->
+<view class='voices' >
+  <view class='voice' hover-class='voice-hover' bindtap='playVoice' data-index='{{index}}' style="width:95%" aria-role="button" aria-label="语音条，点击{{playing == true ? '暂停' : '播放'}}">
+    <image src="../../image/{{playing == true?'ic_stop':'ic_play_arrow'}}.png" style='margin-left:22rpx;'></image>
+    <!--下面的时间的先去掉，读屏支持会冲突 ->
+     <!--todo ：讲暂停和播放的声音样式进行调整 ->
+    <!-- <image src='../image/voice{{voiceImg}}.png' style='margin-right:10rpx;'></image> -->
+  </view>
+  <!-- <text style='font-size:24rpx;font-weight:400;color:rgba(155,155,155,1);line-height:34rpx;margin-left:16rpx'>{{length}}s</text> -->
+</view>

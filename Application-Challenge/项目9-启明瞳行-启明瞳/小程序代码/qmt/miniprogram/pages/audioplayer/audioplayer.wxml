@@ -1,0 +1,29 @@
+<navbar title="播放器" subPage="true" helpType="2"></navbar>
+<view class="touch" bindtap="tap" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px">
+  <view class="container">
+    <image src="{{ albumBg }}" mode="scaleToFill" class="bg-album" aria-role="背景图片" aria-label="{{tip}}" />
+    <!-- <view class="music-album"> -->
+    <view class="song-name">
+      <text>{{ songName }}</text>
+    </view>
+    <view class="song-author">
+      <text>作者：{{ songAuthor }}</text>
+    </view>
+    <view class="m-control">
+      <image src="/image/ic_{{ status === 0 ? 'pause_circle_out' : 'play_circle_out' }}.png" style="width:69px;height:69px;" aria-label='播放显示状态图标' />
+    </view>
+  </view>
+</view>
+
+<view>
+  <image src="/image/ic_help_outline.png" mode="aspectFit" class="help-float" aria-label="{{tip}}" />
+  <!-- <navigator url="../fm/album/album?id={{albumId}}">
+    <image src='/image/ic_format_list_bulle.png' class='format-list-bulle' aria-role="按钮" aria-label="专辑列表"></image>
+  </navigator> -->
+
+  <image class='share-tint' src='/image/ic_share_tint.png'> </image>
+  <button class='share-tint' style="opacity:0;  border: none;" open-type='share' aria-role="按钮" aria-label="分享">
+  </button>
+
+</view>
+<ad unit-id="adunit-a080609513cd1b6c" ad-intervals="30"></ad>

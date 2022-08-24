@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "有声书",
+  "usingComponents": {
+    "navbar": "../../../components/navbar/index",
+    "ace-cells": "../../../components/ace-cells/ace-cells",
+    "ace-cell": "../../../components/ace-cell/ace-cell"
+  }
+}

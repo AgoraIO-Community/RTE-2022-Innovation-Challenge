@@ -1,0 +1,18 @@
+<view class="navbar" style="padding-right: {{sysInfo.paddingRight}}px; padding-top: {{sysInfo.paddingTop}}px;height: {{sysInfo.height}}px;line-height: {{sysInfo.height}}px;">
+    <button bindtap="return" aria-role="button" aria-label="返回" ><image src="../../image/return.svg" class="return" wx:if="{{subPage}}"></image></button>
+    <text wx:if="{{subPage}}" class="subPage">{{title}}</text>
+    <text wx:else class="mainPage">{{title}}</text>
+    <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <button bindtap="notice" aria-label="最近志愿者回复" aria-role='button'><image src="../../image/notice.svg"></image></button>
+    </view>
+    <!-- 
+    <navigator url="{{DownloadUrl}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <button bindtap="download" aria-label="下载" wx:if="{{!fm && !app}}"><image src="../../image/download.svg"></image></button>
+    </navigator>
+    <button bindtap="openFm" aria-label="打开启明fm" wx:if="{{fm}}" ><image src="../../image/fm.svg"></image></button>
+    <button bindtap="openApp" aria-label="打开启明瞳app" wx:if="{{app}}" ><image src="../../image/app.svg"></image></button> -->
+    <!-- <button bindtap="share"  aria-role="button" aria-label="点该分享按钮发送给朋友，也可点右边“更多”按钮选底部谭框中的”添加到我的小程序“或“添加到桌面”更方便使用启明瞳小程序" open-type="share"><image src="../../image/share.svg"></image></button> -->
+    <!-- <navigator url="{{HelpUrl}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <button bindtap="help" aria-label="帮助"><image src="../../image/help.svg"></image></button>
+    </navigator> -->
+</view>

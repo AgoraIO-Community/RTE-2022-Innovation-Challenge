@@ -1,0 +1,57 @@
+<!-- todo 苹果手机 读屏软件不支持 相机上面的读屏，解决方案：1和微信部门反馈，2 尝试另外一种交互方式 -->
+<navbar app="{{focusInfo[9]}}" helpType="1" bind:app="openApp" bind:share="share"></navbar>
+<!-- <view style="widht:100%;height:2%;margin-top:0rpx;font-size:16rpx;text-align: center;"  bindtap="takePhoto">
+  <text>帮助提醒从上到下选择不同智能识别或求助志愿者，点击此处可快速拍照进入求助志愿者界面</text>
+</view> -->
+<camera  wx:if="{{cameraOn}}" device-position="{{device}}" flash="{{flash}}" torch="true"
+  style="margin-top: {{sysInfo.height + sysInfo.statusBarHeight}}px;width: 100%; height:{{sysInfo.windowHeight - sysInfo.tabBarHeight - 80 - 90}}px">
+  <view class='coverview' aria-label="识别功能列表" wx:if="{{!isRecord}}">
+    <cover-view wx:if="{{device === 'back'}}" bindtap="checkDevice" aria-role="button" class="list"
+      aria-label="切换到前置摄像头" aria-role="button">
+      <button class="inner-list" aria-role="button">切换到前置摄像头</button>
+    </cover-view>
+    <cover-view wx:else class="list" bindtap="checkDevice" aria-label="切换到后置摄像头">
+      <button class="inner-list" aria-role="button">切换到后置摄像头</button>
+    </cover-view>
+    <button class="list" bindtap="doOcr" aria-label="拍照识别文字" aria-role="button">拍照识别文字</button>
+    <button class="list" bindtap="doImgTag" aria-label="拍照识别物体" aria-role="button">拍照识别物体</button>
+    <button class="list" bindtap="doImgScene" aria-label="拍照识别场景" aria-role="button">拍照识别场景</button>
+    <button class="list" bindtap="doFace" aria-label="拍照人脸识别" aria-role="button">拍照人脸识别</button>
+    <button class="list" bindtap="chooseImage" aria-label="选择本机图片" aria-role="button">选择图片</button>
+    <button class="list" bindtap="record" aria-label="录视频求助志愿者" aria-role="button">录视频求助志愿者</button>
+    <button class="list" bindtap="createVoip" aria-label="视频通话求助亲友" aria-role="button">视频通话求助亲友</button>
+    <!-- <button class="list" form-type="submit">{{videoShow}}</button> -->
+    <!--<cover-view wx:if="{{!isRecord}}" aria-label="点击后开始录制" class="list">
+        <button class="list" form-type="submit">短视频求助志愿者</button>
+      </cover-view>-->
+    <!--<cover-view wx:else class="list">
+        <button class="inner-list" form-type="submit">结束录制</button>
+      </cover-view>-->
+    <button class="list" bindtap="askImageHelp" aria-role="button">拍照求助志愿者</button>
+  </view>
+  <view wx:else class='coverview'>
+    <button class="list"></button>
+    <button class="list"></button>
+    <button class="list"></button>
+    <button class="list"></button>
+    <button class="list"></button>
+    <button class="list" bindtap="record" aria-label="点击后结束录制">结束录制</button>
+    <!--<cover-view class="list">
+        <button class="inner-list" form-type="submit">结束录制</button>
+      </cover-view>-->
+    <button class="list"></button>
+  </view>
+</camera>
+
+<view class="icon-menu"  wx:if="{{!isRecord}}">
+    <image bindtap="checkDevice" aria-label="{{device === 'back' ? '切换到前置摄像头' : '切换到后置摄像头'}}" aria-role="button" src="../../image/switchCam.svg"></image>
+    <image bindtap="checkFlash" aria-label="{{flash === 'torch' ? '关闭闪光灯' : '打开闪光灯'}}" aria-role="button" src="../../image/ic_lightbulb_outline.svg"></image>
+    <image bindtap="doOcr" aria-label="拍照识别文字" aria-role="button" src="../../image/OCR.svg"></image>
+    <image bindtap="doImgTag" aria-label="拍照识别物体" aria-role="button" src="../../image/imgTag.svg"></image>
+    <image bindtap="chooseImage" aria-label="选择图片" aria-role="button" src="../../image/chooseImg.svg"></image>
+    <image bindtap="record" aria-label="录视频求助志愿者" aria-role="button" src="../../image/video.svg"></image>
+    <image bindtap="createVoip" aria-label="视频通话求助亲友" aria-role="button" src="../../image/ic_voice_chat.svg"></image>
+    <image bindtap="askImageHelp" aria-label="拍照求助志愿者" aria-role="button" src="../../image/photo.svg"></image>
+</view>
+
+<ace-tabbar selected='0'></ace-tabbar>

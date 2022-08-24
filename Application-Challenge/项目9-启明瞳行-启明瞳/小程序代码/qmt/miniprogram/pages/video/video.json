@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "短视频求助",
+  "usingComponents": {
+    "navbar": "../../components/navbar/index"
+  }
+}

@@ -1,0 +1,379 @@
+/* 页面背景及高度 */
+
+.page {
+  background-color: #a6a6a6;
+  height: 100vh;
+}
+
+/* -------------------------页面上部分------------------------ */
+
+.page-head {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+/* 我的问题title样式 */
+
+.page-head-title {
+  font-size: 42rpx;
+  height: 5vh;
+  color: #000;
+  padding-top: 5rpx;
+}
+
+/* 上部分内容容器 */
+
+.page-head-box {
+  border-radius: 9rpx;
+  background-color: #e5e5e5;
+  height: 40vh;
+}
+
+.page-head-img {
+  border-top-left-radius: 9rpx;
+  border-top-right-radius: 9rpx;
+  height: 25vh;
+  background-color: #666;
+}
+
+.head-image {
+  border-top-left-radius: 9rpx;
+  border-top-right-radius: 9rpx;
+  height: 25vh;
+  width: 695rpx;
+  margin-right: 30rpx;
+}
+
+/* 求助者头像 */
+
+.headImg {
+  position: relative;
+  left: 30rpx;
+  top: -260rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 9rpx;
+  border: #808080 solid 5rpx;
+}
+
+/* 救助者信息 */
+
+.askerinfo {
+  position: relative;
+  left: 20rpx;
+  top: -270rpx;
+  text-align: center;
+  width: 120rpx;
+}
+
+.askerName {
+  font-size: 31rpx;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  color: #000;
+  line-height: 1.5;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+}
+
+.askTime {
+  font-size: 29rpx;
+  line-height: 1.5;
+}
+
+.question-box {
+  margin-left: 170rpx;
+  position: relative;
+  top: 0;
+  height: 15vh;
+  padding: 10rpx;
+}
+
+.question {
+  text-align: left;
+  display: --webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  font-size: 33rpx;
+  color: #000;
+  line-height: 45rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+}
+
+/* --------------页面上部分end------------ */
+
+/* ---------------页面下部分-------------- */
+
+.page-body {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 54vh;
+}
+
+.switch-box {
+  display: flex;
+}
+
+.swiper-left {
+  width: 120rpx;
+  height: 90rpx;
+}
+
+.swiper-left-img {
+  width: 120rpx;
+  height: 90rpx;
+}
+
+.swiper-right {
+  width: 120rpx;
+  height: 90rpx;
+}
+
+/*---------------------------------志愿者回复内容滑片样式-------------------------------------*/
+
+.response {
+  padding: 10rpx 10rpx 10rpx 10rpx;
+  height: auto;
+  background-color: #eee;
+  border-radius: 9rpx;
+}
+
+.answer-headImg {
+  position: relative;
+  top: 10rpx;
+  left: 25rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 9rpx;
+  border: #808080 solid 5rpx;
+}
+
+.answerInfo {
+  position: relative;
+  left: 25rpx;
+  top: 10rpx;
+  text-align: center;
+  width: 120rpx;
+  height: 160rpx;
+}
+
+.answerName {
+  font-size: 31rpx;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  color: #000;
+  line-height: 1.5;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+}
+
+.answerTime {
+  font-size: 29rpx;
+  line-height: 1.5;
+}
+
+.answerText {
+  /* position: relative;
+  top: -260rpx;
+  left: 200rpx; */
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+  float: right;
+  width: 450rpx;
+  height: 22vh;
+  padding: 25rpx;
+  background-color: #e5e5e5;
+  border-radius: 33rpx;
+}
+
+.answerText text {
+  font-size: 42rpx;
+}
+
+/* ------------------------------满意度-------------------------------------------- */
+
+/* ----------------星星评分------------------- */
+
+.star-group {
+  text-align: center;
+  position: relative;
+  top: 1vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+}
+.star_icon{
+  width: 48px;
+  height: 48px;
+}
+
+/* 下面的废弃掉 */
+.cell-group {
+  text-align: center;
+  /* height: 10vh; */
+  position: relative;
+  top: 1vh;
+}
+
+.l-evalbox-row {
+  /* background-color: green; */
+  position: relative;
+  top: 3vh;
+  height: 10vh;
+  border-top: #a6a6a6 solid 6rpx;
+  border-bottom: #a6a6a6 solid 6rpx;
+}
+
+/*-------------------------------下方按钮样式---------------------------------------*/
+
+.bottom-box {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  background-color: gray;
+  /* background-color: red; */
+}
+
+.weui-grid {
+  position: relative;
+  float: left;
+  margin-top: 2rpx;
+  padding: 0px 0px 0px 0px;
+  width: 29%;
+  height: 150rpx;
+  box-sizing: border-box;
+  background-size: cover;
+}
+
+.switch-box {
+  position: absolute;
+  bottom: 10rpx;
+  width: 100%;
+  background-color: gray;
+  /* background-color: red; */
+}
+
+.button-left {
+  background-color: #fff;
+  height: 10vh;
+  width: 33.3%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 6rpx;
+  margin-right: 3rpx;
+  margin-bottom: 0rpx;
+  border-bottom-left-radius: 9rpx;
+}
+
+.button-left-1 {
+  background-color: #e5e5e5;
+  height: 10vh;
+  width: 33.3%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 6rpx;
+  margin-right: 3rpx;
+  margin-bottom: 0rpx;
+  border-bottom-left-radius: 9rpx;
+}
+
+.button-right {
+  background-color: #fff;
+  height: 10vh;
+  width: 33.3%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 6rpx;
+  margin-left: 3rpx;
+  margin-bottom: 0rpx;
+  border-bottom-right-radius: 9rpx;
+}
+
+.button-right-1 {
+  background-color: #e5e5e5;
+  height: 10vh;
+  width: 33.3%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 6rpx;
+  margin-left: 3rpx;
+  margin-bottom: 0rpx;
+  border-bottom-right-radius: 9rpx;
+}
+
+.button-text {
+  position: relative;
+  top: 2vh;
+  font-size: 60rpx;
+  font: Microsoft yahei;
+}
+
+.topMaxBox {
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+}
+
+.topLeft {
+  border: 1px solid #e5e5e5;
+  margin-right: 10px;
+}
+
+.topLeft image {
+  width: 100%;
+  height: 100%;
+}
+
+.topRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.r_top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.l-evalbox {
+  height: 100rpx;
+  padding: 0 3%;
+  margin-top: 0rpx;
+  background: #fff;
+  line-height: 100rpx;
+}
+
+.l-evaltxt {
+  /* width: 120rpx; */
+  display: block;
+  font-size: 42rpx;
+  color: #666;
+  margin-left: 20rpx;
+  margin-top: 0rpx;
+}
+
+.l-evalist .icon {
+  background: url("../icon/icon.png");
+  background-position: -77rpx -246rpx;
+  width: 40rpx;
+  height: 43rpx;
+  margin-right: 30rpx;
+}
+
+.l-evalist .cur {
+  background-position: -128rpx -246rpx;
+}
+
+.l-evalist .icon:last-child {
+  margin: 0;
+}

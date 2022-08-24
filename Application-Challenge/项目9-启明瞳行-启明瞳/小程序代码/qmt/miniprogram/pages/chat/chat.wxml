@@ -1,0 +1,84 @@
+<!--pages/chat/chat.wxml-->
+<!-- <view class='bottom-content'>
+  <rich-text nodes='<img src="{{albumIcon}}" alt="相册" >' class='weui-grid' bindtap="checkPic"> </rich-text>
+  <rich-text nodes='<img src="{{photographIcon}}" alt="拍照" >' class='weui-grid' bindtap="openCamera"></rich-text>
+  <rich-text nodes='<img src="{{textIcon}}" alt="文字识别" >' class='weui-grid' bindtap="doWordIndentify"></rich-text>
+  <rich-text nodes='<img src="{{descIcon}}" alt="描述图片" >' class='weui-grid' bindtap="doDescribe"></rich-text>
+  <rich-text nodes='<img src="{{iamgeIcon}}" alt="图片内容" >' class='weui-grid' bindtap="doConIndentity"></rich-text>
+</view> -->
+
+<view class="container">
+  <scroll-view class="scrool-view" scroll-y="true" scroll-with-animation="true" scroll-into-view="{{scrolltop}}" enable-back-to-top="true">
+    <view class="chat-list">
+      <block wx:for="{{chatList}}" wx:key="time">
+        <!-- 回复输出 -->
+        <view id="roll{{index + 1}}" class="chat-left" wx:if="{{item.orientation === 'l'}}">
+          <image class="avatar-img-left" src="/image/ic_ai.png" alt="头像"></image>
+
+          <view wx:for="{{item.text}}" wx:key="ai" wx:for-item="tmp" wx:for-index="idx">
+            <view class='chat-text-left' data-text='{{tmp}}' bindtap='bindTextTap'>
+              <text>{{tmp}}</text>
+            </view>
+          </view>
+        </view>
+        <!-- 用户输入 -->
+        <view id="roll{{index + 1}}" class="chat-right">
+          <!-- 语音输入 -->
+          <view wx:if="{{item.orientation == 'v'}}">
+            <view data-key="{{voice}}" bindtap='gotoPlay'>
+              <!-- <image src='../image/speaker6.png' mode='aspectFit'></image> -->
+            </view>
+          </view>
+          <!-- 点击识别方式按钮自动打印提示 -->
+          <view wx:if="{{item.orientation === 'a'}}">
+            <!-- 用户头像 -->
+            <image class="avatar-img-right" src="{{userInfo.avatarUrl}}"></image>
+
+            <view class='chat-text-right' data-text='{{item.text}}' bindtap='bindTextTap'>
+              <text>{{item.text}}</text>
+            </view>
+          </view>
+          <!-- 图片 -->
+          <view wx:if="{{item.orientation === 'p'}}">
+            <!-- 用户头像 -->
+            <image class="avatar-img-right" src="{{userInfo.avatarUrl}}"></image>
+
+            <view class='request-img-wrapper'>
+              <image src='{{item.text}}' mode='aspectFit' class="request-img" bindload='testPreLoad' bindtap='previewImg'></image>
+            </view>
+          </view>
+          <!-- 文本输入 -->
+          <view class='chat-right' wx:if="{{item.orientation === 'r'}}">
+            <!-- 用户头像 -->
+            <image class="avatar-img-right" src="{{userInfo.avatarUrl}}"></image>
+
+            <view class='chat-text-right'>
+              <text>{{item.text}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+
+
+
+
+<view class="ask-input-word">
+
+  <rich-text nodes='<img src="{{textIcon}}" alt="文字识别" >' class='weui-grid' bindtap="doOcr"></rich-text>
+  <rich-text nodes='<img src="{{descIcon}}" alt="描述图片" >' class='weui-grid' bindtap="doImgDes"></rich-text>
+
+  <input confirm-type="send" name="ask_word" type="text"  maxlength='-1'  bindconfirm="sendChat" bindinput="Typing" placeholder="输入求助内容" value="{{askWord}}" adjust-position="false" confirm-type='send'  bindconfirm='askVolunteerHelp'></input>
+  <form bindsubmit="askVolunteerHelp" report-submit='true'>
+    <button form-type="submit">发送</button>
+  </form>
+</view>
+
+
+
+
+<image class="speaker" hidden="{{!isSpeaking}}" src="{{speakerUrl}}"></image>
+<canvas canvas-id="pngCanvas" id="pngCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+<!-- <video src="{{recordUrl}}" autoplay="autoplay"></video> -->

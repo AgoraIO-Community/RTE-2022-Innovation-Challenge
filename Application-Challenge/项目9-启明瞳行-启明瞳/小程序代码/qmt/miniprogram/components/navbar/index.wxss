@@ -1,0 +1,40 @@
+.navbar {
+    display: block;
+    color: #fff;
+    font-size: 34rpx;
+    font-weight: bold;
+    display: flex;
+}
+.options{
+    display: flex;
+}
+.navbar .mainPage{
+    padding-left: 40rpx;
+    flex: 1;
+    font-size: 50rpx;
+}
+.navbar .subPage{
+    flex: 1;
+    font-size: 50rpx;
+    max-width: 400rpx;
+    max-height: 100rpx;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.navbar button {
+    padding:0;
+    margin:0;
+    background:none;
+}
+.navbar .return{
+    width: 100rpx;
+    height: 100rpx;
+    vertical-align:middle;
+}
+image{
+    width: 58rpx;
+    height: 58rpx;
+    vertical-align:middle;
+    margin-right: 20rpx;
+    margin-bottom: 10rpx;
+}

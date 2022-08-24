@@ -155,11 +155,11 @@ class _ChatPageState extends State<ChatPage> {
   // 仅在远程可以生效，本地无效果
   Future<void> _enableVirtualBackground() async {
     print('_enableVirtualBackground');
-    ByteData data = await rootBundle.load("assets/images/home.jpg");
+    ByteData data = await rootBundle.load("assets/images/img1.jpg");
     List<int> bytes =  data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
 
     Directory appDocDir = await getApplicationDocumentsDirectory();
-    String p = path.join(appDocDir.path, 'home.jpg');
+    String p = path.join(appDocDir.path, 'img1.jpg');
     final file = File(p);
     if (!(await file.exists())) {
       await file.create();
@@ -241,12 +241,12 @@ class _ChatPageState extends State<ChatPage> {
     }
     final dropDownMenus = <DropdownMenuItem<int>>[];
     dropDownMenus.add(const DropdownMenuItem(
-      child: Text('please select window id'),
+      child: Text('ID'),
       value: -1,
     ));
     for (var v in windows) {
       dropDownMenus.add(DropdownMenuItem(
-        child: Text(v.name),
+        child: Text('ID'),
         value: v.id,
       ));
     }
@@ -368,7 +368,7 @@ class _ChatPageState extends State<ChatPage> {
         ),
         Positioned(
           top: 0,
-          right: 0,
+          right: 16,
           bottom: 0,
           child: _groupButtons(),
         ),
@@ -439,8 +439,9 @@ class _ChatPageState extends State<ChatPage> {
         ),
         const VSpace(8),
         ElevatedButton(
+          style: style,
           onPressed: isJoined ? _switchEffect : null,
-          child: Text('${playEffect ? 'Stop' : 'Play'} effect'),
+          child: playEffect ? const Icon(Icons.image_rounded) : const Icon(Icons.image_not_supported_rounded)
         ),
         const VSpace(8),
         ElevatedButton(

@@ -1,0 +1,10 @@
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\APIExample\binx86\Debug\netcoreapp20\agorartc.deps.json
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\APIExample\binx86\Debug\netcoreapp20\agorartc.dll
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\APIExample\binx86\Debug\netcoreapp20\agorartc.pdb
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\Agora-C_Sharp-RTC-SDK\agorartc\obj\x86\Debug\netcoreapp20\agorartc.csproj.AssemblyReference.cache
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\Agora-C_Sharp-RTC-SDK\agorartc\obj\x86\Debug\netcoreapp20\agorartc.GeneratedMSBuildEditorConfig.editorconfig
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\Agora-C_Sharp-RTC-SDK\agorartc\obj\x86\Debug\netcoreapp20\agorartc.AssemblyInfoInputs.cache
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\Agora-C_Sharp-RTC-SDK\agorartc\obj\x86\Debug\netcoreapp20\agorartc.AssemblyInfo.cs
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\Agora-C_Sharp-RTC-SDK\agorartc\obj\x86\Debug\netcoreapp20\agorartc.csproj.CoreCompileInputs.cache
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\Agora-C_Sharp-RTC-SDK\agorartc\obj\x86\Debug\netcoreapp20\agorartc.dll
+C:\迅雷下载\Agora-C_Sharp-SDK-master\Agora-C_Sharp-SDK-master\Agora-C_Sharp-RTC-SDK\agorartc\obj\x86\Debug\netcoreapp20\agorartc.pdb

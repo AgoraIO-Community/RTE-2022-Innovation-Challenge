@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\迅雷下载\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-RTC-SDK\\agorartc\\agorartc.csproj": {}
+  },
+  "projects": {
+    "C:\\迅雷下载\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-RTC-SDK\\agorartc\\agorartc.csproj": {
+      "version": "3.6.2",
+      "restore": {
+        "projectUniqueName": "C:\\迅雷下载\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-RTC-SDK\\agorartc\\agorartc.csproj",
+        "projectName": "agora_rtc_sdk",
+        "projectPath": "C:\\迅雷下载\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-RTC-SDK\\agorartc\\agorartc.csproj",
+        "packagesPath": "C:\\Users\\beyondma\\.nuget\\packages\\",
+        "outputPath": "C:\\迅雷下载\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-SDK-master\\Agora-C_Sharp-RTC-SDK\\agorartc\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\beyondma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net40",
+          "netcoreapp20"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.0": {
+            "targetAlias": "netcoreapp20",
+            "projectReferences": {}
+          },
+          "net40": {
+            "targetAlias": "net40",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.0": {
+          "targetAlias": "netcoreapp20",
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        },
+        "net40": {
+          "targetAlias": "net40",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

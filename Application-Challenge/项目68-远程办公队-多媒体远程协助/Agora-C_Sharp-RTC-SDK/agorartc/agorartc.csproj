@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp20;net40</TargetFrameworks>
+    <Nullable>disable</Nullable>
+    <Platforms>x64;x86</Platforms>
+    <ApplicationIcon />
+    <Win32Resource />
+    <Company>Agora.io</Company>
+    <Copyright>Agora.io Copyright (C) 2021</Copyright>
+    <Version>3.6.2</Version>
+    <Description> Agora C# SDK enables developer one-to-many and many-to-many audio or video live streaming.
+Agora C# SDK support .netCore(minimum 2.0) and .netFramework(minimum 4.0) application.
+
+Developer can use APIExample to test different case and understand how to integrate C# SDK.
+
+Before test APIExample, create a developer account at [Agora.io](https://dashboard.agora.io/signin/), and obtain an App ID.
+
+For details, see this [FAQ](https://docs.agora.io/en/faq/profile_difference).
+
+**For more detail information, please visit our [API Reference](https://docs.agora.io/en/Video/api-ref?platform=All%20Platforms) **</Description>
+    <PackageProjectUrl>https://github.com/AgoraIO-Community/Agora-C_Sharp-SDK/tree/release/3.6.2</PackageProjectUrl>
+
+    <PackageId>agora_rtc_sdk</PackageId>
+  </PropertyGroup>
+
+  <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\APIExample\binx64\Debug\</OutputPath>
+    </PropertyGroup>-->
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <OutputPath>..\..\APIExample\binx86\Debug\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutputPath>..\..\APIExample\binx64\Debug</OutputPath>
+  </PropertyGroup>
+
+  <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\APIExample\binx64\Release\</OutputPath>
+    </PropertyGroup>-->
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <OutputPath>..\..\APIExample\binx86\Release\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutputPath>..\..\APIExample\binx64\Release\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LitJson" Version="0.17.0" />
+  </ItemGroup>
+
+</Project>

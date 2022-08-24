@@ -1,0 +1,77 @@
+PODS:
+  - agora_rtc_engine (5.2.0):
+    - AgoraIrisRTC_macOS (= 3.6.2-fix.2)
+    - FlutterMacOS
+  - AgoraIrisRTC_macOS (3.6.2-fix.2)
+  - flutter_secure_storage_macos (3.3.1):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - package_info_plus_macos (0.0.1):
+    - FlutterMacOS
+  - path_provider_macos (0.0.1):
+    - FlutterMacOS
+  - shared_preferences_macos (0.0.1):
+    - FlutterMacOS
+  - sign_in_with_apple (0.0.1):
+    - FlutterMacOS
+  - smart_auth (0.0.1):
+    - FlutterMacOS
+  - sqflite (0.0.2):
+    - FlutterMacOS
+    - FMDB (>= 2.7.5)
+
+DEPENDENCIES:
+  - agora_rtc_engine (from `Flutter/ephemeral/.symlinks/plugins/agora_rtc_engine/macos`)
+  - flutter_secure_storage_macos (from `Flutter/ephemeral/.symlinks/plugins/flutter_secure_storage_macos/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - package_info_plus_macos (from `Flutter/ephemeral/.symlinks/plugins/package_info_plus_macos/macos`)
+  - path_provider_macos (from `Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos`)
+  - shared_preferences_macos (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_macos/macos`)
+  - sign_in_with_apple (from `Flutter/ephemeral/.symlinks/plugins/sign_in_with_apple/macos`)
+  - smart_auth (from `Flutter/ephemeral/.symlinks/plugins/smart_auth/macos`)
+  - sqflite (from `Flutter/ephemeral/.symlinks/plugins/sqflite/macos`)
+
+SPEC REPOS:
+  trunk:
+    - AgoraIrisRTC_macOS
+    - FMDB
+
+EXTERNAL SOURCES:
+  agora_rtc_engine:
+    :path: Flutter/ephemeral/.symlinks/plugins/agora_rtc_engine/macos
+  flutter_secure_storage_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/flutter_secure_storage_macos/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  package_info_plus_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/package_info_plus_macos/macos
+  path_provider_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos
+  shared_preferences_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_macos/macos
+  sign_in_with_apple:
+    :path: Flutter/ephemeral/.symlinks/plugins/sign_in_with_apple/macos
+  smart_auth:
+    :path: Flutter/ephemeral/.symlinks/plugins/smart_auth/macos
+  sqflite:
+    :path: Flutter/ephemeral/.symlinks/plugins/sqflite/macos
+
+SPEC CHECKSUMS:
+  agora_rtc_engine: 36b2e1b7fee9d0d1e9c28dc45f45012db539a88a
+  AgoraIrisRTC_macOS: c60a91aba025d9c7ded292643ad27af6afdad2b4
+  flutter_secure_storage_macos: 6ceee8fbc7f484553ad17f79361b556259df89aa
+  FlutterMacOS: 57701585bf7de1b3fc2bb61f6378d73bbdea8424
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  package_info_plus_macos: f010621b07802a241d96d01876d6705f15e77c1c
+  path_provider_macos: 3c0c3b4b0d4a76d2bf989a913c2de869c5641a19
+  shared_preferences_macos: a64dc611287ed6cbe28fd1297898db1336975727
+  sign_in_with_apple: a9e97e744e8edc36aefc2723111f652102a7a727
+  smart_auth: b38e3ab4bfe089eacb1e233aca1a2340f96c28e9
+  sqflite: a5789cceda41d54d23f31d6de539d65bb14100ea
+
+PODFILE CHECKSUM: 6eac6b3292e5142cfc23bdeb71848a40ec51c14c
+
+COCOAPODS: 1.11.3

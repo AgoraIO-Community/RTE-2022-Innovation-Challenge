@@ -1,0 +1,217 @@
+PODS:
+  - agora_rtc_engine (5.3.0):
+    - AgoraIrisRTC_iOS (= 3.7.0.3)
+    - AgoraRtcEngine_iOS (= 3.7.0.3)
+    - Flutter
+  - AgoraIrisRTC_iOS (3.7.0.3)
+  - AgoraRtcEngine_iOS (3.7.0.3):
+    - AgoraRtcEngine_iOS/AINS (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/AV1Dec (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/ContentInspect (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/FullAudioFormat (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/ReplayKit (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/ROIEnc (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/RtcBasic (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/SpatialAudio (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/SuperResolution (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/VideoPreprocess (= 3.7.0.3)
+    - AgoraRtcEngine_iOS/VirtualBackground (= 3.7.0.3)
+  - AgoraRtcEngine_iOS/AINS (3.7.0.3)
+  - AgoraRtcEngine_iOS/AV1Dec (3.7.0.3)
+  - AgoraRtcEngine_iOS/ContentInspect (3.7.0.3)
+  - AgoraRtcEngine_iOS/FullAudioFormat (3.7.0.3)
+  - AgoraRtcEngine_iOS/ReplayKit (3.7.0.3)
+  - AgoraRtcEngine_iOS/ROIEnc (3.7.0.3)
+  - AgoraRtcEngine_iOS/RtcBasic (3.7.0.3)
+  - AgoraRtcEngine_iOS/SpatialAudio (3.7.0.3)
+  - AgoraRtcEngine_iOS/SuperResolution (3.7.0.3)
+  - AgoraRtcEngine_iOS/VideoPreprocess (3.7.0.3)
+  - AgoraRtcEngine_iOS/VirtualBackground (3.7.0.3)
+  - BaiduMapKit/Base (6.5.1)
+  - BaiduMapKit/Map (6.5.1):
+    - BaiduMapKit/Base
+  - BaiduMapKit/Search (6.5.1):
+    - BaiduMapKit/Base
+  - BaiduMapKit/Utils (6.5.1):
+    - BaiduMapKit/Base
+  - BMKLocationKit (2.0.2)
+  - custom_floating_action_button (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - flutter_apns_only (0.0.1):
+    - Flutter
+  - flutter_baidu_mapapi_base (3.1.0):
+    - BaiduMapKit/Utils (= 6.5.1)
+    - Flutter
+  - flutter_baidu_mapapi_map (3.1.0):
+    - BaiduMapKit/Map (= 6.5.1)
+    - Flutter
+    - flutter_baidu_mapapi_base
+  - flutter_baidu_mapapi_search (3.1.0):
+    - BaiduMapKit/Search (= 6.5.1)
+    - Flutter
+    - flutter_baidu_mapapi_base
+  - flutter_baidu_mapapi_utils (3.1.0):
+    - BaiduMapKit/Utils (= 6.5.1)
+    - Flutter
+    - flutter_baidu_mapapi_base
+  - flutter_bmflocation (2.0.1):
+    - BMKLocationKit (~> 2.0.2)
+    - Flutter
+  - flutter_keyboard_visibility (0.0.1):
+    - Flutter
+  - flutter_secure_storage (3.3.1):
+    - Flutter
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - home_indicator (0.0.1):
+    - Flutter
+  - HyphenateChat (3.9.4.1)
+  - im_flutter_sdk (0.0.1):
+    - Flutter
+    - HyphenateChat (= 3.9.4.1)
+  - package_info_plus (0.4.5):
+    - Flutter
+  - path_provider_ios (0.0.1):
+    - Flutter
+  - permission_handler_apple (9.0.4):
+    - Flutter
+  - shared_preferences_ios (0.0.1):
+    - Flutter
+  - sign_in_with_apple (0.0.1):
+    - Flutter
+  - smart_auth (0.0.1):
+    - Flutter
+  - sqflite (0.0.2):
+    - Flutter
+    - FMDB (>= 2.7.5)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+  - video_player_avfoundation (0.0.1):
+    - Flutter
+  - wakelock (0.0.1):
+    - Flutter
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - agora_rtc_engine (from `.symlinks/plugins/agora_rtc_engine/ios`)
+  - custom_floating_action_button (from `.symlinks/plugins/custom_floating_action_button/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_apns_only (from `.symlinks/plugins/flutter_apns_only/ios`)
+  - flutter_baidu_mapapi_base (from `.symlinks/plugins/flutter_baidu_mapapi_base/ios`)
+  - flutter_baidu_mapapi_map (from `.symlinks/plugins/flutter_baidu_mapapi_map/ios`)
+  - flutter_baidu_mapapi_search (from `.symlinks/plugins/flutter_baidu_mapapi_search/ios`)
+  - flutter_baidu_mapapi_utils (from `.symlinks/plugins/flutter_baidu_mapapi_utils/ios`)
+  - flutter_bmflocation (from `.symlinks/plugins/flutter_bmflocation/ios`)
+  - flutter_keyboard_visibility (from `.symlinks/plugins/flutter_keyboard_visibility/ios`)
+  - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
+  - home_indicator (from `.symlinks/plugins/home_indicator/ios`)
+  - im_flutter_sdk (from `.symlinks/plugins/im_flutter_sdk/ios`)
+  - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
+  - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - sign_in_with_apple (from `.symlinks/plugins/sign_in_with_apple/ios`)
+  - smart_auth (from `.symlinks/plugins/smart_auth/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
+  - wakelock (from `.symlinks/plugins/wakelock/ios`)
+  - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AgoraIrisRTC_iOS
+    - AgoraRtcEngine_iOS
+    - BaiduMapKit
+    - BMKLocationKit
+    - FMDB
+    - HyphenateChat
+
+EXTERNAL SOURCES:
+  agora_rtc_engine:
+    :path: ".symlinks/plugins/agora_rtc_engine/ios"
+  custom_floating_action_button:
+    :path: ".symlinks/plugins/custom_floating_action_button/ios"
+  Flutter:
+    :path: Flutter
+  flutter_apns_only:
+    :path: ".symlinks/plugins/flutter_apns_only/ios"
+  flutter_baidu_mapapi_base:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_base/ios"
+  flutter_baidu_mapapi_map:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_map/ios"
+  flutter_baidu_mapapi_search:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_search/ios"
+  flutter_baidu_mapapi_utils:
+    :path: ".symlinks/plugins/flutter_baidu_mapapi_utils/ios"
+  flutter_bmflocation:
+    :path: ".symlinks/plugins/flutter_bmflocation/ios"
+  flutter_keyboard_visibility:
+    :path: ".symlinks/plugins/flutter_keyboard_visibility/ios"
+  flutter_secure_storage:
+    :path: ".symlinks/plugins/flutter_secure_storage/ios"
+  home_indicator:
+    :path: ".symlinks/plugins/home_indicator/ios"
+  im_flutter_sdk:
+    :path: ".symlinks/plugins/im_flutter_sdk/ios"
+  package_info_plus:
+    :path: ".symlinks/plugins/package_info_plus/ios"
+  path_provider_ios:
+    :path: ".symlinks/plugins/path_provider_ios/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+  shared_preferences_ios:
+    :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  sign_in_with_apple:
+    :path: ".symlinks/plugins/sign_in_with_apple/ios"
+  smart_auth:
+    :path: ".symlinks/plugins/smart_auth/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+  video_player_avfoundation:
+    :path: ".symlinks/plugins/video_player_avfoundation/ios"
+  wakelock:
+    :path: ".symlinks/plugins/wakelock/ios"
+  webview_flutter_wkwebview:
+    :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
+
+SPEC CHECKSUMS:
+  agora_rtc_engine: eb26dd1d3993b69345235352d558e79bfdd84f40
+  AgoraIrisRTC_iOS: d802443ae16f043e7b2805c978880eb62ee8154c
+  AgoraRtcEngine_iOS: 549bb3853d5afb18fabca4197786f39f31141da8
+  BaiduMapKit: f227cfb43581e91466fb4f1344f655eab5788777
+  BMKLocationKit: 3b96beefb31c3b12d53e9156aa4ab19ecd695dec
+  custom_floating_action_button: d1676bb7a5380db43a9510dfa05c559d265e6c96
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  flutter_apns_only: 3d91c0ca9dbef4439874858590909a19f8ed06a4
+  flutter_baidu_mapapi_base: cb406be78c3a949fb58a45dc6627f139d580bd37
+  flutter_baidu_mapapi_map: 81c4e6e93dc668e311d9b521421deaf292390434
+  flutter_baidu_mapapi_search: 13a360334e91abea0bcf820546b2ef4548e42e08
+  flutter_baidu_mapapi_utils: f6a5d23da26b0e58f1ae9908da7ba87fd48384b1
+  flutter_bmflocation: 0149a2e51abccb1bdaaf7ef7b7aa03c6d4e809b7
+  flutter_keyboard_visibility: 0339d06371254c3eb25eeb90ba8d17dca8f9c069
+  flutter_secure_storage: 7953c38a04c3fdbb00571bcd87d8e3b5ceb9daec
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  home_indicator: 60c6a4b60d17173cd164c112eb9be37055b23af8
+  HyphenateChat: 4036a3b362728b6ca16846c44b33c885e31ead74
+  im_flutter_sdk: bc537400fd28f7c709bf12a3622b2b5c93275ea9
+  package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  sign_in_with_apple: f3bf75217ea4c2c8b91823f225d70230119b8440
+  smart_auth: 4bedbc118723912d0e45a07e8ab34039c19e04f2
+  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  url_launcher_ios: 839c58cdb4279282219f5e248c3321761ff3c4de
+  video_player_avfoundation: e489aac24ef5cf7af82702979ed16f2a5ef84cff
+  wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
+  webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f
+
+PODFILE CHECKSUM: 4d441ab7449970d9b1e4cbc697a9a448cf2c143e
+
+COCOAPODS: 1.11.3

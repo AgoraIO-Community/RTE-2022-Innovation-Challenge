@@ -1,0 +1,7 @@
+.idea
+.vscode
+android_release_keysotre
+*/.vscode
+client/fastlane/report.xml
+Runner.ipa
+Runner.app.dSYM.zip

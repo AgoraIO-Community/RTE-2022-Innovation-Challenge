@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SettingActivity">
+
+    <TextView
+        android:id="@+id/tv_set_video"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sw_50dp"
+        android:layout_marginTop="@dimen/sw_20dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/sw_10dp"
+        android:text="@string/set_resolution"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sw_18sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rg_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sw_10dp"
+        android:gravity="start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_set_video">
+
+        <RadioButton
+            android:id="@+id/rb_video_low"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/low"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+        <RadioButton
+            android:id="@+id/rb_video_middle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/middle"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+        <RadioButton
+            android:id="@+id/rb_video_high"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sw_50dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/high"
+            android:textSize="@dimen/sw_18sp"
+            android:theme="@style/MyCheckBox" />
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

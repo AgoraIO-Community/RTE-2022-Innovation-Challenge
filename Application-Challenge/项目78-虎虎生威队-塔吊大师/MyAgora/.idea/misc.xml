@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable-v24/bg_shape_loading.xml" value="0.431" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable-xxhdpi/bg_gray_0_radius_20.xml" value="0.431" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable-xxhdpi/tab_content.xml" value="0.4035" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable-xxhdpi/tab_conversation.xml" value="0.4035" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable-xxhdpi/tab_mine.xml" value="0.4035" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/bg_gray_0_radius_20.xml" value="0.453" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/bg_shape_loading.xml" value="0.459" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/bg_white_0_radius_10.xml" value="0.459" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/bg_white_0_radius_3.xml" value="0.4445" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/check_box_color.xml" value="0.471" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2555" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2555" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3795" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2555" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_about_us.xml" value="0.48007246376811596" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_add_friend.xml" value="0.4322916666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_call.xml" value="0.4708333333333333" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_call_camera.xml" value="0.4375" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_call_construction.xml" value="0.5098958333333333" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_call_operation.xml" value="0.4161458333333333" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_chat.xml" value="0.2373353596757852" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_create_group.xml" value="0.5036458333333333" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_create_group_info.xml" value="0.2758152173913043" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_group_info.xml" value="0.4473958333333333" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_group_more.xml" value="0.5104166666666666" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_join_group.xml" value="0.4901041666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_login.xml" value="0.45677083333333335" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_main.xml" value="0.42077464788732394" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_main2.xml" value="0.3770833333333333" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_main3.xml" value="0.2791666666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_register.xml" value="0.4354166666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_setting.xml" value="0.446875" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_setting_role.xml" value="0.4041666666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_setting_video.xml" value="0.5109375" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_splash.xml" value="0.3754528985507246" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/activity_test.xml" value="0.4401041666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/fragment_contact.xml" value="0.6" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/fragment_conversation.xml" value="0.24547101449275363" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/fragment_dashboard.xml" value="0.379981884057971" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/fragment_home.xml" value="0.379981884057971" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/fragment_mine.xml" value="0.24547101449275363" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/fragment_notifications.xml" value="0.3963541666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/item_create_group.xml" value="0.29483695652173914" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/item_friend.xml" value="0.2898550724637681" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/item_group.xml" value="0.5026041666666666" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/layout_item.xml" value="0.4114583333333333" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/layout_item_with_icon.xml" value="0.44166666666666665" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/layout_loading.xml" value="0.46770833333333334" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/layout_title_bar.xml" value="0.5244791666666667" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/layout_video.xml" value="0.503125" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/popupwindow_add_friend.xml" value="0.49947916666666664" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/popupwindow_logout.xml" value="0.3605072463768116" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/popupwindow_tip.xml" value="0.4230072463768116" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/title_text.xml" value="0.5140625" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/title_text_finish.xml" value="0.35988902100673803" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/layout/title_text_group.xml" value="0.47760416666666666" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/menu/bottom_nav_menu.xml" value="0.43645833333333334" />
+        <entry key="..\:/WorkSpace/MyAgora/app/src/main/res/menu/contact_right_menu.xml" value="0.41770833333333335" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

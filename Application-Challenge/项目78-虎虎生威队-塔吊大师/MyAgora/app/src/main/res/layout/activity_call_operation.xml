@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.agora.crane.activity.CallOperationActivity">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_theme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.agora.crane.widget.WaveView
+            android:id="@+id/wave_view_call_operation"
+            android:layout_width="@dimen/sw_230dp"
+            android:layout_height="@dimen/sw_230dp"
+            app:layout_constraintStart_toStartOf="@+id/cv_call_operation_construction"
+            app:layout_constraintEnd_toEndOf="@+id/cv_call_operation_construction"
+            app:layout_constraintTop_toTopOf="@+id/cv_call_operation_construction"
+            app:layout_constraintBottom_toBottomOf="@+id/cv_call_operation_construction"
+            android:visibility="visible"
+            />
+
+
+        <com.agora.crane.widget.LayoutVideo
+            android:id="@+id/layout_forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_10dp"
+            app:layout_constraintEnd_toStartOf="@+id/layout_left"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_direction="@string/forward" />
+
+        <com.agora.crane.widget.LayoutVideo
+            android:id="@+id/layout_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_10dp"
+            app:layout_constraintStart_toStartOf="@+id/layout_forward"
+            app:layout_constraintTop_toBottomOf="@+id/layout_forward"
+            app:text_direction="@string/back" />
+
+        <com.agora.crane.widget.LayoutVideo
+            android:id="@+id/layout_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_10dp"
+            app:layout_constraintEnd_toStartOf="@+id/layout_up"
+            app:layout_constraintStart_toEndOf="@+id/layout_forward"
+            app:layout_constraintTop_toTopOf="@+id/layout_forward"
+            app:text_direction="@string/left" />
+
+        <com.agora.crane.widget.LayoutVideo
+            android:id="@+id/layout_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_10dp"
+            app:layout_constraintStart_toStartOf="@+id/layout_left"
+            app:layout_constraintTop_toBottomOf="@+id/layout_forward"
+            app:text_direction="@string/right" />
+
+        <com.agora.crane.widget.LayoutVideo
+            android:id="@+id/layout_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_10dp"
+            app:layout_constraintEnd_toStartOf="@+id/cv_call_operation"
+            app:layout_constraintStart_toEndOf="@+id/layout_left"
+            app:layout_constraintTop_toTopOf="@+id/layout_forward"
+            app:text_direction="@string/up" />
+
+        <com.agora.crane.widget.LayoutVideo
+            android:id="@+id/layout_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/layout_up"
+            app:layout_constraintTop_toTopOf="@+id/layout_right"
+            app:text_direction="@string/down" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_call_operation"
+            android:layout_width="@dimen/sw_135dp"
+            android:layout_height="@dimen/sw_135dp"
+            android:layout_marginStart="@dimen/sw_15dp"
+            android:layout_marginTop="@dimen/sw_10dp"
+            app:cardBackgroundColor="@android:color/darker_gray"
+            app:cardCornerRadius="@dimen/sw_10dp"
+            app:cardMaxElevation="@dimen/sw_15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_up">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_10dp"
+                android:gravity="center"
+                android:text="@string/order_area"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sw_15sp" />
+
+            <ImageView
+                android:id="@+id/iv_call_operation_order"
+                android:layout_width="@dimen/sw_80dp"
+                android:layout_height="@dimen/sw_80dp"
+                android:layout_marginStart="@dimen/sw_27dp"
+                android:layout_marginTop="@dimen/sw_40dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/sw_20dp"
+            android:layout_height="@dimen/sw_20dp"
+            android:layout_marginEnd="@dimen/sw_35dp"
+            android:layout_marginBottom="@dimen/sw_5dp"
+            app:cardCornerRadius="@dimen/sw_10dp"
+            app:cardElevation="@dimen/sw_2dp"
+            app:layout_constraintBottom_toTopOf="@+id/cv_call_operation_construction"
+            app:layout_constraintEnd_toEndOf="@+id/cv_call_operation_construction">
+
+            <ImageView
+                android:id="@+id/iv_call_operation_sound"
+                android:layout_width="@dimen/sw_20dp"
+                android:layout_height="@dimen/sw_20dp"
+                android:padding="@dimen/sw_3dp"
+                android:src="@drawable/sound_open" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/sw_20dp"
+            android:layout_height="@dimen/sw_20dp"
+            android:layout_marginStart="@dimen/sw_35dp"
+            android:layout_marginBottom="@dimen/sw_5dp"
+            app:cardCornerRadius="@dimen/sw_10dp"
+            app:cardElevation="@dimen/sw_2dp"
+            app:layout_constraintBottom_toTopOf="@+id/cv_call_operation_construction"
+            app:layout_constraintStart_toStartOf="@+id/cv_call_operation_construction">
+
+            <ImageView
+                android:id="@+id/iv_call_operation_network"
+                android:layout_width="@dimen/sw_20dp"
+                android:layout_height="@dimen/sw_20dp"
+                android:padding="@dimen/sw_3dp"
+                android:src="@drawable/net_word_4" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_call_operation_construction"
+            android:layout_width="@dimen/sw_120dp"
+            android:layout_height="@dimen/sw_120dp"
+            app:cardMaxElevation="@dimen/sw_15dp"
+            app:cardElevation="@dimen/sw_5dp"
+            app:cardCornerRadius="@dimen/sw_68dp"
+            app:layout_constraintStart_toStartOf="@+id/cv_call_operation"
+            app:layout_constraintEnd_toEndOf="@+id/cv_call_operation"
+            app:layout_constraintTop_toBottomOf="@+id/cv_call_operation"
+            android:layout_marginTop="@dimen/sw_40dp"
+            >
+
+            <FrameLayout
+                android:id="@+id/fl_call_operation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <com.agora.crane.widget.ZoomConstraintLayout
+            android:id="@+id/cl_call_operation_call_to_construction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_15dp"
+            android:background="@drawable/bg_gray_0_radius_20"
+            android:paddingStart="@dimen/sw_5dp"
+            android:paddingEnd="@dimen/sw_5dp"
+            app:layout_constraintStart_toStartOf="@+id/cv_call_operation_construction"
+            app:layout_constraintTop_toBottomOf="@+id/cv_call_operation_construction"
+            app:layout_constraintEnd_toEndOf="@+id/cv_call_operation_construction">
+
+            <ImageView
+                android:id="@+id/iv_call_construction_call_to_operator"
+                android:layout_width="@dimen/sw_30dp"
+                android:layout_height="@dimen/sw_30dp"
+                android:background="@drawable/icon_phone" />
+
+            <TextView
+                android:id="@+id/tv_call_operation_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sw_5dp"
+                android:paddingEnd="@dimen/sw_5dp"
+                android:text="@string/call_to_construction"
+                android:textColor="@color/color_theme"
+                android:textSize="@dimen/sw_15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_call_construction_call_to_operator"
+                app:layout_constraintStart_toEndOf="@+id/iv_call_construction_call_to_operator"
+                app:layout_constraintTop_toTopOf="@+id/iv_call_construction_call_to_operator" />
+
+
+        </com.agora.crane.widget.ZoomConstraintLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_call_operation_pick_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/cv_call_operation_construction"
+            app:layout_constraintTop_toTopOf="@+id/tv_call_operation_hang_up"
+            app:layout_constraintEnd_toStartOf="@+id/tv_call_operation_hang_up"
+            android:background="@drawable/bg_white_0_radius_3"
+            android:textSize="@dimen/sw_14sp"
+            android:textColor="@color/color_theme"
+            android:text="@string/pick_up"
+            android:paddingStart="@dimen/sw_5dp"
+            android:paddingEnd="@dimen/sw_5dp"
+            android:paddingTop="@dimen/sw_2dp"
+            android:paddingBottom="@dimen/sw_2dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_call_operation_hang_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/cv_call_operation_construction"
+            app:layout_constraintStart_toEndOf="@+id/tv_call_operation_pick_up"
+            app:layout_constraintTop_toBottomOf="@+id/cv_call_operation_construction"
+            android:background="@drawable/bg_white_0_radius_3"
+            android:textSize="@dimen/sw_14sp"
+            android:textColor="@color/color_theme"
+            android:text="@string/hang_up"
+            android:layout_marginTop="@dimen/sw_15dp"
+            android:paddingStart="@dimen/sw_5dp"
+            android:paddingEnd="@dimen/sw_5dp"
+            android:paddingTop="@dimen/sw_2dp"
+            android:paddingBottom="@dimen/sw_2dp"
+            android:visibility="gone"
+            />
+
+
+        <View
+            android:id="@+id/view_mask_call_operation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/video_mark"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,124 @@
+<resources>
+    <string name="application_name">塔吊大师</string>
+    <string name="login_button">Login</string>
+    <string name="logout_button">Logout</string>
+    <string name="join_button">Join</string>
+    <string name="leave_button">Leave</string>
+    <string name="send_peer_msg_button">Peer MSG</string>
+    <string name="send_channel_msg_button">Group MSG</string>
+    <string name="uid">Enter your uid</string>
+    <string name="msg">Enter your message</string>
+    <string name="channel_name">Channel name</string>
+    <string name="peer_name">Peer name</string>
+
+    <string name="app_id">937ed990831f46adbdf914d49b808087</string>
+    <string name="token">006937ed990831f46adbdf914d49b808087IADogYTK7qDYNoMQRmJjfb/gwqpuhIJSsQ4t1NLswzsIZSHf2/QAAAAAEADxK56Ys9ndYgEA6AOz2d1i</string>
+    <string name="forward">前</string>
+    <string name="back">后</string>
+    <string name="left">左</string>
+    <string name="right">右</string>
+    <string name="up">上</string>
+    <string name="down">下</string>
+    <string name="account">账号:</string>
+    <string name="password">密码:</string>
+    <string name="input_account">请输入账号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="register_success">注册成功，请登录</string>
+    <string name="register_failure">注册失败</string>
+    <string name="register_account">注册账号</string>
+    <string name="please_input_account">请输入账号</string>
+    <string name="please_input_password">请输入密码</string>
+    <string name="login_failure">登录失败</string>
+    <string name="loading">加载中...</string>
+    <string name="conversation">会话</string>
+    <string name="contact">通讯录</string>
+    <string name="mine">我的</string>
+    <string name="setting">设置</string>
+    <string name="about_us">关于我们</string>
+    <string name="set_role">设置角色</string>
+    <string name="set_video">设置视频</string>
+    <string name="set_resolution">设置分辨率</string>
+    <string name="logout">退出登录</string>
+    <string name="logout_failure">退出登录失败</string>
+    <string name="logout_ing">退出登录中...</string>
+
+    <string name="role_operator">操作员</string>
+    <string name="role_construction">现场施工</string>
+    <string name="role_camera_forward">摄像头前</string>
+    <string name="role_camera_back">摄像头后</string>
+    <string name="role_camera_left">摄像头左</string>
+    <string name="role_camera_right">摄像头右</string>
+    <string name="role_camera_up">摄像头上</string>
+    <string name="role_camera_down">摄像头下</string>
+    <string name="un_set_role">未设置</string>
+    <string name="tip_un_set_role">您未设置角色，是否现在去设置？</string>
+    <string name="user_name">名字：%1$s</string>
+    <string name="user_role">角色：%s</string>
+
+    <string name="low">低</string>
+    <string name="middle">中</string>
+    <string name="high">高</string>
+
+    <string name="introduce">\u3000\u3000塔吊大师是一款服务于塔吊司机及塔吊管理的应用。\n
+        \u3000众所周知，现在建筑工地中有非常多的塔吊，每台塔吊都由一名塔吊师傅在顶部的驾驶室中进行操作，塔吊建在室外，非常高，塔吊师傅一整天都得呆在塔吊上面，工作环境非常恶劣，上班的时候上到塔吊上面，下班的时候从上面下来，非常不方便，而且也非常危险。\n
+        \u3000面对这样的情况，基于声网SDK开发了这样一款应用。应用的场景是这样的，塔吊的吊勾上装上摄像头，然后通过声网的SDK把摄像头的数据实时的传回控制室，塔吊师傅只要在控制室内通过实时的现场画面进行操作就可以，这样塔吊师傅的工作环境能够得到改善。\n
+        \u3000同时，应用也集成了环信SDK，可对塔吊组进行管理，也可以跟现场施工人员进行一些操作指令的沟通，这样更方便施工，有利于提高效率。</string>
+
+    <string name="open_source_license">开源许可</string>
+
+    <string name="tip">提示</string>
+    <string name="tip_logout">您确定要退出登录吗？</string>
+
+
+    <string name="group_list">吊塔列表</string>
+    <string name="friend">好友</string>
+    <string name="add_friend">添加好友</string>
+    <string name="add_friend_success">添加好友成功</string>
+    <string name="add_friend_failure">添加好友失败</string>
+    <string name="send_add_friend_message_success">已发送好友请求</string>
+    <string name="send_add_friend_message_failure">发送好友请求失败</string>
+    <string name="join_group">加入群聊</string>
+    <string name="exit_group">退出群聊</string>
+    <string name="destroy_group">解散群聊</string>
+    <string name="tip_exit_group">您确定要退出群聊吗？</string>
+    <string name="tip_destroy_group">您确定要解散群聊吗？</string>
+    <string name="exit_group_success">退出群聊成功</string>
+    <string name="destroy_group_success">解散群聊成功</string>
+    <string name="exit_group_failure">退出群聊失败</string>
+    <string name="destroy_group_failure">解散群聊失败</string>
+    <string name="join_group_success">加入群聊成功</string>
+    <string name="join_group_failure">加入群聊失败</string>
+    <string name="create_group">创建群聊</string>
+    <string name="create_group_success">创建群聊成功</string>
+    <string name="create_group_failure">创建群聊失败</string>
+    <string name="input_user_id">请输入用户ID</string>
+    <string name="input_group_id">请输入群ID</string>
+    <string name="cancel">取消</string>
+    <string name="sure">确定</string>
+    <string name="add">添加</string>
+    <string name="operation">操作</string>
+    <string name="finish">完成</string>
+    <string name="ok">OK</string>
+    <string name="no_friends_selected">未选中任何好友</string>
+    <string name="copy">复制</string>
+    <string name="call_to_operator">与操作员通话</string>
+    <string name="call_to_construction">与现场通话</string>
+    <string name="call_to_operator_ing">请求通话中...</string>
+    <string name="call_to_operator_pick_up">正在通话中...</string>
+    <string name="order_area">指令操作区</string>
+    <string name="pick_up">接受</string>
+    <string name="hang_up">挂断</string>
+
+    <string name="group_name">名称</string>
+    <string name="group_introduction">简介</string>
+    <string name="input_group_name">请输入群名称</string>
+    <string name="input_group_introduction">请输入群简介</string>
+    <string name="group_info">群资料</string>
+    <string name="group_more">群信息</string>
+    <string name="group_owner">群主</string>
+    <string name="get_group_info_failure">获取群消息失败</string>
+    <string name="group_name1">群名称：%1$s</string>
+    <string name="group_id">群ID：%s</string>
+</resources>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_theme"
+    tools:context=".activity.CallConstructionActivity">
+
+    <com.agora.crane.widget.ZoomImageView
+        android:id="@+id/tv_call_construction_ok"
+        android:layout_width="@dimen/sw_80dp"
+        android:layout_height="@dimen/sw_80dp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_call_construction_up"
+        app:layout_constraintBottom_toTopOf="@+id/iv_call_construction_left"
+       android:background="@drawable/icon_ok"
+        android:layout_marginEnd="@dimen/sw_20dp"
+        android:layout_marginBottom="@dimen/sw_20dp"
+        />
+
+    <com.agora.crane.widget.ZoomImageView
+        android:id="@+id/iv_call_construction_left"
+        android:layout_width="@dimen/sw_100dp"
+        android:layout_height="@dimen/sw_100dp"
+        android:background="@drawable/icon_arrow_left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_call_construction_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.agora.crane.widget.ZoomImageView
+        android:id="@+id/iv_call_construction_up"
+        android:layout_width="@dimen/sw_100dp"
+        android:layout_height="@dimen/sw_100dp"
+        android:layout_marginTop="@dimen/sw_50dp"
+        android:background="@drawable/icon_arrow_up"
+        app:layout_constraintEnd_toEndOf="@+id/iv_call_construction_right"
+        app:layout_constraintStart_toStartOf="@+id/iv_call_construction_left"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.agora.crane.widget.ZoomImageView
+        android:id="@+id/iv_call_construction_right"
+        android:layout_width="@dimen/sw_100dp"
+        android:layout_height="@dimen/sw_100dp"
+        android:layout_marginStart="@dimen/sw_50dp"
+        android:background="@drawable/icon_arrow_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_call_construction_forward"
+        app:layout_constraintStart_toEndOf="@+id/iv_call_construction_left"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.agora.crane.widget.ZoomImageView
+        android:id="@+id/iv_call_construction_down"
+        android:layout_width="@dimen/sw_100dp"
+        android:layout_height="@dimen/sw_100dp"
+        android:layout_marginBottom="@dimen/sw_50dp"
+        android:background="@drawable/icon_arrow_down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_call_construction_up" />
+
+    <com.agora.crane.widget.ZoomImageView
+        android:id="@+id/iv_call_construction_forward"
+        android:layout_width="@dimen/sw_100dp"
+        android:layout_height="@dimen/sw_100dp"
+        android:background="@drawable/icon_arrow_forward"
+        app:layout_constraintEnd_toStartOf="@+id/layout_operator"
+        app:layout_constraintStart_toEndOf="@+id/iv_call_construction_right"
+        app:layout_constraintTop_toTopOf="@+id/iv_call_construction_up" />
+
+    <com.agora.crane.widget.ZoomImageView
+        android:id="@+id/iv_call_construction_back"
+        android:layout_width="@dimen/sw_100dp"
+        android:layout_height="@dimen/sw_100dp"
+        android:background="@drawable/icon_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_call_construction_down"
+        app:layout_constraintStart_toStartOf="@+id/iv_call_construction_forward" />
+
+
+    <com.agora.crane.widget.LayoutVideo
+        android:id="@+id/layout_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sw_50dp"
+        android:layout_marginTop="@dimen/sw_50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_call_construction_forward"
+        app:layout_constraintTop_toTopOf="parent"
+        app:text_direction="@string/role_operator" />
+
+
+    <com.agora.crane.widget.ZoomConstraintLayout
+        android:id="@+id/cl_call_construction_call_to_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sw_30dp"
+        android:background="@drawable/bg_gray_0_radius_20"
+        android:paddingStart="@dimen/sw_5dp"
+        android:paddingEnd="@dimen/sw_5dp"
+        app:layout_constraintEnd_toEndOf="@+id/layout_operator"
+        app:layout_constraintStart_toStartOf="@+id/layout_operator"
+        app:layout_constraintTop_toBottomOf="@+id/layout_operator"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/iv_call_construction_call_to_operator"
+            android:layout_width="@dimen/sw_30dp"
+            android:layout_height="@dimen/sw_30dp"
+            android:background="@drawable/icon_phone" />
+
+        <TextView
+            android:id="@+id/tv_call_construction_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_5dp"
+            android:paddingEnd="@dimen/sw_5dp"
+            android:text="@string/call_to_operator"
+            android:textColor="@color/color_theme"
+            android:textSize="@dimen/sw_15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_call_construction_call_to_operator"
+            app:layout_constraintStart_toEndOf="@+id/iv_call_construction_call_to_operator"
+            app:layout_constraintTop_toTopOf="@+id/iv_call_construction_call_to_operator" />
+
+
+    </com.agora.crane.widget.ZoomConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_call_construction_pick_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/layout_operator"
+        app:layout_constraintTop_toTopOf="@+id/tv_call_construction_hang_up"
+        app:layout_constraintEnd_toStartOf="@+id/tv_call_construction_hang_up"
+        android:background="@drawable/bg_white_0_radius_3"
+        android:textSize="@dimen/sw_16sp"
+        android:textColor="@color/color_theme"
+        android:text="@string/pick_up"
+        android:paddingStart="@dimen/sw_5dp"
+        android:paddingEnd="@dimen/sw_5dp"
+        android:paddingTop="@dimen/sw_2dp"
+        android:paddingBottom="@dimen/sw_2dp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_call_construction_hang_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/layout_operator"
+        app:layout_constraintStart_toEndOf="@+id/tv_call_construction_pick_up"
+        app:layout_constraintTop_toBottomOf="@+id/layout_operator"
+        android:background="@drawable/bg_white_0_radius_3"
+        android:textSize="@dimen/sw_16sp"
+        android:textColor="@color/color_theme"
+        android:text="@string/hang_up"
+        android:layout_marginTop="@dimen/sw_30dp"
+        android:paddingStart="@dimen/sw_5dp"
+        android:paddingEnd="@dimen/sw_5dp"
+        android:paddingTop="@dimen/sw_2dp"
+        android:paddingBottom="@dimen/sw_2dp"
+        android:visibility="gone"
+        />
+
+
+
+    <View
+        android:id="@+id/view_mask_call_construction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/video_mark"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

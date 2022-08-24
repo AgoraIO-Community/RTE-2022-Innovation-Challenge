@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.agora.crane">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 如果你使用的是 Android 12.0 及以上设备，还需要添加如下权限： -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.agora.crane.utils.MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/logo"
+        android:label="@string/application_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:taskAffinity=""
+        android:theme="@style/Theme.MyAgora"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity.CallCameraActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            />
+        <activity
+            android:name=".activity.CallConstructionActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.GroupMoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.GroupInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CreateGroupInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CreateGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.JoinGroupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddFriendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SettingVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SettingRoleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false" /> <!-- 声明 SDK 所需的 service 的核心功能 -->
+        <service
+            android:name="com.hyphenate.chat.EMChatService"
+            android:exported="true" />
+        <service
+            android:name="com.hyphenate.chat.EMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- 声明 SDK 所需的 receiver -->
+        <receiver
+            android:name="com.hyphenate.chat.EMMonitorReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 可选 filter -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".activity.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="com.agora.crane.utils.MyFileProvide"
+            android:authorities="com.agora.crane.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activity.CallOperationActivity"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>

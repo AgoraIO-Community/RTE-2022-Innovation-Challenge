@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.AddFriendActivity">
+
+    <EditText
+        android:id="@+id/et_add_friend"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sw_40dp"
+        android:layout_marginStart="@dimen/sw_10dp"
+        android:layout_marginTop="@dimen/sw_10dp"
+        android:background="@drawable/bg_gray_0_radius_20"
+        android:hint="@string/input_user_id"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:paddingStart="@dimen/sw_50dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_add_friend_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/sw_28dp"
+        android:layout_height="@dimen/sw_32dp"
+        android:layout_marginStart="@dimen/sw_15dp"
+        android:background="@drawable/icon_search"
+        app:layout_constraintBottom_toBottomOf="@+id/et_add_friend"
+        app:layout_constraintStart_toStartOf="@+id/et_add_friend"
+        app:layout_constraintTop_toTopOf="@+id/et_add_friend" />
+
+    <ImageView
+        android:id="@+id/iv_add_friend_clean"
+        android:layout_width="@dimen/sw_25dp"
+        android:layout_height="@dimen/sw_25dp"
+        android:layout_marginEnd="@dimen/sw_15dp"
+        android:src="@drawable/icon_close"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/et_add_friend"
+        app:layout_constraintEnd_toEndOf="@+id/et_add_friend"
+        app:layout_constraintTop_toTopOf="@+id/et_add_friend" />
+
+    <TextView
+        android:id="@+id/tv_add_friend_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/sw_50dp"
+        android:gravity="center"
+        android:paddingStart="@dimen/sw_10dp"
+        android:paddingEnd="@dimen/sw_10dp"
+        android:text="@string/cancel"
+        android:textColor="@color/icon_selected"
+        android:textSize="@dimen/sw_18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_add_friend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_add_friend" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_add"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sw_60dp"
+        android:layout_marginTop="@dimen/sw_20dp"
+        android:background="@color/bg"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/et_add_friend">
+
+        <com.agora.crane.widget.CircleImageView
+            android:id="@+id/iv_item_friend_portrait"
+            android:layout_width="@dimen/sw_40dp"
+            android:layout_height="@dimen/sw_40dp"
+            android:layout_marginStart="@dimen/sw_20dp"
+            android:layout_marginTop="@dimen/sw_10dp"
+            android:layout_marginBottom="@dimen/sw_10dp"
+            android:src="@drawable/icon_group"
+            app:ease_radius="@dimen/sw_35dp"
+            app:es_shape_type="rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_add_friend_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_80dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sw_18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_item_friend_portrait"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_item_friend_portrait" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="@dimen/sw_10dp"
+            android:layout_marginEnd="@dimen/sw_10dp"
+            android:background="@color/bg_line"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_add_friend_add"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/sw_50dp"
+            android:gravity="center"
+            android:paddingStart="@dimen/sw_10dp"
+            android:paddingEnd="@dimen/sw_10dp"
+            android:text="@string/add"
+            android:textColor="@color/icon_selected"
+            android:textSize="@dimen/sw_18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

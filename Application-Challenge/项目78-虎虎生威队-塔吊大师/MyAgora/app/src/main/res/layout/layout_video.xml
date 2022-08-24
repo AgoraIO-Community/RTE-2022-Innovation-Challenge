@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/sw_135dp"
+    android:layout_height="@dimen/sw_165dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/sw_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/fl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sw_135dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_direction"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/sw_30dp"
+                android:gravity="center"
+                android:paddingStart="@dimen/sw_10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/sw_20dp"
+                android:layout_height="@dimen/sw_20dp"
+                android:layout_marginEnd="@dimen/sw_10dp"
+                android:layout_marginBottom="@dimen/sw_5dp"
+                app:cardCornerRadius="@dimen/sw_10dp"
+                app:cardElevation="@dimen/sw_2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_sound"
+                    android:layout_width="@dimen/sw_20dp"
+                    android:layout_height="@dimen/sw_20dp"
+                    android:padding="@dimen/sw_3dp"
+                    android:src="@drawable/sound_open" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/sw_20dp"
+                android:layout_height="@dimen/sw_20dp"
+                android:layout_marginEnd="@dimen/sw_40dp"
+                android:layout_marginBottom="@dimen/sw_5dp"
+                app:cardCornerRadius="@dimen/sw_10dp"
+                app:cardElevation="@dimen/sw_2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_network"
+                    android:layout_width="@dimen/sw_20dp"
+                    android:layout_height="@dimen/sw_20dp"
+                    android:padding="@dimen/sw_3dp"
+                    android:src="@drawable/net_word_4" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

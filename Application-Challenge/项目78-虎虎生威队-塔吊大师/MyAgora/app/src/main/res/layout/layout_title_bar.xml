@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sw_44dp"
+    android:background="@color/color_theme">
+
+    <ImageView
+        android:id="@+id/iv_title_bar_left"
+        android:layout_width="@dimen/sw_44dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/sw_10dp"
+        android:gravity="center"
+        android:padding="@dimen/sw_10dp"
+       android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sw_20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_title_bar_right"
+        android:layout_width="@dimen/sw_44dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/sw_10dp"
+        android:visibility="gone"
+        app:tint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_bar_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="@color/icon_selected"
+        android:textSize="@dimen/sw_18sp"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/sw_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

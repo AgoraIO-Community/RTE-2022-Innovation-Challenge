@@ -1,0 +1,19 @@
+{
+  "FilePath": "f:\\GitEE\\RTE-2022-Innovation-Challenge\\Application-Challenge\\89-领航者-服务平台\\Piloteer-Unity\\Assembly-CSharp-Editor.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 900
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

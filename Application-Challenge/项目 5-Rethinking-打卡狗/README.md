@@ -30,7 +30,7 @@ https://user-images.githubusercontent.com/8814535/185785003-8dbb5556-bfa4-486a-a
 
 
 ## 使用指南
-![](assets/tutorial.PNG)
+![](assets/tutorial.jpg)
 ## 技术栈
 后端架构：
 1. Nodejs

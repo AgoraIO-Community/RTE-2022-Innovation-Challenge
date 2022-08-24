@@ -14,7 +14,6 @@ import android.view.View;
 
 import com.agora.crane.R;
 import com.agora.crane.databinding.ActivityLoginBinding;
-import com.agora.crane.utils.HLog;
 import com.agora.crane.utils.MyApplication;
 import com.agora.crane.utils.ToastUtil;
 import com.agora.crane.utils.UserManager;

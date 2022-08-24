@@ -7,7 +7,6 @@ import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,8 +23,9 @@ public class ZoomTextView extends AppCompatTextView {
 
     /**
      * 构造方法
-     * @param context  上下文
-     * @param attrs    属性集
+     *
+     * @param context 上下文
+     * @param attrs   属性集
      */
     public ZoomTextView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);

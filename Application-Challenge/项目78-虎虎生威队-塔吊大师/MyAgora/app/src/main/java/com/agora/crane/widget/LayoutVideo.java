@@ -56,7 +56,7 @@ public class LayoutVideo extends ConstraintLayout {
             int muteResult = mRtcEngine.muteRemoteAudioStream(uid, !muteSound);
             if (Constant.MUTE_SUCCESS_CODE == muteResult) {
                 muteSound = !muteSound;
-                mBinding.ivSound.setBackgroundResource(muteSound ? R.drawable.sound_close : R.drawable.sound_open);
+                mBinding.ivSound.setImageResource(muteSound ? R.drawable.sound_close : R.drawable.sound_open);
             }
         });
     }

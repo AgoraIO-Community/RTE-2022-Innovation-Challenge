@@ -18,7 +18,6 @@ import com.agora.crane.adapter.FriendAdapter;
 import com.agora.crane.adapter.GroupAdapter;
 import com.agora.crane.bean.EventBusBean;
 import com.agora.crane.databinding.FragmentContactBinding;
-import com.agora.crane.utils.HLog;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMGroup;
 import com.hyphenate.easeui.constants.EaseConstant;
@@ -28,7 +27,6 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

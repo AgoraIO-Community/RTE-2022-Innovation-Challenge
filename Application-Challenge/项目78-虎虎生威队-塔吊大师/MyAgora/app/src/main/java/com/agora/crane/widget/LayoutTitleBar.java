@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,8 +23,8 @@ public class LayoutTitleBar extends ConstraintLayout {
     private final LayoutTitleBarBinding mBinding;
 
 
-    public LayoutTitleBar(@NonNull Context context){
-        this(context,null,0);
+    public LayoutTitleBar(@NonNull Context context) {
+        this(context, null, 0);
     }
 
     /**
@@ -94,10 +93,11 @@ public class LayoutTitleBar extends ConstraintLayout {
 
     /**
      * 设置标题
+     *
      * @param title 标题
      */
-    public void setTitle(String title){
-        if(title!=null){
+    public void setTitle(String title) {
+        if (title != null) {
             mBinding.tvTitleBarTitle.setText(title);
         }
     }

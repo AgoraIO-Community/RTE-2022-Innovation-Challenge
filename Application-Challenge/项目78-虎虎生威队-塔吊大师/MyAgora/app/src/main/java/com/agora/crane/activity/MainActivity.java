@@ -4,7 +4,6 @@ package com.agora.crane.activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.ArrayMap;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,11 +18,6 @@ import com.agora.crane.fragment.ContactFragment;
 import com.agora.crane.fragment.ConversationFragment;
 import com.agora.crane.fragment.MineFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.hyphenate.chat.EMClient;
-import com.hyphenate.chat.EMCustomMessageBody;
-import com.hyphenate.chat.EMMessage;
-
-import java.util.Map;
 
 /**
  * @Author: hyx

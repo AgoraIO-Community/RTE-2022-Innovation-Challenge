@@ -1,6 +1,5 @@
 package com.agora.crane.activity;
 
-import static com.agora.crane.utils.Constant.getCodeRole;
 import static com.agora.crane.utils.UserManager.ROLE_CONSTRUCTION;
 import static com.agora.crane.utils.UserManager.ROLE_OPERATOR;
 

@@ -35,6 +35,8 @@ public class CallCameraActivity extends BaseActivity<ActivityCallCameraBinding> 
     private static final int PERMISSION_CODE = 22;
     private String conversationId;
     private RtcEngine mRtcEngine;
+    private int myUid;
+
     /**
      * 界面跳转
      *
@@ -53,7 +55,9 @@ public class CallCameraActivity extends BaseActivity<ActivityCallCameraBinding> 
         @Override
         // 监听频道内的远端用户，获取用户的 uid 信息。
         public void onUserJoined(int uid, int elapsed) {
-
+            if (mRtcEngine != null && uid != myUid) {
+                mRtcEngine.muteRemoteAudioStream(uid, true);
+            }
         }
 
         @Override
@@ -70,6 +74,7 @@ public class CallCameraActivity extends BaseActivity<ActivityCallCameraBinding> 
         needFullScreen = true;
         super.initAfterSetContentView();
     }
+
     /**
      * 初始化数据
      *
@@ -77,6 +82,7 @@ public class CallCameraActivity extends BaseActivity<ActivityCallCameraBinding> 
      */
     @Override
     protected void initData(Bundle savedInstanceState) {
+        myUid = Constant.getCodeRole();
         String userRole = String.format(getString(R.string.user_role), UserManager.getRoleName());
         mBinding.tvCallCameraRole.setText(userRole);
         requestPermission(new String[]{Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO}, PERMISSION_CODE);
@@ -136,7 +142,7 @@ public class CallCameraActivity extends BaseActivity<ActivityCallCameraBinding> 
                         VideoEncoderConfiguration.VideoDimensions dimensions = new VideoEncoderConfiguration.VideoDimensions(width, height);
                         VideoEncoderConfiguration configuration = new VideoEncoderConfiguration(dimensions, VideoEncoderConfiguration.FRAME_RATE.FRAME_RATE_FPS_15, 0, VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_ADAPTIVE);
                         mRtcEngine.setVideoEncoderConfiguration(configuration);
-                        mRtcEngine.joinChannel(bean.getData(), conversationId, "", Constant.getCodeRole());
+                        mRtcEngine.joinChannel(bean.getData(), conversationId, "", myUid);
                     }
                 }
             }
@@ -149,7 +155,8 @@ public class CallCameraActivity extends BaseActivity<ActivityCallCameraBinding> 
 
     /**
      * 点击事件
-     * @param view  点击的控件
+     *
+     * @param view 点击的控件
      */
     @Override
     public void onClick(View view) {

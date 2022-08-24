@@ -1,18 +1,15 @@
 package com.agora.crane.activity;
 
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -20,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
 
 import com.agora.crane.R;
-import com.agora.crane.utils.HLog;
 import com.agora.crane.utils.MyApplication;
 import com.agora.crane.widget.LoadingDialog;
 
@@ -105,7 +101,8 @@ public abstract class BaseActivity<W extends ViewBinding> extends BasePermission
 
     /**
      * 设置标题
-     * @param title  标题
+     *
+     * @param title 标题
      */
     public void setTitle(String title) {
         if (tvTitle != null) {
@@ -117,7 +114,7 @@ public abstract class BaseActivity<W extends ViewBinding> extends BasePermission
      * 显示返回按钮
      */
     public void showBackButton() {
-        if (actionBar!=null) {
+        if (actionBar != null) {
             actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
             actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
         }
@@ -139,7 +136,7 @@ public abstract class BaseActivity<W extends ViewBinding> extends BasePermission
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()== android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
             return true;
         }

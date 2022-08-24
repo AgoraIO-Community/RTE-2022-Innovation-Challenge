@@ -7,7 +7,14 @@
 
 
 ## 使用指南
+
+
 <!-- 请描述该应用的使用步骤，包括下载、依赖安装、参数及软硬件配置（如有）等 -->
+### 服务端
+`RTE-2022-Innovation-Challenge/Application-Challenge/JunaYa-ΩPaking/server`
+按照 readme 中操作步骤来启动本地服务
+
+### 客户端
 在该路径下配置，声网后台 token `RTE-2022-Innovation-Challenge/Application-Challenge/JunaYa-ΩPaking/omega_paking/lib/config/agora.config.dart`
 
 dev
@@ -59,8 +66,6 @@ todo
 
 ## 二次开发
 <!-- 1、如果是基于已有项目进行二次开发的参赛作品，请在此说明主要变更点，并附上原项目链接。2、如果是本次全新开发，请写“无” -->
-
-client 
 
 server 在此开源项目开发
 https://github.com/an-zolkin/axum_jwt_example

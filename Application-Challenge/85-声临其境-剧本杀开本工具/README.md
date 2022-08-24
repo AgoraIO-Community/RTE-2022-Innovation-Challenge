@@ -13,6 +13,7 @@
 项目视频预览：[视频网址](https://scripts-res.oss-cn-shanghai.aliyuncs.com/rte2022_03.mp4)
 
 ## 安装部署指南
+
 前置条件：至少需要安装了 `git`、`node 16`、`npm 8`
 
 第一步：克隆项目到本地`git clone git@github.com:Zauther/RTE2022.git`
@@ -22,7 +23,6 @@
 第三步：下载项目依赖 `npm install`
 
 第四步：运行项目 `npm start`
-
 
 ## 功能简介
  
@@ -71,11 +71,20 @@
 
 ## 技术栈
 
-React
+- 声网白板底层库 white-web-sdk^2.16.24
+- 声网白板 SDK @netless/fastboard^0.3.3
+- 声网白板媒体播放器插件 @netless/app-plyr^0.2.1
+- 声网白板倒计时插件 @netless/app-countdown^0.0.2
+- React^18.2.0
+- PDF浏览插件 @react-pdf-viewer^3.6.0
+
+## 二次开发
+
+- 基于 [community-app-template](https://github.com/netless-io/community-app-template) 模版 React 分支
+- 借助声网白板SDK和插件库
+- 自研内容参考【功能简介】部分
 ## 可扩展方向 
 
 - 剧本库：可扩展剧本库内容，主持人登陆时可选择不同剧本后创建房间。
-
 - 辅助工具：剧本杀的机制丰富，还可以利用白板和RTC开发更多支持功能，比如匿名投票、私聊、分发代币等。
-
 - 沉浸体验：白板主题色可根据剧本主题色变更，并添加符合场景的样式渲染。

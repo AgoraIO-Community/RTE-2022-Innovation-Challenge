@@ -1,0 +1,50 @@
+.toolbar {
+  position: absolute;
+  left: 16px;
+  bottom: 80px;
+  width: 42px;
+  z-index: 10;
+  border: 1px solid #e5e8f0;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &-item {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    padding: 5px;
+    cursor: pointer;
+
+    &-bubble {
+      position: absolute;
+      right: -170px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 150px;
+      border: 1px solid #e5e8f0;
+      background-color: #fff;
+
+      &-line {
+        padding: 10px;
+      }
+
+      &-line:not(:first-child) {
+        border-top: 1px solid #e5e8f0;
+      }
+    }
+
+    &-bubble::after {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      border-left: 1px solid #e5e8f0;
+      border-top: 1px solid #e5e8f0;
+      transform: matrix(1, -1, 1, 1, -7, -0.5);
+      background-color: #fff;
+    }
+  }
+}

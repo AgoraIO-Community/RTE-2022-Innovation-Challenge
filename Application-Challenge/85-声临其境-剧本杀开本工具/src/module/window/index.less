@@ -1,0 +1,41 @@
+.window {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 50%;
+  z-index: 20;
+  overflow-y: scroll;
+  background-color: #fff;
+  border-left: 2px solid #e5e8f0;
+  box-shadow: 10px 0 10px 10px darkgrey;
+
+  .clue {
+    width: 100%;
+  }
+
+  .info {
+    margin: 10px;
+  }
+  
+  .check-box {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    border: 1px solid grey;
+  }
+
+  .check-box.check-box-checked::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 10px;
+    left: 2px;
+    bottom: 1px;
+    border-right: 2px solid green;
+    border-bottom: 2px solid green;
+    transform: rotate(45deg);
+  }
+}

@@ -1,0 +1,19 @@
+lane :beta_ios do
+
+    # iOS 打包
+    flutter(args: ["build", "ipa", "--release", "--build-number", number_of_commits, "--export-method", "enterprise"])
+
+    pgyer(
+        ipa: './build/ios/ipa/super_rent.ipa',
+        update_description: "1. 支持直播带看\n2. 支持根据当前地点推荐房源\n3. 支持提醒开播"
+    )
+end
+
+lane :beta_apk do
+    flutter(args: ["build", "apk", "--release", "--build-number", number_of_commits, "--target-platform", "android-arm64"])
+
+    pgyer(
+        apk: './build/app/outputs/flutter-apk/app-release.apk',
+        update_description: "1. 支持直播带看\n2. 支持根据当前地点推荐房源"
+    )
+end

@@ -1,0 +1,161 @@
+name: super_rent
+description: 向"虚假房源"说No、再见"黑中介"
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 0.9.0
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+
+  # leancloud
+  leancloud_storage: ^0.7.8
+
+  # 声网
+  agora_rtc_engine: ^5.3.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+  # 目前主要用了 Result 类
+  async: ^2.8.1
+
+  #
+  get: ^4.6.1
+  sign_in_with_apple: ^3.3.0
+  modal_bottom_sheet: ^2.0.1
+  flutter_multi_formatter: ^2.5.1
+  pinput: ^2.2.7
+
+  # 主要用来存放加密的登录信息
+  flutter_secure_storage: ^5.0.2
+
+  # bottom navigation
+  bottom_bar: ^2.0.1
+
+  # 全局加号
+  custom_floating_action_button: ^0.0.3
+
+  # segment
+  animated_toggle_switch: ^0.5.2
+
+  # 定位
+  flutter_baidu_mapapi_base: ^3.2.0
+  flutter_baidu_mapapi_map: ^3.0.0+2
+  flutter_baidu_mapapi_search: ^3.0.0
+  flutter_baidu_mapapi_utils: ^3.0.0
+  flutter_bmflocation: ^3.1.0
+
+  # 权限相关
+  permission_handler: ^10.0.0
+
+  # json
+  g_json: ^4.1.0
+
+  # 选择地址
+  simple_tags: ^0.0.4
+
+  # 获取版本号相关
+  package_info_plus: ^1.4.2
+
+  #
+  flutter_radio_group: ^2.1.0
+  im_flutter_sdk: ^3.9.4+2
+  in_date_utils: ^1.1.0
+  flutter_keyboard_visibility: ^5.3.0
+
+  # chat ui
+  flutter_chat_ui: ^1.6.4
+  flutter_chat_types: ^3.4.3
+
+  # living
+  home_indicator: ^2.0.2
+
+  path_provider: ^2.0.11
+  path:
+  dio: ^4.0.6
+
+  # 水印
+  video_player: ^2.4.5
+  flick_video_player: ^0.5.0
+
+  # 直播
+  animated_text_kit: ^4.2.2
+  avatar_stack: ^1.1.2
+  im_animations: ^0.1.2
+
+  #
+  reorderable_grid_view: ^2.2.2
+  interactiveviewer_gallery: ^0.6.0
+  cached_network_image: ^3.2.1
+  visibility_detector: ^0.3.3
+
+  # 滑动删除
+  flutter_swipe_action_cell: ^3.0.4
+
+  flutter_svg: ^1.1.4
+
+  flutter_apns_only: ^1.6.0
+
+  webview_flutter: ^3.0.4
+
+dependency_overrides:
+  json_annotation: ^4.4.0
+
+dev_dependencies:
+  # flutter_test:
+  #   sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/2.0/
+    - assets/images/3.0/
+
+  # fonts:
+  #   - family: iconfont
+  #     fonts:
+  #       - asset: assets/fonts/iconfont.ttf

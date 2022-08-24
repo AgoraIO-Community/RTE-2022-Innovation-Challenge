@@ -1,0 +1,81 @@
+PODS:
+  - agora_rtc_engine (5.3.0):
+    - AgoraIrisRTC_macOS (= 3.7.0.3)
+    - AgoraRtcEngine_macOS (= 3.7.0.3)
+    - FlutterMacOS
+  - AgoraIrisRTC_macOS (3.7.0.3)
+  - AgoraRtcEngine_macOS (3.7.0.3):
+    - AgoraRtcEngine_macOS/AINS (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/AV1Dec (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/ContentInspect (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/FullAudioFormat (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/ROIEnc (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/RtcBasic (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/SpatialAudio (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/SuperResolution (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/VideoPreprocess (= 3.7.0.3)
+    - AgoraRtcEngine_macOS/VirtualBackground (= 3.7.0.3)
+  - AgoraRtcEngine_macOS/AINS (3.7.0.3)
+  - AgoraRtcEngine_macOS/AV1Dec (3.7.0.3)
+  - AgoraRtcEngine_macOS/ContentInspect (3.7.0.3)
+  - AgoraRtcEngine_macOS/FullAudioFormat (3.7.0.3)
+  - AgoraRtcEngine_macOS/ROIEnc (3.7.0.3)
+  - AgoraRtcEngine_macOS/RtcBasic (3.7.0.3)
+  - AgoraRtcEngine_macOS/SpatialAudio (3.7.0.3)
+  - AgoraRtcEngine_macOS/SuperResolution (3.7.0.3)
+  - AgoraRtcEngine_macOS/VideoPreprocess (3.7.0.3)
+  - AgoraRtcEngine_macOS/VirtualBackground (3.7.0.3)
+  - connectivity_macos (0.0.1):
+    - FlutterMacOS
+    - Reachability
+  - desktop_window (0.0.1):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+  - path_provider_macos (0.0.1):
+    - FlutterMacOS
+  - Reachability (3.2)
+  - shared_preferences_macos (0.0.1):
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - agora_rtc_engine (from `Flutter/ephemeral/.symlinks/plugins/agora_rtc_engine/macos`)
+  - connectivity_macos (from `Flutter/ephemeral/.symlinks/plugins/connectivity_macos/macos`)
+  - desktop_window (from `Flutter/ephemeral/.symlinks/plugins/desktop_window/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - path_provider_macos (from `Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos`)
+  - shared_preferences_macos (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_macos/macos`)
+
+SPEC REPOS:
+  trunk:
+    - AgoraIrisRTC_macOS
+    - AgoraRtcEngine_macOS
+    - Reachability
+
+EXTERNAL SOURCES:
+  agora_rtc_engine:
+    :path: Flutter/ephemeral/.symlinks/plugins/agora_rtc_engine/macos
+  connectivity_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/connectivity_macos/macos
+  desktop_window:
+    :path: Flutter/ephemeral/.symlinks/plugins/desktop_window/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  path_provider_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_macos/macos
+  shared_preferences_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_macos/macos
+
+SPEC CHECKSUMS:
+  agora_rtc_engine: 1706b526090485456fb550b7878a0b9d0cf903e6
+  AgoraIrisRTC_macOS: d38e1331248c14cc9f57068095517554d5a5e7e9
+  AgoraRtcEngine_macOS: 53243a1be5db8c3115c0ec761aec903a38e9640a
+  connectivity_macos: 5dae6ee11d320fac7c05f0d08bd08fc32b5514d9
+  desktop_window: fb7c4f12c1129f947ac482296b6f14059d57a3c3
+  FlutterMacOS: 57701585bf7de1b3fc2bb61f6378d73bbdea8424
+  path_provider_macos: 3c0c3b4b0d4a76d2bf989a913c2de869c5641a19
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  shared_preferences_macos: a64dc611287ed6cbe28fd1297898db1336975727
+
+PODFILE CHECKSUM: 6eac6b3292e5142cfc23bdeb71848a40ec51c14c
+
+COCOAPODS: 1.11.3

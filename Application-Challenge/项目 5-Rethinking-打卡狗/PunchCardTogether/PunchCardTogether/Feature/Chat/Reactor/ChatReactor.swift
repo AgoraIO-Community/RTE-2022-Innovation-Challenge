@@ -84,15 +84,7 @@ class ChatReactor: Reactor {
                 }
             let hideKeyboard = Observable<Mutation>.just(.setKeyboardHide)
             let scroll = Observable<Mutation>.just(.afterReceiveMessages)
-            let refreshSign = provider.rx.request(.isSignInRoom(roomId: currentState.conversation.conversationId))
-                .map(SignInResponse.self)
-                .asObservable()
-                .map(\.data)
-                .catchAndReturn(false)
-                .flatMap { status -> Observable<Mutation> in
-                    return .just(.setSignInStatus(status))
-                }
-            return Observable.concat([sendMessage, hideKeyboard, scroll, refreshSign])
+            return Observable.concat([sendMessage, hideKeyboard, scroll])
         case let .sendImageMessage(image):
             guard let data = image.jpegData(compressionQuality: 0.5) else {
                 return .empty()

@@ -44,7 +44,7 @@ extension Reactive where Base == MessageCenter {
     
     func fetchMessages(conversation: EMConversation) -> Observable<[EMChatMessage]> {
         return Observable.create { observer in
-            conversation.loadMessagesStart(fromId: nil, count: 20, searchDirection: .down) { messages, error in
+            conversation.loadMessagesStart(fromId: nil, count: 20, searchDirection: .up) { messages, error in
                 if let list = messages {
                     observer.onNext(list)
                 } else {

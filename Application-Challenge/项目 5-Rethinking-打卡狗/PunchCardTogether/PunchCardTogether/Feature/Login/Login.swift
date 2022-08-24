@@ -10,6 +10,7 @@ import Defaults
 import Combine
 import ToastSwiftUI
 import Toast
+import Moya
 
 
 enum LoginType {
@@ -157,6 +158,10 @@ struct Login: View {
  
                 provider.requestPublisher(.register(account: account, password: password))
                     .map(UserWrapper.self)
+                    .mapError({ error -> MoyaError in
+                        debugPrint("error")
+                        return error
+                    })
                     .sink { error in
                         debugPrint("login error is \(error)")
                         //TODO 展示服务器返回的错误信息

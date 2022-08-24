@@ -306,11 +306,7 @@ class ChatViewController: UIViewController, View {
             .subscribe(onNext: {
                 [weak self] view in
                 guard let self = self else { return }
-                
-//                let storyboard = UIStoryboard.init(name: "LiveRoom", bundle: nil);
-//                let vc = storyboard.instantiateViewController(identifier: "LiveRoom")
-//                self.present(vc, animated: true)
-//                
+                debugPrint("go in to check in view")
                 let vc = LiveViewController()
                 vc.roomName = "test"
                 self.navigationController?.pushViewController(vc, animated: true);

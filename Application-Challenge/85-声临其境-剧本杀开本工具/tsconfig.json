@@ -1,0 +1,14 @@
+{
+  "include": ["playground", "src"],
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+    "jsx": "react"
+  }
+}

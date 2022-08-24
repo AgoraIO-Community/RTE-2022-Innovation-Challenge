@@ -1,0 +1,9 @@
+"use strict";
+exports.__esModule = true;
+exports.createTipDom = void 0;
+exports.createTipDom = function () {
+    var tipDom = document.createElement('div');
+    tipDom.className = '__ErrTipWrap__';
+    tipDom.innerHTML = "\n      <span class=\"_ErrTipSpan_ _ErrTipSpan_1_\"></span><span class=\"_ErrTipSpan_ _ErrTipSpan_2_\"></span><span class=\"_ErrTipSpan_ _ErrTipSpan_3_\"></span><span class=\"_ErrTipSpan_ _ErrTipSpan_4_\"></span>  \n      <style>\n      .__ErrTipWrap__{\n        user-select: none;\n      }\n      ._ErrTipSpan_ {\n        position: fixed;\n        z-index: 999999999;\n        width: 0;\n        height: 0;\n        animation:showMove 1s infinite linear;\n      }\n      ._ErrTipSpan_._ErrTipSpan_1_ {\n        top: 0;\n        left: 0;\n        right: 0;\n        height: 30px;\n        width: 100%;\n        background-image: linear-gradient(to bottom,rgba(255,0,0,1), rgba(255,255,255,0));\n      }\n      ._ErrTipSpan_._ErrTipSpan_2_ {\n        top: 0;\n        right: 0;\n        width: 30px;\n        height: 100vh;\n        background-image: linear-gradient(to left,rgba(255,0,0,1), rgba(255,255,255,0));\n      }\n      ._ErrTipSpan_._ErrTipSpan_3_ {\n        bottom: 0;\n        left: 0;\n        right: 0;\n        height: 30px;\n        width: 100%;\n        background-image: linear-gradient(to top,rgba(255,0,0,1), rgba(255,255,255,0));\n      }\n      ._ErrTipSpan_._ErrTipSpan_4_ {\n        top: 0;\n        left: 0;\n        width: 30px;\n        height: 100vh;\n        background-image: linear-gradient(to right,rgba(255,0,0,1), rgba(255,255,255,0));\n      }\n      @keyframes showMove\n      {\n        0%{\n          opacity: 0;\n        }\n        50%{\n          opacity: 1;\n        }\n        100%{\n          opacity: 0;\n        }\n      }\n      </style>\n    ";
+    return tipDom;
+};

@@ -1,0 +1,169 @@
+.notAuthWarning {
+  backdrop-filter: blur(10px);
+}
+.title {
+  background: rgb(121, 242, 157);
+}
+.videoPlayer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  height: 240px;
+  border-radius: 4px;
+  overflow: hidden;
+  video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+  }
+}
+.modalWrap {
+  position: fixed;
+  max-width: 90% !important;
+  max-height: 90% !important;
+  width: 520px;
+  height: 750px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  .modalBox {
+    height: 100%;
+  }
+  :global {
+    .@{ant-prefix}-modal-content,
+    .@{ant-prefix}-modal-body {
+      display: flex;
+      height: 100%;
+      flex-grow: 2;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+}
+
+.mainBox {
+  flex-grow: 2;
+  position: relative;
+  height: 100%;
+}
+
+.formWrap {
+  display: flex;
+  flex-grow: 2;
+  height: 100%;
+  flex-direction: column;
+  .scrollbarsWrap {
+    flex-grow: 2;
+    overflow: auto;
+  }
+  .btnsWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .tipBtnsWrap {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.detectionWrap {
+  .statusWrap {
+    display: flex;
+  }
+  .icon {
+    font-size: 12px;
+    display: none;
+  }
+  .status {
+    display: none;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+  }
+  .successWrap {
+    .icon {
+      display: block;
+      color: #0c9b49;
+    }
+    .status {
+      display: block;
+      color: #0c9b49;
+    }
+  }
+  .errorWrap {
+    .icon {
+      display: block;
+      color: #e52d26;
+    }
+    .status {
+      display: block;
+      color: #e52d26;
+    }
+  }
+  .itemWrap {
+    padding: 0 20px;
+  }
+  .itemInfo + .itemInfo {
+    margin-top: 10px;
+  }
+  .itemInfo {
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+}
+.outWrap {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  .flexGrow {
+    flex-grow: 2;
+  }
+  .playBtn {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    font-size: 12px;
+    color: #666;
+    line-height: 22px;
+  }
+}
+.endWarp {
+  position: relative;
+  min-width: 28px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+}
+
+.manBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

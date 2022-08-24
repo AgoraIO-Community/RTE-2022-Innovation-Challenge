@@ -1,0 +1,43 @@
+.demo-tab-btn {
+  position: relative;
+  display: inline-block;
+  background-color: #f8f8f8;
+  border-radius: 2px;
+  line-height: 22px;
+  padding: 2px 16px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 5px;
+  color: #8e908c;
+  user-select: none;
+}
+
+.demo-tab-switch-btn:hover {
+  background-color: rgba(25, 55, 88, 0.04);
+}
+
+.demo-tab-switch-btn:active {
+  background-color: rgba(25, 55, 88, 0.1);
+}
+
+.demo-tab-switch-btn {
+  background-color: #ffff;
+  border: 1px solid #ededed;
+  border-bottom: none;
+}
+
+.tabContainer pre {
+  margin-top: 0px;
+}
+
+.btnContainer {
+  margin-top: 10px;
+}
+
+.markdown-section iframe {
+  border: none
+}
+
+.markdown-section {
+  max-width: 1300px; 
+}

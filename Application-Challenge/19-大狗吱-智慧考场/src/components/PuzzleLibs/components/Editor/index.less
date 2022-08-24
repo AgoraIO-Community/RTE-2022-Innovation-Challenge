@@ -1,0 +1,283 @@
+@import '~antd/dist/antd.less';
+.page {
+  display: flex;
+  background: #f8faff;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  height: 68px;
+  padding: 0 24px;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.body {
+  display: flex;
+  padding: 24px;
+  flex-grow: 2;
+
+  .bodyHeaderWrap {
+    flex-shrink: 0;
+    display: flex;
+    height: 55px;
+    border-bottom: 1px solid #ebf0f8;
+    align-items: center;
+    padding: 0 24px;
+    justify-content: space-between;
+    .title {
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #192038;
+      line-height: 22px;
+      margin-bottom: 0;
+    }
+    .titleInput {
+    }
+  }
+  .leftWrap {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    margin-right: 24px;
+    background: #fff;
+  }
+  .leftBody {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    padding: 24px 0;
+    .scroolBody {
+      padding: 0 24px;
+    }
+  }
+
+  .rightWrap {
+    display: flex;
+    flex-direction: column;
+    width: 278px;
+    background: #fff;
+    .scroolBody {
+      padding: 0 24px;
+    }
+  }
+
+  .rightBody {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    padding: 24px 0;
+    .top {
+      padding: 0 24px;
+    }
+    .scoreWrap {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      strong {
+        width: 0;
+        flex-grow: 2;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #434b61;
+        line-height: 20px;
+      }
+      div + strong {
+        text-align: right;
+      }
+    }
+    .addBtn {
+      width: 100%;
+    }
+    .bigQuestionWrap {
+      margin-top: 24px;
+      flex-grow: 2;
+      .bigQuestionItemWrap + .bigQuestionItemWrap {
+        margin-top: 24px;
+      }
+      .bigQuestionItemWrap {
+        border-bottom: 1px solid #ebf0f8;
+      }
+      .bigQuestionItemHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        h4 {
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #192038;
+          line-height: 20px;
+          margin-bottom: 0;
+        }
+        .toolsBtn {
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          line-height: 20px;
+        }
+      }
+      .bigQuestionItemTools {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        strong {
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #434b61;
+          line-height: 20px;
+        }
+        .toolsBtn {
+          color: rgba(168, 177, 194, 1);
+          &.disable {
+            cursor: no-drop;
+            &:hover {
+              color: rgba(204, 210, 219, 1);
+            }
+            color: rgba(204, 210, 219, 1);
+          }
+          &:hover {
+            color: @primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bigQuestionItemCard {
+  width: 100%;
+  & + & {
+    margin-top: 24px;
+  }
+  .bigQTitle {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #192038;
+    margin-bottom: 0;
+    line-height: 22px;
+    span {
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #434b61;
+      line-height: 20px;
+    }
+    .iptWrap {
+      flex-shrink: 0;
+    }
+    .explainWrap {
+      padding: 0 10px;
+      width: 0;
+      flex-grow: 2;
+      overflow: hidden;
+      text-overflow: ellipsis; //文本溢出显示省略号
+      white-space: nowrap; //文本不会换行
+    }
+  }
+  & > div:first-child {
+    background: #f8faff;
+  }
+  .bigQNameInput {
+    max-width: 200px;
+  }
+  .subsItemWrap + .subsItemWrap {
+    margin-top: 16px;
+  }
+  .subsItemWrap {
+  }
+}
+
+.explainModalWrap {
+  .tip {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #434b61;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  .textAreaWrap {
+  }
+}
+
+.addQMinModalWrap {
+  & > div {
+    padding-bottom: 0;
+    width: 90% !important;
+    height: 90%;
+  }
+  .addQMinModalContent {
+    & > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    & > div > div:nth-child(3) {
+      position: relative;
+      height: 100%;
+    }
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 24px;
+  }
+}
+
+.QSearchWrap {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  overflow: hidden;
+  height: 100%;
+  .searchWrap {
+    display: flex;
+    flex-direction: row;
+  }
+  .containerbody {
+    flex-grow: 2;
+    overflow: scroll;
+  }
+  .footer {
+    flex-shrink: 0;
+    border-top: 1px solid #ebf0f8;
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .paginationWrap {
+    padding: 25px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+.addQQMinWrap {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ebf0f8;
+}

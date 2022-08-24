@@ -1,0 +1,46 @@
+@import '~antd/dist/antd.less';
+
+.testWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  background: #fff;
+}
+.document {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  overflow: auto;
+}
+.paginationWrap {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .pagination {
+    background: @primary-1;
+    padding: 10px;
+    border-radius: 4px;
+    // *{
+    //   color: #fff;
+    // }
+    // li>a {
+    //   color: #000;
+    // }
+  }
+}
+.btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+}

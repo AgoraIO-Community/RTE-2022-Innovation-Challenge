@@ -1,0 +1,142 @@
+@import '~antd/dist/antd.less';
+
+.hideFormItem {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1000;
+  top: -10000px;
+  left: -1000px;
+}
+
+.EditorQWrap {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100px;
+  .containerbody {
+    flex-grow: 2;
+    overflow: scroll;
+  }
+  .footer {
+    flex-shrink: 0;
+    border-top: 1px solid #ebf0f8;
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .paginationWrap {
+    padding: 25px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+.iptWrap {
+  border: 1px solid #e0e5ee;
+  height: 150px;
+  overflow: hidden;
+}
+
+.subOptionWarp {
+  .subQListItemWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    &.subQListHeaderTip {
+      min-height: 34px;
+      justify-content: center;
+      align-items: center;
+      .subQListItemBody {
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #8f9bb3;
+        line-height: 20px;
+      }
+    }
+    .subQListItemBody {
+      flex-grow: 2;
+    }
+    .subQListItemTools {
+      width: 150px;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+    }
+    .toolsItem {
+      padding: 0 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #434b61;
+      line-height: 20px;
+    }
+  }
+  .addSubQOBtn {
+    margin-top: 20px;
+  }
+}
+
+.RecordVideoQForEditor {
+}
+
+.CompositeQForEditor {
+  .EditorQItemWrap + .EditorQItemWrap {
+    margin-top: 20px;
+  }
+  .EditorQItemWrap:nth-child(even) {
+    // background: @primary-3;
+  }
+  .EditorQItemWrap {
+    padding: 10px;
+    // background: @primary-1;
+    border-radius: 4px;
+    &:hover {
+      // background: @primary-2;
+    }
+  }
+  .subsQWrap {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    .EditorQWrap {
+      .containerbody {
+        overflow: auto;
+      }
+    }
+  }
+  .EditorQItemHeaderWrap {
+    margin-bottom: 24px;
+    strong {
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #192038;
+      line-height: 20px;
+    }
+  }
+}
+.upFilesWrap {
+  padding: 20px 0 0;
+}
+
+.UpFilesWrap {
+  .mediaWrap {
+    margin-top: 20px;
+  }
+}
+.labelWrap {
+  strong {
+    font-weight: normal;
+    color: #8f9bb3;
+  }
+}

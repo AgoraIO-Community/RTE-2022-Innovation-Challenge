@@ -1,0 +1,17 @@
+module.exports = {
+  '@primary-color': '#e60013',
+  '@info-color': '#1eabc3',
+  '@warning-color': '#f57c01',
+  '@error-color': '#e52d26',
+  '@highlight-color': '#c22620',
+  '@processing-color': '@primary-color',
+  '@body-background': '#f8f9fd',
+  '@text-color': '#192038',
+  '@text-color-dark': '#192038',
+  '@border-color-base': '#e0e5ee',
+  '@layout-header-background': '#1a9a4d',
+  '@layout-sider-background-light': '#f8faff',
+  '@table-header-bg': '#F8FAFF',
+  '@table-row-hover-bg': '#E6FAEF',
+  '@border-radius-base': '4px',
+};

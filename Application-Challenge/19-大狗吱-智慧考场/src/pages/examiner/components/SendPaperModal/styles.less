@@ -1,0 +1,115 @@
+.modalWrap {
+  position: fixed;
+  width: 70% !important;
+  height: 70% !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  :global {
+    .@{ant-prefix}-modal-content,
+    .@{ant-prefix}-modal-body {
+      display: flex;
+      height: 100%;
+      flex-grow: 2;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+  .modalBox {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+  }
+}
+.modalWrapPaper {
+  position: fixed;
+  width: 90% !important;
+  height: 90% !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  :global {
+    .@{ant-prefix}-modal-content,
+    .@{ant-prefix}-modal-body {
+      display: flex;
+      height: 100%;
+      flex-grow: 2;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+  .modalBox {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+  }
+}
+.icon {
+  color: rgba(144, 156, 178, 1);
+}
+.infoText {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #192038;
+}
+.userHeader {
+  background: url('./assets/userHeader.png') no-repeat;
+  background-size: 100%;
+  margin-right: 16px;
+}
+.userInfoWrap {
+  display: flex;
+  flex-direction: row;
+  .userInfoItem {
+    display: flex;
+    flex-grow: 2;
+    flex-shrink: 0;
+    align-items: center;
+  }
+}
+
+.mainBox {
+  flex-grow: 2;
+  position: relative;
+  height: 100%;
+}
+
+.formWrap {
+  display: flex;
+  flex-grow: 2;
+  height: 100%;
+  flex-direction: column;
+  .scrollbarsWrap {
+    flex-grow: 2;
+    overflow: auto;
+  }
+  .btnsWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+.userSelectLoading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 150px;
+}
+
+.customWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

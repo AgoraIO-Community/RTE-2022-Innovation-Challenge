@@ -1,0 +1,59 @@
+* [概述](/README.md)
+* 入门
+  * [快速开始](/base/quick-start.md)
+  * [下载](/base/download.md)
+  * [引用](/base/import.md)
+  * [挂载节点](/base/mount.md)
+  * [鉴权](/base/auth.md)
+  * [兼容性](/base/compatibility.md)
+  * [事件](/base/event.md)
+  * [错误码](/base/error.md)
+* 配置项
+  * [显示模式](/custom/mode.md)
+  * [自定义功能选项](/custom/options.md)
+  * [组件状态设置](/custom/component-state.md)
+  * [协作用户属性设置](/custom/cooper-user.md)
+  * [拦截相关功能设置](/custom/intercept.md)
+* 场景
+  * 文字
+    * [书签](/scenes/word/bookmark.md)
+* 基础用法
+  * [Tabs](/base/tabs.md)
+  * [主动保存](/base/save.md)
+  * [剪切板](/base/clipboard.md)
+* 高级用法
+  * [概述](/advance/index.md)
+  * [!!注意事项](/advance/warn.md)
+  * 文字
+    * [导出文件](/advance/word/export.md)
+    * [获取页码、跳转页](/advance/word/page.md)
+    * [内容控件](/advance/word/content.md)
+    * [书签功能](/advance/word/bookmark.md)
+    * [查找替换](/advance/word/text.md)
+    * [编辑与修订模式切换](/advance/word/edit_status.md)
+    * [用户相关功能](/advance/word/user.md)
+    * [评论](/advance/word/comment.md)
+    * [页模式](/advance/word/page_mode.md)
+    * [缩放](/advance/word/zoom.md)
+    * [目录](/advance/word/docMap.md)
+    * [剪切板](/advance/word/clipboard.md)
+  * 表格
+    * [导出文件](/advance/excel/export.md)
+    * [用户相关功能](/advance/excel/user.md)
+    * [Sheet相关](/advance/excel/sheet.md)
+    * [缩放](/advance/excel/zoom.md)
+    * [剪切板](/advance/excel/clipboard.md)
+  * 演示
+    * [导出文件](/advance/ppt/export.md)
+    * [用户相关功能](/advance/ppt/user.md)
+    * [获取页码、跳转页](/advance/ppt/page.md)
+    * [幻灯片动画控制](/advance/ppt/annimation.md)
+    * [缩放](/advance/ppt/zoom.md)
+  * PDF
+    * [获取页码、跳转页](/advance/pdf/page.md)
+    * [用户相关功能](/advance/pdf/user.md)
+    * [模式](/advance/pdf/mode.md)
+    * [缩放](/advance/pdf/zoom.md)
+    * [目录](/advance/pdf/docMap.md)
+* API Reference
+  * [说明](/api/index.md)

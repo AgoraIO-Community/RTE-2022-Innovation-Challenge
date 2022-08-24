@@ -29,15 +29,15 @@ build
 ## 功能简介
 <!-- 请给出该应用的主要功能点 -->
 todo
-[x] 注册
-[x] 登录
-[x] 平台首页（教学直播间列表）
-[x] 进入直播间
-[x] 分享屏幕（仅 macOS、win、Linux）
-[] 内嵌网页白板
+* [x] 注册
+* [x] 登录
+* [x] 平台首页（教学直播间列表）
+* [x] 进入直播间
+* [x] 分享屏幕（仅 macOS、win、Linux）
+* [ ] 内嵌网页白板
 
 演示视频
-【声网 RTC 2022 创新编程挑战赛作品- omega-paking-哔哩哔哩】 声网 RTC 2022 创新编程挑战赛作品- omega-paking_哔哩哔哩_bilibili
+【声网 RTC 2022 创新编程挑战赛作品- omega-paking-哔哩哔哩】 声网 RTC 2022 创新编程挑战赛作品- omega-paking_哔哩哔哩_bilibili https://b23.tv/gbnA83w
 ## 技术栈
 <!-- 请给出该应用主要的技术栈，包括声网和环信（如有用） SDK 版本 -->
 ### 第三方框架
@@ -53,18 +53,13 @@ todo
 | **device_info**            | **设备信息**       |
 | **connectivity**           | **网络链接**       |
 | **iconfont**               | **字库图标**       |
-| **share**                  | **系统分享**       |
-| **flutter_spinkit**        | **加载框样式**      |
-| **get_version**            | **版本信息**       |
 | **flutter_webview_plugin** | **全屏的webview** |
-| **sqflite**                | **数据库**        |
 | **flutter_statusbar**      | **状态栏**        |
-| **flutter_svg**            | **svg**        |
 | **agora_rtc_engine**       | **agora_rtc_engine: ^5.3.0**         |
 | **path_provider**          | **本地路径**       |
 | **path**                   | **本地路径**       |
 | **permission_handler**     | **权限**         |
-| **lottie**                 | **svg动画**    |
+| **rive**                 | **svg动画**    |
 
 ## 二次开发
 <!-- 1、如果是基于已有项目进行二次开发的参赛作品，请在此说明主要变更点，并附上原项目链接。2、如果是本次全新开发，请写“无” -->

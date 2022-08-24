@@ -22,7 +22,7 @@
 
 ## 功能简介
  
-!()[https://scripts-res.oss-cn-shanghai.aliyuncs.com/demo.png]
+![https://scripts-res.oss-cn-shanghai.aliyuncs.com/demo.png]()
 
 - 项目角色：使用项目工具的用户分为【主持人】和【玩家】
 

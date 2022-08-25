@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="26dp"
+    android:layout_marginEnd="22dp"
+    android:background="@drawable/ic_user_background">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/girl" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="13dp"
+            android:textColor="#ff5b0a55"
+            android:textSize="9sp"
+            tools:text="Maturlala" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="9dp"
+            android:layout_marginTop="3dp"
+            android:textColor="#59000000"
+            android:textSize="7sp"
+            tools:text="岩石与契约的海港" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/mic"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/mic_on" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

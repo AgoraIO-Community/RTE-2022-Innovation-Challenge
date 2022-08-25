@@ -1,0 +1,172 @@
+@import '~antd/dist/antd.less';
+
+.modalWrap {
+  position: fixed;
+  max-width: 90% !important;
+  max-height: 90% !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  .modalBox {
+    height: 100%;
+  }
+  :global {
+    .@{ant-prefix}-modal-content,
+    .@{ant-prefix}-modal-body {
+      display: flex;
+      height: 100%;
+      flex-grow: 2;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+}
+
+.tabWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.loadingWrap {
+  button {
+    display: none;
+  }
+  :global(.@{ant-prefix}-modal-confirm-btns) {
+    display: none;
+  }
+  .loadingContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .loadingIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+  }
+  .loadingTip {
+    text-align: center;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #434b61;
+    line-height: 20px;
+  }
+}
+.chatModal {
+  :global {
+    .@{ant-prefix}-modal-body {
+      padding: 0;
+    }
+  }
+}
+.chatWrap {
+  height: 100%;
+}
+.chatMain {
+  height: 100%;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  .chatList {
+    flex-grow: 2;
+    overflow: auto;
+  }
+  .chatScroll {
+  }
+  .chatSendWrap {
+    padding: 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ebf0f8;
+    height: 140px;
+    background: #fff;
+  }
+  .chatSendHeader {
+    // margin-bottom: 8px;
+  }
+  .chatSendTools {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #192038;
+    line-height: 1;
+    .selectTools {
+      color: @primary-color;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+  .textAreaWrap {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    width: 100%;
+  }
+  .textArea {
+    flex-grow: 2;
+    height: 100%;
+    resize: none;
+  }
+  .sendBtn {
+    // display: none;
+    margin-left: 10px;
+    width: 100px;
+    height: 100%;
+  }
+}
+
+.chatItemWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 16px;
+  .chatItemUserInfo {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #434b61;
+    line-height: 20px;
+  }
+  .chatItemMsgWrap {
+    background: #f8faff;
+    border-radius: 2px;
+    padding: 8px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #434b61;
+    line-height: 20px;
+    margin-bottom: 16px;
+    & > div {
+      word-break: break-all;
+    }
+  }
+  &.isMeMsg {
+    justify-content: flex-end;
+    align-items: flex-end;
+    .chatItemMsgWrap {
+      background: @primary-1;
+    }
+  }
+}
+.modalBox {
+  height: 500px;
+}

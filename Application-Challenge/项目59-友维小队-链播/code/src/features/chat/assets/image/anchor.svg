@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="14px" viewBox="0 0 8 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>蓝色</title>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="信息-事件上报推送" transform="translate(-304.000000, -305.000000)" fill="#3478F6">
+            <path d="M304,315.257431 C305.947114,317.63581 308.440435,318.825 311.479964,318.825 C308.986643,316.638689 307.823093,312.197022 307.989314,305.5 L304,305.5 L304,315.257431 Z" id="蓝色" transform="translate(307.739982, 312.162500) scale(1, -1) translate(-307.739982, -312.162500) "></path>
+        </g>
+    </g>
+</svg>

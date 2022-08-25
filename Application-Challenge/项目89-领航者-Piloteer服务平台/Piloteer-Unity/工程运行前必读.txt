@@ -1,0 +1,9 @@
+Game/local文件夹下有视频下载所需资料；
+voc文件夹下是yolo v3 模型文件，需下载；
+Library文件夹下需要下载unity3d 2021.2.14配套的libary文件；
+Assets/RTC-Engine文件夹下需下载所需资料；
+Assets/RTM-Engine文件夹下需下载所需资料；
+当然也可以直接下载完整工程项目：
+链接：https://pan.baidu.com/s/1bFbUsXTFAuihSNOHWOe0gg 
+提取码：mach
+祝运行顺利

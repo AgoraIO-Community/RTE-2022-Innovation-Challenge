@@ -1,0 +1,56 @@
+.bg {
+  backdrop-filter: blur(10px);
+}
+.gloadingWrap {
+  position: relative;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 4px;
+  // box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%),
+  //   0 9px 28px 8px rgb(0 0 0 / 5%);
+  pointer-events: auto;
+  background: #fff;
+  * {
+    user-select: none;
+  }
+}
+.dotting {
+  display: inline-block;
+  width: 10px;
+  min-height: 2px;
+  padding-right: 2px;
+  border-left: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  background-color: currentColor;
+  background-clip: content-box;
+  box-sizing: border-box;
+  animation: dot 4s infinite step-start both;
+}
+.dotting::before {
+  content: '';
+}
+:root .dotting {
+  margin-left: 2px;
+  padding-left: 2px;
+} /* IE9+ */
+
+@keyframes dot {
+  25% {
+    border-color: transparent;
+    background-color: transparent;
+  } /* 0个点 */
+  50% {
+    border-right-color: transparent;
+    background-color: transparent;
+  } /* 1个点 */
+  75% {
+    border-right-color: transparent;
+  } /* 2个点 */
+}
+
+.loaderWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

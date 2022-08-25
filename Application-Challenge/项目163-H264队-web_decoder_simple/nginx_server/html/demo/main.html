@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<body>
+    <div style="margin: 40px;">
+      H264:
+        <input type="file" onchange="handleVideoFiles(this.files)" onclick="setDecoder(0)">
+    </div>
+    <div style="margin: 40px;">
+      H265:
+        <input type="file" onchange="handleVideoFiles(this.files)" onclick="setDecoder(1)">
+    </div>
+    <div style="margin: 40px;">
+      Audio:
+        <input type="file" onchange="handleAudioFiles(this.files)" onclick="setAudioDecoder(0)">
+    </div>
+    <div style="margin: 40px;">
+      <button id="play" onclick="playAudio()">Start Play</button>
+    </div>
+
+  <div style="margin-top: 10px; display: block; width: 540px; height: 300px; background-color: black;">
+    <canvas id="playCanvas"></canvas>
+  </div>
+
+  <script src="libffmpeg.js"></script>
+  <script src="video.js"></script>
+  <script src="audio.js"></script>
+  <script src="webgl.js"></script>
+
+</body>
+</html>

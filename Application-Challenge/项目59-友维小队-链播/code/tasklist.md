@@ -1,0 +1,1 @@
+1. 继承agora + easamob  ---- chat system and sub pub

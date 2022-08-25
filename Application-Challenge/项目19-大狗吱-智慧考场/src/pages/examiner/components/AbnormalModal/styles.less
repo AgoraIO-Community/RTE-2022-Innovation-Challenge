@@ -1,0 +1,50 @@
+@import '~antd/dist/antd.less';
+
+.modalWrap {
+  position: fixed;
+  width: 90% !important;
+  height: 90% !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  .modalBox {
+    height: 100%;
+  }
+  :global {
+    .@{ant-prefix}-modal-content,
+    .@{ant-prefix}-modal-body {
+      display: flex;
+      height: 100%;
+      flex-grow: 2;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+}
+
+.mainBox {
+  flex-grow: 2;
+  position: relative;
+  height: 100%;
+}
+
+.formWrap {
+  display: flex;
+  flex-grow: 2;
+  height: 100%;
+  flex-direction: column;
+  .scrollbarsWrap {
+    flex-grow: 2;
+    overflow: auto;
+  }
+  .btnsWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

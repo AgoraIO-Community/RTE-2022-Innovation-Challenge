@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs 'libs', '../libusbcamera/libs'
+        }
+    }
+}
+ext {
+    androidXVersion = '1.1.0'
+    versionCompiler = 28
+    versionTarget = 27
+    // if hope supporting 4.4
+    // please modify it to 16
+    minSdkVersion = 21
+    versionCode = 99
+    versionNameString = '1.2.2.20200419'
+    minSdkVersion = 16
+    versionCode = 101
+    versionNameString = '2.3.6.20211117'
+    javaSourceCompatibility = JavaVersion.VERSION_1_8
+    javaTargetCompatibility = JavaVersion.VERSION_1_8
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,5 +1,0 @@
-# InlineShapes
-
----
-
-##

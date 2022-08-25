@@ -1,0 +1,66 @@
+@import '~antd/dist/antd.less';
+
+.modalWrap {
+  position: fixed;
+  width: 90% !important;
+  height: 90% !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  .modalBox {
+    height: 100%;
+  }
+  :global {
+    .@{ant-prefix}-modal-content,
+    .@{ant-prefix}-modal-body {
+      display: flex;
+      height: 100%;
+      flex-grow: 2;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+}
+
+.testWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  background: #fff;
+}
+.document {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  overflow: auto;
+}
+.paginationWrap {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .pagination {
+    background: @primary-1;
+    padding: 10px;
+    border-radius: 4px;
+    // *{
+    //   color: #fff;
+    // }
+    // li>a {
+    //   color: #000;
+    // }
+  }
+}

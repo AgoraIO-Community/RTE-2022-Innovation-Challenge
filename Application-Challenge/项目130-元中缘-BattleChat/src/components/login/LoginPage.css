@@ -1,0 +1,8 @@
+.eye {
+  padding: 4px;
+  cursor: pointer;
+}
+.eye svg {
+  display: block;
+  font-size: var(--adm-font-size-7);
+}

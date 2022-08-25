@@ -1,0 +1,66 @@
+{
+  "name": "@netless/community-apps",
+  "version": "0.1.0",
+  "description": "Template for a Netless Community App",
+  "private": true,
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "assets",
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "server": {
+    "host": true
+  },
+  "engines": {
+    "npm": "^8.0.0"
+  },
+  "dependencies": {
+    "@netless/app-countdown": "^0.0.2",
+    "@netless/app-plyr": "^0.2.1",
+    "@netless/app-slide": "^0.2.5",
+    "@netless/synced-store": "^2.0.6",
+    "@react-pdf-viewer/core": "^3.6.0",
+    "@react-pdf-viewer/default-layout": "^3.6.0",
+    "@react-pdf-viewer/toolbar": "^3.6.0",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "axios": "^0.27.2",
+    "clipboard-js": "^0.3.6",
+    "crc-32": "^1.2.2",
+    "cuint": "^0.2.2",
+    "events": "^3.3.0",
+    "nvm": "0.0.4",
+    "pdfjs-dist": "^2.14.305",
+    "pnpm": "^7.9.0",
+    "prop-types": "^15.8.1",
+    "react-axios": "^2.0.6",
+    "react-pdf": "^5.7.2",
+    "white-web-sdk": "^2.16.24"
+  },
+  "devDependencies": {
+    "@netless/fastboard": "^0.3.3",
+    "@netless/fastboard-react": "^0.3.6",
+    "@netless/window-manager": "^0.4.30",
+    "@types/clipboard-js": "^0.3.2",
+    "@types/events": "^3.0.0",
+    "@types/node": "^18.7.2",
+    "@types/pdfjs-dist": "^2.10.378",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "@types/react-pdf": "^5.7.2",
+    "@vitejs/plugin-react": "^1.3.2",
+    "agora-rtc-sdk-ng": "latest",
+    "buffer": "^6.0.3",
+    "crypto-js": "^4.1.1",
+    "less": "^4.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^3",
+    "white-web-sdk": "^2.16.24"
+  }
+}

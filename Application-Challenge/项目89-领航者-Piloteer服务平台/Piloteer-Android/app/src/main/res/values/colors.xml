@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="agora_blue">#006AD8</color>
+
+    <color name="colorPrimary">@color/agora_blue</color>
+    <color name="colorPrimaryDark">@color/agora_blue</color>
+    <color name="colorAccent">@color/agora_blue</color>
+
+    <color name="lightColorAccent">#30FF4081</color>
+
+    <!--<color name="dark_black">#CC262626</color>-->
+
+    <color name="transparent_75_white">#ACFFFFFF</color>
+
+    <color name="black_light">#CC222222</color>
+
+    <color name="dark_black">#FF333333</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorFunctionBg">#1D283B</color>
+    <color name="colorSplashBg">#FBFBFB</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorSelectTab">#19BB9C</color>
+    <color name="colorLightGray">#F0F8FF</color>
+    <color name="gray_color">#A1A1A1</color>
+    <color name="semi_transparent_gray_color">#40A1A1A1</color>
+    <color name="transparent_item_bg_color">#00A1A1A1</color>
+    <color name="color_gren">#A9A9A9</color>
+    <color name="setting_bg_color">#F4F4F4</color>
+    <color name="setting_text_value_color">#AAAAAA</color>
+    <color name="dialog_txt_color">#33B5E5</color>
+    <color name="orange_color">#FFA500</color>
+</resources>

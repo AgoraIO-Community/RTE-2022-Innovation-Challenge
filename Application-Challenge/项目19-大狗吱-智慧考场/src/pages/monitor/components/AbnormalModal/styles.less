@@ -1,0 +1,70 @@
+@import '~antd/dist/antd.less';
+.wrapClassName{
+  backdrop-filter: blur(10px);
+}
+.modalWrap {
+  position: fixed;
+  width: 90% !important;
+  height: 90% !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  .modalBox {
+    height: 100%;
+  }
+  :global {
+    .@{ant-prefix}-modal-header{
+      background-color: rgba(28, 35, 86, 1);
+      background: linear-gradient(270deg, rgba(150, 192, 255, 0.08) 0%, rgba(93, 140, 255, 0.56) 100%);
+      border-bottom: 0;
+    }
+    .@{ant-prefix}-modal-title {
+      font-size: 24px;
+      font-family: SourceHanSansCN-Heavy, SourceHanSansCN;
+      font-weight: 800;
+      color: #CEDCF4;
+      line-height: 36px;
+      letter-spacing: 2px;
+      text-shadow: 0px 2px 4px rgba(40, 48, 83, 0.87);
+      background: linear-gradient(180deg, #E9F0FA 0%, #F5F8FF 5%, #9EAFF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .@{ant-prefix}-modal-content,
+    .@{ant-prefix}-modal-body {
+      display: flex;
+      height: 100%;
+      flex-grow: 2;
+      flex-direction: column;
+      background: rgba(28, 35, 86, 1);
+      overflow: auto;
+    }
+  }
+}
+
+.mainBox {
+  flex-grow: 2;
+  position: relative;
+  height: 100%;
+}
+
+.formWrap {
+  display: flex;
+  flex-grow: 2;
+  height: 100%;
+  flex-direction: column;
+  .scrollbarsWrap {
+    flex-grow: 2;
+    overflow: auto;
+  }
+  .btnsWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

@@ -14,3 +14,4 @@ node_modules/
 .deploy*/
 .vscode/
 yarn.lock
+.idea

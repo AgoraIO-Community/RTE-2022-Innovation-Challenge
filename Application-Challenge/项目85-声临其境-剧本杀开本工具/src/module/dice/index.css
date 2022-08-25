@@ -1,0 +1,82 @@
+.netless-app-dice-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.netless-app-dice-cube {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform-origin: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.netless-app-dice-reset {
+  animation: netless-app-dice-anti-rotate 0.1s paused;
+}
+
+.netless-app-dice-activate {
+  animation: netless-app-dice-rotate 3s running;
+  cursor: not-allowed;
+}
+
+.netless-app-dice-face {
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  overflow: hidden;
+  position: absolute;
+  transform-origin: 0 0;
+  background-color: #F7BA0B;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.netless-app-dice-face-1 {
+  transform: translateZ(50px);
+}
+.netless-app-dice-face-2 {
+  left: 100px;
+  transform: translateZ(-50px) rotateY(180deg);
+}
+.netless-app-dice-face-3 {
+  transform: rotateY(-90deg) translateX(-50px);
+}
+.netless-app-dice-face-4 {
+  left: 100px;
+  transform: rotateY(90deg) translateX(-50px);
+}
+.netless-app-dice-face-5 {
+  top: 100px;
+  transform: rotateX(-90deg) translateY(-50px);
+}
+.netless-app-dice-face-6 {
+  transform: rotateX(90deg) translateY(-50px);
+}
+
+@keyframes netless-app-dice-rotate {
+  from {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  to {
+    transform: rotateX(1080deg) rotateY(-720deg) rotateZ(0);
+  }
+}
+
+@keyframes netless-app-dice-anti-rotate {
+  from {
+    transform: rotateX(1080deg) rotateY(-720deg) rotateZ(0);
+  }
+  to {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+}

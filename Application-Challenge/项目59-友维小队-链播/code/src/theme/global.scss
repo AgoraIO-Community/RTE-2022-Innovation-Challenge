@@ -1,0 +1,42 @@
+@import "./ionic.scss";
+@import "hjcore/browser/base.css";
+@import "./color.scss";
+ion-item.pure {
+  --inner-border-width: 0;
+}
+ion-toolbar {
+  --min-height: 48px;
+  ion-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+  }
+}
+.alert-input ion-input {
+  margin-left: 12px;
+}
+.underline {
+  text-align: left;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: currentColor;
+    height: 1px;
+    transform: scaleY(0.4);
+  }
+  &.has-focus::after {
+    transform: scaleY(1);
+  }
+}
+ion-toolbar ion-title {
+  box-sizing: border-box;
+}
+
+.transition {
+  transition: all 0.25s ease;
+}

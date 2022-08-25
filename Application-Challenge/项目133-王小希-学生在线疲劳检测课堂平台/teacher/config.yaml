@@ -1,0 +1,20 @@
+#leancloud appId
+leancloud_appId : 'Kllqq69T39mWeIal2XBwKXPF-9Nh9j0Va'
+
+#leancloud appKey
+leancloud_appKey : 'yMUsQLDQlvoYTjpXOKQ2Spmt'
+
+#leancloud masterKey
+leancloud_masterKey : 'WQv6PpmfgNYiDVczr5shUvIc'
+
+#agora账号信息
+leanCloud_agora_info : "Agora_info"
+
+#房间表名
+leancloud_chatroom : 'Chatroom'
+
+#学生表名
+#leancloud_student : "Student"
+
+#老师表名
+leancloud_teacher : "Teacher"

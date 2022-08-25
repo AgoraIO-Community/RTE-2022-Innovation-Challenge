@@ -1,0 +1,30 @@
+
+robot:
+    name: '小宝小宝'
+    tts: baidu-tts
+    stt: baidu-stt
+    robot: tuling
+    sampleRate: 16000
+    voiceStopTime: 800
+    voiceNoiseFloat: 2.2
+
+
+snowBoyUsers:
+    -
+        # 用户id
+        uid: 'lambo'
+        name: '林小宝'
+        # 敏感度
+        sensitivity: 0.5
+        # 唤醒的语音模型
+        voiceModel: '.snowBoy/lambo.mdl'
+
+baiDuYuYin:
+    appId: ''
+    appKey: ''
+    secretKey: ''
+    per: 0
+
+#图灵机器人的appKey.
+tuLing:
+    appKey:  ''

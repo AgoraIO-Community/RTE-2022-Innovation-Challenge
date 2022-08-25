@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机器人控制页面</title>
+    <style type="text/css">
+        button.ctrl {margin-right: 10%;margin-top: 50px;float:left;width:40%; height: 200px;font-size: 3em;}
+    </style>
+</head>
+<body>
+    <iframe id="targetFrame" width="90%" style="font-size: 2em;"></iframe>
+    <div style="width: 100%;height: 20px;margin-top: 30px;">
+        <form action="javascript:void(0);" onsubmit="return submitForm();">
+            <label style="font-size: 2em;">
+                输入：
+            </label>
+            <input id="hearInput" type="text" style="width:80%; font-size: 2em;"  title="请在此处输入"/>
+        </form>
+    </div>
+    <div>
+        <div>
+            <button class="ctrl" onclick="clickHear(this)" >播放音乐</button>
+            <button class="ctrl" onclick="clickHear(this)" >停止播放</button>
+            <button class="ctrl" onclick="clickHear(this)" >下一首歌</button>
+            <button class="ctrl" onclick="clickHear(this)" >上一首歌</button>
+            <button class="ctrl" onclick="clickHear(this)" >什么歌</button>
+            <button class="ctrl" onclick="clickHear(this)" >播放本地</button>
+            <button class="ctrl" onclick="clickHear(this)" >随机播放</button>
+            <button class="ctrl" onclick="clickHear(this)" >保存</button>
+            <button class="ctrl" onclick="clickHear(this)" >删除</button>
+            <button class="ctrl" onclick="clickHear(this)" >小点声</button>
+            <button class="ctrl" onclick="clickHear(this)" >大点声</button>
+            <button class="ctrl" onclick="clickHear(this)" >音量八十</button>
+            <button class="ctrl" onclick="clickHear(this)" >音量一百</button>
+            <button class="ctrl" onclick="clickHear(this)" >深圳天气</button>
+            <button class="ctrl" onclick="clickHear(this)" >绕口令</button>
+            <button class="ctrl" onclick="clickHear(this)" >笑话</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var targetFrame = document.getElementById('targetFrame');
+        function clickHear(_self){
+            targetFrame.src = "/hear?" + _self.innerText;
+        }
+        function submitForm(){
+            targetFrame.src = "/hear?" + document.getElementById("hearInput").value;
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 <!-- 内容建议:以下为建议你可以补充的内容要点和方向 -->
 
-项目文件太大，请参考这里：https://pan.baidu.com/s/1iAkWlhewkfKjP6S0X1UPaA  取码: wxqe 
+项目文件太大，请参考这里：https://pan.baidu.com/s/1LeYdXXnrNsjcf3EpjjCfzw 提取码: jg3f
 
 # 项目名 
 元宇宙metaverse

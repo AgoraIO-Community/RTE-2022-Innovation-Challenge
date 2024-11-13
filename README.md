@@ -1,4 +1,9 @@
-# RTE 2022 编程挑战赛
+# ⚠️ [ARCHIVED] RTE 2022 编程挑战赛
+Please note that this repository is now in a read-only state and will not receive any further updates or support.
+
+For documentation and support, please visit the [Agora Documentation](https://docs.agora.io/en/).
+
+---
 
 <!-- [**中文**](README.md) | *中文* -->
 

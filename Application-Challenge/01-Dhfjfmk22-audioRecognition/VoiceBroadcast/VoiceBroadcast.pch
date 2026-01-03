@@ -1,0 +1,55 @@
+//
+//  VoiceBroadcast.pch
+//  播报语音
+//
+//  Created by mac on 2019/4/15.
+//  Copyright © 2019年 mac. All rights reserved.
+//
+
+#ifndef VoiceBroadcast_pch
+#define VoiceBroadcast_pch
+
+#ifdef __OBJC__
+
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+#import <AVFoundation/AVFoundation.h>
+#import <Masonry.h>
+
+
+//应用APPID
+#define Voice_APPID @"16018332"
+// 应用APIKey
+#define Voice_API_KEY @"mfMDcvGDYzn7LpOjF389Qq8v"
+// 应用SecretKey
+#define Voice_SECRET_KEY @"Lfieox9gRIi6ZwkVVLVRgRbZUPgKHvOs"
+
+//网络请求
+#import "YLAppUrls.h"
+#import "WebConnect.h"
+
+#import "FaceAppToolHandle.h"
+
+#define WIDTH  [[UIScreen mainScreen]bounds].size.width
+#define HEIGHT [[UIScreen mainScreen]bounds].size.height
+#define BOUNDS [[UIScreen mainScreen] bounds]
+
+//使用语音识别功能
+#import "BDSEventManager.h"
+#import "BDSASRDefines.h"
+#import "BDSASRParameters.h"
+
+//使用语音离线唤醒功能
+#import "BDSWakeupDefines.h"
+#import "BDSWakeupParameters.h"
+
+//使用语音内置识别控件
+#import "BDTheme.h"
+#import "BDRecognizerViewParamsObject.h"
+#import "BDRecognizerViewController.h"
+#import "BDRecognizerViewDelegate.h"
+
+#endif
+
+#endif /* VoiceBroadcast_pch */

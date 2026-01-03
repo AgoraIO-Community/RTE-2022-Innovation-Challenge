@@ -1,0 +1,5 @@
+target 'VoiceBroadcast' do
+pod 'AFNetworking'
+pod 'Masonry'
+
+end

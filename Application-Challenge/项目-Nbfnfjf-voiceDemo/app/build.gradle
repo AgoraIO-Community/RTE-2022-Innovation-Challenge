@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.baidu.speech.recognizerdemo"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "3.0.8"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions{
+        doNotStrip "*/*/libvad.dnn.so"
+        doNotStrip "*/*/libbd_easr_s1_merge_normal_20151216.dat.so"
+    }
+}
+
+dependencies {
+    // implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation project(path: ':core')
+    implementation project(':uiasr')
+    implementation project(':uidialog')
+}

@@ -1,0 +1,11 @@
+唤醒词功能即SDK识别唤醒词，或者认为是SDK识别出用户一大段话中的“关键词”，与Android系统自身的锁屏唤醒无关
+
+测试方法：
+1.第一次使用需要联网使用
+2. 请说“小度你好”或者 “百度一下”
+
+唤醒词是本地功能，需要获取正式授权文件（与离线命令词的正式授权文件是同一个）。 第一次联网使用唤醒词功能自动获取正式授权文件。之后可以断网测试。
+
+集成指南：
+1.demo的wakeUp.bin文件是放在core的模块里的assets目录下。需要自定义bsg文件，可以在http://yuyin.baidu.com/asr 下载
+2.首次联网SDK会自动下载授权文件。自动下载的前提是您填写的appId，appKey，secretKey及包名，同网页上填写的一致。本demo的包名是com.baidu.speech.recognizerdemo，定义在build.gradle文件中。
